@@ -1,0 +1,23 @@
+{"jsonrpc":"2.0","method":"turn/started","params":{"threadId":"thread-fixture","turn":{"id":"turn-fixture"}}}
+{"jsonrpc":"2.0","method":"item/agentMessage/delta","params":{"threadId":"thread-fixture","turnId":"turn-fixture","itemId":"message-1","delta":"answer"}}
+{"jsonrpc":"2.0","method":"item/reasoning/summaryTextDelta","params":{"threadId":"thread-fixture","turnId":"turn-fixture","itemId":"reason-1","delta":"analysis"}}
+{"jsonrpc":"2.0","method":"item/started","params":{"threadId":"thread-fixture","turnId":"turn-fixture","item":{"type":"commandExecution","id":"tool-command","command":"go test ./...","cwd":"C:\\private\\workspace","env":{"TOKEN":"secret"}}}}
+{"jsonrpc":"2.0","method":"item/commandExecution/outputDelta","params":{"threadId":"thread-fixture","turnId":"turn-fixture","itemId":"tool-command","delta":"running"}}
+{"jsonrpc":"2.0","method":"item/completed","params":{"threadId":"thread-fixture","turnId":"turn-fixture","item":{"type":"commandExecution","id":"tool-command","status":"completed","exitCode":0,"aggregatedOutput":"ok"}}}
+{"jsonrpc":"2.0","method":"item/started","params":{"threadId":"thread-fixture","turnId":"turn-fixture","item":{"type":"fileChange","id":"tool-file","changes":[{"path":"src/main.go","kind":{"type":"update"},"diff":"@@ changed @@"}]}}}
+{"jsonrpc":"2.0","method":"item/completed","params":{"threadId":"thread-fixture","turnId":"turn-fixture","item":{"type":"fileChange","id":"tool-file","status":"completed","changes":[{"path":"src/main.go","kind":{"type":"update"},"diff":"@@ changed @@"}]}}}
+{"jsonrpc":"2.0","method":"item/started","params":{"threadId":"thread-fixture","turnId":"turn-fixture","item":{"type":"mcpToolCall","id":"tool-mcp","server":"docs","tool":"lookup","arguments":{"query":"bridge","accessToken":"must-not-escape"}}}}
+{"jsonrpc":"2.0","method":"item/completed","params":{"threadId":"thread-fixture","turnId":"turn-fixture","item":{"type":"mcpToolCall","id":"tool-mcp","status":"completed","result":{"content":[{"type":"text","text":"documentation"},{"type":"image","data":"cG5n","mimeType":"image/png"}],"structuredContent":{"matches":1}}}}}
+{"jsonrpc":"2.0","method":"item/started","params":{"threadId":"thread-fixture","turnId":"turn-fixture","item":{"type":"dynamicToolCall","id":"tool-dynamic","tool":"render","arguments":{"name":"diagram"}}}}
+{"jsonrpc":"2.0","method":"item/completed","params":{"threadId":"thread-fixture","turnId":"turn-fixture","item":{"type":"dynamicToolCall","id":"tool-dynamic","status":"completed","contentItems":[{"type":"inputText","text":"rendered"},{"type":"inputImage","imageUrl":"https://private.example/image"}]}}}
+{"jsonrpc":"2.0","method":"item/started","params":{"threadId":"thread-fixture","turnId":"turn-fixture","item":{"type":"imageGeneration","id":"tool-image","prompt":"chart"}}}
+{"jsonrpc":"2.0","method":"item/completed","params":{"threadId":"thread-fixture","turnId":"turn-fixture","item":{"type":"imageGeneration","id":"tool-image","status":"completed","savedPath":"artifacts/chart.png"}}}
+{"jsonrpc":"2.0","method":"turn/plan/updated","params":{"threadId":"thread-fixture","turnId":"turn-fixture","plan":[{"step":"inspect","status":"completed"},{"step":"test","status":"inProgress"}],"explanation":"execute in order"}}
+{"jsonrpc":"2.0","method":"turn/diff/updated","params":{"threadId":"thread-fixture","turnId":"turn-fixture","diff":"diff --git a/src/main.go b/src/main.go"}}
+{"jsonrpc":"2.0","method":"thread/tokenUsage/updated","params":{"threadId":"thread-fixture","turnId":"turn-fixture","tokenUsage":{"last":{"inputTokens":8,"outputTokens":5,"totalTokens":13}}}}
+{"jsonrpc":"2.0","method":"item/completed","params":{"threadId":"thread-fixture","turnId":"turn-fixture","item":{"type":"collabAgentToolCall","id":"collab-tool","senderThreadId":"thread-fixture","model":"gpt-test","agentsStates":{"child-thread":{"status":"completed"}}}}}
+{"jsonrpc":"2.0","method":"mcpServer/startupStatus/updated","params":{"threadId":"thread-fixture","name":"docs","status":"ready"}}
+{"jsonrpc":"2.0","method":"future/notification","params":{"threadId":"thread-fixture","secret":"must-not-escape"}}
+{"jsonrpc":"2.0","method":"item/completed","params":{"threadId":"thread-fixture","turnId":"turn-fixture","item":{"type":"futureItem","id":"future-item","secret":"must-not-escape"}}}
+{"jsonrpc":"2.0","method":"thread/status/changed","params":{"threadId":"thread-fixture","status":{"type":"idle"}}}
+{"jsonrpc":"2.0","method":"turn/completed","params":{"threadId":"thread-fixture","turn":{"id":"turn-fixture","status":"completed"}}}

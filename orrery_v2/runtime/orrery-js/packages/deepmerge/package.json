@@ -1,0 +1,8 @@
+{
+  "name": "deepmerge",
+  "version": "4.3.2",
+  "private": true,
+  "main": "index.cjs",
+  "license": "Apache-2.0",
+  "files": ["index.cjs", "LICENSE", "NOTICE", "package.json"]
+}

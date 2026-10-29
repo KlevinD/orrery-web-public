@@ -1,0 +1,89 @@
+ARG GO_VERSION
+ARG APT_MIRROR
+ARG DEBIAN_SECURITY_MIRROR
+ARG GOPROXY
+ARG RUNTIME_BASE_IMAGE=debian:bookworm-slim
+
+FROM golang:${GO_VERSION}-bookworm AS build
+
+ARG APT_MIRROR
+ARG DEBIAN_SECURITY_MIRROR
+ARG GOPROXY
+
+ENV GOPROXY=${GOPROXY}
+
+WORKDIR /src
+RUN printf 'deb %s bookworm main contrib non-free non-free-firmware\n\
+deb %s bookworm-updates main contrib non-free non-free-firmware\n\
+deb %s bookworm-security main contrib non-free non-free-firmware\n' \
+    "${APT_MIRROR}" "${APT_MIRROR}" "${DEBIAN_SECURITY_MIRROR}" > /etc/apt/sources.list.d/debian.sources.list \
+    && rm -f /etc/apt/sources.list.d/debian.sources
+COPY go.mod go.sum ./
+COPY third_party/lark-sdk/go.mod third_party/lark-sdk/go.sum ./third_party/lark-sdk/
+COPY third_party/dingtalk-stream-sdk/go.mod third_party/dingtalk-stream-sdk/go.sum ./third_party/dingtalk-stream-sdk/
+COPY third_party/centrifuge/go.mod third_party/centrifuge/go.sum ./third_party/centrifuge/
+RUN --mount=type=cache,target=/go/pkg/mod go mod download
+
+COPY . .
+# Default coverage tests enforce Orrery Web/API scope. External MCP acceptance
+# is an explicit separate check using the external_mcp_acceptance test build tag.
+RUN --mount=type=cache,target=/go/pkg/mod --mount=type=cache,target=/root/.cache/go-build \
+    go test ./internal/app/ontology -run 'TestProductionCoverage(Gate|AuditReport|Required0618Modules|ExemptionReport)' -v -count=1
+RUN --mount=type=cache,target=/go/pkg/mod --mount=type=cache,target=/root/.cache/go-build \
+    CGO_ENABLED=0 GOOS=linux go build -trimpath -ldflags="-s -w" -o /out/orrery-api ./cmd/server
+
+FROM ${RUNTIME_BASE_IMAGE}
+
+ARG APT_MIRROR
+ARG DEBIAN_SECURITY_MIRROR
+ARG NODE_VERSION
+ARG NODE_DIST_MIRROR
+ARG NPM_REGISTRY
+ARG TARGETARCH
+
+COPY config/node-SHASUMS256.txt /opt/orrery-node-SHASUMS256.txt
+COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+
+RUN printf 'deb %s bookworm main contrib non-free non-free-firmware\n\
+deb %s bookworm-updates main contrib non-free non-free-firmware\n\
+deb %s bookworm-security main contrib non-free non-free-firmware\n' \
+        "${APT_MIRROR}" "${APT_MIRROR}" "${DEBIAN_SECURITY_MIRROR}" > /etc/apt/sources.list.d/debian.sources.list \
+    && rm -f /etc/apt/sources.list.d/debian.sources \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends ca-certificates curl xz-utils openssh-client \
+    && node_arch="${TARGETARCH:-amd64}" \
+    && case "${node_arch}" in amd64) node_arch="x64" ;; arm64) node_arch="arm64" ;; *) echo "unsupported TARGETARCH=${TARGETARCH}" >&2; exit 1 ;; esac \
+    && node_archive="node-v${NODE_VERSION}-linux-${node_arch}.tar.xz" \
+    && curl -fsSL "${NODE_DIST_MIRROR}/v${NODE_VERSION}/${node_archive}" -o "/tmp/${node_archive}" \
+    && cd /tmp \
+    && grep "  ${node_archive}$" /opt/orrery-node-SHASUMS256.txt | sha256sum -c - \
+    && tar -xJf "/tmp/${node_archive}" --strip-components=1 -C /usr/local \
+    && rm "/tmp/${node_archive}" \
+    && npm config set registry "${NPM_REGISTRY}" \
+    && apt-get purge -y --auto-remove xz-utils \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN groupadd --system orrery \
+    && useradd --system --gid orrery --home-dir /app --create-home orrery \
+    && mkdir -p /var/lib/orrery \
+    && chown -R orrery:orrery /var/lib/orrery /app
+
+COPY --from=build /out/orrery-api /usr/local/bin/orrery-api
+COPY runtime/pi-coding-agent /app/runtime/pi-coding-agent
+COPY runtime/orrery-js /app/runtime/orrery-js
+RUN npm --prefix /app/runtime/pi-coding-agent ci --omit=dev --ignore-scripts --registry="${NPM_REGISTRY}" \
+    && node /app/runtime/orrery-js/install.mjs pi --check \
+    && chown -R orrery:orrery /app/runtime
+
+ENV PATH=/app/runtime/pi-coding-agent/node_modules/.bin:$PATH
+
+WORKDIR /app
+USER orrery
+
+EXPOSE 8080
+VOLUME ["/var/lib/orrery"]
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=5 \
+    CMD curl -fsS http://127.0.0.1:8080/api/health >/dev/null || exit 1
+
+ENTRYPOINT ["orrery-api"]

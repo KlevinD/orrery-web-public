@@ -1,0 +1,97 @@
+name: orrery
+
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "${DOCKER_LOG_MAX_SIZE:-10m}"
+    max-file: "${DOCKER_LOG_MAX_FILE:-3}"
+
+services:
+  orrery-postgres:
+    image: postgres:17-bookworm
+    restart: unless-stopped
+    logging: *default-logging
+    environment:
+      POSTGRES_USER: orrery
+      POSTGRES_PASSWORD: ${ORRERY_POSTGRES_PASSWORD:?ORRERY_POSTGRES_PASSWORD is required}
+      POSTGRES_DB: orrery
+    ports:
+      - "${ORRERY_POSTGRES_BIND:-127.0.0.1}:${ORRERY_POSTGRES_PORT:-5434}:5432"
+    volumes:
+      - orrery-postgres-data:/var/lib/postgresql/data
+      - ./orrery_v2/scripts/postgres-init-orrery.sh:/docker-entrypoint-initdb.d/10-init-orrery.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+  orrery-api:
+    image: ${ORRERY_API_IMAGE:?load orrery_v2/deploy/releases/local.env or a production release manifest}
+    build:
+      context: ./orrery_v2
+      dockerfile: Dockerfile.api
+      args:
+        GO_VERSION: ${GO_VERSION:?load orrery_v2/config/build.env}
+        APT_MIRROR: ${APT_MIRROR:?load orrery_v2/config/build.env}
+        DEBIAN_SECURITY_MIRROR: ${DEBIAN_SECURITY_MIRROR:?load orrery_v2/config/build.env}
+        GOPROXY: ${GOPROXY:?load orrery_v2/config/build.env}
+        NODE_VERSION: ${RUNTIME_NODE_VERSION:?load orrery_v2/config/build.env}
+        NODE_DIST_MIRROR: ${NODE_DIST_MIRROR:?load orrery_v2/config/build.env}
+        NPM_REGISTRY: ${NPM_REGISTRY:?load orrery_v2/config/build.env}
+    restart: unless-stopped
+    logging: *default-logging
+    depends_on:
+      orrery-postgres:
+        condition: service_healthy
+    environment:
+      ORRERY_CONFIG: /etc/orrery/orrery.yaml
+      ORRERY_DATABASE_PASSWORD: ${ORRERY_POSTGRES_PASSWORD:?ORRERY_POSTGRES_PASSWORD is required}
+      ORRERY_BOOTSTRAP_SUPERADMIN_PASSWORD: ${ORRERY_BOOTSTRAP_SUPERADMIN_PASSWORD:?ORRERY_BOOTSTRAP_SUPERADMIN_PASSWORD is required}
+      ORRERY_SECRET_KNOWLEDGE_PAGEINDEX: ${PAGEINDEX_API_KEY:-}
+      ORRERY_SECRET_ONTOLOGY_CURSOR_KEY_V1: ${ORRERY_SECRET_ONTOLOGY_CURSOR_KEY_V1:?ORRERY_SECRET_ONTOLOGY_CURSOR_KEY_V1 is required}
+      ORRERY_SECRET_ONTOLOGY_CURSOR_KEY_V0: ${ORRERY_SECRET_ONTOLOGY_CURSOR_KEY_V0:-}
+      ORRERY_GATEWAY_SECRET_KEY: ${ORRERY_GATEWAY_SECRET_KEY:-}
+      ORRERY_GATEWAY_SECRET_KEY_FILE: ${ORRERY_GATEWAY_SECRET_KEY_FILE:-/var/lib/orrery/secrets/gateway-config-key}
+      ORRERY_RUNTIME_MCP_TOKEN: ${ORRERY_RUNTIME_MCP_TOKEN:-}
+      ORRERY_RUNTIME_MCP_AUTHORIZATION: ${ORRERY_RUNTIME_MCP_AUTHORIZATION:-}
+      ORRERY_AUTH_LOCAL_MFA_TOTP_SECRET: ${ORRERY_AUTH_LOCAL_MFA_TOTP_SECRET:-}
+      ORRERY_FEISHU_APP_ID: ${ORRERY_FEISHU_APP_ID:-}
+      ORRERY_FEISHU_APP_SECRET: ${ORRERY_FEISHU_APP_SECRET:-}
+      ORRERY_FEISHU_STATE_SECRET: ${ORRERY_FEISHU_STATE_SECRET:-}
+      ORRERY_HYDRA_ADMIN_TOKEN: ${ORRERY_HYDRA_ADMIN_TOKEN:-}
+      ORRERY_OIDC_CLIENT_SECRET: ${ORRERY_OIDC_CLIENT_SECRET:-}
+      ORRERY_AUTHZ_OPENFGA_TOKEN: ${ORRERY_AUTHZ_OPENFGA_TOKEN:-}
+      ORRERY_INTERNAL_VIEWER_TOKEN: ${ORRERY_INTERNAL_VIEWER_TOKEN:-}
+      ORRERY_INTERNAL_VIEWER_AUTHORIZATION: ${ORRERY_INTERNAL_VIEWER_AUTHORIZATION:-}
+    ports:
+      - "${ORRERY_API_BIND:-127.0.0.1}:${ORRERY_API_PORT:-8080}:8080"
+    volumes:
+      - orrery-data:/var/lib/orrery
+      - ./orrery_v2/config/orrery.production.yaml:/etc/orrery/orrery.yaml:ro
+
+  orrery-web:
+    image: ${ORRERY_WEB_IMAGE:?load orrery_v2/deploy/releases/local.env or a production release manifest}
+    build:
+      context: ./orrery_v2
+      dockerfile: web/Dockerfile
+      args:
+        NODE_VERSION: ${NODE_VERSION:?load orrery_v2/config/build.env}
+        APT_MIRROR: ${APT_MIRROR:?load orrery_v2/config/build.env}
+        DEBIAN_SECURITY_MIRROR: ${DEBIAN_SECURITY_MIRROR:?load orrery_v2/config/build.env}
+        NPM_REGISTRY: ${NPM_REGISTRY:?load orrery_v2/config/build.env}
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL-}
+    restart: unless-stopped
+    logging: *default-logging
+    depends_on:
+      orrery-api:
+        condition: service_healthy
+    ports:
+      - "${ORRERY_WEB_BIND:-0.0.0.0}:${ORRERY_WEB_PORT:-80}:80"
+    volumes:
+      - orrery-web-immutable-assets:/usr/share/nginx/html/_app/immutable
+
+volumes:
+  orrery-data:
+  orrery-postgres-data:
+  orrery-web-immutable-assets:

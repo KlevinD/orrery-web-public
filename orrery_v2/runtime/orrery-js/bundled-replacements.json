@@ -1,0 +1,180 @@
+{
+  "formatVersion": 1,
+  "svelteCompilerSha256": "53fd6de1a6932eda8da99820cfbd31766cc77e4ba2e9b51fb01540a3b293b9a7",
+  "helpers": {
+    "rangeContains": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "getLocator": "b0b5a0e36c51158948a43a76231c6257d5abec23ebf3ed11720524147363e874",
+    "locate": "f41c6fadc89d72756ea840a04367961e91ed27b794e99b5d3329522c41b16e35",
+    "is_reference": "bbd038b0aa73e213278d971ce6561065cff3a344a74d3d4572a94d3301add672"
+  },
+  "files": [
+    {
+      "package": "rollup",
+      "version": "4.61.0",
+      "file": "dist/shared/rollup.js",
+      "inputSha256": "2e7b5ca8ecaac59ac9cda3a3af77500f596b768d2e1bb15916a53b7770d9a340",
+      "outputSha256": "2ddbd071448268f900357d21b5abfbc6ec8f0c176266033d147d04fef5014da8",
+      "ranges": [
+        {
+          "name": "is_reference",
+          "start": 190780,
+          "end": 192072,
+          "sha256": "20c110e586511b210b758ed2278ffcce67d18a8e3101fad964a70af0f3cb4b3a"
+        }
+      ]
+    },
+    {
+      "package": "rollup",
+      "version": "4.61.0",
+      "file": "dist/es/shared/node-entry.js",
+      "inputSha256": "e1961d570cbef49878096e208ffc4eb4c8ae04ff47ba25de5e3d7aa4293f24ea",
+      "outputSha256": "81eace4056d0fa5ebe943762b0522a75b1d8081daa8eda7c94b9562d8e17d05f",
+      "ranges": [
+        {
+          "name": "is_reference",
+          "start": 63271,
+          "end": 64563,
+          "sha256": "20c110e586511b210b758ed2278ffcce67d18a8e3101fad964a70af0f3cb4b3a"
+        }
+      ]
+    },
+    {
+      "package": "rollup",
+      "version": "4.61.0",
+      "file": "dist/shared/parseAst.js",
+      "inputSha256": "ffff4233be6716d8386e8fe241788a5891865326e6a08314120cd07df349276b",
+      "outputSha256": "af8b733c102bdb70b1046ca870ad98504b2350150345bdd2b7b3efdf81ed8617",
+      "ranges": [
+        {
+          "name": "rangeContains",
+          "start": 410,
+          "end": 501,
+          "sha256": "48cdfdfc2dceb174c85550f72ad2249adffd582a34bbbb4dd7b44c56ce1cc3ee"
+        },
+        {
+          "name": "getLocator",
+          "start": 585,
+          "end": 1522,
+          "sha256": "688819dce3c2bd745a975ff61e5c5b2aed670cf73334e31d513eb8f666873ed2"
+        },
+        {
+          "name": "locate",
+          "start": 1676,
+          "end": 1796,
+          "sha256": "1f862f36f515bb42cc1cad4daddb8eb44c7fa9ec36240868154264d8b6aaa5b9"
+        }
+      ]
+    },
+    {
+      "package": "rollup",
+      "version": "4.61.0",
+      "file": "dist/es/shared/parseAst.js",
+      "inputSha256": "1e45a9fcfbac0ad881481807b834ac58e474b1dcdedb31a587285fdced846f79",
+      "outputSha256": "5fb85767947b327b8503f1c94a0e29fb2b02d476635737d418de59b0149aab56",
+      "ranges": [
+        {
+          "name": "rangeContains",
+          "start": 2300,
+          "end": 2391,
+          "sha256": "48cdfdfc2dceb174c85550f72ad2249adffd582a34bbbb4dd7b44c56ce1cc3ee"
+        },
+        {
+          "name": "getLocator",
+          "start": 2475,
+          "end": 3412,
+          "sha256": "688819dce3c2bd745a975ff61e5c5b2aed670cf73334e31d513eb8f666873ed2"
+        },
+        {
+          "name": "locate",
+          "start": 3566,
+          "end": 3686,
+          "sha256": "1f862f36f515bb42cc1cad4daddb8eb44c7fa9ec36240868154264d8b6aaa5b9"
+        }
+      ]
+    },
+    {
+      "package": "rollup",
+      "version": "4.59.0",
+      "file": "dist/shared/rollup.js",
+      "inputSha256": "1f0be54a506fa7ed03032382adfe17b8e1ae746d9813538220428c34f14198cd",
+      "outputSha256": "c492633df2bace800a94811b9ffde6775174beb7bd8629ecec74544f940a912f",
+      "ranges": [
+        {
+          "name": "is_reference",
+          "start": 184066,
+          "end": 185358,
+          "sha256": "20c110e586511b210b758ed2278ffcce67d18a8e3101fad964a70af0f3cb4b3a"
+        }
+      ]
+    },
+    {
+      "package": "rollup",
+      "version": "4.59.0",
+      "file": "dist/es/shared/node-entry.js",
+      "inputSha256": "64dca0e6a401b129d2a55bf6a6759f4671b50b8cd30782e3ab73104ffe4f3c3e",
+      "outputSha256": "1f325129d7b9fcffc2daf2387defb3b28cd9c7a047c51f79f9fd4b655e542f23",
+      "ranges": [
+        {
+          "name": "is_reference",
+          "start": 63205,
+          "end": 64497,
+          "sha256": "20c110e586511b210b758ed2278ffcce67d18a8e3101fad964a70af0f3cb4b3a"
+        }
+      ]
+    },
+    {
+      "package": "rollup",
+      "version": "4.59.0",
+      "file": "dist/shared/parseAst.js",
+      "inputSha256": "130b32304a825d6a8eb8d9e3f7219fd6c4a232d8ec8ad4db99305a64cdd0f96e",
+      "outputSha256": "0109c48ad8c6f4dd94af84d9c0e4c3fc2111fd5ad3c4e3b0ff7a7528ec887c40",
+      "ranges": [
+        {
+          "name": "rangeContains",
+          "start": 410,
+          "end": 501,
+          "sha256": "48cdfdfc2dceb174c85550f72ad2249adffd582a34bbbb4dd7b44c56ce1cc3ee"
+        },
+        {
+          "name": "getLocator",
+          "start": 585,
+          "end": 1522,
+          "sha256": "688819dce3c2bd745a975ff61e5c5b2aed670cf73334e31d513eb8f666873ed2"
+        },
+        {
+          "name": "locate",
+          "start": 1676,
+          "end": 1796,
+          "sha256": "1f862f36f515bb42cc1cad4daddb8eb44c7fa9ec36240868154264d8b6aaa5b9"
+        }
+      ]
+    },
+    {
+      "package": "rollup",
+      "version": "4.59.0",
+      "file": "dist/es/shared/parseAst.js",
+      "inputSha256": "077033312dbcd03604df8c54f6f159a21c056ceed2b6cd3c682cf9a2e5076827",
+      "outputSha256": "9f7d2dac0dbe2b54e692fffb578635247ee21efe7a458f7791540281f80edf4b",
+      "ranges": [
+        {
+          "name": "rangeContains",
+          "start": 3109,
+          "end": 3200,
+          "sha256": "48cdfdfc2dceb174c85550f72ad2249adffd582a34bbbb4dd7b44c56ce1cc3ee"
+        },
+        {
+          "name": "getLocator",
+          "start": 3284,
+          "end": 4221,
+          "sha256": "688819dce3c2bd745a975ff61e5c5b2aed670cf73334e31d513eb8f666873ed2"
+        },
+        {
+          "name": "locate",
+          "start": 4375,
+          "end": 4495,
+          "sha256": "1f862f36f515bb42cc1cad4daddb8eb44c7fa9ec36240868154264d8b6aaa5b9"
+        }
+      ]
+    }
+  ]
+}

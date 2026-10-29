@@ -1,0 +1,60 @@
+# Optional external PageIndex service. Use with the root docker-compose.yml.
+# Existing database volumes need the documented explicit database init command.
+services:
+  orrery-postgres:
+    environment:
+      PAGEINDEX_POSTGRES_USER: ${PAGEINDEX_POSTGRES_USER:-pageindex}
+      PAGEINDEX_POSTGRES_PASSWORD: ${PAGEINDEX_POSTGRES_PASSWORD:?PAGEINDEX_POSTGRES_PASSWORD is required for PageIndex}
+      PAGEINDEX_POSTGRES_DB: ${PAGEINDEX_POSTGRES_DB:-pageindex_service}
+    volumes:
+      - ./orrery_v2/scripts/postgres-init-pageindex.sh:/docker-entrypoint-initdb.d/20-init-pageindex.sh:ro
+
+  pageindex:
+    image: ${PAGEINDEX_IMAGE:?load orrery_v2/deploy/releases/local.env or a production release manifest}
+    restart: unless-stopped
+    depends_on:
+      orrery-postgres:
+        condition: service_healthy
+    environment:
+      PAGEINDEX_HOST: 0.0.0.0
+      PAGEINDEX_PORT: 8091
+      PAGEINDEX_DATABASE_URL: ${PAGEINDEX_DATABASE_URL:-postgresql://${PAGEINDEX_POSTGRES_USER:-pageindex}:${PAGEINDEX_POSTGRES_PASSWORD:?PAGEINDEX_POSTGRES_PASSWORD is required}@${PAGEINDEX_POSTGRES_HOST:-orrery-postgres}:${PAGEINDEX_POSTGRES_SERVICE_PORT:-5432}/${PAGEINDEX_POSTGRES_DB:-pageindex_service}}
+      PAGEINDEX_API_KEY: ${PAGEINDEX_API_KEY:?PAGEINDEX_API_KEY is required}
+      PAGEINDEX_API_KEY_PREVIOUS: ${PAGEINDEX_API_KEY_PREVIOUS:-}
+      PAGEINDEX_OAUTH_DYNAMIC_REGISTRATION_ENABLED: ${PAGEINDEX_OAUTH_DYNAMIC_REGISTRATION_ENABLED:-false}
+      PAGEINDEX_OAUTH_REGISTRATION_TOKEN: ${PAGEINDEX_OAUTH_REGISTRATION_TOKEN:-}
+      PAGEINDEX_ROOT: /var/lib/pageindex
+      PAGEINDEX_LOG_FILE: /var/log/pageindex/pageindex-service.log
+      PAGEINDEX_LOG_LEVEL: ${PAGEINDEX_LOG_LEVEL:-INFO}
+      PAGEINDEX_UPSTREAM_ROOT: /app/upstream_pageindex
+      PAGEINDEX_INIT_DB: ${PAGEINDEX_INIT_DB:-1}
+      PAGEINDEX_DB_WAIT_SECONDS: ${PAGEINDEX_DB_WAIT_SECONDS:-60}
+      PAGEINDEX_LLM_API_KEY: ${PAGEINDEX_LLM_API_KEY:-}
+      PAGEINDEX_LLM_API_BASE: ${PAGEINDEX_LLM_API_BASE:-}
+      PAGEINDEX_MODEL: ${PAGEINDEX_MODEL:-}
+      PAGEINDEX_RETRIEVE_MODEL: ${PAGEINDEX_RETRIEVE_MODEL:-}
+      PAGEINDEX_MAX_UPLOAD_BYTES: ${PAGEINDEX_MAX_UPLOAD_BYTES:-52428800}
+      PAGEINDEX_MAX_XLSX_CELLS: ${PAGEINDEX_MAX_XLSX_CELLS:-100000}
+      PAGEINDEX_SCANNED_PDF_MIN_TEXT_CHARS: ${PAGEINDEX_SCANNED_PDF_MIN_TEXT_CHARS:-80}
+      PAGEINDEX_SCANNED_PDF_MIN_IMAGES: ${PAGEINDEX_SCANNED_PDF_MIN_IMAGES:-1}
+      PAGEINDEX_QUEUE_BACKEND: local
+      PAGEINDEX_WORKERS: ${PAGEINDEX_WORKERS:-2}
+    ports:
+      - "${PAGEINDEX_BIND:-127.0.0.1}:${PAGEINDEX_PORT:-8091}:8091"
+    volumes:
+      - pageindex-data:/var/lib/pageindex
+      - pageindex-logs:/var/log/pageindex
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import os, urllib.request; port=os.environ.get('PAGEINDEX_PORT','8091'); token=os.environ.get('PAGEINDEX_API_KEY',''); req=urllib.request.Request('http://127.0.0.1:%s/healthz' % port, headers={'Authorization':'Bearer '+token} if token else {}); urllib.request.urlopen(req, timeout=5).read()\""]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  orrery-api:
+    environment:
+      ORRERY_SECRET_KNOWLEDGE_PAGEINDEX: ${PAGEINDEX_API_KEY:?PAGEINDEX_API_KEY is required for PageIndex}
+
+volumes:
+  pageindex-data:
+  pageindex-logs:

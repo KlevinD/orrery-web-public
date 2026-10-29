@@ -1,0 +1,697 @@
+{
+  "formatVersion": 1,
+  "localSnapshotCommit": "0ae5691f0c8cd8f05c0748c9824bc8bf0c662fe9",
+  "localSnapshotReviewDate": "2026-10-26",
+  "reviewDate": "2026-10-16",
+  "scope": "retained source adaptations; not external runtime installations or binary redistribution approval",
+  "sourceTextNormalization": "CRLF-to-LF for local source and license hashes; upstream evidence hashes raw pinned blob bytes",
+  "sources": [
+    {
+      "auditLimits": "Cross-language text comparison cannot prove independent authorship or rule out translation. Conservative source attribution is retained.",
+      "commit": "76f5554286ba0b6d33fb74d5c2bb2b3b0b83100d",
+      "copyright": "Copyright 2025 AionUi (aionui.com)",
+      "externalInstallRequired": false,
+      "license": "Apache-2.0",
+      "licenseEvidence": "pinned root LICENSE preserved; workspace MIT metadata does not establish crate inheritance",
+      "licenseFile": "compliance/licenses/aionui-session-76f5554-Apache-2.0.txt",
+      "licenseSha256": "a515d5a76da6c082f0d3d33a597bf82e32ecdac8841ed1783ac081ebd6d62ebf",
+      "localFiles": [
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/core/runtime_backend.go",
+          "sha256": "3ce2672d64b9d1f7dc08e0971ca9263d47b482059b4e6b9505bc45c7ea070b9f"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/core/runtime_capability.go",
+          "sha256": "6e65bfd61086063f2c79d78a98cc786dd9c235e186a0ac3dfb9503847d75babf"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/core/runtime_command.go",
+          "sha256": "2e1d84e6d107130119e1d3b7631397966f617607512a940721dc764f25787d08"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/core/runtime_envelope.go",
+          "sha256": "5233e06ba1232f4003aae43fa8b0b1932cf4f21911def75d1c41094149ae10b1"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/core/runtime_event.go",
+          "sha256": "d91186ddb0bbc78e2144bfb28ef056d9e5985a1e23a7598c20f36273b69fecaa"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/core/runtime_event_payloads.go",
+          "sha256": "3322b35100bf5827d8eeba4c3dd919ba127c9a26cc20ca1e2c0eb1791e5f66e2"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/core/runtime_session_spec.go",
+          "sha256": "baa5340ea419770459e29a113e5182cb8e38bf337f585feacb6ca8490d7a1f5c"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/runtime/providers/claude/session_connection.go",
+          "sha256": "174dce990e931c60211b456f78c46a0d7fe7cbfc7ddc4c149af7b7848e6cd219"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/runtime/providers/codex/session_backend.go",
+          "sha256": "5402f6c200cdda043d585f4790cb0cda390eb65f31cf47cc20b9c82219111dd9"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/runtime/providers/codex/session_connection.go",
+          "sha256": "e577fbd0a80851043bcdba3a132ec19c3ff60b27348cbd929505cdaa3c9708c9"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/runtime/session/conversation.go",
+          "sha256": "6f756d2682ff7f11ad5cdc8ec2d0432733760dfb9eea868991a14ae98ab0f9b2"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/runtime/session/orchestrator.go",
+          "sha256": "dfd40caa3de32c4968dfc2d86310a6afe3ac5c4cba57ea420e0f9e5bafb3fbb9"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/runtime/session/reducer.go",
+          "sha256": "ba7d8ab2e3cefd62e61ca8daa20d6f39c87c6e4c4f9afeed878e840898a440f4"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/runtime/session/rehydrate.go",
+          "sha256": "96b2d7c76a8f546f0d08e0ccbab43cc35b4b74fc48d8474a5f808c1d358620c1"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/runtime/session/state.go",
+          "sha256": "759d5a0b74a68c179b94a7d87bb4d72dae08ab29c6945c7bacaf60cfa8a2a752"
+        },
+        {
+          "basis": "historical-design-and-source-anchor",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/runtime/session/suspend.go",
+          "sha256": "d8672a020934e08fb1c982deec3841ce8036c9975a8ff5369791b03c5a368b7c"
+        },
+        {
+          "basis": "historical-test-migration",
+          "modifications": "Go adaptation with Orrery validation, concurrency, storage and provider integration",
+          "path": "orrery_v2/internal/agent/runtime/conformance/suite.go",
+          "sha256": "7049eef6d2ff982227940b340a6b0db7afc88017ed53679016d770c3b65b0cb6"
+        },
+        {
+          "basis": "five-record-match-after-CRLF-and-em-dash-normalization",
+          "modifications": "CRLF line endings and em dash replaced with ASCII hyphen",
+          "noticeFile": "orrery_v2/internal/agent/runtime/providers/claude/testdata/claude_write_tool_turn.ndjson.license",
+          "noticeSha256": "8fdf6d18e16517368478c491f6ca8b1c49827132dd7ac7507cddd30983e73224",
+          "path": "orrery_v2/internal/agent/runtime/providers/claude/testdata/claude_write_tool_turn.ndjson",
+          "sha256": "0ab2b84213c2e75f703203a9aec86e18ff3680160f7eb3199880c97b3fb1f6da"
+        }
+      ],
+      "name": "AionCore aionui-session source adaptations",
+      "provenanceDocument": "orrery_v2/docs/runtime/runtime-source-provenance.md",
+      "purl": "pkg:github/iOfficeAI/AionCore@76f5554286ba0b6d33fb74d5c2bb2b3b0b83100d#crates/aionui-session",
+      "repository": "https://github.com/iOfficeAI/AionCore",
+      "retiredParityTests": [
+        "orrery_v2/internal/agent/core/runtime_command_bridge_test.go: TestRuntimeBridgeCommandUnionAndNames",
+        "orrery_v2/internal/agent/runtime/session/reducer_test.go: former ported invariant suite",
+        "orrery_v2/internal/agent/runtime/conformance/testdata/aioncore_reducer_trace.json"
+      ],
+      "upstreamBinaryBundled": false,
+      "upstreamCheckoutRequired": false,
+      "upstreamEvidence": [
+        {
+          "bytes": 5372,
+          "gitBlobSha1": "c371ebb8ab4b9d3a50433539c22c0ff97d8d535d",
+          "path": "Cargo.toml",
+          "sha256": "343d6be29ce6d1bdd7d8a73f1c76d23ce55e33abbe3fd2b01a6262b40c44b8da"
+        },
+        {
+          "bytes": 10939,
+          "gitBlobSha1": "1aa6d7d8cf5e0216d1a1bef32c9719d20fce6d91",
+          "path": "LICENSE",
+          "sha256": "a515d5a76da6c082f0d3d33a597bf82e32ecdac8841ed1783ac081ebd6d62ebf"
+        },
+        {
+          "bytes": 1954,
+          "gitBlobSha1": "397c446728d83c191c897f864f919017a2c94af3",
+          "path": "crates/aionui-session/Cargo.toml",
+          "sha256": "41336d92d251e344e0fbb66ad3be323a1bcb0632c55d4ba1fb2a8e4834636bc8"
+        },
+        {
+          "bytes": 521,
+          "gitBlobSha1": "7dcd5179c89bdd7825cec69ae352f574d1ba8465",
+          "path": "crates/aionui-session/proptest-regressions/adapter/claude.txt",
+          "sha256": "40239c31577d21c47e1bcfdd2c4aec17a7fc8aa3f289779bd2edec5acffaef10"
+        },
+        {
+          "bytes": 11948,
+          "gitBlobSha1": "210e8a994eaeb54e311ce515e7bf5ae93d9487fa",
+          "path": "crates/aionui-session/src/adapter.rs",
+          "sha256": "3ed1d29b1e7826c8f3e611c62844ceeaa7b1b40b114b91aaa4742e81aa52b4b5"
+        },
+        {
+          "bytes": 113320,
+          "gitBlobSha1": "15355f462b54efa307e75c5af84bcb9f8db72ce4",
+          "path": "crates/aionui-session/src/adapter/claude.rs",
+          "sha256": "0c3a9e3806975519c08bda124a89d0940d157738dc043ccfe68db1eac3c1de4f"
+        },
+        {
+          "bytes": 198929,
+          "gitBlobSha1": "2683234ea5b26414702aa4223b139b36b6996f16",
+          "path": "crates/aionui-session/src/backend/acp_conn.rs",
+          "sha256": "a02fd605f29d360bd9acd0ade785f6d33a93cdf1107e950259721eec978cb51f"
+        },
+        {
+          "bytes": 281290,
+          "gitBlobSha1": "7efed82a7e28ea267a88debc77bd94b6d49c796e",
+          "path": "crates/aionui-session/src/backend/claude_conn.rs",
+          "sha256": "6758360998fd974b836bf1205522051510288e11b96dfa7cb570db2d26b850fa"
+        },
+        {
+          "bytes": 413996,
+          "gitBlobSha1": "b77577e441adc55d32d101ebe55cb8a6510202bf",
+          "path": "crates/aionui-session/src/backend/codex_conn.rs",
+          "sha256": "1b0f7f79996942487664d3c0d8c6b082e842fa97e86d7f4eed4823833f07fc02"
+        },
+        {
+          "bytes": 1704,
+          "gitBlobSha1": "b8fd3886b3eb3b8f6a7b972a760b8593350bfc15",
+          "path": "crates/aionui-session/src/backend/codex_init_prompt.md",
+          "sha256": "e4bf92827062e0b704254549e3d90f496fbf135ec11c68905c8c08425fbe5fa3"
+        },
+        {
+          "bytes": 76489,
+          "gitBlobSha1": "012406190f6e079efa823283b27b5eca6f9abe99",
+          "path": "crates/aionui-session/src/backend/conversation_session.rs",
+          "sha256": "6b864e99b82ac934617078b921fd3e5f4c5f27a30d7882192975c4fc6949d625"
+        },
+        {
+          "bytes": 14362,
+          "gitBlobSha1": "7817e4b2e2b0bf5c879d44a0ba45fde609d35477",
+          "path": "crates/aionui-session/src/backend/mod.rs",
+          "sha256": "4503f79b31fc60b779f049635f413bae7c5d54c20e42d75a563cc27a18edac75"
+        },
+        {
+          "bytes": 131830,
+          "gitBlobSha1": "b08814bc267bbb1bcbd90e75289a270d2776908f",
+          "path": "crates/aionui-session/src/backend/orchestrator.rs",
+          "sha256": "302031b5154f70a7617db188f0b136a17e1a722c573a973ec9c13049ac4b866b"
+        },
+        {
+          "bytes": 2949,
+          "gitBlobSha1": "fdc6e7ee15a77ba4cb6a02adffc2bca9e7f2b760",
+          "path": "crates/aionui-session/src/backend/rehydrate.rs",
+          "sha256": "16e11020545a4a756308dd4738c23e6f30011b20d29a8eb9158b1d364dd774c3"
+        },
+        {
+          "bytes": 17573,
+          "gitBlobSha1": "4ade7f1631ece7b12c8cfe4ce1bc0cd4a8ee40bd",
+          "path": "crates/aionui-session/src/backend/suspend.rs",
+          "sha256": "052da4be68dfe3de7049cfd554e8cf10b5ecce193607e27d9273ed69a8d4650f"
+        },
+        {
+          "bytes": 21228,
+          "gitBlobSha1": "b1ad769f39c842f96e2bd2aa0839aa1b4a28f998",
+          "path": "crates/aionui-session/src/backend/types.rs",
+          "sha256": "e98afb341ead2d8e98fc066d8d7fd3c9d4a593da7b93d288deb3d75a09aad78e"
+        },
+        {
+          "bytes": 10896,
+          "gitBlobSha1": "60947d5d026c28355644fd6973c56bfb187b8da2",
+          "path": "crates/aionui-session/src/capability.rs",
+          "sha256": "24b4471d86cca62ef88e576ee5648feec7929c262eba5e1469564beefa43bbd3"
+        },
+        {
+          "bytes": 909,
+          "gitBlobSha1": "9048f86e87fc2d2597a88e8f0469e567284d7c3c",
+          "path": "crates/aionui-session/src/error.rs",
+          "sha256": "47ceaa576dd1951d7ce326e5cdcc85de61756db436eadce88c41dce157c28195"
+        },
+        {
+          "bytes": 75066,
+          "gitBlobSha1": "b7505a7539c1adfba3276cdffa084aa3ad7cc283",
+          "path": "crates/aionui-session/src/event.rs",
+          "sha256": "1241f356dcfb44e9a179e007d3765ae732c463f1fa4b0a730dcb5d5c7ea177d5"
+        },
+        {
+          "bytes": 4348,
+          "gitBlobSha1": "9fcdeb373734e7b9858a8afd8721e7b8c55f50d1",
+          "path": "crates/aionui-session/src/lib.rs",
+          "sha256": "ac3b2bc49bfd10583ddf27e3f56f1c75cb9366b7d6cb3b2ef39da627d9777962"
+        },
+        {
+          "bytes": 94427,
+          "gitBlobSha1": "303e558546354b19ce0f7cf736e0e90fd956c764",
+          "path": "crates/aionui-session/src/reducer.rs",
+          "sha256": "61efd2d020cc555c52db87ea0a687e0a0421e6c20e29001e92b8cb499af575a8"
+        },
+        {
+          "bytes": 34413,
+          "gitBlobSha1": "d47146f62ac33532836c9d93652dd20e476b448f",
+          "path": "crates/aionui-session/src/state.rs",
+          "sha256": "18cf0cd791b0ac4cc818cf5a0457398001a39374cb56ebdebdd422f598545da3"
+        },
+        {
+          "bytes": 30942,
+          "gitBlobSha1": "cd5f7efc38f38734f4cbde697f0d9107e715ceab",
+          "path": "crates/aionui-session/src/testing.rs",
+          "sha256": "a93bc7ffb8f70dffc577e5510153abf764c3f1d8b7900cd43c077098ca812fd6"
+        },
+        {
+          "bytes": 16327,
+          "gitBlobSha1": "0d45ba29508212239e59fc0a26421880e055c6c6",
+          "path": "crates/aionui-session/tests/fixtures/claude_2.1.169_single_tool_turn.ndjson",
+          "sha256": "4e932d1d4e85d6c0a0507b6c18d6bc750d9f9eec1d979f7db15a26be2cdda380"
+        },
+        {
+          "bytes": 94801,
+          "gitBlobSha1": "8a029c9fe281367c9bbe7acaa4e31e1629c3b472",
+          "path": "crates/aionui-session/tests/fixtures/claude_2.1.176_workflow_multiagent_3parallel_1fail.ndjson",
+          "sha256": "57943b36bed13c410460d097cf4afdcd7ddf1e2149c340304965746594b4324c"
+        },
+        {
+          "bytes": 155,
+          "gitBlobSha1": "3d45204a5bcbdfaaeadcc36c7f920fd37295b6de",
+          "path": "crates/aionui-session/tests/fixtures/claude_2.1.185_cancel_before_output_result.ndjson",
+          "sha256": "329f336139b92bde34b2c088048d5009d501cdf161da850767f8c29c4a2af2c9"
+        },
+        {
+          "bytes": 385,
+          "gitBlobSha1": "afcd3cc50ec5afa89ed06188fe6401c97cd39952",
+          "path": "crates/aionui-session/tests/fixtures/claude_error_result.ndjson",
+          "sha256": "2dd34fdec63e964079957e8d0abba35ba97cff54c17c785a635af9e29d8fb452"
+        },
+        {
+          "bytes": 1331,
+          "gitBlobSha1": "887f14fdaa922b3a568f067f62d076f58a1c93a7",
+          "path": "crates/aionui-session/tests/fixtures/claude_parallel_tools_turn.ndjson",
+          "sha256": "e2d31079649f0eb55559cf244f8679c6ad6f8aa8722be9a6c9fd904653aaaf02"
+        },
+        {
+          "bytes": 1160,
+          "gitBlobSha1": "88eb82060c2c1119002adb557b732079d615a6ab",
+          "path": "crates/aionui-session/tests/fixtures/claude_read_attachment_turn.ndjson",
+          "sha256": "b2cb1091838fc571e1d816a959b0505cde0482266fb3ace0dac8828bba991b9a"
+        },
+        {
+          "bytes": 1311,
+          "gitBlobSha1": "ff4c398b4c6f4c0fcde80a3334a06f6a0c131942",
+          "path": "crates/aionui-session/tests/fixtures/claude_read_image_tool_turn.ndjson",
+          "sha256": "69ec33692c8a53c17febbb5fd4425a53369829f094e358dc961de07651e01f2d"
+        },
+        {
+          "bytes": 676,
+          "gitBlobSha1": "27e564a32d7e296b01a0e9032f5e08f8ea2c2226",
+          "path": "crates/aionui-session/tests/fixtures/claude_simple_text_turn.ndjson",
+          "sha256": "b3ec9c15db394b450d7dce8a19a34a0f27a6cd1bd482ac302ce784c83e80b423"
+        },
+        {
+          "bytes": 929,
+          "gitBlobSha1": "1d3f157d8ac1bef362c88f47c3ca93b3f097c090",
+          "path": "crates/aionui-session/tests/fixtures/claude_thinking_then_text_turn.ndjson",
+          "sha256": "9196c8a486eaa3594ab9c1afa7e63742f9de4d916e5c5c0c9412ae9dce707d88"
+        },
+        {
+          "bytes": 1176,
+          "gitBlobSha1": "6a4a2ddfccb47bf3a1699c84add545fbf1b3d951",
+          "path": "crates/aionui-session/tests/fixtures/claude_write_tool_turn.ndjson",
+          "sha256": "6222879ce035bb945541b6045a44854a1a061f13c4dc84d510c14a16d4adbeb0"
+        },
+        {
+          "bytes": 10633,
+          "gitBlobSha1": "dc38d113aa5252c387f3e591b78ac8928318676a",
+          "path": "crates/aionui-session/tests/fixtures/trace-tool.ndjson",
+          "sha256": "fbd8960c596e0260a6db6491053ad992df63b22a95d10b2a6d9f7deb49e83740"
+        }
+      ],
+      "upstreamSubpath": "crates/aionui-session"
+    },
+    {
+      "commit": "v0.38.0",
+      "copyright": "Copyright (c) 2023 Centrifugal Labs LTD",
+      "externalInstallRequired": false,
+      "license": "MIT",
+      "licenseEvidence": "Upstream root MIT LICENSE and internal/websocket/LICENSE retained; source file hashes recorded in UPSTREAM_FILES.json",
+      "licenseFile": "orrery_v2/third_party/centrifuge/LICENSE",
+      "licenseSha256": "f2537b4e2a92d33130ea8a6a21a707af0c6773c2b98fbac5663543686fd7524d",
+      "localFiles": [
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/broker.go",
+          "sha256": "847b42d644fe60f414a4002eadfaeff90036bb31815f43810c8664c2303336b0"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/broker_memory.go",
+          "sha256": "964d7d044cbf25abf6577b69f19b12987f07e2a6f8d43388f48f8aa58247fa59"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/channel_medium.go",
+          "sha256": "2d3513dbb70c7df56aa5a09acadc8c633c462f35d6ee3f79f503d9d823a55bf7"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/client.go",
+          "sha256": "d8f59b4b313d0f75666f9a5159b10733266f4f9af845b26da6df4a7f379628c7"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/client_experimental.go",
+          "sha256": "91846fa32eb91fad225b01ec8cf3c863d0a226b1ac4ff7c9d5a44e34438db8c2"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/config.go",
+          "sha256": "17027d3cd3432ae371716b902d39b01a7ef7c15be38eb1b8482948deba0a6f8b"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/controller.go",
+          "sha256": "94bda28c1df9a77fe11d5fc2f04c46f8f19040bf7ec86b07bfff8ca3013ec268"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/credentials.go",
+          "sha256": "7162581b5db9b16bf9f14b178a6432ddfc734f0760805bd6924fc9b2dc8c9bd2"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/disconnect.go",
+          "sha256": "1e448615f5845ce9cb474937f23ef281837f335edc54389137d718c451c342fc"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/doc.go",
+          "sha256": "7a77ff233e61dc39ebef9444f07abe34a7dad80e9c51c586a90a1f15e397c315"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/emulation.go",
+          "sha256": "8b6c92bfcea761a4cf60d92e76b1f5d4f2d7b75078f0eb7fdb1558a0eb5952e2"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/errors.go",
+          "sha256": "65df8f9df45d4ddeea78a2c85af9dc2cf3b936e15b29a55d85c399d0ccdbebdf"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/events.go",
+          "sha256": "a88068b93ad80e7546226915bb2df091744052281f94aace5e0b6976e0ef31a3"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/go.mod",
+          "sha256": "49c1c1ca55e95ff21842d77a528006e8bcc07a481b77f7ea6878e7185fe82a89"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/go.sum",
+          "sha256": "34741fe0e839d8a24551728a297f2916c26b786d595dec79387be29d810accad"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/handler_http_stream.go",
+          "sha256": "42e71c0b4107c9f50562e10f3cc736a02c5a5d088c4d14a9464192320d4c1c73"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/handler_sse.go",
+          "sha256": "6ae2788c47d9999c9028524c8accabd65079ec95cc3ae189fe816afe7a8e2acb"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/handler_websocket.go",
+          "sha256": "45af8b07baa055e7819113708fcb28b8ebbca95ee861d9854d7fe0f886b5b30a"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/hub.go",
+          "sha256": "dfeb33cf0ca7280b015907de197b930ffb357a40826885f6641b8c9b3c811572"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/bpool/bpool.go",
+          "sha256": "e052f634d4e590c89c2a055158fe69f551e132498a2d3313c61f930f3defc992"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/cancelctx/context.go",
+          "sha256": "a97b76d391a918303291c025ea28d7613da1e4b16f909fa3ce45122c44423c62"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/controlpb/control.pb.go",
+          "sha256": "b495e8ed431e9f2ca9ba5d3a408d210179d686a26cbbc58e565d03f11fbbf49e"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/controlpb/control_vtproto.pb.go",
+          "sha256": "3ac72e8e190ba4a35af92ccbb9f4317b79fffa8c11d8a242001e3fd0606c1646"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/controlproto/marshal.go",
+          "sha256": "6744ff2f7abcfa71ca3be46d02857fb09083b9dd69da15fb0bf8cad42a4729fe"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/controlproto/unmarshal.go",
+          "sha256": "bcd3c02eb984b9e6ddaf0ecf5b972c8ef92b0d343d8593110decf92056d88dc6"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/convert/convert_safe.go",
+          "sha256": "2b36b727748326c1d5f63479a85376c4bf2966850760bfc410f28d514b60e7c1"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/convert/convert_unsafe.go",
+          "sha256": "bb7e6803cffee3c144feae60bc89a7716296786033a6a986abf870a84395a7d5"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/dissolve/dissolve.go",
+          "sha256": "9e75e556447585dddb2fdd57c1011fd56f4d73fb1bc9528f31e22b4c235cb551"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/dissolve/queue.go",
+          "sha256": "3e9a4294e9e2db3d3196948527e50697dd87f60e433fc668b07d9ace80d5b050"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/filter/filter.go",
+          "sha256": "e5b389ac2d3aa76b8b6309fa22a3e23881efbc7a9d9bbf70107cf7e2438def28"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/filter/filter_builder.go",
+          "sha256": "478a099f6bafd9956dcffb918f05a400b581192e9e74e97e40210c9f5a606447"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/memstream/stream.go",
+          "sha256": "8ac20cbb58a59bd841df83ec05701e3553b679ae7e629f657131f027ef174ac0"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/nowtime/getter.go",
+          "sha256": "5c0ba008dfb4791968b038b1cca59501323face3e69e2d9842957700ede7dcde"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/priority/priority.go",
+          "sha256": "7a8c37ebc2090ff12ee3423b63e164e2b9a06cc3e7f2f26f0e9cc07169f07910"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/queue/queue.go",
+          "sha256": "790f3cbb15916f92a64164f9fb0d2d4afcab8b50ca8fd76215cd0744c85c10de"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/readerpool/pool.go",
+          "sha256": "0157ae5d02401ed69776279d3308055be31e7724063ce029bf73ec0f17a3de6a"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/recovery/helpers.go",
+          "sha256": "e09bf7ec2efc689f5ba672e833a03694f47f11286bd4ecf98e72fbb7d0caeff8"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/recovery/sync.go",
+          "sha256": "6509d8b220f12bdb05e5b5e92a133c08047e5e64e74f6f8698cc7b7c654abc3d"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/saferand/rand.go",
+          "sha256": "1ece11e43a7fb54c97b55d0c4265a13a513f4fd17b68b5bffc239d21644c2589"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/timers/pool.go",
+          "sha256": "3b071b819487edc9015e69af763796138751a7c79a6fba8e5bf0379b2dbf68d0"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/client.go",
+          "sha256": "3e0f3fa433e5ed61a2b16e8e0ba583d99c5c679ab5652ecf78ed75a4ff4b03d4"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/compression.go",
+          "sha256": "6e832d6f640153f235eb45813e9be642ee98f56a295904288760c4ea7191ba7e"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/conn.go",
+          "sha256": "92a8d305f8bc27a9f2ca5d7c2be4d786e1ae1d83df97de6c4a6b5b2a929a190c"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/convert_safe.go",
+          "sha256": "fc5ae72a513a43333e1051fbbce7b156b1556393e80470a8bbe12bae90549779"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/convert_unsafe.go",
+          "sha256": "32bcf02deda476dfb3d13a485b09f8e27b6c609307b99248bc3f87c4e10da518"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/doc.go",
+          "sha256": "da8581b0f28235a84efcf1865759a9561306aac4eac01425907f190b3e144868"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/http2.go",
+          "sha256": "8c04b529ae298868501cf0f6c13928fffaad61ac83e759d64e225c4f9b8b82eb"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/LICENSE",
+          "sha256": "2be1b548b0387ca8948e1bb9434e709126904d15f622cc2d0d8e7f186e4d122d"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/mask.go",
+          "sha256": "3b7d56f7e1595ae7fdea62029cf1de74c530ef0d049a42c8fa49a4bdf3d3e49e"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/mask_safe.go",
+          "sha256": "2eed649a0946b9d1f2783fc6e6f8846a7d5d0a5359aa89e492a76183867ebfaf"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/prepared.go",
+          "sha256": "efe70bacf15a7f371828532ddbfd58baec445301c167afe9865aeba258ecc68c"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/server.go",
+          "sha256": "14f5a07b92431d77cb2100676cb422dd229c4457334a4db3fbb2e22eac9ec5a4"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/tls_handshake.go",
+          "sha256": "5d5137f3478e7c8f4116c102f9f75b38ed184d23340c9c214d0ba6d1e7b48727"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/internal/websocket/util.go",
+          "sha256": "9724903c57a05d36cc3b691cab77bc7b3884fdcfe6e42e6ce0d56b4df82f0c0e"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/LICENSE",
+          "sha256": "f2537b4e2a92d33130ea8a6a21a707af0c6773c2b98fbac5663543686fd7524d"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/logging.go",
+          "sha256": "4272c8c6601dfb998d3b4fa4b6e4be3c206d157d4935f75eb5de26e5994be591"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/metrics.go",
+          "sha256": "a00e14cf1e935b260a1545374a269fec1843a3b87e0e7aa257d522ef49067e83"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/node.go",
+          "sha256": "da59fb13c5afca268d05f2a17a952410c0182a9e663945411589e2b6b9305638"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/options.go",
+          "sha256": "d115ef6a4f75cbdb1e75fbb98bc02a071b28972c08df00b62a58bf106de2eb15"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/ORRERY_ADAPTATION.md",
+          "sha256": "f61fa1ce08c3ff8e6b3a3547069500dc1555fa5e93fd0bfe1262fe2929324a3b"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/presence.go",
+          "sha256": "c542e52956d74a0bc7d5ce5fcea7ca05b7d6d7315776c17190c012129984ccb2"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/presence_memory.go",
+          "sha256": "57584dedaec73e28ca1c57125703af8037d89f6653d7694c5f71cb68c7a1612d"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/transport.go",
+          "sha256": "4f50e6042d1129407d64ed11e223d55a74c26873024b169c35fefc757d3c3f69"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/unsubscribe.go",
+          "sha256": "a4e16a5826d01c126c6d0659f30c32ca74801423e675275bf995c743149195a6"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/UPSTREAM_FILES.json",
+          "sha256": "5e6b9b1a85fdda62cc86b5e9cc93d6d195c166f5b930aeaf3e6f04e1187aa71e"
+        },
+        {
+          "modifications": "Redis adapters and associated assets omitted; retained Go implementation unchanged; module requirements pruned",
+          "path": "orrery_v2/third_party/centrifuge/writer.go",
+          "sha256": "c87cd4275f524405049409220b61e20dcc01b91cd2511643f66762df9ed1a952"
+        }
+      ],
+      "name": "Centrifuge in-memory source distribution",
+      "provenanceDocument": "orrery_v2/third_party/centrifuge/ORRERY_ADAPTATION.md",
+      "purl": "pkg:golang/github.com/centrifugal/centrifuge@v0.38.0",
+      "repository": "https://github.com/centrifugal/centrifuge",
+      "upstreamBinaryBundled": false,
+      "upstreamCheckoutRequired": false
+    }
+  ]
+}

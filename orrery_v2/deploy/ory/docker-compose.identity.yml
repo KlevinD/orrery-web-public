@@ -1,0 +1,184 @@
+services:
+  kratos-postgres:
+    image: postgres:17-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${ORY_KRATOS_POSTGRES_USER:-kratos}
+      POSTGRES_PASSWORD: ${ORY_KRATOS_POSTGRES_PASSWORD:?ORY_KRATOS_POSTGRES_PASSWORD is required}
+      POSTGRES_DB: ${ORY_KRATOS_POSTGRES_DB:-kratos}
+    volumes:
+      - orrery-kratos-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    networks:
+      - kratos-control
+
+  kratos-migrate:
+    image: ${ORY_KRATOS_IMAGE:?load deploy/releases/local.env or a production release manifest}
+    restart: "no"
+    command: migrate sql -e --yes --config /etc/config/kratos/kratos.yml
+    volumes: &kratos-volumes
+      - ${ORRERY_V2_ROOT:-.}/deploy/ory/kratos.yml:/etc/config/kratos/kratos.yml:ro
+      - ${ORRERY_V2_ROOT:-.}/deploy/ory/identity.schema.json:/etc/config/kratos/identity.schema.json:ro
+      - ${ORRERY_V2_ROOT:-.}/deploy/ory/feishu.jsonnet:/etc/config/kratos/feishu.jsonnet:ro
+    environment: &kratos-env
+      DSN: postgres://${ORY_KRATOS_POSTGRES_USER:-kratos}:${ORY_KRATOS_POSTGRES_PASSWORD:?ORY_KRATOS_POSTGRES_PASSWORD is required}@kratos-postgres:5432/${ORY_KRATOS_POSTGRES_DB:-kratos}?sslmode=disable
+      SECRETS_COOKIE: ${ORY_KRATOS_COOKIE_SECRET:?ORY_KRATOS_COOKIE_SECRET is required}
+      SECRETS_CIPHER: ${ORY_KRATOS_CIPHER_SECRET:?ORY_KRATOS_CIPHER_SECRET is required}
+      SERVE_PUBLIC_BASE_URL: ${ORY_KRATOS_PUBLIC_URL:?ORY_KRATOS_PUBLIC_URL is required}
+      SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: ${ORRERY_APP_PUBLIC_URL:?ORRERY_APP_PUBLIC_URL is required}/
+      SELFSERVICE_ALLOWED_RETURN_URLS: ${ORRERY_APP_PUBLIC_URL:?ORRERY_APP_PUBLIC_URL is required}
+      SELFSERVICE_METHODS_OIDC_CONFIG_BASE_REDIRECT_URI: ${ORY_KRATOS_PUBLIC_URL:?ORY_KRATOS_PUBLIC_URL is required}
+      SELFSERVICE_METHODS_OIDC_CONFIG_PROVIDERS_0_CLIENT_ID: ${ORRERY_FEISHU_APP_ID:?ORRERY_FEISHU_APP_ID is required}
+      SELFSERVICE_METHODS_OIDC_CONFIG_PROVIDERS_0_CLIENT_SECRET: ${ORRERY_FEISHU_APP_SECRET:?ORRERY_FEISHU_APP_SECRET is required}
+      SELFSERVICE_FLOWS_ERROR_UI_URL: ${ORRERY_APP_PUBLIC_URL:?ORRERY_APP_PUBLIC_URL is required}/login
+      SELFSERVICE_FLOWS_LOGIN_UI_URL: ${ORRERY_APP_PUBLIC_URL:?ORRERY_APP_PUBLIC_URL is required}/login
+      SELFSERVICE_FLOWS_LOGOUT_AFTER_DEFAULT_BROWSER_RETURN_URL: ${ORRERY_APP_PUBLIC_URL:?ORRERY_APP_PUBLIC_URL is required}/login
+      SELFSERVICE_FLOWS_REGISTRATION_UI_URL: ${ORRERY_APP_PUBLIC_URL:?ORRERY_APP_PUBLIC_URL is required}/login
+      SELFSERVICE_FLOWS_SETTINGS_UI_URL: ${ORRERY_APP_PUBLIC_URL:?ORRERY_APP_PUBLIC_URL is required}/login
+    depends_on:
+      kratos-postgres:
+        condition: service_healthy
+    networks:
+      - kratos-control
+
+  kratos:
+    image: ${ORY_KRATOS_IMAGE:?load deploy/releases/local.env or a production release manifest}
+    restart: unless-stopped
+    command: serve all --config /etc/config/kratos/kratos.yml
+    volumes: *kratos-volumes
+    environment:
+      <<: *kratos-env
+    ports:
+      - "${ORY_KRATOS_PUBLIC_BIND:-127.0.0.1}:${ORY_KRATOS_PUBLIC_PORT:-4433}:4433"
+    depends_on:
+      kratos-migrate:
+        condition: service_completed_successfully
+    networks:
+      - default
+      - kratos-control
+
+  hydra-postgres:
+    image: postgres:17-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${ORY_HYDRA_POSTGRES_USER:-hydra}
+      POSTGRES_PASSWORD: ${ORY_HYDRA_POSTGRES_PASSWORD:?ORY_HYDRA_POSTGRES_PASSWORD is required}
+      POSTGRES_DB: ${ORY_HYDRA_POSTGRES_DB:-hydra}
+    volumes:
+      - orrery-hydra-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  hydra-migrate:
+    image: ${ORY_HYDRA_IMAGE:?load deploy/releases/local.env or a production release manifest}
+    depends_on:
+      hydra-postgres:
+        condition: service_healthy
+    restart: "no"
+    environment: &hydra-env
+      DSN: postgres://${ORY_HYDRA_POSTGRES_USER:-hydra}:${ORY_HYDRA_POSTGRES_PASSWORD:?ORY_HYDRA_POSTGRES_PASSWORD is required}@hydra-postgres:5432/${ORY_HYDRA_POSTGRES_DB:-hydra}?sslmode=disable
+      SECRETS_SYSTEM: ${ORY_HYDRA_SYSTEM_SECRET:?ORY_HYDRA_SYSTEM_SECRET is required}
+      URLS_SELF_ISSUER: ${ORY_HYDRA_PUBLIC_URL:?ORY_HYDRA_PUBLIC_URL is required}
+      URLS_LOGIN: ${ORRERY_APP_PUBLIC_URL:?ORRERY_APP_PUBLIC_URL is required}/api/oauth2/login
+      URLS_CONSENT: ${ORRERY_APP_PUBLIC_URL:?ORRERY_APP_PUBLIC_URL is required}/api/oauth2/consent
+      URLS_ERROR: ${ORRERY_APP_PUBLIC_URL:?ORRERY_APP_PUBLIC_URL is required}/login
+      SERVE_PUBLIC_HOST: 0.0.0.0
+      SERVE_PUBLIC_PORT: 4444
+      SERVE_ADMIN_HOST: 0.0.0.0
+      SERVE_ADMIN_PORT: 4445
+      LOG_LEVEL: ${ORY_HYDRA_LOG_LEVEL:-info}
+      OAUTH2_PKCE_ENFORCED: "true"
+      OAUTH2_PKCE_ENFORCED_FOR_PUBLIC_CLIENTS: "true"
+    command: migrate sql up -e --yes
+
+  hydra:
+    image: ${ORY_HYDRA_IMAGE:?load deploy/releases/local.env or a production release manifest}
+    depends_on:
+      hydra-migrate:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    environment:
+      <<: *hydra-env
+    command: serve all
+    ports:
+      - "${ORY_HYDRA_PUBLIC_BIND:-127.0.0.1}:${ORY_HYDRA_PUBLIC_PORT:-4444}:4444"
+
+  openfga-postgres:
+    image: postgres:17-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${OPENFGA_POSTGRES_USER:-openfga}
+      POSTGRES_PASSWORD: ${OPENFGA_POSTGRES_PASSWORD:?OPENFGA_POSTGRES_PASSWORD is required}
+      POSTGRES_DB: ${OPENFGA_POSTGRES_DB:-openfga}
+    volumes:
+      - orrery-openfga-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  openfga-migrate:
+    image: ${OPENFGA_IMAGE:?load deploy/releases/local.env or a production release manifest}
+    depends_on:
+      openfga-postgres:
+        condition: service_healthy
+    restart: "no"
+    environment: &openfga-env
+      OPENFGA_DATASTORE_ENGINE: postgres
+      OPENFGA_DATASTORE_URI: postgres://${OPENFGA_POSTGRES_USER:-openfga}:${OPENFGA_POSTGRES_PASSWORD:?OPENFGA_POSTGRES_PASSWORD is required}@openfga-postgres:5432/${OPENFGA_POSTGRES_DB:-openfga}?sslmode=disable
+      OPENFGA_LOG_FORMAT: json
+      OPENFGA_LOG_LEVEL: ${OPENFGA_LOG_LEVEL:-info}
+      OPENFGA_PLAYGROUND_ENABLED: "false"
+    command: migrate
+
+  openfga:
+    image: ${OPENFGA_IMAGE:?load deploy/releases/local.env or a production release manifest}
+    depends_on:
+      openfga-migrate:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    environment:
+      <<: *openfga-env
+      OPENFGA_HTTP_ADDR: 0.0.0.0:8080
+      OPENFGA_GRPC_ADDR: 0.0.0.0:8081
+    command: run
+    ports:
+      - "${OPENFGA_HTTP_BIND:-127.0.0.1}:${OPENFGA_HTTP_PORT:-8081}:8080"
+
+  orrery-api:
+    depends_on:
+      kratos:
+        condition: service_started
+      hydra:
+        condition: service_started
+      openfga:
+        condition: service_started
+    environment:
+      ORRERY_AUTH_LOCAL_MFA_TOTP_SECRET: ${ORRERY_AUTH_LOCAL_MFA_TOTP_SECRET:-}
+      ORRERY_FEISHU_APP_ID: ${ORRERY_FEISHU_APP_ID:?ORRERY_FEISHU_APP_ID is required}
+      ORRERY_FEISHU_APP_SECRET: ${ORRERY_FEISHU_APP_SECRET:-}
+      ORRERY_FEISHU_STATE_SECRET: ${ORRERY_FEISHU_STATE_SECRET:-}
+      ORRERY_KRATOS_ADMIN_TOKEN: ${ORRERY_KRATOS_ADMIN_TOKEN:-}
+      ORRERY_HYDRA_ADMIN_TOKEN: ${ORRERY_HYDRA_ADMIN_TOKEN:-}
+      ORRERY_OIDC_CLIENT_SECRET: ${ORRERY_OIDC_CLIENT_SECRET:-}
+      ORRERY_AUTHZ_OPENFGA_TOKEN: ${ORRERY_AUTHZ_OPENFGA_TOKEN:-}
+    networks:
+      - default
+      - kratos-control
+
+volumes:
+  orrery-kratos-postgres-data:
+  orrery-hydra-postgres-data:
+  orrery-openfga-postgres-data:
+
+networks:
+  kratos-control:
+    internal: true

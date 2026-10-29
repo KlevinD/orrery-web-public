@@ -1,0 +1,10 @@
+{
+  "name": "@orrery/error-callsite",
+  "version": "1.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "Minvia",
+  "main": "./index.cjs",
+  "types": "./index.d.cts",
+  "files": ["index.cjs", "index.d.cts", "LICENSE", "NOTICE"]
+}

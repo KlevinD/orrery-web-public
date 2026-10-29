@@ -1,0 +1,76 @@
+{
+  "formatVersion": 1,
+  "integrationFiles": {
+    "orrery_v2/runtime/orrery-js/bundled-replacements.json": "9e5e4f6c5f67566f55e9120b32786655fa1f48c1b454f544edec61764ce2ee11",
+    "orrery_v2/runtime/orrery-js/bundles.mjs": "52b8c5191528aaa46b98325a4ee943f2e0eb5ea1645b51106d1a4524d0f35a86",
+    "orrery_v2/runtime/orrery-js/install.mjs": "b32ddcf628693744743ca7b73480d6b6640921a58918c114eebf756953e728b2",
+    "orrery_v2/runtime/orrery-js/prepare-bundles.mjs": "706a5b77d1d7bebb4ca964df34ba99dbc2c7bf48c5e1bc4f0a0b682d6ea1d00c",
+    "orrery_v2/runtime/orrery-js/sources.mjs": "ee960d1dc57f7bf14d2cbfb234d8ce3c245e29d7f4d83e14133f580f873a6838"
+  },
+  "packages": [
+    {
+      "directory": "orrery_v2/runtime/orrery-js/packages/ast-reference",
+      "files": {
+        "orrery_v2/runtime/orrery-js/packages/ast-reference/LICENSE": "a515d5a76da6c082f0d3d33a597bf82e32ecdac8841ed1783ac081ebd6d62ebf",
+        "orrery_v2/runtime/orrery-js/packages/ast-reference/NOTICE": "47c126f06dc767714325220ae20a8d383570d354e6e2ef283091ac974aff82b3",
+        "orrery_v2/runtime/orrery-js/packages/ast-reference/index.d.ts": "906cca1e937f3470c2c844f5e3e030b8c569e103d7597b6894f1cf3d6102d074",
+        "orrery_v2/runtime/orrery-js/packages/ast-reference/index.js": "c025b31816847d6cfccbad36df072139cfb4fb3e7e3f1775c4ff942d11cacc1e",
+        "orrery_v2/runtime/orrery-js/packages/ast-reference/package.json": "1e104d7091db3e26709bb8fd17875da3f7bb7aeaa8832572c81b227ad87607ff"
+      },
+      "license": "Apache-2.0",
+      "name": "@orrery/ast-reference",
+      "version": "1.0.0"
+    },
+    {
+      "directory": "orrery_v2/runtime/orrery-js/packages/deepmerge",
+      "files": {
+        "orrery_v2/runtime/orrery-js/packages/deepmerge/LICENSE": "a515d5a76da6c082f0d3d33a597bf82e32ecdac8841ed1783ac081ebd6d62ebf",
+        "orrery_v2/runtime/orrery-js/packages/deepmerge/NOTICE": "2bdeff63a18fe30fbe597c5bacaed49cc60deb02d5b0eb7d92c9ef48a8239a05",
+        "orrery_v2/runtime/orrery-js/packages/deepmerge/index.cjs": "9d2217646d1a2da72aab00f0e9fd1b1633e010c23a22f28a0d090d27c123aa80",
+        "orrery_v2/runtime/orrery-js/packages/deepmerge/package.json": "15c636552153ce8fea177fa43805b3e067b72cec12c82109b944d4961d3c5555"
+      },
+      "license": "Apache-2.0",
+      "name": "deepmerge",
+      "version": "4.3.2"
+    },
+    {
+      "directory": "orrery_v2/runtime/orrery-js/packages/error-callsite",
+      "files": {
+        "orrery_v2/runtime/orrery-js/packages/error-callsite/LICENSE": "a515d5a76da6c082f0d3d33a597bf82e32ecdac8841ed1783ac081ebd6d62ebf",
+        "orrery_v2/runtime/orrery-js/packages/error-callsite/NOTICE": "df5f94ac640954ca9218957f82c1e052172b7a1cab7899528ff45f83f02618aa",
+        "orrery_v2/runtime/orrery-js/packages/error-callsite/index.cjs": "f29d9015f99599f4f735f21b8331a9d1b2f99ecadbc47b4b12d7f65c8a39c9b6",
+        "orrery_v2/runtime/orrery-js/packages/error-callsite/index.d.cts": "9dc83b5d3440f2cc94ad346911d2f5dcecc84052504c7b01ce74f9fb09d60a68",
+        "orrery_v2/runtime/orrery-js/packages/error-callsite/package.json": "ca63bdf0ea47de25d5c1e01ef2e2ddb9e7dc735dc62d5d4d0f9dad0edbf88b2b"
+      },
+      "license": "Apache-2.0",
+      "name": "@orrery/error-callsite",
+      "version": "1.0.0"
+    },
+    {
+      "directory": "orrery_v2/runtime/orrery-js/packages/proxy-negotiate",
+      "files": {
+        "orrery_v2/runtime/orrery-js/packages/proxy-negotiate/LICENSE": "a515d5a76da6c082f0d3d33a597bf82e32ecdac8841ed1783ac081ebd6d62ebf",
+        "orrery_v2/runtime/orrery-js/packages/proxy-negotiate/NOTICE": "93ddf5b7809e11cb9932040ace720a8cc50374d20a35d607092b92f4d301dcb5",
+        "orrery_v2/runtime/orrery-js/packages/proxy-negotiate/index.d.ts": "f6cdab4ca10a476432914407943b24ce957b3c89c0ee2472d454b542a47c074f",
+        "orrery_v2/runtime/orrery-js/packages/proxy-negotiate/index.js": "2d6a145272a5107bf1a6f1423096d091b9e51e43d8dd892b9f27a1e7028fe8d1",
+        "orrery_v2/runtime/orrery-js/packages/proxy-negotiate/package.json": "e5605210d47ceea8aa6c6a4353b125e2c03653eb1983490fbbd4e599d6fd5af4"
+      },
+      "license": "Apache-2.0",
+      "name": "@orrery/proxy-negotiate",
+      "version": "1.0.0"
+    },
+    {
+      "directory": "orrery_v2/runtime/orrery-js/packages/source-location",
+      "files": {
+        "orrery_v2/runtime/orrery-js/packages/source-location/LICENSE": "a515d5a76da6c082f0d3d33a597bf82e32ecdac8841ed1783ac081ebd6d62ebf",
+        "orrery_v2/runtime/orrery-js/packages/source-location/NOTICE": "1fe9644a87efca2bec5260bce52617f124e220b7203562b1b066bbd95c001fe7",
+        "orrery_v2/runtime/orrery-js/packages/source-location/index.d.ts": "fe97c903354017c5a74883c0ffb1a2ff4da7b20bf545c6f24f47bdd9715abb5a",
+        "orrery_v2/runtime/orrery-js/packages/source-location/index.js": "73e1845e126da701a9141fc6a430ccbf9d5526e392919c52c7bb0825747da1f5",
+        "orrery_v2/runtime/orrery-js/packages/source-location/package.json": "e6e9171daf78c8468a0682fd948dbce5dd24edd8be0fa0a219a85e67f913b82e"
+      },
+      "license": "Apache-2.0",
+      "name": "@orrery/source-location",
+      "version": "1.0.0"
+    }
+  ]
+}

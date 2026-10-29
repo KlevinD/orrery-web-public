@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-19",
+  "code_commit": "c4674fc3d05ffdb7dd8bd6a712ec4790bad82a62",
+  "private_preparation_only": true,
+  "deployed_to_production": false,
+  "published": false,
+  "github_ci_used": false,
+  "docker_used_after_user_prohibition": false,
+  "web": {
+    "platform": "Linux",
+    "completed_before_user_prohibited_docker": true,
+    "passed": 1348,
+    "failed": 0,
+    "skipped": 0,
+    "svelte_errors": 0,
+    "svelte_warnings": 0,
+    "production_build_passed": true,
+    "current_web_input_files_matched": 755,
+    "input_hash_mismatches": [],
+    "evidence": [
+      "web-tests.json",
+      "web-check.log",
+      "web-build.log",
+      "web-tested-inputs.json"
+    ]
+  },
+  "native_windows": {
+    "full_attempt": {
+      "evidence": "go-native-full.jsonl",
+      "tests": {
+        "pass": 9798,
+        "skip": 94,
+        "fail": 20
+      },
+      "top_level_tests": {
+        "pass": 7101,
+        "skip": 82,
+        "fail": 19
+      },
+      "packages": {
+        "pass": 166,
+        "skip": 12,
+        "fail": 11
+      }
+    },
+    "full_attempt_exit_code": 1,
+    "final_commit_full_suite_repeated": false,
+    "resourcectl": {
+      "evidence": "resourcectl-native.jsonl",
+      "tests": {
+        "pass": 28
+      },
+      "top_level_tests": {
+        "pass": 23
+      },
+      "packages": {
+        "pass": 1
+      }
+    },
+    "execenv_device_agenttrace": {
+      "evidence": "go-native-platform-fixes.jsonl",
+      "tests": {
+        "pass": 75,
+        "skip": 1
+      },
+      "top_level_tests": {
+        "pass": 58
+      },
+      "packages": {
+        "pass": 3
+      }
+    },
+    "codex_display_and_real_mission_contracts": {
+      "evidence": "go-native-contract-windows.jsonl",
+      "tests": {
+        "pass": 5
+      },
+      "top_level_tests": {
+        "pass": 3
+      },
+      "packages": {
+        "pass": 2
+      }
+    },
+    "ontology_resourceadmin_nativescheduled": {
+      "evidence": "go-native-followup.jsonl",
+      "tests": {
+        "pass": 655,
+        "skip": 2
+      },
+      "top_level_tests": {
+        "pass": 562,
+        "skip": 2
+      },
+      "packages": {
+        "pass": 3
+      }
+    },
+    "openclawshadow": {
+      "evidence": "openclawshadow-final.jsonl",
+      "tests": {
+        "pass": 30,
+        "skip": 2
+      },
+      "top_level_tests": {
+        "pass": 16,
+        "skip": 1
+      },
+      "packages": {
+        "pass": 1
+      }
+    },
+    "final_focused_retests": {
+      "evidence": "go-native-final-focused.jsonl",
+      "tests": {
+        "pass": 10
+      },
+      "top_level_tests": {
+        "pass": 8
+      },
+      "packages": {
+        "pass": 4
+      }
+    },
+    "focused_retest_timeouts_changed": false,
+    "symlink_privilege_checks": "Explicit skip only for Windows error 1314; no Windows POSIX chmod guarantee claimed",
+    "api_binary_build_passed": true,
+    "api_binary_sha256": "<redacted-build-digest>"
+  },
+  "native_postgresql": {
+    "production_config_check_passed": true,
+    "six_database_init_passed": true,
+    "unauthenticated_todos_status": 401,
+    "bootstrap_login_passed": true,
+    "task_create_and_authenticated_read_before_restart": true,
+    "initial_shutdown_wait_timed_out": true,
+    "shutdown_checkpoint_sync_seconds": 525.207,
+    "same_data_postgresql_restart_passed": true,
+    "task_persistence_after_restart_checked_by_sql": true,
+    "api_health_after_restart_passed": true,
+    "authenticated_api_read_after_restart_verified": false,
+    "isolated_database_stopped": true,
+    "evidence": [
+      "native-coldstart/result.json",
+      "native-coldstart/restart-continuation-result.json"
+    ]
+  },
+  "baseline": {
+    "revision": 8,
+    "mechanical_check_errors": [],
+    "semantic_compatibility_proved_by_checker": false
+  },
+  "limitations": [
+    "No final immutable-commit full Go suite pass is claimed",
+    "Windows account lacks symlink creation privilege; POSIX mode assertions do not certify Windows ACLs",
+    "External model, external MCP, PageIndex service and real channel business delivery not accepted",
+    "Desktop/client source is retained but excluded from Web/API export; device connectivity and signed packages not accepted"
+  ],
+  "evidence_directory": "D:/Orrery/artifacts/pr269-current-integration-20261019/"
+}

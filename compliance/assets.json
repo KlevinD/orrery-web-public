@@ -1,0 +1,135 @@
+{
+  "assets": [
+    {
+      "license": "MIT",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/third_party/lark-sdk/doc/assets/debugger-tip.png",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "fbd5bf154c0ecd036967195061d07c6ce22c1a307e4f708be47afa0e7e8d63d7"
+    },
+    {
+      "license": "MIT",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/third_party/lark-sdk/doc/assets/deprecated.png",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "2cc34fff3c052de885a5d7df0246fbee91b8eca79a7b7374d8785ad2850ae8ca"
+    },
+    {
+      "license": "MIT",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/third_party/lark-sdk/doc/assets/msg-card.png",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "255ea269e2139da37221928c7de3f69bf8a112e20a4bde2af97a4db3180a506f"
+    },
+    {
+      "license": "MIT",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/third_party/lark-sdk/doc/console.jpeg",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "0da4d271368da6f0bc31e749129dfd29490e64cc28e2e9db02e51bdd9f5fbc1f"
+    },
+    {
+      "license": "MIT",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/third_party/lark-sdk/doc/event_protocol.jpeg",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "02f989114e83ab8557ba9a1d2ea7c5bbad369a62efba7164e0d5c22b8df4e23d"
+    },
+    {
+      "license": "MIT",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/third_party/lark-sdk/doc/find_method.jpg",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "7d32743cc787a55ae171c8befb505e7b7c8138da0a9369d554bf65c62ebe5c04"
+    },
+    {
+      "license": "OFL-1.1",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/web/static/fonts/dm-sans-italic-latin-ext.woff2",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "b72f7226650dcbc66e1e6ccdc9e53dc8c66107357eeac2d2a4ca18942c42f360"
+    },
+    {
+      "license": "OFL-1.1",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/web/static/fonts/dm-sans-italic-latin.woff2",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "d5c53a50536536971ea27318a590dbf723a190dd2f608e7a92929a021cc0ebaa"
+    },
+    {
+      "license": "OFL-1.1",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/web/static/fonts/dm-sans-normal-latin-ext.woff2",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "5d18d31d23ada61ebee1d589b11d5da30db9e158f589d5e35221ba2b1a45de54"
+    },
+    {
+      "license": "OFL-1.1",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/web/static/fonts/dm-sans-normal-latin.woff2",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "ca72d2bcea8f4daa783dbdfa2d9b46068c3ce38168e05918fb867aa453b4f890"
+    },
+    {
+      "license": "OFL-1.1",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/web/static/fonts/jetbrains-mono-cyrillic-ext.woff2",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "62213be8a78b42f1e29d1452d91e2f8b3e745572a9dd98d3941e39fa00b37d76"
+    },
+    {
+      "license": "OFL-1.1",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/web/static/fonts/jetbrains-mono-cyrillic.woff2",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "e17cfd15fb96909d64095015f958207063a0c07191da3512df7d560a781aebdf"
+    },
+    {
+      "license": "OFL-1.1",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/web/static/fonts/jetbrains-mono-greek.woff2",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "0a557721b1f8b36d3f3f84442689a71ca4a744300abcb46a1953f51bfc663b66"
+    },
+    {
+      "license": "OFL-1.1",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/web/static/fonts/jetbrains-mono-latin-ext.woff2",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "db5ff4db83e580426280e9337a58dc57d3a83784a1b03ad80914651594441d52"
+    },
+    {
+      "license": "OFL-1.1",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/web/static/fonts/jetbrains-mono-latin.woff2",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "83c005d49d8a6a50474c73a5a36ac0468076e9c4a29da7bdb14995d80560a5be"
+    },
+    {
+      "license": "OFL-1.1",
+      "licenseEvidence": "license-evidence-verified",
+      "path": "orrery_v2/web/static/fonts/jetbrains-mono-vietnamese.woff2",
+      "provenance": "existing Orrery repository resource",
+      "rightsReview": "compliance/web-asset-rights.json",
+      "sha256": "c89b9cc0bc6262bd4f8d8494b6961601f3aefa829d08c2e3635f4d501d3a47c2"
+    }
+  ],
+  "formatVersion": 1,
+  "scope": "repository provenance is not a redistribution grant",
+  "sourceTextNormalization": "CRLF-to-LF for SVG source; binary resources unchanged"
+}

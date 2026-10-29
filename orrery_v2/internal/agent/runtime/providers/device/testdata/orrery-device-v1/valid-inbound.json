@@ -1,0 +1,49 @@
+[
+  {
+    "protocol_version": "1.0",
+    "message_id": "msg_welcome_0001",
+    "connection_epoch": "conn_epoch_0001",
+    "type": "device.welcome",
+    "sent_at": "2026-07-25T12:00:00Z",
+    "payload": {
+      "selected_protocol_version": "1.0",
+      "server_time": "2026-07-25T12:00:00Z",
+      "replay_cursor": "cursor_0001",
+      "heartbeat_interval_ms": 20000,
+      "lease_timeout_ms": 60000,
+      "remote_execution_enabled": true
+    }
+  },
+  {
+    "protocol_version": "1.0",
+    "message_id": "msg_offer_0001",
+    "connection_epoch": "conn_epoch_0001",
+    "type": "work_order.offer",
+    "sent_at": "2026-07-25T12:00:01Z",
+    "payload": {
+      "work_order_id": "wo_contract_0001",
+      "idempotency_key": "tenant/project/task/attempt-1",
+      "project_id": "project_contract_0001",
+      "origin_actor_id": "actor_contract_0001",
+      "task": {
+        "kind": "agent_turn",
+        "instruction": "Implement the accepted change and report the result"
+      },
+      "workspace_grant_id": "grant_contract_0001",
+      "required_capabilities": ["workspace.read", "workspace.write"],
+      "requested_artifact_classes": ["patch", "summary"],
+      "deadline": "2026-07-25T12:30:00Z"
+    }
+  },
+  {
+    "protocol_version": "1.0",
+    "message_id": "msg_cancel_0001",
+    "connection_epoch": "conn_epoch_0001",
+    "type": "work_order.cancel",
+    "sent_at": "2026-07-25T12:01:00Z",
+    "payload": {
+      "work_order_id": "wo_contract_0001",
+      "reason": "Cancelled by project owner"
+    }
+  }
+]

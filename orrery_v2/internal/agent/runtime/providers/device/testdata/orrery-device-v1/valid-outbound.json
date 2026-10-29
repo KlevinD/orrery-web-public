@@ -1,0 +1,90 @@
+[
+  {
+    "protocol_version": "1.0",
+    "message_id": "msg_hello_0001",
+    "connection_epoch": "conn_epoch_0001",
+    "type": "device.hello",
+    "sent_at": "2026-07-25T12:00:00Z",
+    "payload": {
+      "device_id": "device_contract_0001",
+      "protocol_min": "1.0",
+      "protocol_max": "1.0",
+      "client_version": "0.1.0",
+      "aioncore_version": "0.1.52",
+      "capability_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "active_work_orders": []
+    }
+  },
+  {
+    "protocol_version": "1.0",
+    "message_id": "msg_heartbeat_0001",
+    "connection_epoch": "conn_epoch_0001",
+    "type": "device.heartbeat",
+    "sent_at": "2026-07-25T12:00:20Z",
+    "payload": {
+      "active_work_orders": [{ "work_order_id": "wo_contract_0001", "state": "running", "last_sequence": 2 }],
+      "last_replay_cursor": "cursor_0001"
+    }
+  },
+  {
+    "protocol_version": "1.0",
+    "message_id": "msg_accepted_0001",
+    "connection_epoch": "conn_epoch_0001",
+    "type": "work_order.accepted",
+    "sent_at": "2026-07-25T12:00:02Z",
+    "payload": { "work_order_id": "wo_contract_0001", "accepted_at": "2026-07-25T12:00:02Z" }
+  },
+  {
+    "protocol_version": "1.0",
+    "message_id": "msg_rejected_0001",
+    "connection_epoch": "conn_epoch_0001",
+    "type": "work_order.rejected",
+    "sent_at": "2026-07-25T12:00:02Z",
+    "payload": {
+      "work_order_id": "wo_contract_0002",
+      "reason_code": "workspace_grant_missing",
+      "detail": "No matching local grant"
+    }
+  },
+  {
+    "protocol_version": "1.0",
+    "message_id": "msg_frame_0001",
+    "connection_epoch": "conn_epoch_0001",
+    "type": "work_order.frame",
+    "sent_at": "2026-07-25T12:00:03Z",
+    "payload": {
+      "work_order_id": "wo_contract_0001",
+      "sequence": 1,
+      "frame": { "kind": "text", "channel": "output", "content": "Started" }
+    }
+  },
+  {
+    "protocol_version": "1.0",
+    "message_id": "msg_terminal_0001",
+    "connection_epoch": "conn_epoch_0001",
+    "type": "work_order.terminal",
+    "sent_at": "2026-07-25T12:00:04Z",
+    "payload": {
+      "work_order_id": "wo_contract_0001",
+      "sequence": 2,
+      "status": "succeeded",
+      "summary": "Completed"
+    }
+  },
+  {
+    "protocol_version": "1.0",
+    "message_id": "msg_artifact_0001",
+    "connection_epoch": "conn_epoch_0001",
+    "type": "artifact.manifest",
+    "sent_at": "2026-07-25T12:00:04Z",
+    "payload": {
+      "work_order_id": "wo_contract_0001",
+      "artifact_id": "artifact_contract_0001",
+      "class": "patch",
+      "display_name": "change.patch",
+      "media_type": "text/x-diff",
+      "size_bytes": 128,
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  }
+]

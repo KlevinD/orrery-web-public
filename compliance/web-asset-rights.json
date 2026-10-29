@@ -1,0 +1,861 @@
+{
+  "formatVersion": 1,
+  "scope": "Retained Web/API assets from source-export review; source correspondence and complete license texts, not whole-release approval.",
+  "inputCommit": "16fa7fe2471dffe79d512116380d1bab57f5c60f",
+  "reviewDate": "2026-10-18",
+  "assets": [
+    {
+      "path": "orrery_v2/third_party/lark-sdk/doc/assets/debugger-tip.png",
+      "sha256": "fbd5bf154c0ecd036967195061d07c6ce22c1a307e4f708be47afa0e7e8d63d7",
+      "license": "MIT",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://raw.githubusercontent.com/larksuite/oapi-sdk-go/ff207b774541a195f0a98c5bfda1507905e45431/doc/assets/debugger-tip.png",
+        "sourceSha256": "fbd5bf154c0ecd036967195061d07c6ce22c1a307e4f708be47afa0e7e8d63d7",
+        "sourceCommit": "ff207b774541a195f0a98c5bfda1507905e45431",
+        "sourceTag": "v3.9.9",
+        "licensePath": "orrery_v2/third_party/lark-sdk/LICENSE",
+        "licenseLfSha256": "29d16ac53b7f3f8513fb4c6ca4e683bed3f958f9a53f27cb0a840b4f07c5f5b4",
+        "originalCopyright": "Copyright (c) 2020 Lark Technologies Pte. Ltd.",
+        "scope": "SDK source and associated documentation; no separate trademark endorsement"
+      }
+    },
+    {
+      "path": "orrery_v2/third_party/lark-sdk/doc/assets/deprecated.png",
+      "sha256": "2cc34fff3c052de885a5d7df0246fbee91b8eca79a7b7374d8785ad2850ae8ca",
+      "license": "MIT",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://api.github.com/repos/larksuite/oapi-sdk-go/contents/doc/assets/deprecated.png?ref=ff207b774541a195f0a98c5bfda1507905e45431",
+        "sourceSha256": "2cc34fff3c052de885a5d7df0246fbee91b8eca79a7b7374d8785ad2850ae8ca",
+        "sourceCommit": "ff207b774541a195f0a98c5bfda1507905e45431",
+        "sourceTag": "v3.9.9",
+        "licensePath": "orrery_v2/third_party/lark-sdk/LICENSE",
+        "licenseLfSha256": "29d16ac53b7f3f8513fb4c6ca4e683bed3f958f9a53f27cb0a840b4f07c5f5b4",
+        "originalCopyright": "Copyright (c) 2020 Lark Technologies Pte. Ltd.",
+        "scope": "SDK source and associated documentation; no separate trademark endorsement"
+      }
+    },
+    {
+      "path": "orrery_v2/third_party/lark-sdk/doc/assets/msg-card.png",
+      "sha256": "255ea269e2139da37221928c7de3f69bf8a112e20a4bde2af97a4db3180a506f",
+      "license": "MIT",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://api.github.com/repos/larksuite/oapi-sdk-go/contents/doc/assets/msg-card.png?ref=ff207b774541a195f0a98c5bfda1507905e45431",
+        "sourceSha256": "255ea269e2139da37221928c7de3f69bf8a112e20a4bde2af97a4db3180a506f",
+        "sourceCommit": "ff207b774541a195f0a98c5bfda1507905e45431",
+        "sourceTag": "v3.9.9",
+        "licensePath": "orrery_v2/third_party/lark-sdk/LICENSE",
+        "licenseLfSha256": "29d16ac53b7f3f8513fb4c6ca4e683bed3f958f9a53f27cb0a840b4f07c5f5b4",
+        "originalCopyright": "Copyright (c) 2020 Lark Technologies Pte. Ltd.",
+        "scope": "SDK source and associated documentation; no separate trademark endorsement"
+      }
+    },
+    {
+      "path": "orrery_v2/third_party/lark-sdk/doc/console.jpeg",
+      "sha256": "0da4d271368da6f0bc31e749129dfd29490e64cc28e2e9db02e51bdd9f5fbc1f",
+      "license": "MIT",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://raw.githubusercontent.com/larksuite/oapi-sdk-go/ff207b774541a195f0a98c5bfda1507905e45431/doc/console.jpeg",
+        "sourceSha256": "0da4d271368da6f0bc31e749129dfd29490e64cc28e2e9db02e51bdd9f5fbc1f",
+        "sourceCommit": "ff207b774541a195f0a98c5bfda1507905e45431",
+        "sourceTag": "v3.9.9",
+        "licensePath": "orrery_v2/third_party/lark-sdk/LICENSE",
+        "licenseLfSha256": "29d16ac53b7f3f8513fb4c6ca4e683bed3f958f9a53f27cb0a840b4f07c5f5b4",
+        "originalCopyright": "Copyright (c) 2020 Lark Technologies Pte. Ltd.",
+        "scope": "SDK source and associated documentation; no separate trademark endorsement"
+      }
+    },
+    {
+      "path": "orrery_v2/third_party/lark-sdk/doc/event_protocol.jpeg",
+      "sha256": "02f989114e83ab8557ba9a1d2ea7c5bbad369a62efba7164e0d5c22b8df4e23d",
+      "license": "MIT",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://api.github.com/repos/larksuite/oapi-sdk-go/contents/doc/event_protocol.jpeg?ref=ff207b774541a195f0a98c5bfda1507905e45431",
+        "sourceSha256": "02f989114e83ab8557ba9a1d2ea7c5bbad369a62efba7164e0d5c22b8df4e23d",
+        "sourceCommit": "ff207b774541a195f0a98c5bfda1507905e45431",
+        "sourceTag": "v3.9.9",
+        "licensePath": "orrery_v2/third_party/lark-sdk/LICENSE",
+        "licenseLfSha256": "29d16ac53b7f3f8513fb4c6ca4e683bed3f958f9a53f27cb0a840b4f07c5f5b4",
+        "originalCopyright": "Copyright (c) 2020 Lark Technologies Pte. Ltd.",
+        "scope": "SDK source and associated documentation; no separate trademark endorsement"
+      }
+    },
+    {
+      "path": "orrery_v2/third_party/lark-sdk/doc/find_method.jpg",
+      "sha256": "7d32743cc787a55ae171c8befb505e7b7c8138da0a9369d554bf65c62ebe5c04",
+      "license": "MIT",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://raw.githubusercontent.com/larksuite/oapi-sdk-go/ff207b774541a195f0a98c5bfda1507905e45431/doc/find_method.jpg",
+        "sourceSha256": "7d32743cc787a55ae171c8befb505e7b7c8138da0a9369d554bf65c62ebe5c04",
+        "sourceCommit": "ff207b774541a195f0a98c5bfda1507905e45431",
+        "sourceTag": "v3.9.9",
+        "licensePath": "orrery_v2/third_party/lark-sdk/LICENSE",
+        "licenseLfSha256": "29d16ac53b7f3f8513fb4c6ca4e683bed3f958f9a53f27cb0a840b4f07c5f5b4",
+        "originalCopyright": "Copyright (c) 2020 Lark Technologies Pte. Ltd.",
+        "scope": "SDK source and associated documentation; no separate trademark endorsement"
+      }
+    },
+    {
+      "path": "orrery_v2/web/static/fonts/dm-sans-italic-latin-ext.woff2",
+      "sha256": "b72f7226650dcbc66e1e6ccdc9e53dc8c66107357eeac2d2a4ca18942c42f360",
+      "license": "OFL-1.1",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://fonts.gstatic.com/s/dmsans/v17/rP2Fp2ywxg089UriCZa4ET-DNl0.woff2",
+        "sourceSha256": "b72f7226650dcbc66e1e6ccdc9e53dc8c66107357eeac2d2a4ca18942c42f360",
+        "licensePath": "orrery_v2/web/static/fonts/OFL-DM-Sans.txt",
+        "licenseLfSha256": "7ec15e79c59bc14b86436a17e5eb7926b46cbcaeb08e1a7e6c110b415e6eb2a2",
+        "officialLicenseSha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+        "licenseComparison": "complete license text; only line-ending/trailing-whitespace differences allowed",
+        "trailingWhitespaceOnlyDifferingLines": [
+          21
+        ],
+        "upstreamProject": "https://github.com/googlefonts/dm-fonts",
+        "originalCopyright": "Copyright 2014 The DM Sans Project Authors"
+      }
+    },
+    {
+      "path": "orrery_v2/web/static/fonts/dm-sans-italic-latin.woff2",
+      "sha256": "d5c53a50536536971ea27318a590dbf723a190dd2f608e7a92929a021cc0ebaa",
+      "license": "OFL-1.1",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://fonts.gstatic.com/s/dmsans/v17/rP2Fp2ywxg089UriCZa4Hz-D.woff2",
+        "sourceSha256": "d5c53a50536536971ea27318a590dbf723a190dd2f608e7a92929a021cc0ebaa",
+        "licensePath": "orrery_v2/web/static/fonts/OFL-DM-Sans.txt",
+        "licenseLfSha256": "7ec15e79c59bc14b86436a17e5eb7926b46cbcaeb08e1a7e6c110b415e6eb2a2",
+        "officialLicenseSha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+        "licenseComparison": "complete license text; only line-ending/trailing-whitespace differences allowed",
+        "trailingWhitespaceOnlyDifferingLines": [
+          21
+        ],
+        "upstreamProject": "https://github.com/googlefonts/dm-fonts",
+        "originalCopyright": "Copyright 2014 The DM Sans Project Authors"
+      }
+    },
+    {
+      "path": "orrery_v2/web/static/fonts/dm-sans-normal-latin-ext.woff2",
+      "sha256": "5d18d31d23ada61ebee1d589b11d5da30db9e158f589d5e35221ba2b1a45de54",
+      "license": "OFL-1.1",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://fonts.gstatic.com/s/dmsans/v17/rP2Hp2ywxg089UriCZ2IHSeH.woff2",
+        "sourceSha256": "5d18d31d23ada61ebee1d589b11d5da30db9e158f589d5e35221ba2b1a45de54",
+        "licensePath": "orrery_v2/web/static/fonts/OFL-DM-Sans.txt",
+        "licenseLfSha256": "7ec15e79c59bc14b86436a17e5eb7926b46cbcaeb08e1a7e6c110b415e6eb2a2",
+        "officialLicenseSha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+        "licenseComparison": "complete license text; only line-ending/trailing-whitespace differences allowed",
+        "trailingWhitespaceOnlyDifferingLines": [
+          21
+        ],
+        "upstreamProject": "https://github.com/googlefonts/dm-fonts",
+        "originalCopyright": "Copyright 2014 The DM Sans Project Authors"
+      }
+    },
+    {
+      "path": "orrery_v2/web/static/fonts/dm-sans-normal-latin.woff2",
+      "sha256": "ca72d2bcea8f4daa783dbdfa2d9b46068c3ce38168e05918fb867aa453b4f890",
+      "license": "OFL-1.1",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://fonts.gstatic.com/s/dmsans/v17/rP2Hp2ywxg089UriCZOIHQ.woff2",
+        "sourceSha256": "ca72d2bcea8f4daa783dbdfa2d9b46068c3ce38168e05918fb867aa453b4f890",
+        "licensePath": "orrery_v2/web/static/fonts/OFL-DM-Sans.txt",
+        "licenseLfSha256": "7ec15e79c59bc14b86436a17e5eb7926b46cbcaeb08e1a7e6c110b415e6eb2a2",
+        "officialLicenseSha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+        "licenseComparison": "complete license text; only line-ending/trailing-whitespace differences allowed",
+        "trailingWhitespaceOnlyDifferingLines": [
+          21
+        ],
+        "upstreamProject": "https://github.com/googlefonts/dm-fonts",
+        "originalCopyright": "Copyright 2014 The DM Sans Project Authors"
+      }
+    },
+    {
+      "path": "orrery_v2/web/static/fonts/jetbrains-mono-cyrillic-ext.woff2",
+      "sha256": "62213be8a78b42f1e29d1452d91e2f8b3e745572a9dd98d3941e39fa00b37d76",
+      "license": "OFL-1.1",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPx3cwhsk.woff2",
+        "sourceSha256": "62213be8a78b42f1e29d1452d91e2f8b3e745572a9dd98d3941e39fa00b37d76",
+        "licensePath": "orrery_v2/web/static/fonts/OFL-JetBrains-Mono.txt",
+        "licenseLfSha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+        "officialLicenseSha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+        "licenseComparison": "complete license text; only line-ending/trailing-whitespace differences allowed",
+        "trailingWhitespaceOnlyDifferingLines": [],
+        "upstreamProject": "https://github.com/JetBrains/JetBrainsMono",
+        "originalCopyright": "Copyright 2020 The JetBrains Mono Project Authors"
+      }
+    },
+    {
+      "path": "orrery_v2/web/static/fonts/jetbrains-mono-cyrillic.woff2",
+      "sha256": "e17cfd15fb96909d64095015f958207063a0c07191da3512df7d560a781aebdf",
+      "license": "OFL-1.1",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxTcwhsk.woff2",
+        "sourceSha256": "e17cfd15fb96909d64095015f958207063a0c07191da3512df7d560a781aebdf",
+        "licensePath": "orrery_v2/web/static/fonts/OFL-JetBrains-Mono.txt",
+        "licenseLfSha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+        "officialLicenseSha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+        "licenseComparison": "complete license text; only line-ending/trailing-whitespace differences allowed",
+        "trailingWhitespaceOnlyDifferingLines": [],
+        "upstreamProject": "https://github.com/JetBrains/JetBrainsMono",
+        "originalCopyright": "Copyright 2020 The JetBrains Mono Project Authors"
+      }
+    },
+    {
+      "path": "orrery_v2/web/static/fonts/jetbrains-mono-greek.woff2",
+      "sha256": "0a557721b1f8b36d3f3f84442689a71ca4a744300abcb46a1953f51bfc663b66",
+      "license": "OFL-1.1",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxPcwhsk.woff2",
+        "sourceSha256": "0a557721b1f8b36d3f3f84442689a71ca4a744300abcb46a1953f51bfc663b66",
+        "licensePath": "orrery_v2/web/static/fonts/OFL-JetBrains-Mono.txt",
+        "licenseLfSha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+        "officialLicenseSha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+        "licenseComparison": "complete license text; only line-ending/trailing-whitespace differences allowed",
+        "trailingWhitespaceOnlyDifferingLines": [],
+        "upstreamProject": "https://github.com/JetBrains/JetBrainsMono",
+        "originalCopyright": "Copyright 2020 The JetBrains Mono Project Authors"
+      }
+    },
+    {
+      "path": "orrery_v2/web/static/fonts/jetbrains-mono-latin-ext.woff2",
+      "sha256": "db5ff4db83e580426280e9337a58dc57d3a83784a1b03ad80914651594441d52",
+      "license": "OFL-1.1",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPx7cwhsk.woff2",
+        "sourceSha256": "db5ff4db83e580426280e9337a58dc57d3a83784a1b03ad80914651594441d52",
+        "licensePath": "orrery_v2/web/static/fonts/OFL-JetBrains-Mono.txt",
+        "licenseLfSha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+        "officialLicenseSha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+        "licenseComparison": "complete license text; only line-ending/trailing-whitespace differences allowed",
+        "trailingWhitespaceOnlyDifferingLines": [],
+        "upstreamProject": "https://github.com/JetBrains/JetBrainsMono",
+        "originalCopyright": "Copyright 2020 The JetBrains Mono Project Authors"
+      }
+    },
+    {
+      "path": "orrery_v2/web/static/fonts/jetbrains-mono-latin.woff2",
+      "sha256": "83c005d49d8a6a50474c73a5a36ac0468076e9c4a29da7bdb14995d80560a5be",
+      "license": "OFL-1.1",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwg.woff2",
+        "sourceSha256": "83c005d49d8a6a50474c73a5a36ac0468076e9c4a29da7bdb14995d80560a5be",
+        "licensePath": "orrery_v2/web/static/fonts/OFL-JetBrains-Mono.txt",
+        "licenseLfSha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+        "officialLicenseSha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+        "licenseComparison": "complete license text; only line-ending/trailing-whitespace differences allowed",
+        "trailingWhitespaceOnlyDifferingLines": [],
+        "upstreamProject": "https://github.com/JetBrains/JetBrainsMono",
+        "originalCopyright": "Copyright 2020 The JetBrains Mono Project Authors"
+      }
+    },
+    {
+      "path": "orrery_v2/web/static/fonts/jetbrains-mono-vietnamese.woff2",
+      "sha256": "c89b9cc0bc6262bd4f8d8494b6961601f3aefa829d08c2e3635f4d501d3a47c2",
+      "license": "OFL-1.1",
+      "status": "license-evidence-verified",
+      "evidence": {
+        "sourceUrl": "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPx_cwhsk.woff2",
+        "sourceSha256": "c89b9cc0bc6262bd4f8d8494b6961601f3aefa829d08c2e3635f4d501d3a47c2",
+        "licensePath": "orrery_v2/web/static/fonts/OFL-JetBrains-Mono.txt",
+        "licenseLfSha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+        "officialLicenseSha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d",
+        "licenseComparison": "complete license text; only line-ending/trailing-whitespace differences allowed",
+        "trailingWhitespaceOnlyDifferingLines": [],
+        "upstreamProject": "https://github.com/JetBrains/JetBrainsMono",
+        "originalCopyright": "Copyright 2020 The JetBrains Mono Project Authors"
+      }
+    }
+  ],
+  "limitations": [
+    "An existing Git commit does not itself prove media authorship or redistribution rights.",
+    "Verified evidence covers the recorded asset bytes and bundled license; trademarks and use context remain separate.",
+    "Pending assets remain in private candidates and must not be treated as licensed by the root Apache-2.0 file.",
+    "Retired asset entries preserve unresolved provenance only; their original bytes are absent from the current source tree and must not be redistributed as licensed assets."
+  ],
+  "retiredAssets": [
+    {
+      "path": "orrery_v2/web/static/beian-police.png",
+      "sha256": "8dfecad0dfcb3dc584f2c2447943eefb1fd65a058856eb0611e2c56ddc4c1fe1",
+      "status": "pending-rights-evidence",
+      "category": "registration-icon",
+      "reason": "The design records a supplied registration icon; that is provenance, not an unrestricted redistribution grant for other operators.",
+      "provenanceReferences": [
+        "docs/superpowers/plans/2026-07-24-compliance-footer.md",
+        "git:ced0d1e6b707e6fe6f09d085f58b635cd743d7a9:orrery_v2/web/static/beian-police.png"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "ced0d1e6b707e6fe6f09d085f58b635cd743d7a9",
+        "path": "orrery_v2/web/static/beian-police.png",
+        "sha256": "8dfecad0dfcb3dc584f2c2447943eefb1fd65a058856eb0611e2c56ddc4c1fe1",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "14328349dae7d7aff698281d8439b389e8e8718e",
+      "replacementSource": "orrery_v2/web/src/lib/components/layout/ComplianceFooter.svelte"
+    },
+    {
+      "path": "orrery_v2/web/static/dingtalk-app.png",
+      "sha256": "a1f648dac517fc930ee35fe8d6a1f92a9d222f9fdd5f49d6d7afbb5af3676139",
+      "status": "pending-rights-evidence",
+      "category": "third-party-service-icon",
+      "reason": "The login integration identifies these service icons, but a matching original source and permitted redistribution/use terms have not been fixed.",
+      "provenanceReferences": [
+        "4c162cda145fe7919392407c86c8df30400d8f1a",
+        "39d3a1661852be40314aba889fd53a06c0ab2c42",
+        "git:39d3a1661852be40314aba889fd53a06c0ab2c42:orrery_v2/web/static/dingtalk-app.png"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "39d3a1661852be40314aba889fd53a06c0ab2c42",
+        "path": "orrery_v2/web/static/dingtalk-app.png",
+        "sha256": "a1f648dac517fc930ee35fe8d6a1f92a9d222f9fdd5f49d6d7afbb5af3676139",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "14328349dae7d7aff698281d8439b389e8e8718e",
+      "replacementSource": "orrery_v2/web/src/lib/components/auth/KratosLoginForm.svelte"
+    },
+    {
+      "path": "orrery_v2/web/static/feishu.png",
+      "sha256": "cfd2b879c472a2674520492c84a0304c537a19964b8a2dcd3562c57de773268b",
+      "status": "pending-rights-evidence",
+      "category": "third-party-service-icon",
+      "reason": "The login integration identifies these service icons, but a matching original source and permitted redistribution/use terms have not been fixed.",
+      "provenanceReferences": [
+        "4c162cda145fe7919392407c86c8df30400d8f1a",
+        "39d3a1661852be40314aba889fd53a06c0ab2c42",
+        "git:4c162cda145fe7919392407c86c8df30400d8f1a:orrery_v2/web/static/feishu.png"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "4c162cda145fe7919392407c86c8df30400d8f1a",
+        "path": "orrery_v2/web/static/feishu.png",
+        "sha256": "cfd2b879c472a2674520492c84a0304c537a19964b8a2dcd3562c57de773268b",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "14328349dae7d7aff698281d8439b389e8e8718e",
+      "replacementSource": "orrery_v2/web/src/lib/components/auth/KratosLoginForm.svelte"
+    },
+    {
+      "path": "orrery_v2/web/static/images/selection-wash.jpg",
+      "sha256": "d6fb6b9016c20b8750cfcc63b8fc602b38dc58439889248237401679adb282e4",
+      "status": "pending-rights-evidence",
+      "category": "decorative-image",
+      "reason": "The login/selection image is tracked, but creator/source and redistribution terms are not recorded.",
+      "provenanceReferences": [
+        "caa14545d8a6e9c6688f5dd8c9a2505bc4321e68",
+        "64838a535cdab43db759a2db6682e740fe74943b",
+        "git:64838a535cdab43db759a2db6682e740fe74943b:orrery_v2/web/static/images/selection-wash.jpg"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "64838a535cdab43db759a2db6682e740fe74943b",
+        "path": "orrery_v2/web/static/images/selection-wash.jpg",
+        "sha256": "d6fb6b9016c20b8750cfcc63b8fc602b38dc58439889248237401679adb282e4",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "14328349dae7d7aff698281d8439b389e8e8718e",
+      "replacementSource": "orrery_v2/web/src/app.css"
+    },
+    {
+      "path": "orrery_v2/web/static/login-still-life.jpg",
+      "sha256": "dfdaf4cecbda0f155577c2141c1ca2d5d450842c2530cec5a3b27bfff2b6ac25",
+      "status": "pending-rights-evidence",
+      "category": "decorative-image",
+      "reason": "The login/selection image is tracked, but creator/source and redistribution terms are not recorded.",
+      "provenanceReferences": [
+        "caa14545d8a6e9c6688f5dd8c9a2505bc4321e68",
+        "64838a535cdab43db759a2db6682e740fe74943b",
+        "git:caa14545d8a6e9c6688f5dd8c9a2505bc4321e68:ideado_v2/web/static/login-still-life.jpg"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "caa14545d8a6e9c6688f5dd8c9a2505bc4321e68",
+        "path": "ideado_v2/web/static/login-still-life.jpg",
+        "sha256": "dfdaf4cecbda0f155577c2141c1ca2d5d450842c2530cec5a3b27bfff2b6ac25",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "14328349dae7d7aff698281d8439b389e8e8718e",
+      "replacementSource": "orrery_v2/web/src/routes/login/+page.svelte"
+    },
+    {
+      "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/coordinator-agent.jpg",
+      "sha256": "73746c2ffe208915a6f74d4a86d72a28892e5e766c40d2f6b973ba20b7bc605a",
+      "status": "pending-rights-evidence",
+      "category": "default-agent-portrait",
+      "reason": "Current bytes match the 2026-08-02 generated-avatar seed commit; original generation/provider inputs and applicable rights records are still missing.",
+      "provenanceReferences": [
+        "bf9859a10540be631563fff8e85176aaac45163a",
+        "orrery_v2/internal/transport/http/workforce_avatar_defaults/manifest.json",
+        "git:bf9859a10540be631563fff8e85176aaac45163a:orrery_v2/internal/transport/http/workforce_avatar_defaults/coordinator-agent.jpg"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "bf9859a10540be631563fff8e85176aaac45163a",
+        "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/coordinator-agent.jpg",
+        "sha256": "73746c2ffe208915a6f74d4a86d72a28892e5e766c40d2f6b973ba20b7bc605a",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "9b5f98c94419e3516ff1e2ba06f6b12bcf7cc4b2",
+      "replacementSource": "orrery_v2/internal/transport/http/workforce_avatar_artwork.go"
+    },
+    {
+      "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/lead-agent.jpg",
+      "sha256": "841fd994e55476e9685d5a005a512694ca106a68a4c13fe4505b39ab0f536be9",
+      "status": "pending-rights-evidence",
+      "category": "default-agent-portrait",
+      "reason": "Current bytes match the 2026-08-02 generated-avatar seed commit; original generation/provider inputs and applicable rights records are still missing.",
+      "provenanceReferences": [
+        "bf9859a10540be631563fff8e85176aaac45163a",
+        "orrery_v2/internal/transport/http/workforce_avatar_defaults/manifest.json",
+        "git:bf9859a10540be631563fff8e85176aaac45163a:orrery_v2/internal/transport/http/workforce_avatar_defaults/lead-agent.jpg"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "bf9859a10540be631563fff8e85176aaac45163a",
+        "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/lead-agent.jpg",
+        "sha256": "841fd994e55476e9685d5a005a512694ca106a68a4c13fe4505b39ab0f536be9",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "9b5f98c94419e3516ff1e2ba06f6b12bcf7cc4b2",
+      "replacementSource": "orrery_v2/internal/transport/http/workforce_avatar_artwork.go"
+    },
+    {
+      "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/marlon-brando.jpg",
+      "sha256": "99880a218a54cc4559f9ed0926829b8400cd80c57b30d1bc10eb885323d66609",
+      "status": "pending-rights-evidence",
+      "category": "default-agent-portrait",
+      "reason": "Current bytes match the 2026-08-02 generated-avatar seed commit; original generation/provider inputs and applicable rights records are still missing. This is a byte-identical rename of legal-knowledge-agent.jpg, not evidence of an actor photograph.",
+      "provenanceReferences": [
+        "bf9859a10540be631563fff8e85176aaac45163a",
+        "orrery_v2/internal/transport/http/workforce_avatar_defaults/manifest.json",
+        "git:bf9859a10540be631563fff8e85176aaac45163a:orrery_v2/internal/transport/http/workforce_avatar_defaults/legal-knowledge-agent.jpg",
+        "git:01a1689f04182c07116956910f65ad07da14f527:R100 legal-knowledge-agent.jpg -> marlon-brando.jpg"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "bf9859a10540be631563fff8e85176aaac45163a",
+        "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/legal-knowledge-agent.jpg",
+        "sha256": "99880a218a54cc4559f9ed0926829b8400cd80c57b30d1bc10eb885323d66609",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "9b5f98c94419e3516ff1e2ba06f6b12bcf7cc4b2",
+      "replacementSource": "orrery_v2/internal/transport/http/workforce_avatar_artwork.go"
+    },
+    {
+      "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/qa-check-agent.jpg",
+      "sha256": "5d807b06ecc5c95e48beaa781cbcd5f326b29533437daeb87e66072d641305ef",
+      "status": "pending-rights-evidence",
+      "category": "default-agent-portrait",
+      "reason": "Current bytes match the 2026-08-02 generated-avatar seed commit; original generation/provider inputs and applicable rights records are still missing.",
+      "provenanceReferences": [
+        "bf9859a10540be631563fff8e85176aaac45163a",
+        "orrery_v2/internal/transport/http/workforce_avatar_defaults/manifest.json",
+        "git:bf9859a10540be631563fff8e85176aaac45163a:orrery_v2/internal/transport/http/workforce_avatar_defaults/qa-check-agent.jpg"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "bf9859a10540be631563fff8e85176aaac45163a",
+        "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/qa-check-agent.jpg",
+        "sha256": "5d807b06ecc5c95e48beaa781cbcd5f326b29533437daeb87e66072d641305ef",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "9b5f98c94419e3516ff1e2ba06f6b12bcf7cc4b2",
+      "replacementSource": "orrery_v2/internal/transport/http/workforce_avatar_artwork.go"
+    },
+    {
+      "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/qa-plan-agent.jpg",
+      "sha256": "40d00ea547c21e1aece302e3d05d85fa99736b72800d4844642b8581f5c62620",
+      "status": "pending-rights-evidence",
+      "category": "default-agent-portrait",
+      "reason": "Current bytes match the 2026-08-02 generated-avatar seed commit; original generation/provider inputs and applicable rights records are still missing.",
+      "provenanceReferences": [
+        "bf9859a10540be631563fff8e85176aaac45163a",
+        "orrery_v2/internal/transport/http/workforce_avatar_defaults/manifest.json",
+        "git:bf9859a10540be631563fff8e85176aaac45163a:orrery_v2/internal/transport/http/workforce_avatar_defaults/qa-plan-agent.jpg"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "bf9859a10540be631563fff8e85176aaac45163a",
+        "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/qa-plan-agent.jpg",
+        "sha256": "40d00ea547c21e1aece302e3d05d85fa99736b72800d4844642b8581f5c62620",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "9b5f98c94419e3516ff1e2ba06f6b12bcf7cc4b2",
+      "replacementSource": "orrery_v2/internal/transport/http/workforce_avatar_artwork.go"
+    },
+    {
+      "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/website-knowledge-curator.jpg",
+      "sha256": "ab3a8b418e32e65b8734b76107ac034dbf040f25d78162989fbbf493137a07a5",
+      "status": "pending-rights-evidence",
+      "category": "default-agent-portrait",
+      "reason": "Current bytes match the 2026-08-02 generated-avatar seed commit; original generation/provider inputs and applicable rights records are still missing.",
+      "provenanceReferences": [
+        "bf9859a10540be631563fff8e85176aaac45163a",
+        "orrery_v2/internal/transport/http/workforce_avatar_defaults/manifest.json",
+        "git:bf9859a10540be631563fff8e85176aaac45163a:orrery_v2/internal/transport/http/workforce_avatar_defaults/website-knowledge-curator.jpg"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "bf9859a10540be631563fff8e85176aaac45163a",
+        "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/website-knowledge-curator.jpg",
+        "sha256": "ab3a8b418e32e65b8734b76107ac034dbf040f25d78162989fbbf493137a07a5",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "9b5f98c94419e3516ff1e2ba06f6b12bcf7cc4b2",
+      "replacementSource": "orrery_v2/internal/transport/http/workforce_avatar_artwork.go"
+    },
+    {
+      "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/website-receptionist-customer.jpg",
+      "sha256": "f8cb9fc1aba26c1da74fe49a401841dac9e2ff96db1f9538d97974f7154f3fad",
+      "status": "pending-rights-evidence",
+      "category": "default-agent-portrait",
+      "reason": "Current bytes match the 2026-08-02 generated-avatar seed commit; original generation/provider inputs and applicable rights records are still missing.",
+      "provenanceReferences": [
+        "bf9859a10540be631563fff8e85176aaac45163a",
+        "orrery_v2/internal/transport/http/workforce_avatar_defaults/manifest.json",
+        "git:bf9859a10540be631563fff8e85176aaac45163a:orrery_v2/internal/transport/http/workforce_avatar_defaults/website-receptionist-customer.jpg"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "bf9859a10540be631563fff8e85176aaac45163a",
+        "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/website-receptionist-customer.jpg",
+        "sha256": "f8cb9fc1aba26c1da74fe49a401841dac9e2ff96db1f9538d97974f7154f3fad",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "9b5f98c94419e3516ff1e2ba06f6b12bcf7cc4b2",
+      "replacementSource": "orrery_v2/internal/transport/http/workforce_avatar_artwork.go"
+    },
+    {
+      "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/website-receptionist-public.jpg",
+      "sha256": "57f818caa835b6402e839641b8e301ff96535a5978d9c5b120e9d168666a6469",
+      "status": "pending-rights-evidence",
+      "category": "default-agent-portrait",
+      "reason": "Current bytes match the 2026-08-02 generated-avatar seed commit; original generation/provider inputs and applicable rights records are still missing.",
+      "provenanceReferences": [
+        "bf9859a10540be631563fff8e85176aaac45163a",
+        "orrery_v2/internal/transport/http/workforce_avatar_defaults/manifest.json",
+        "git:bf9859a10540be631563fff8e85176aaac45163a:orrery_v2/internal/transport/http/workforce_avatar_defaults/website-receptionist-public.jpg"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "bf9859a10540be631563fff8e85176aaac45163a",
+        "path": "orrery_v2/internal/transport/http/workforce_avatar_defaults/website-receptionist-public.jpg",
+        "sha256": "57f818caa835b6402e839641b8e301ff96535a5978d9c5b120e9d168666a6469",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "9b5f98c94419e3516ff1e2ba06f6b12bcf7cc4b2",
+      "replacementSource": "orrery_v2/internal/transport/http/workforce_avatar_artwork.go"
+    },
+    {
+      "path": "orrery_v2/docs/evidence/marketing-material-approval.png",
+      "sha256": "b3dbe7bb63016d4138e49caa8bd2b5cdf1ab09e6d489d63b06d1d46ffabc1423",
+      "status": "pending-rights-evidence",
+      "category": "documentation-image",
+      "reason": "Bytes match the September 9 screenshot commit; Codex history records copying the isolated UI verification capture into this path. Original capture inputs and all visible artwork still require per-file publication review.",
+      "provenanceReferences": [
+        "git:f20c910c01b05323b9686d0e9d7b20aabbd54f1f:orrery_v2/docs/evidence/marketing-material-approval.png"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "f20c910c01b05323b9686d0e9d7b20aabbd54f1f",
+        "path": "orrery_v2/docs/evidence/marketing-material-approval.png",
+        "sha256": "b3dbe7bb63016d4138e49caa8bd2b5cdf1ab09e6d489d63b06d1d46ffabc1423",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "7b3b326c83da89112ca9e139acf216ac35684a11",
+      "replacementSource": "orrery_v2/docs/evidence/README.md"
+    },
+    {
+      "path": "orrery_v2/docs/images/orrery-functional-architecture-v2.png",
+      "sha256": "90c9c3d087d182a0ac9f16093acfae1ad381f85d0b571f59b90ea09988d24361",
+      "status": "pending-rights-evidence",
+      "category": "documentation-image",
+      "reason": "Bytes match the July 21 rebrand snapshot, and the architecture draft retains diagram prompts. Per-image original generation/provider and publication evidence is still missing.",
+      "provenanceReferences": [
+        "git:1299f48b03da3d658805468c4e7a554648e48bfe:orrery_v2/docs/images/orrery-functional-architecture-v2.png",
+        "orrery_v2/docs/architecture-diagrams-draft.md"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "1299f48b03da3d658805468c4e7a554648e48bfe",
+        "path": "orrery_v2/docs/images/orrery-functional-architecture-v2.png",
+        "sha256": "90c9c3d087d182a0ac9f16093acfae1ad381f85d0b571f59b90ea09988d24361",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "7b3b326c83da89112ca9e139acf216ac35684a11",
+      "replacementSource": "orrery_v2/docs/web-api-architecture.md"
+    },
+    {
+      "path": "orrery_v2/docs/images/orrery-functional-architecture-v3.png",
+      "sha256": "42739d00076a5590c9b9e6a5c2dbe5e3694daa37827c02af58049cc959bb4d4e",
+      "status": "pending-rights-evidence",
+      "category": "documentation-image",
+      "reason": "Bytes match the July 21 rebrand snapshot, and the architecture draft retains diagram prompts. Per-image original generation/provider and publication evidence is still missing.",
+      "provenanceReferences": [
+        "git:1299f48b03da3d658805468c4e7a554648e48bfe:orrery_v2/docs/images/orrery-functional-architecture-v3.png",
+        "orrery_v2/docs/architecture-diagrams-draft.md"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "1299f48b03da3d658805468c4e7a554648e48bfe",
+        "path": "orrery_v2/docs/images/orrery-functional-architecture-v3.png",
+        "sha256": "42739d00076a5590c9b9e6a5c2dbe5e3694daa37827c02af58049cc959bb4d4e",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "7b3b326c83da89112ca9e139acf216ac35684a11",
+      "replacementSource": "orrery_v2/docs/web-api-architecture.md"
+    },
+    {
+      "path": "orrery_v2/docs/images/orrery-functional-architecture.png",
+      "sha256": "db8f46f3d3c74701c1977e6c3bf78e369ca7c790d3cdd272c0eb7d281e8c8ca1",
+      "status": "pending-rights-evidence",
+      "category": "documentation-image",
+      "reason": "Bytes match the July 21 rebrand snapshot, and the architecture draft retains diagram prompts. Per-image original generation/provider and publication evidence is still missing.",
+      "provenanceReferences": [
+        "git:1299f48b03da3d658805468c4e7a554648e48bfe:orrery_v2/docs/images/orrery-functional-architecture.png",
+        "orrery_v2/docs/architecture-diagrams-draft.md"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "1299f48b03da3d658805468c4e7a554648e48bfe",
+        "path": "orrery_v2/docs/images/orrery-functional-architecture.png",
+        "sha256": "db8f46f3d3c74701c1977e6c3bf78e369ca7c790d3cdd272c0eb7d281e8c8ca1",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "7b3b326c83da89112ca9e139acf216ac35684a11",
+      "replacementSource": "orrery_v2/docs/web-api-architecture.md"
+    },
+    {
+      "path": "orrery_v2/docs/images/orrery-technical-architecture-v2.png",
+      "sha256": "4822d54862fdc00207064404bccd346b8955b984fe5ed77dc7146d7626daca74",
+      "status": "pending-rights-evidence",
+      "category": "documentation-image",
+      "reason": "Bytes match the July 21 rebrand snapshot, and the architecture draft retains diagram prompts. Per-image original generation/provider and publication evidence is still missing.",
+      "provenanceReferences": [
+        "git:1299f48b03da3d658805468c4e7a554648e48bfe:orrery_v2/docs/images/orrery-technical-architecture-v2.png",
+        "orrery_v2/docs/architecture-diagrams-draft.md"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "1299f48b03da3d658805468c4e7a554648e48bfe",
+        "path": "orrery_v2/docs/images/orrery-technical-architecture-v2.png",
+        "sha256": "4822d54862fdc00207064404bccd346b8955b984fe5ed77dc7146d7626daca74",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "7b3b326c83da89112ca9e139acf216ac35684a11",
+      "replacementSource": "orrery_v2/docs/web-api-architecture.md"
+    },
+    {
+      "path": "orrery_v2/docs/images/orrery-technical-architecture-v3.png",
+      "sha256": "d1701148dbcd0440ae46346da65820d146b2799bc3dd948259a95768a0b257eb",
+      "status": "pending-rights-evidence",
+      "category": "documentation-image",
+      "reason": "Bytes match the July 21 rebrand snapshot, and the architecture draft retains diagram prompts. Per-image original generation/provider and publication evidence is still missing.",
+      "provenanceReferences": [
+        "git:1299f48b03da3d658805468c4e7a554648e48bfe:orrery_v2/docs/images/orrery-technical-architecture-v3.png",
+        "orrery_v2/docs/architecture-diagrams-draft.md"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "1299f48b03da3d658805468c4e7a554648e48bfe",
+        "path": "orrery_v2/docs/images/orrery-technical-architecture-v3.png",
+        "sha256": "d1701148dbcd0440ae46346da65820d146b2799bc3dd948259a95768a0b257eb",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "7b3b326c83da89112ca9e139acf216ac35684a11",
+      "replacementSource": "orrery_v2/docs/web-api-architecture.md"
+    },
+    {
+      "path": "orrery_v2/docs/images/orrery-technical-architecture.png",
+      "sha256": "d470b48f7fd2201e802f57cfabd255f2e8227afa7dc2a93228d35ba9c81677ed",
+      "status": "pending-rights-evidence",
+      "category": "documentation-image",
+      "reason": "Bytes match the July 21 rebrand snapshot, and the architecture draft retains diagram prompts. Per-image original generation/provider and publication evidence is still missing.",
+      "provenanceReferences": [
+        "git:1299f48b03da3d658805468c4e7a554648e48bfe:orrery_v2/docs/images/orrery-technical-architecture.png",
+        "orrery_v2/docs/architecture-diagrams-draft.md"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "1299f48b03da3d658805468c4e7a554648e48bfe",
+        "path": "orrery_v2/docs/images/orrery-technical-architecture.png",
+        "sha256": "d470b48f7fd2201e802f57cfabd255f2e8227afa7dc2a93228d35ba9c81677ed",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "7b3b326c83da89112ca9e139acf216ac35684a11",
+      "replacementSource": "orrery_v2/docs/web-api-architecture.md"
+    },
+    {
+      "path": "orrery_v2/docs/screenshots/image-generation-settings/image-settings-1440.png",
+      "sha256": "dade3fadfffb6c655a7eb056d3bf17571b93449bed8dd9fd7252bd2f53afa5e6",
+      "status": "pending-rights-evidence",
+      "category": "documentation-image",
+      "reason": "The committed browser fixture creates screenshots at matching 1440px/390px viewports. The screenshot also reproduces pending-rights registration artwork; creation provenance alone does not close embedded artwork rights.",
+      "provenanceReferences": [
+        "git:17dd1879e9e2c8d83b82aed8c4c3abde6696d403:orrery_v2/docs/screenshots/image-generation-settings/image-settings-1440.png",
+        "orrery_v2/web/e2e/image-generation-settings.spec.ts"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "17dd1879e9e2c8d83b82aed8c4c3abde6696d403",
+        "path": "orrery_v2/docs/screenshots/image-generation-settings/image-settings-1440.png",
+        "sha256": "dade3fadfffb6c655a7eb056d3bf17571b93449bed8dd9fd7252bd2f53afa5e6",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "embeddedPendingAssets": [
+        "orrery_v2/web/static/beian-police.png",
+        "orrery_v2/web/static/images/selection-wash.jpg"
+      ],
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "7b3b326c83da89112ca9e139acf216ac35684a11",
+      "replacementSource": "orrery_v2/docs/image-generation-settings.md"
+    },
+    {
+      "path": "orrery_v2/docs/screenshots/image-generation-settings/image-settings-390.png",
+      "sha256": "4694166fb8d1937bacdf590c8fca9adba1d3984e31dce2cf5dd33cf77310a33d",
+      "status": "pending-rights-evidence",
+      "category": "documentation-image",
+      "reason": "The committed browser fixture creates screenshots at matching 1440px/390px viewports. The screenshot also reproduces pending-rights registration artwork; creation provenance alone does not close embedded artwork rights.",
+      "provenanceReferences": [
+        "git:17dd1879e9e2c8d83b82aed8c4c3abde6696d403:orrery_v2/docs/screenshots/image-generation-settings/image-settings-390.png",
+        "orrery_v2/web/e2e/image-generation-settings.spec.ts"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "17dd1879e9e2c8d83b82aed8c4c3abde6696d403",
+        "path": "orrery_v2/docs/screenshots/image-generation-settings/image-settings-390.png",
+        "sha256": "4694166fb8d1937bacdf590c8fca9adba1d3984e31dce2cf5dd33cf77310a33d",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "embeddedPendingAssets": [
+        "orrery_v2/web/static/beian-police.png"
+      ],
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "7b3b326c83da89112ca9e139acf216ac35684a11",
+      "replacementSource": "orrery_v2/docs/image-generation-settings.md"
+    },
+    {
+      "path": "orrery_v2/minvia.png",
+      "sha256": "7f77da1f503f62682752ad48a3b3a0524b7e1680baa8247b54c44f7f5940d04f",
+      "status": "pending-rights-evidence",
+      "category": "project-brand-image",
+      "reason": "Both current copies match ideado_v2/minvia.png at the 2026-06-21 commit. The earlier June 13 artwork differs; original supplied artwork and redistribution scope remain unverified.",
+      "provenanceReferences": [
+        "git:719c9168b40e5971af157c5327796eaf7a3f112b:ideado_v2/minvia.png"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "719c9168b40e5971af157c5327796eaf7a3f112b",
+        "path": "ideado_v2/minvia.png",
+        "sha256": "7f77da1f503f62682752ad48a3b3a0524b7e1680baa8247b54c44f7f5940d04f",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "7b3b326c83da89112ca9e139acf216ac35684a11",
+      "replacementSource": "orrery_v2/web/src/routes/login/+page.svelte",
+      "replacementSources": ["orrery_v2/web/src/routes/login/+page.svelte", "orrery_v2/web/src/routes/oauth2/consent/+page.svelte"]
+    },
+    {
+      "path": "orrery_v2/web/static/minvia.png",
+      "sha256": "7f77da1f503f62682752ad48a3b3a0524b7e1680baa8247b54c44f7f5940d04f",
+      "status": "pending-rights-evidence",
+      "category": "project-brand-image",
+      "reason": "Both current copies match ideado_v2/minvia.png at the 2026-06-21 commit. The earlier June 13 artwork differs; original supplied artwork and redistribution scope remain unverified.",
+      "provenanceReferences": [
+        "git:719c9168b40e5971af157c5327796eaf7a3f112b:ideado_v2/minvia.png"
+      ],
+      "nextAction": "Recover original source and applicable grant, or replace with an original asset while preserving behavior.",
+      "repositoryCorrespondence": {
+        "commit": "719c9168b40e5971af157c5327796eaf7a3f112b",
+        "path": "ideado_v2/minvia.png",
+        "sha256": "7f77da1f503f62682752ad48a3b3a0524b7e1680baa8247b54c44f7f5940d04f",
+        "byteIdentical": true,
+        "scope": "Historical repository blob correspondence; not a creator attestation or redistribution grant."
+      },
+      "disposition": "removed-from-current-web-api-source",
+      "removalDate": "2026-10-18",
+      "removalBaseCommit": "7b3b326c83da89112ca9e139acf216ac35684a11",
+      "replacementSource": "orrery_v2/web/src/routes/login/+page.svelte",
+      "replacementSources": ["orrery_v2/web/src/routes/login/+page.svelte", "orrery_v2/web/src/routes/oauth2/consent/+page.svelte"]
+    }
+  ]
+}

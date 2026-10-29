@@ -1,0 +1,7 @@
+SPDX-FileCopyrightText: 2025 AionUi (aionui.com)
+SPDX-FileCopyrightText: 2026 Minvia (modifications)
+SPDX-License-Identifier: Apache-2.0
+
+Source: https://github.com/iOfficeAI/AionCore/blob/76f5554286ba0b6d33fb74d5c2bb2b3b0b83100d/crates/aionui-session/tests/fixtures/claude_write_tool_turn.ndjson
+Modifications: CRLF line endings; em dash replaced with ASCII hyphen.
+Full license: compliance/licenses/aionui-session-76f5554-Apache-2.0.txt

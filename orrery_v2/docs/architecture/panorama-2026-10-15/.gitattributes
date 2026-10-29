@@ -1,0 +1,8 @@
+# Preserve validated Archify artifacts and editable specifications byte for byte.
+*.html -text
+*.candidate.json -text
+*.txt -text
+# Keep the generator's whitespace-only template lines and collapse its bundled code in reviews.
+features.html whitespace=-blank-at-eol linguist-generated=true
+data.html whitespace=-blank-at-eol linguist-generated=true
+rsi.html whitespace=-blank-at-eol linguist-generated=true

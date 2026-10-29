@@ -1,0 +1,65 @@
+services:
+  postgres:
+    image: postgres:17-bookworm
+    environment:
+      POSTGRES_USER: orrery
+      POSTGRES_PASSWORD: ${ORRERY_POSTGRES_PASSWORD:?ORRERY_POSTGRES_PASSWORD is required}
+      POSTGRES_DB: orrery
+    volumes:
+      - orrery-postgres-data:/var/lib/postgresql/data
+      - ./scripts/postgres-init-orrery.sh:/docker-entrypoint-initdb.d/10-init-orrery.sh:ro
+    networks:
+      default:
+        aliases:
+          - orrery-postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  orrery-api:
+    image: ${ORRERY_API_IMAGE:?load deploy/releases/local.env or a production release manifest}
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+      args:
+        GO_VERSION: ${GO_VERSION:?load config/build.env}
+        APT_MIRROR: ${APT_MIRROR:?load config/build.env}
+        DEBIAN_SECURITY_MIRROR: ${DEBIAN_SECURITY_MIRROR:?load config/build.env}
+        GOPROXY: ${GOPROXY:?load config/build.env}
+        NODE_VERSION: ${RUNTIME_NODE_VERSION:?load config/build.env}
+        NODE_DIST_MIRROR: ${NODE_DIST_MIRROR:?load config/build.env}
+        NPM_REGISTRY: ${NPM_REGISTRY:?load config/build.env}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      ORRERY_CONFIG: /etc/orrery/orrery.yaml
+      ORRERY_DATABASE_PASSWORD: ${ORRERY_POSTGRES_PASSWORD:?ORRERY_POSTGRES_PASSWORD is required}
+      ORRERY_BOOTSTRAP_SUPERADMIN_PASSWORD: ${ORRERY_BOOTSTRAP_SUPERADMIN_PASSWORD:?ORRERY_BOOTSTRAP_SUPERADMIN_PASSWORD is required}
+      ORRERY_SECRET_KNOWLEDGE_PAGEINDEX: ${ORRERY_SECRET_KNOWLEDGE_PAGEINDEX:-}
+      ORRERY_SECRET_ONTOLOGY_CURSOR_KEY_V1: ${ORRERY_SECRET_ONTOLOGY_CURSOR_KEY_V1:?ORRERY_SECRET_ONTOLOGY_CURSOR_KEY_V1 is required}
+      ORRERY_SECRET_ONTOLOGY_CURSOR_KEY_V0: ${ORRERY_SECRET_ONTOLOGY_CURSOR_KEY_V0:-}
+      ORRERY_GATEWAY_SECRET_KEY: ${ORRERY_GATEWAY_SECRET_KEY:-}
+      ORRERY_GATEWAY_SECRET_KEY_FILE: ${ORRERY_GATEWAY_SECRET_KEY_FILE:-/var/lib/orrery/secrets/gateway-config-key}
+      ORRERY_RUNTIME_MCP_TOKEN: ${ORRERY_RUNTIME_MCP_TOKEN:-}
+      ORRERY_RUNTIME_MCP_AUTHORIZATION: ${ORRERY_RUNTIME_MCP_AUTHORIZATION:-}
+      ORRERY_AUTH_LOCAL_MFA_TOTP_SECRET: ${ORRERY_AUTH_LOCAL_MFA_TOTP_SECRET:-}
+      ORRERY_FEISHU_APP_ID: ${ORRERY_FEISHU_APP_ID:-}
+      ORRERY_FEISHU_APP_SECRET: ${ORRERY_FEISHU_APP_SECRET:-}
+      ORRERY_FEISHU_STATE_SECRET: ${ORRERY_FEISHU_STATE_SECRET:-}
+      ORRERY_HYDRA_ADMIN_TOKEN: ${ORRERY_HYDRA_ADMIN_TOKEN:-}
+      ORRERY_OIDC_CLIENT_SECRET: ${ORRERY_OIDC_CLIENT_SECRET:-}
+      ORRERY_AUTHZ_OPENFGA_TOKEN: ${ORRERY_AUTHZ_OPENFGA_TOKEN:-}
+      ORRERY_INTERNAL_VIEWER_TOKEN: ${ORRERY_INTERNAL_VIEWER_TOKEN:-}
+      ORRERY_INTERNAL_VIEWER_AUTHORIZATION: ${ORRERY_INTERNAL_VIEWER_AUTHORIZATION:-}
+    ports:
+      - "${ORRERY_API_BIND:-127.0.0.1}:${ORRERY_API_PORT:-8080}:8080"
+    volumes:
+      - orrery-api-data:/var/lib/orrery
+      - ./config/orrery.production.yaml:/etc/orrery/orrery.yaml:ro
+
+volumes:
+  orrery-postgres-data:
+  orrery-api-data:

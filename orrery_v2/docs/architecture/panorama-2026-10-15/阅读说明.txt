@@ -1,0 +1,18 @@
+Orrery 全景架构（2026-10-15）
+
+打开 orrery-panorama.html 查看完整交互版。
+包含四个视图：全景总览、功能地图、应用与数据、Ontology 与 RSI。
+features.html、data.html、rsi.html 可分别打开并使用 Archify 的导出功能。
+HTML 文件须保留在同一文件夹，页签才能加载对应图形。
+
+Orrery-全景架构.pdf 是分层总览的静态打印版。
+orrery-overview.png 是总览预览图。
+三个 candidate.json 是可编辑的 Archify 图形源文件。
+
+范围包含用户与组织、接入入口、业务功能、应用服务、数据资产、存储与基础设施。
+Ontology、RSI、定时任务、知识库、记忆库、审批 HIL、MCP、Skills、通知和审计已展开。
+源码引用及范围说明见 HTML 页脚和图形中的节点来源。
+本版整合不同分支的源码能力；不能据此判断各功能已在同一线上版本中部署。
+RSI 已实现的受控版本能力与仍待建设的完整自动改进闭环分别标明。
+
+图形生成项目：https://github.com/tt-a1i/archify

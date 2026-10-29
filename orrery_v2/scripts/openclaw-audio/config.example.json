@@ -1,0 +1,7 @@
+{
+  "tts": {
+    "provider": "microsoft",
+    "defaultVoice": "zh-CN-XiaoxiaoNeural",
+    "voices": ["zh-CN-XiaoxiaoNeural", "zh-CN-YunxiNeural"]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$id": "https://schemas.orrery.local/identity.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Orrery identity",
+  "type": "object",
+  "properties": {
+    "traits": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "minLength": 1,
+          "ory.sh/kratos": {
+            "credentials": {
+              "password": {
+                "identifier": true
+              }
+            }
+          }
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "agent_profile_id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "person_id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "person_revision": {
+          "type": "integer",
+          "minimum": 1,
+          "readOnly": true
+        }
+      },
+      "required": ["username"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["traits"],
+  "additionalProperties": false
+}

@@ -1,0 +1,152 @@
+schema_version: 1
+profile: development
+environment: development
+development:
+  allow_owner_self_approval: false
+  workspace_root: ./data/managed-workspaces
+  workspace_lease_ttl: 2h
+  workspace_retention: 336h
+  git_committer_name: Orrery Git Service
+  git_committer_email: orrery@localhost
+  git_signing_key_ref: ""
+  git_signing_format: ssh
+  require_signed_commits: true
+  max_changed_file_bytes: 5242880
+server:
+  addr: 127.0.0.1:8080
+  trusted_proxy_cidrs:
+    - 127.0.0.1/8
+    - ::1/128
+  trusted_viewer_headers_enabled: false
+device_delivery:
+  public_origin: ""
+  default_tenant_id: global
+  max_artifact_bytes: 10485760
+paths:
+  base_dir: ../.dev
+database:
+  password_env: ORRERY_DATABASE_PASSWORD
+  default_url: "postgres://orrery@127.0.0.1:5432/orrery?sslmode=disable"
+  urls:
+    core: "postgres://orrery@127.0.0.1:5432/orrery?sslmode=disable"
+    audit: "postgres://orrery@127.0.0.1:5432/orrery?sslmode=disable"
+    events: "postgres://orrery@127.0.0.1:5432/orrery?sslmode=disable"
+    jobs: "postgres://orrery@127.0.0.1:5432/orrery?sslmode=disable"
+    runtime: "postgres://orrery@127.0.0.1:5432/orrery?sslmode=disable"
+    observability: "postgres://orrery@127.0.0.1:5432/orrery?sslmode=disable"
+runtime:
+  execenv:
+    root: ./data/execenv
+  managed:
+    enabled: false
+  mcp:
+    url: http://127.0.0.1:8080/mcp
+    server_name: orrery
+    transport: streamable-http
+integrations:
+  legal:
+    mcp_url: http://127.0.0.1:8092/mcp
+  people:
+    enabled: false
+bootstrap:
+  pageindex:
+    api_url: http://127.0.0.1:8091
+    api_key_ref: secret://knowledge/pageindex
+  gateway:
+    legacy_config: ./config/gateway.yaml
+filestore:
+  backend: local
+  root: ./data/artifacts
+  base_url: ""
+logging:
+  level: info
+  console: true
+  file: ./data/logs/platform.jsonl
+health:
+  readiness_cache_ttl: 1s
+queue:
+  claim_ttl: 30s
+  max_attempts: 3
+  sweep_batch_size: 100
+  worker_concurrency: 4
+mission:
+  agent:
+    timeout: 60m
+lock:
+  default_ttl: 30s
+liveness:
+  heartbeat_ttl: 1m
+metrics:
+  addr: ""
+  buffer_size: 1024
+  warn_interval: 1m
+secret:
+  root: ./secrets
+sweeper:
+  timeout: 30s
+  batch_size: 100
+tracing:
+  buffer_size: 1024
+resource:
+  mcp_registry_url: ""
+auth:
+  require_https: false
+  local:
+    enabled: false
+    superadmin_mfa_enabled: false
+  identity:
+    mode: standalone
+    auto_link_enabled: true
+  kratos:
+    public_url: http://127.0.0.1:4433
+    callback_url: http://127.0.0.1:5178/api/auth/identity/kratos/callback
+    display_name: Kratos
+    session_cookie_names: ory_kratos_session
+    admin_url: http://127.0.0.1:4434
+    schema_id: default
+    feishu_provider_id: feishu
+  feishu:
+    app_id: ""
+    callback_url: ""
+    binding_callback_url: ""
+    allowed_tenant_key: ""
+    auto_provision_enabled: false
+    directory_sync_enabled: false
+  oidc:
+    introspection_url: ""
+    client_id: ""
+    issuer: ""
+    audience: orrery-api
+    provider: ""
+  hydra:
+    admin_url: ""
+    remember_for: ""
+    client_sync_enabled: false
+authz:
+  mode: ""
+  role_scope:
+    mode: authoritative
+  openfga:
+    api_url: ""
+    store_id: ""
+    authorization_model_id: ""
+    timeout: ""
+    ignore_duplicate_writes: true
+    enforce_ready: false
+    enforce_object_types: ""
+    fail_open_dev: false
+  relation_backfill:
+    mode: ""
+discussion:
+  agent_id: ""
+  agent:
+    runtime_kind: ""
+    runtime_config_ref: ""
+    runtime_config: {}
+    system_prompt: ""
+    model: ""
+    working_directory: ""
+    timeout: ""
+agent_defaults:
+  runtime_kind: ""
+  runtime_config_ref: ""

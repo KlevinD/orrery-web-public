@@ -1,0 +1,39 @@
+{
+  "schema_version": 1, "diagram_type": "architecture",
+  "meta": {"title": "Orrery 应用与数据资产架构", "output": ".archify/architecture-orrery-panorama-20261015-114814/data.html", "locale": "zh-CN", "quality_profile": "showcase", "repository": {"url": "local-only", "revision": "redacted", "link_mode": "local-only"}},
+  "components": [
+    {"id": "identity", "type": "security", "label": "身份与组织服务", "sublabel": "用户 · Profile · 组织 · 角色", "pos": [40, 40], "size": [205, 80], "sources": [{"path": "orrery_v2/cmd/server/main.go", "line": 83, "end_line": 123}]},
+    {"id": "identity-data", "type": "database", "label": "用户与权限数据", "sublabel": "账号 · 成员归属 · 角色与资源关系", "pos": [40, 220], "size": [205, 80], "sources": [{"path": "orrery_v2/cmd/server/main.go", "line": 83, "end_line": 123}]},
+    {"id": "collaboration", "type": "backend", "label": "协作与任务服务", "sublabel": "聊天 · Mission · Todo · 责任", "pos": [340, 40], "size": [205, 80], "sources": [{"path": "orrery_v2/cmd/server/main.go", "line": 363, "end_line": 409}, {"path": "orrery_v2/cmd/server/main.go", "line": 477, "end_line": 500}]},
+    {"id": "collaboration-data", "type": "database", "label": "任务与会话数据", "sublabel": "Mission · Task · 消息 · 交付证据", "pos": [340, 220], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/mission/task/contract.go", "line": 16, "end_line": 70}, {"path": "orrery_v2/cmd/server/main.go", "line": 477, "end_line": 490}]},
+    {"id": "scheduler", "type": "backend", "label": "定时调度与执行", "sublabel": "计划 · 分发 · Agent · 重试", "pos": [640, 40], "size": [205, 80], "sources": [{"path": "orrery_v2/cmd/server/production_scheduler_dispatch.go", "line": 20, "end_line": 100}]},
+    {"id": "scheduler-data", "type": "database", "label": "调度与运行数据", "sublabel": "ScheduledTask / Run · Job · 租约", "pos": [640, 220], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/app/scheduler/repository.go", "line": 13, "end_line": 67}, {"path": "orrery_v2/cmd/server/production_scheduler_dispatch.go", "line": 75, "end_line": 100}]},
+    {"id": "resource", "type": "backend", "label": "资源与 RSI 服务", "sublabel": "MCP · Skills · 受控版本治理", "pos": [940, 40], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/app/resourceadmin/skill_rsi_supervisor.go", "line": 46, "end_line": 124}, {"path": "orrery_v2/internal/app/resourceadmin/command_skill_rsi.go", "line": 60, "end_line": 116}]},
+    {"id": "resource-data", "type": "database", "label": "版本与评估账本", "sublabel": "定义 · 包摘要 · 候选 · 评估引用", "pos": [940, 220], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/app/resourceadmin/skill_version_evaluation.go", "line": 18, "end_line": 90}, {"path": "orrery_v2/docs/rsi/2026-10-14-publication-consistency.md", "line": 5, "end_line": 25}]},
+    {"id": "knowledge", "type": "backend", "label": "知识入库与检索", "sublabel": "解析 · 索引 · 检索 · 元数据", "pos": [40, 440], "size": [205, 80], "sources": [{"path": "orrery_v2/cmd/server/main.go", "line": 247, "end_line": 308}]},
+    {"id": "knowledge-data", "type": "database", "label": "知识库与文档资产", "sublabel": "KB / Document · 文件 · 检索索引", "pos": [40, 620], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/knowledge/core/types.go", "line": 73, "end_line": 157}, {"path": "orrery_v2/cmd/server/main.go", "line": 271, "end_line": 305}]},
+    {"id": "memory", "type": "backend", "label": "记忆沉淀与蒸馏", "sublabel": "日记 · 候选 · 经验 · 审核", "pos": [340, 440], "size": [205, 80], "sources": [{"path": "orrery_v2/cmd/server/main.go", "line": 417, "end_line": 452}]},
+    {"id": "memory-data", "type": "database", "label": "记忆与候选血缘", "sublabel": "MemoryRecord / Candidate · 证据", "pos": [340, 620], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/memory/core/types.go", "line": 57, "end_line": 105}, {"path": "orrery_v2/internal/memory/core/candidate.go", "line": 31, "end_line": 72}]},
+    {"id": "ontology", "type": "backend", "label": "Ontology 投影治理", "sublabel": "规则映射 · 模型 · 动作 · 评估", "pos": [640, 440], "size": [205, 80], "sources": [{"path": "orrery_v2/cmd/server/main.go", "line": 263, "end_line": 278}, {"path": "orrery_v2/cmd/server/main.go", "line": 417, "end_line": 435}, {"path": "orrery_v2/cmd/server/main.go", "line": 747, "end_line": 756}]},
+    {"id": "graph-data", "type": "database", "label": "本体对象关系与证据", "sublabel": "Object · Link · Fact · Evidence", "pos": [640, 620], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/app/contextgraph/types.go", "line": 15, "end_line": 79}, {"path": "orrery_v2/internal/app/contextgraph/platform_store.go", "line": 15, "end_line": 65}]},
+    {"id": "audit", "type": "backend", "label": "审计与通知服务", "sublabel": "操作归档 · 可靠转存 · 通知", "pos": [940, 440], "size": [205, 80], "sources": [{"path": "orrery_v2/cmd/server/production_skill_audit.go", "line": 14, "end_line": 26}, {"path": "orrery_v2/cmd/server/main.go", "line": 757, "end_line": 783}]},
+    {"id": "audit-data", "type": "database", "label": "审计与待投递记录", "sublabel": "审计事件 · Outbox · 渠道回执", "pos": [940, 620], "size": [205, 80], "sources": [{"path": "orrery_v2/docs/rsi/2026-10-14-publication-consistency.md", "line": 17, "end_line": 25}, {"path": "orrery_v2/cmd/server/main.go", "line": 778, "end_line": 783}]}
+  ],
+  "connections": [
+    {"id": "identity-store", "from": "identity", "to": "identity-data", "label": "管理", "variant": "security"},
+    {"id": "collaboration-store", "from": "collaboration", "to": "collaboration-data", "label": "管理"},
+    {"id": "scheduler-store", "from": "scheduler", "to": "scheduler-data", "label": "持久化"},
+    {"id": "resource-store", "from": "resource", "to": "resource-data", "label": "版本记录"},
+    {"id": "knowledge-store", "from": "knowledge", "to": "knowledge-data", "label": "入库/检索"},
+    {"id": "memory-store", "from": "memory", "to": "memory-data", "label": "沉淀/审核"},
+    {"id": "ontology-store", "from": "ontology", "to": "graph-data", "label": "投影/查询"},
+    {"id": "audit-store", "from": "audit", "to": "audit-data", "label": "可靠转存", "variant": "dashed"},
+    {"id": "knowledge-projection", "from": "knowledge", "to": "ontology", "label": "元数据事件", "variant": "dashed"},
+    {"id": "memory-projection", "from": "memory", "to": "ontology", "label": "元数据", "variant": "dashed"}
+  ],
+  "cards": [
+    {"dot": "cyan", "title": "应用与数据责任", "items": ["每列展示一个应用责任与其管理的数据；数据域不等于独立数据库。", "Web、客户端和渠道通过统一身份访问应用；租户、所有者和资源权限跟随数据对象。"]},
+    {"dot": "violet", "title": "物理存储", "items": ["SQL 通过 core、audit、events、jobs、runtime、observability 六角色路由，驱动按配置选择。", "原始文档、附件、Skill 包快照和轨迹由文件资产层保存；PageIndex 按配置提供检索。", "Ontology 图对象有 SQL Store；不能把它误画成已独立部署的 Neo4j。"]},
+    {"dot": "emerald", "title": "为什么本体可以关联数据", "items": ["知识入库与记忆写入产生元数据事件，由映射规则投影到本体。", "定时任务 Repository 也提供 Task / Run 投影接口；关联需要接线、有效映射与正确归属。", "业务主记录、检索索引与本体投影各有职责；自动关联不代表任意内容都已被语义理解。"]}
+  ]
+}

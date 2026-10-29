@@ -1,0 +1,567 @@
+{
+  "externalRequestsSent": false,
+  "formatVersion": 1,
+  "methodLimitations": [
+    "Archive inspection and source/history searches did not locate complete package-level MIT notice text; a negative search is not a legal determination.",
+    "Registry provenance payload and subject digest were checked; Sigstore signatures, certificate chains and transparency entries were not independently verified.",
+    "Unmerged third-party license suggestions and sibling package licenses are not treated as copyright-holder authorization."
+  ],
+  "originalLicenseGapsClosed": 0,
+  "originalLicenseGapsRemaining": 4,
+  "packages": [
+    {
+      "completeOriginalLicenseLocated": false,
+      "declaredLicense": "MIT",
+      "historyReview": {
+        "completeMITTextLocated": false,
+        "licenseFileHistoryLocated": false,
+        "reachableCommitCount": 49
+      },
+      "inspectedRepositoryHead": "8bb053129bfabe2f6a7d7ed050159d67ebe82829",
+      "name": "is-reference",
+      "publishedArchives": [
+        {
+          "files": 5,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-U97wHNoh4HB1JRjm1x0T1VpKE6CrXx9bHiLac0KZDd5Lk8njmCw4CIzzUAzCqMLXcJQYQzC2xLhcF6cio7YOLw==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "e9f80e87b4633c99cb5d7de5ce57871ab06f810d",
+          "sha256": "15db34f321366fc6693d620ed029cf62c8e1bb938630736c1facc93197b952fe",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-1.0.0.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "1.0.0"
+        },
+        {
+          "files": 5,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-iwqfyLQ+HYDVBux0Cd6B3uYahT7miHSAINmarvMpV07DUAgcxhYrWHRoH0zsAdFJaftrEvtVN4zty8McbWvN+A==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "2d3f2a09876e6bc8649338257abdb3db5edf6fe5",
+          "sha256": "7523278c3d40eb1e6d8cf72f91348bd8c391e1824f7d3bd498a3e490726b96bb",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-1.0.1.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "1.0.1"
+        },
+        {
+          "files": 6,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-h37O/IX4efe56o9k41II1ECMqKwtqHa7/12dLDEzJIFux2x15an4WCDb0/eKdmUgRpLJ3bR0DrzDc7vOrVgRDw==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "50e6ef3f64c361e2c53c0416cdc9420037f2685b",
+          "sha256": "3194821b0e314833cc4c77253334aa2125c49bf38d01be4b9c6f6ef212107e03",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-1.1.0.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "1.1.0"
+        },
+        {
+          "files": 6,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-URlByVARcyP2E2GC7d3Ur702g3vqW391VKCHuF5Goo/M8IT97k4RU/+56OYImwDdX1J/V/VRxECE/wJqB0I2tg==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "bf2cda150a877f04d48caaf8fd70c03d8bed5e2d",
+          "sha256": "f746faff1382a88d2d30172eee970c1dc80b43f40b9a4b1f043a1a9311738b76",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-1.1.1.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "1.1.1"
+        },
+        {
+          "files": 6,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-Kn5g8c7XHKejFOpTf2QN9YjiHHKl5xRj+2uAZf9iM2//nkBNi/NNeB5JMoun28nEaUVHyPUzqzhfRlfAirEjXg==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "01cf91517d21db66a34642287ed6e70d53dcbe5c",
+          "sha256": "84024ba5fccff622fd417e6b23194caee5a5f7172eca350cfeb058de2307bbfe",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-1.1.2.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "1.1.2"
+        },
+        {
+          "files": 6,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-W1iHHv/oyBb2pPxkBxtaewxa1BC58Pn5J0hogyCdefwUIvb6R+TGbAcIa4qPNYLqLhb3EnOgUf2MQkkF76BcKw==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "e99059204b66fdbe09305cfca715a29caa5c8a51",
+          "sha256": "afea220247374cc0929eeffe8ea54672ec6c6fbd0fd1bf677ab95e7eda82655d",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-1.1.3.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "1.1.3"
+        },
+        {
+          "files": 6,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-uJA/CDPO3Tao3GTrxYn6AwkM4nUPJiGGYu5+cB8qbC7WGFlrKZbiRo7SFKxUAEpFUfiHofWCXBUNhvYJMh+6zw==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "3f95849886ddb70256a3e6d062b1a68c13c51427",
+          "sha256": "34ef05be0a76d91e96f8df65275794cc17fd6e2cfe271c855ef1b4ea3c4611f4",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-1.1.4.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "1.1.4"
+        },
+        {
+          "files": 6,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-ZVxq+5TkOx6GQdnoMm2aRdCKADdcrOWXLGzGT+vIA8DMpqEJaRk5AL1bS80zJ2bjHunVmjdzfCt0e4BymIEqKQ==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "d938b0cf85a0df09849417b274f02fb509293599",
+          "sha256": "57690c5c66f733a27480c97dacf5f31203c415f1d610cc2edd1151ca82e6cf77",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-1.2.0.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "1.2.0"
+        },
+        {
+          "files": 6,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-U82MsXXiFIrjCK4otLT+o2NA2Cd2g5MLoOVXUZjIOhLurrRxpEXzI8O0KZHr3IjLvlAH1kTPYSuqer5T9ZVBKQ==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "8b2dac0b371f4bc994fdeaba9eb542d03002d0b7",
+          "sha256": "64378adcaca033879d0a0172497bae4a73f9c07a0e57df1c9469db82f18fafd5",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-1.2.1.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "1.2.1"
+        },
+        {
+          "files": 5,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-kgaeJVq59jasPrhlGK/K61muTjLxMOZf4oMwI4X94nDWqkqLxDWVWrecCSP5c6OR8JF7Yul0X7h59lB1ho0epQ==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "285569ec765c94a1938405e81451789e8e07d086",
+          "sha256": "804b46f620c6238d1165f872532b3a4b84afe9f5685f812f33b888e05b7dd0ef",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-2.0.0.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "2.0.0"
+        },
+        {
+          "files": 5,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-Eo1W3wUoHWoCoVM4GVl/a+K0IgiqE5aIo4kJABFyMum1ZORlPkC+UC357sSQUL5w5QCE5kCC9upl75b7+7CY/Q==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "b1380c03d96ddf7089709781e3208fceb0c92cd6",
+          "sha256": "e703e0c10bfaafb1b27a8e7b5cbe1954d043e7c81e0c589f5b71dfef49b1162c",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-3.0.0.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "3.0.0"
+        },
+        {
+          "files": 4,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-baJJdQLiYaJdvFbJqXrcGv3WU3QCzBlUcI5QhbesIm6/xPsvmO+2CDoi/GMOFBQEQm+PXkwOPrp9KK5ozZsp2w==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "d400f4260f7e55733955e60d361d827eb4d3b831",
+          "sha256": "922c6451ba81d97a466942da3ff9522577c91c9ea797c2be39ffb6433ebd3c63",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-3.0.1.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "3.0.1"
+        },
+        {
+          "files": 5,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-v3rht/LgVcsdZa3O2Nqs+NMowLOxeOm7Ay9+/ARQ2F+qEoANRcqrjAZKGN0v8ymUetZGgkp26LTnGT7H0Qo9Pg==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "154747a01f45cd962404ee89d43837af2cba247c",
+          "sha256": "27a74d27473fd9715b133e6d4cb6c485a7990cf275abcef88056690b53c382d0",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-3.0.2.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "3.0.2"
+        },
+        {
+          "files": 5,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-ixkJoqQvAP88E6wLydLGGqCJsrFUnqoH6HnaczB8XmDH1oaWU+xxdptvikTgaEhtZ53Ky6YXiBuUI2WXLMCwjw==",
+          "licenseNamedFiles": [],
+          "name": "is-reference",
+          "registrySHA1": "9ef7bf9029c70a67b2152da4adf57c23d718910f",
+          "sha256": "ca4b7634e99eb3e05df043785e554fd6c0bd28197dd9722445c4193a660f33f0",
+          "url": "https://registry.npmjs.org/is-reference/-/is-reference-3.0.3.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "3.0.3"
+        }
+      ],
+      "publisherSourceIdentity": {
+        "commit": "8bb053129bfabe2f6a7d7ed050159d67ebe82829",
+        "matchedArchiveFiles": [
+          {
+            "archiveMember": "package/src/index.js",
+            "gitBlob": "23f8714ce3461ecdd91342d9b2598dc8afb6e217",
+            "path": "src/index.js"
+          },
+          {
+            "archiveMember": "package/package.json",
+            "gitBlob": "a9425d9f484fa84a7402cbbfce9cc07eb630a9fa",
+            "path": "package.json"
+          },
+          {
+            "archiveMember": "package/README.md",
+            "gitBlob": "a697c5bcd131a6e895ad76c464d83e899586212d",
+            "path": "README.md"
+          }
+        ],
+        "name": "is-reference",
+        "unmatchedArchiveFiles": [
+          "types/index.d.ts.map",
+          "types/index.d.ts"
+        ],
+        "version": "3.0.3"
+      },
+      "registryLatest": "3.0.3",
+      "rejectedAsAuthority": {
+        "merged": false,
+        "reason": "Third-party proposed notice was not merged or approved by a maintainer in the inspected PR records.",
+        "state": "closed",
+        "url": "https://github.com/Rich-Harris/is-reference/pull/6"
+      },
+      "repository": "Rich-Harris/is-reference",
+      "tracking": {
+        "maintainerNoticeSupplied": false,
+        "state": "open",
+        "url": "https://github.com/Rich-Harris/is-reference/issues/12"
+      },
+      "version": "3.0.3"
+    },
+    {
+      "completeOriginalLicenseLocated": false,
+      "declaredLicense": "MIT",
+      "historyReview": {
+        "completeMITTextLocated": false,
+        "licenseFileHistoryLocated": false,
+        "reachableCommitCount": 19
+      },
+      "inspectedRepositoryHead": "08bc0b7674e53239083988c961057fe59f6265e2",
+      "name": "locate-character",
+      "publishedArchives": [
+        {
+          "files": 4,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-rJD97bdYyakSKXpzs44LEmZLMyrU60xaN5FxmDYMvjpCmfNsqo85qpiDqnpfapqepFEzLwmJMtiH09tWXG4j8A==",
+          "licenseNamedFiles": [],
+          "name": "locate-character",
+          "registrySHA1": "116443c23f29fae28900cac285ba0c71f2693f6d",
+          "sha256": "fe5ad51e07b4f06ea51656e707afaeeb7dc08d171e98677268044106bfc6274f",
+          "url": "https://registry.npmjs.org/locate-character/-/locate-character-1.0.0.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "1.0.0"
+        },
+        {
+          "files": 5,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-41rLE0ASyfDDeDnUKnUnIvBlzWpvbQw/Rdd4jeq7HYTZYPMBT7NA6c9jOc0esG+q8lDDNKrIOOtIIguj4xbdwg==",
+          "licenseNamedFiles": [],
+          "name": "locate-character",
+          "registrySHA1": "8eb94df3a899e53c8d4cee6d13c9effb76213699",
+          "sha256": "388a1ce4f46c9230cef40fc5dd86e426acbb23712afda5e43c72c75ea3dc5a65",
+          "url": "https://registry.npmjs.org/locate-character/-/locate-character-2.0.0.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "2.0.0"
+        },
+        {
+          "files": 5,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-GkNdBbLHKiiiL+Dh5bSrZ9AP67cR2jQCLHCMHP83LmG+kFACOryNPyFE1bRoddDbJeO0XQYrk6kb9U+f1e9H7A==",
+          "licenseNamedFiles": [],
+          "name": "locate-character",
+          "registrySHA1": "48f9599f342daf26f73db32f45941eae37bae391",
+          "sha256": "84df282154a48c9030d84961f2566b24b9edb54e61483050bba29826500689db",
+          "url": "https://registry.npmjs.org/locate-character/-/locate-character-2.0.1.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "2.0.1"
+        },
+        {
+          "files": 5,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-LpVfvNFnEpSZm4r6e/gi+1XZ2GrVXEjs/RrqKNMrYKBieoMsc5GmuAsqn4lacbn8HFyqG0JQMTGplDCqtrVlkQ==",
+          "licenseNamedFiles": [],
+          "name": "locate-character",
+          "registrySHA1": "3df66b253b2bd0e30f283d61b6b15dbce560c28c",
+          "sha256": "c84f8562f598a42e105cb2304a8ba7d6d5ec954c72b648b4c56f00955befbd07",
+          "url": "https://registry.npmjs.org/locate-character/-/locate-character-2.0.2.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "2.0.2"
+        },
+        {
+          "files": 6,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-hUwasl2ZUHxwHz6nRDNxbaErWEqEls2g0MLNQi5xOYd56OUChmtILVbJqyg3GKREEgp8eKbedM4Xvp2Ijqa4qQ==",
+          "licenseNamedFiles": [],
+          "name": "locate-character",
+          "registrySHA1": "85a5aedae26b3536c3e97016af164cdaa3ae5ae1",
+          "sha256": "d4f13f42e67816d51b35120e8e4b3996f28d619a0fa3ebf430191f4dce0b77e9",
+          "url": "https://registry.npmjs.org/locate-character/-/locate-character-2.0.3.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "2.0.3"
+        },
+        {
+          "files": 6,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-zWiGnwcaZMNWx8LA7lISxXeDPkttDM+ipMDTUNs/H3k6r96pQS90rPjU5nIMjFHyIGy2YfLxa9WFDxexs4Jcag==",
+          "licenseNamedFiles": [],
+          "name": "locate-character",
+          "registrySHA1": "afc6c90ad4fb45fc4de02d3b79f1c7a28ae81047",
+          "sha256": "ae8fe5af3e795e9e99b44a4349c89860cc9284fa011000ac8a813a2eb659107b",
+          "url": "https://registry.npmjs.org/locate-character/-/locate-character-2.0.4.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "2.0.4"
+        },
+        {
+          "files": 6,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-n2GmejDXtOPBAZdIiEFy5dJ5N38xBCXLNOtw2WpB9kGh6pnrEuKlwYI+Tkpofc4wDtVXHtoAOJaMRlYG/oYaxg==",
+          "licenseNamedFiles": [],
+          "name": "locate-character",
+          "registrySHA1": "f2d2614d49820ecb3c92d80d193b8db755f74c0f",
+          "sha256": "54d0c6f385fcb08d79c640c3be93c9b580a1cc03b4bd2eb31bf5fa042bec9d24",
+          "url": "https://registry.npmjs.org/locate-character/-/locate-character-2.0.5.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "2.0.5"
+        },
+        {
+          "files": 6,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==",
+          "licenseNamedFiles": [],
+          "name": "locate-character",
+          "registrySHA1": "0305c5b8744f61028ef5d01f444009e00779f974",
+          "sha256": "a7925696d7983216a5d4f0383fbcf87b63a9bb36bca205d40fc4ccba1db12585",
+          "url": "https://registry.npmjs.org/locate-character/-/locate-character-3.0.0.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "3.0.0"
+        }
+      ],
+      "publisherSourceIdentity": {
+        "commit": "4f08a59ec248121f7002abd02ee7b94e8eda06bc",
+        "matchedArchiveFiles": [
+          {
+            "archiveMember": "package/src/index.js",
+            "gitBlob": "23068218a8df0724c047f82ed8651ba571aba98b",
+            "path": "src/index.js"
+          },
+          {
+            "archiveMember": "package/package.json",
+            "gitBlob": "9357ebd4989d1d0d2288e726eda7579284279608",
+            "path": "package.json"
+          },
+          {
+            "archiveMember": "package/README.md",
+            "gitBlob": "8e37bd0d681af8159cb89d3175e72671a635fc84",
+            "path": "README.md"
+          },
+          {
+            "archiveMember": "package/src/types.d.ts",
+            "gitBlob": "71bf2dd46a650465c90ac5eeec13d4b92dd411e6",
+            "path": "src/types.d.ts"
+          }
+        ],
+        "name": "locate-character",
+        "unmatchedArchiveFiles": [
+          "types/index.d.ts.map",
+          "types/index.d.ts"
+        ],
+        "version": "3.0.0"
+      },
+      "registryLatest": "3.0.0",
+      "repository": "Rich-Harris/locate-character",
+      "tracking": {
+        "maintainerNoticeSupplied": false,
+        "state": "open",
+        "url": "https://github.com/Rich-Harris/locate-character/issues/1"
+      },
+      "version": "3.0.0"
+    },
+    {
+      "completeOriginalLicenseLocated": false,
+      "declaredLicense": "MIT",
+      "historyReview": {
+        "completePackageMITTextLocated": false,
+        "packageDirectory": "packages/negotiate",
+        "pathChangeCommitCount": 2
+      },
+      "inspectedRepositoryHead": "84e41e433b422cbe9f073952d8e16052eb9b0251",
+      "name": "proxy-agent-negotiate",
+      "publishedArchives": [
+        {
+          "files": 5,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-0IjzosOUKfkebWPg7leLcQoztEU5PuiexNDd61y27+QaDUPhoorrnvZatWptrGtAGdXzG2EZ4ihc0SL6UNuvfQ==",
+          "licenseNamedFiles": [],
+          "name": "proxy-agent-negotiate",
+          "registrySHA1": "9f86a880d6374d1479850f77c70a41781a2bf924",
+          "sha256": "8076992e32d85ab52cdc4ac5164476a20e65c666fe5163925a65e2a90659070c",
+          "url": "https://registry.npmjs.org/proxy-agent-negotiate/-/proxy-agent-negotiate-0.0.0.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "0.0.0"
+        },
+        {
+          "files": 5,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-N8IBcM3UgCVzz2L2Lqv8DVntDnnC8/hiV4nEDUPkqq72TPUgYWjQc+bdZlBPZK9LzPAvOY//gAt0S0DApoOXWQ==",
+          "licenseNamedFiles": [],
+          "name": "proxy-agent-negotiate",
+          "registrySHA1": "de7d37aede9d71e74346125d6f484fac8092b615",
+          "sha256": "6eec23d5d381a8b0ffafe91c19876d3a052e463618695981a7529f3a8bca1997",
+          "url": "https://registry.npmjs.org/proxy-agent-negotiate/-/proxy-agent-negotiate-1.1.0.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "1.1.0"
+        }
+      ],
+      "publisherSourceIdentity": {
+        "commit": "b7e5f7ccce1a3ac5b339cc4c587974e8989cbc16",
+        "packageManifestDifferences": {
+          "devDependencies.@types/node": [
+            "catalog:",
+            "^22.13.0"
+          ],
+          "devDependencies.tsconfig": [
+            "workspace:*",
+            "0.0.0"
+          ],
+          "devDependencies.typescript": [
+            "catalog:",
+            "^5.1.6"
+          ]
+        },
+        "registryProvenance": {
+          "documentSHA256": "e109fa690f2e23184f9a2cb0c00b0132a6339685ac9acceb26ef0d1d353af2a3",
+          "predicateType": "https://slsa.dev/provenance/v1",
+          "signatureVerification": "not-performed",
+          "subject": {
+            "digest": {
+              "sha512": "37c20170cdd4802573cf62f62eabfc0d59ed0e79c2f3f8625789c40d43e4aaaef64cf5206168d073e6dd66504f64af4bccf02f398fff800b744b40c0a6839759"
+            },
+            "name": "pkg:npm/proxy-agent-negotiate@1.1.0"
+          },
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/proxy-agent-negotiate@1.1.0"
+        },
+        "sourceIdentityMethod": "npm registry SLSA provenance payload with matching archive subject digest",
+        "sourceImplementationBlob": "502bac67155ebc9a79ffeadc0971f0173e3b5db1",
+        "sourcePackageManifestBlob": "93d1791cbb9c782d0a03d24d9e5379a7b89418f4"
+      },
+      "registryLatest": "1.1.0",
+      "repository": "TooTallNate/proxy-agents",
+      "tracking": {
+        "maintainerNoticeSupplied": false,
+        "state": "open",
+        "url": "https://github.com/TooTallNate/proxy-agents/issues/479"
+      },
+      "version": "1.1.0"
+    },
+    {
+      "completeOriginalLicenseLocated": false,
+      "declaredLicense": "MIT",
+      "historyReview": {
+        "completeMITTextLocated": false,
+        "licenseFileHistoryLocated": false,
+        "reachableCommitCount": 10
+      },
+      "inspectedRepositoryHead": "24d55717e16f1bb2109e848ea2b3a90ea900ddb5",
+      "name": "stackback",
+      "publishedArchives": [
+        {
+          "files": 5,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-p32ZnMo0yQ9L4eq9lVuIMPGFCpQb24MixIMnl89SjFKUWMKZpheQeAUiHCsPPB4ndzlJ8eNyB21cSwqbdUtjsA==",
+          "licenseNamedFiles": [],
+          "name": "stackback",
+          "registrySHA1": "26c40dca3b4af5f3e5a8b493e0af34fdebe324fc",
+          "sha256": "8584780f49d970b4d017257d05444a9b8588d31e653c4553ac8d40ec5b378e8a",
+          "url": "https://registry.npmjs.org/stackback/-/stackback-0.0.1.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "0.0.1"
+        },
+        {
+          "files": 7,
+          "fullMITGrantCandidates": [],
+          "integrity": "sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==",
+          "licenseNamedFiles": [],
+          "name": "stackback",
+          "registrySHA1": "1ac8a0d9483848d1695e418b6d031a3c3ce68e3b",
+          "sha256": "3e663c82d1ccf9748ed446b648ec21a7dd6c5895ecf4a95310a60a320ca55858",
+          "url": "https://registry.npmjs.org/stackback/-/stackback-0.0.2.tgz",
+          "verificationAlgorithm": "SRI",
+          "verified": true,
+          "version": "0.0.2"
+        }
+      ],
+      "publisherSourceIdentity": {
+        "commit": "1fe7f988c5bac51e942d6c55230895a55fab4504",
+        "matchedArchiveFiles": [
+          {
+            "gitBlob": "3e8b7b2c023d3535e0869b0959616cda4d654fc8",
+            "path": "package.json"
+          },
+          {
+            "gitBlob": "fb6bde7486827b31d96cd2bfc1f96fd945bbf011",
+            "path": "README.md"
+          },
+          {
+            "gitBlob": "d64307d210dd134dff936607480695b86f3b6776",
+            "path": "formatstack.js"
+          },
+          {
+            "gitBlob": "8b87042343d7e6fc238075138f72f4ff3fa58d5e",
+            "path": "index.js"
+          },
+          {
+            "gitBlob": "212b414ab496cf76d2a6977bd935ce714508482f",
+            "path": "test.js"
+          },
+          {
+            "gitBlob": "320698af0f565b2ac32987b5d23ed6aca5c7ef5a",
+            "path": ".travis.yml"
+          }
+        ],
+        "unmatchedArchiveFiles": [
+          ".npmignore"
+        ]
+      },
+      "registryLatest": "0.0.2",
+      "repository": "defunctzombie/node-stackback",
+      "tracking": {
+        "maintainerNoticeSupplied": false,
+        "maintainerResponse": "Maintainer states that the project is no longer maintained and will not receive further changes.",
+        "state": "closed",
+        "url": "https://github.com/defunctzombie/node-stackback/issues/1"
+      },
+      "version": "0.0.2"
+    }
+  ],
+  "redistributionApproved": false,
+  "reviewedAtUTC": "2026-10-26T08:43:35.679362+00:00",
+  "scope": "Four unresolved package-level original MIT notices in the Web/API source lock graphs",
+  "sourceCommit": "a6da83e4c5645a1aa5728c213900d1fe24f2c44d"
+}

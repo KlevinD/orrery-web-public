@@ -1,0 +1,82 @@
+{
+  "name": "orrery-v2-web",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "imports": {
+    "#lib/*": "./src/lib/*"
+  },
+  "scripts": {
+    "dev": "vite dev --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "test": "svelte-kit sync && vitest run",
+    "test:ontology:e2e": "playwright test e2e/ontology-workbench.spec.ts --workers=1",
+    "tauri": "cd .. && npm --prefix web exec tauri -- --config src-tauri/tauri.conf.json",
+    "tauri:dev": "cd .. && powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-sidecar.ps1 && npm --prefix web exec tauri -- dev --config src-tauri/tauri.conf.json",
+    "tauri:dev:linux": "cd .. && bash scripts/build-sidecar.sh && npm --prefix web exec tauri -- dev --config src-tauri/tauri.conf.json",
+    "tauri:build": "cd .. && powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-desktop.ps1",
+    "tauri:build:linux": "cd .. && bash scripts/build-desktop.sh",
+    "generate:api": "openapi-typescript ../docs/api/mission-control.openapi.yaml -o src/lib/types/api.generated.ts",
+    "postinstall": "node ../runtime/orrery-js/install.mjs web",
+    "prebuild": "node ../runtime/orrery-js/install.mjs web --check",
+    "precheck": "node ../runtime/orrery-js/install.mjs web --check",
+    "pretest": "node ../runtime/orrery-js/install.mjs web --check"
+  },
+  "dependencies": {
+    "@codemirror/commands": "^6.10.4",
+    "@codemirror/lang-markdown": "^6.5.1",
+    "@codemirror/language": "^6.12.4",
+    "@codemirror/state": "^6.7.1",
+    "@codemirror/view": "^6.43.7",
+    "@sveltejs/adapter-static": "^4.0.0",
+    "@sveltejs/kit": "^3.1.0",
+    "@tailwindcss/vite": "^4.1.12",
+    "@tanstack/svelte-query": "^6.1.33",
+    "@tauri-apps/api": "^2.8.0",
+    "@types/qrcode": "^1.5.6",
+    "centrifuge": "^5.6.0",
+    "clsx": "^2.1.1",
+    "d3-force": "^3.0.0",
+    "echarts": "^6.0.0",
+    "force-graph": "^1.51.4",
+    "is-reference": "file:../runtime/orrery-js/packages/ast-reference",
+    "locate-character": "file:../runtime/orrery-js/packages/source-location",
+    "lucide-svelte": "^0.468.0",
+    "marked": "^18.0.5",
+    "qrcode": "^1.5.4",
+    "stackback": "file:../runtime/orrery-js/packages/error-callsite",
+    "svelte": "^5.57.3",
+    "tailwind-merge": "^2.5.4",
+    "tw-animate-css": "^1.4.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@tauri-apps/cli": "^2.8.4",
+    "@testing-library/svelte": "^5.2.8",
+    "@types/d3-force": "^3.0.10",
+    "@types/marked": "^5.0.2",
+    "@types/node": "^22.10.2",
+    "deepmerge": "file:../runtime/orrery-js/packages/deepmerge",
+    "jsdom": "^25.0.1",
+    "openapi-typescript": "^7.10.1",
+    "rollup": "4.61.0",
+    "svelte-check": "^4.1.1",
+    "tailwindcss": "^4.1.12",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.5",
+    "vitest": "^4.1.12"
+  },
+  "overrides": {
+    "@redocly/ajv": "8.18.3",
+    "fast-uri": "3.1.9",
+    "is-reference": "$is-reference",
+    "locate-character": "$locate-character",
+    "stackback": "$stackback"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}

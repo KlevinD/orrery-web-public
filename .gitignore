@@ -1,0 +1,100 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vs/
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.pid
+.cache/
+.claude/
+.superpowers/
+/.codex-*
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+orrery_v2/secrets/
+orrery_v2/internal/agent/runtime/core/D:/
+*.pem
+*.key
+
+# Node/Svelte/Vite
+node_modules/
+dist/
+build/
+.svelte-kit/
+.vite/
+coverage/
+orrery_v2/web/test-results/
+orrery_v2/web/playwright-report/
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Rust/Tauri
+target/
+src-tauri/target/
+src-tauri/binaries/
+src-tauri/gen/schemas/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+!orrery_v2/config/env/
+!orrery_v2/config/env/*.env.example
+*.egg-info/
+build/
+dist/
+pip-wheel-metadata/
+
+# Local databases/runtime data
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+.orrery-dev-data/
+orrery_v2/.cache/
+orrery_v2/.dev-5434/
+orrery_v2/.dev/
+orrery_v2/config/.dev/
+orrery_v2/.playwright-cli/
+orrery_v2/output/
+orrery_v2/data/artifacts/
+orrery_v2/data/artifacts/agent-runs/
+orrery_v2/data/artifacts/discussion-conversations/
+orrery_v2/data/discussions/
+orrery_v2/data/skills/
+orrery_v2/data/balance_sheet_data.json
+orrery_v2/data/imports/
+orrery_v2/data/logs/
+orrery_v2/.superpowers/
+orrery_v2/server
+orrery_v2/server.exe
+orrery_v2/资产负债表可视化.html
+src-tauri/data/
+
+# Local export archives
+/*.zip
+
+# Isolated agent worktrees
+.worktrees/
+
+# Generated source export metadata
+.source-release/

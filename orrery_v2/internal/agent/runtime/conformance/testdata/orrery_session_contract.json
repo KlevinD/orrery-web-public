@@ -1,0 +1,233 @@
+{
+  "contract": "orrery-session-v1",
+  "name": "mixed-approval-auth-and-cancelled-next-turn",
+  "initial": {
+    "kind": "starting",
+    "starting": {}
+  },
+  "steps": [
+    {
+      "event": {
+        "kind": "turn_started",
+        "turn_started": {
+          "epoch": 17
+        }
+      },
+      "expected": {
+        "kind": "running",
+        "running": {
+          "since_epoch": 17,
+          "saw_substantive_output": false,
+          "terminal_result_seen": false,
+          "requires_action": {
+            "waiting_on_approval": 0,
+            "waiting_on_auth": 0
+          }
+        }
+      }
+    },
+    {
+      "event": {
+        "kind": "permission",
+        "permission": {
+          "request_id": "release-tool",
+          "kind": "tool"
+        }
+      },
+      "expected": {
+        "kind": "running",
+        "running": {
+          "since_epoch": 17,
+          "saw_substantive_output": false,
+          "terminal_result_seen": false,
+          "requires_action": {
+            "waiting_on_approval": 1,
+            "waiting_on_auth": 0
+          }
+        }
+      }
+    },
+    {
+      "event": {
+        "kind": "permission",
+        "permission": {
+          "request_id": "release-auth",
+          "kind": "auth"
+        }
+      },
+      "expected": {
+        "kind": "running",
+        "running": {
+          "since_epoch": 17,
+          "saw_substantive_output": false,
+          "terminal_result_seen": false,
+          "requires_action": {
+            "waiting_on_approval": 1,
+            "waiting_on_auth": 1
+          }
+        }
+      }
+    },
+    {
+      "event": {
+        "kind": "permission_resolved",
+        "permission_resolved": {
+          "request_id": "release-auth",
+          "kind": "auth"
+        }
+      },
+      "expected": {
+        "kind": "running",
+        "running": {
+          "since_epoch": 17,
+          "saw_substantive_output": false,
+          "terminal_result_seen": false,
+          "requires_action": {
+            "waiting_on_approval": 1,
+            "waiting_on_auth": 0
+          }
+        }
+      }
+    },
+    {
+      "event": {
+        "kind": "tool_result",
+        "tool_result": {
+          "tool_use_id": "license-audit"
+        }
+      },
+      "expected": {
+        "kind": "running",
+        "running": {
+          "since_epoch": 17,
+          "saw_substantive_output": true,
+          "terminal_result_seen": false,
+          "requires_action": {
+            "waiting_on_approval": 1,
+            "waiting_on_auth": 0
+          }
+        }
+      }
+    },
+    {
+      "event": {
+        "kind": "permission_resolved",
+        "permission_resolved": {
+          "request_id": "release-tool",
+          "kind": "tool"
+        }
+      },
+      "expected": {
+        "kind": "running",
+        "running": {
+          "since_epoch": 17,
+          "saw_substantive_output": true,
+          "terminal_result_seen": false,
+          "requires_action": {
+            "waiting_on_approval": 0,
+            "waiting_on_auth": 0
+          }
+        }
+      }
+    },
+    {
+      "event": {
+        "kind": "turn_result",
+        "turn_result": {
+          "epoch": 17,
+          "is_error": false,
+          "result_text": "",
+          "outcome": {
+            "kind": "end_turn"
+          }
+        }
+      },
+      "expected": {
+        "kind": "idle",
+        "idle": {}
+      }
+    },
+    {
+      "event": {
+        "kind": "turn_started",
+        "turn_started": {
+          "epoch": 18
+        }
+      },
+      "expected": {
+        "kind": "running",
+        "running": {
+          "since_epoch": 18,
+          "saw_substantive_output": false,
+          "terminal_result_seen": false,
+          "requires_action": {
+            "waiting_on_approval": 0,
+            "waiting_on_auth": 0
+          }
+        }
+      }
+    },
+    {
+      "event": {
+        "kind": "turn_result",
+        "turn_result": {
+          "epoch": 17,
+          "is_error": true,
+          "result_text": "late release failure",
+          "outcome": {
+            "kind": "failed"
+          }
+        }
+      },
+      "expected": {
+        "kind": "running",
+        "running": {
+          "since_epoch": 18,
+          "saw_substantive_output": false,
+          "terminal_result_seen": false,
+          "requires_action": {
+            "waiting_on_approval": 0,
+            "waiting_on_auth": 0
+          }
+        }
+      }
+    },
+    {
+      "event": {
+        "kind": "cancel",
+        "cancel": {}
+      },
+      "expected": {
+        "kind": "idle",
+        "idle": {}
+      }
+    },
+    {
+      "event": {
+        "kind": "turn_result",
+        "turn_result": {
+          "epoch": 18,
+          "is_error": true,
+          "result_text": "operator cancelled",
+          "outcome": {
+            "kind": "failed"
+          }
+        }
+      },
+      "expected": {
+        "kind": "idle",
+        "idle": {}
+      }
+    },
+    {
+      "event": {
+        "kind": "detached",
+        "detached": {}
+      },
+      "expected": {
+        "kind": "idle",
+        "idle": {}
+      }
+    }
+  ]
+}

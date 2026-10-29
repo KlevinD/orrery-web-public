@@ -1,0 +1,53 @@
+import { existsSync, readFileSync } from 'node:fs'
+import { describe, expect, it } from 'vitest'
+
+describe('evaluation readiness', () => {
+  it('keeps evaluation stream clients available while the page renders the projected Agent resume', () => {
+    const backendPath = '../internal/app/operations/audit_evaluation.go'
+    const frontend = readFileSync('src/lib/queries/operations.ts', 'utf-8')
+    const page = readFileSync('src/routes/evaluation/+page.svelte', 'utf-8')
+
+    if (existsSync(backendPath)) {
+      const backend = readFileSync(backendPath, 'utf-8')
+      expect(backend).not.toContain('TODO(report-stream)')
+      expect(backend).toContain('TaskHistory')
+      expect(backend).toContain('TokenConsumed')
+      expect(backend).toContain('Investment')
+    }
+    expect(frontend).toContain('subscribeEvaluationStream')
+    expect(frontend).toContain('connectEvaluationStream')
+    expect(frontend).toContain('mapEvaluationCenterView')
+    expect(page).toContain('评估中心')
+    expect(page).toContain('useWorkforceMembersQuery')
+    expect(page).toContain('useEvaluationListQuery')
+    expect(page).toContain('workforceAgents')
+    expect(page).toContain('evaluationByEntityId')
+    expect(page).toContain('line-clamp-2 break-words')
+    expect(page).toContain('line-clamp-3 break-words')
+    expect(page).toContain('投入与产出')
+    expect(page).toContain('运行Token')
+    expect(page).toContain('估算人天')
+    expect(page).toContain('评价Token')
+    expect(page).toContain('AgentMemorySheet')
+    expect(page).toContain('查看记忆')
+    expect(page.indexOf('综合评估')).toBeLessThan(page.indexOf('投入与产出'))
+    expect(page).toContain('近期任务记录')
+    expect(page).toContain('总体目标')
+    expect(page).toContain('当前Agent负责工作')
+    expect(page).toContain('radarPoints')
+    expect(page).toContain('暂无任务运行记录')
+    expect(page).not.toContain('Agent 人才库')
+    expect(page).not.toContain('分享档案')
+    expect(page).not.toContain('新建 Agent')
+    expect(page).not.toContain('更多筛选')
+    expect(page).not.toContain("['全部', '审档', '代码', '文档', '评估']")
+    expect(page).not.toContain('ChevronDown')
+    expect(page).not.toContain('MoreHorizontal')
+    expect(page).not.toContain('价值构成')
+    expect(page).not.toContain('投入判断')
+    expect(page).not.toContain('建议继续投入')
+    expect(page).not.toContain('subscribeEvaluationStream')
+    expect(page).not.toContain('采购项目档案归档审核')
+    expect(page).not.toContain('约1.9万元')
+  })
+})

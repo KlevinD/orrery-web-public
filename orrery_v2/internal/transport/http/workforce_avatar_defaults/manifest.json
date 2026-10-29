@@ -1,0 +1,36 @@
+{
+  "profiles": {
+    "website-knowledge-curator": {
+      "file": "website-knowledge-curator.png",
+      "content_type": "image/png"
+    },
+    "A000014": {
+      "file": "website-receptionist-public.png",
+      "content_type": "image/png"
+    },
+    "A000015": {
+      "file": "website-receptionist-customer.png",
+      "content_type": "image/png"
+    },
+    "A000013": {
+      "file": "qa-check-agent.png",
+      "content_type": "image/png"
+    },
+    "A000006": {
+      "file": "marlon-brando.png",
+      "content_type": "image/png"
+    },
+    "A000011": {
+      "file": "coordinator-agent.png",
+      "content_type": "image/png"
+    },
+    "A000012": {
+      "file": "qa-plan-agent.png",
+      "content_type": "image/png"
+    },
+    "A000010": {
+      "file": "lead-agent.png",
+      "content_type": "image/png"
+    }
+  }
+}

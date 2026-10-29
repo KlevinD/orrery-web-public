@@ -1,0 +1,2871 @@
+{
+  "components": [
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-IDl/lrPb90aH+pZFHGNDmgH9nAUQj5PlZH1sJ3w7RikctyjHSnY3oNjZhrLoaBoQn/rNK0zsP6OHEqEhj2tdLA==",
+        "kind": "same-project-original-license",
+        "project": "https://github.com/aws/aws-sdk-js-v3",
+        "reason": "The publisher declares Apache-2.0 for these AWS SDK monorepo packages; preserve the supplied AWS SDK original license.",
+        "upstreamPackage": "@aws-sdk/client-bedrock-runtime",
+        "upstreamVersion": "3.1127.0"
+      },
+      "integrity": "sha512-pnKdh0Br7OJPj+7qKjzgTfDTFW0RhEMKXNDR2jv9CAM4oHuG/4z3hRh8KtutLfpmItuRtDbKBmwWkDqHwwAWXw==",
+      "name": "@aws-sdk/credential-provider-http",
+      "notices": [
+        {
+          "archiveSha256": "cb983616e2e7a81d0b9f454ca3bbc0892a58e3997e188a82f6c69d65191ab6ed",
+          "originalPath": "package/LICENSE",
+          "path": "compliance/licenses/collected/18c295fdd68d4f68418b0209829f241481e93549d9e7b9fcd4b4c029322c8a45.txt",
+          "sha256": "18c295fdd68d4f68418b0209829f241481e93549d9e7b9fcd4b4c029322c8a45",
+          "size": 11390,
+          "sourceArchive": "https://registry.npmjs.org/@aws-sdk/client-bedrock-runtime/-/client-bedrock-runtime-3.1127.0.tgz"
+        }
+      ],
+      "version": "3.972.76"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-IDl/lrPb90aH+pZFHGNDmgH9nAUQj5PlZH1sJ3w7RikctyjHSnY3oNjZhrLoaBoQn/rNK0zsP6OHEqEhj2tdLA==",
+        "kind": "same-project-original-license",
+        "project": "https://github.com/aws/aws-sdk-js-v3",
+        "reason": "The publisher declares Apache-2.0 for these AWS SDK monorepo packages; preserve the supplied AWS SDK original license.",
+        "upstreamPackage": "@aws-sdk/client-bedrock-runtime",
+        "upstreamVersion": "3.1127.0"
+      },
+      "integrity": "sha512-CeQHSbE2CnVdaHIJ/NayRaCecIER+Pm9faUPkmRATO54rCoMTEPSbVieGHzEwvm1dZM2HIs6qQZCznhayNTWJQ==",
+      "name": "@aws-sdk/credential-provider-login",
+      "notices": [
+        {
+          "archiveSha256": "cb983616e2e7a81d0b9f454ca3bbc0892a58e3997e188a82f6c69d65191ab6ed",
+          "originalPath": "package/LICENSE",
+          "path": "compliance/licenses/collected/18c295fdd68d4f68418b0209829f241481e93549d9e7b9fcd4b4c029322c8a45.txt",
+          "sha256": "18c295fdd68d4f68418b0209829f241481e93549d9e7b9fcd4b4c029322c8a45",
+          "size": 11390,
+          "sourceArchive": "https://registry.npmjs.org/@aws-sdk/client-bedrock-runtime/-/client-bedrock-runtime-3.1127.0.tgz"
+        }
+      ],
+      "version": "3.972.81"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-IDl/lrPb90aH+pZFHGNDmgH9nAUQj5PlZH1sJ3w7RikctyjHSnY3oNjZhrLoaBoQn/rNK0zsP6OHEqEhj2tdLA==",
+        "kind": "same-project-original-license",
+        "project": "https://github.com/aws/aws-sdk-js-v3",
+        "reason": "The publisher declares Apache-2.0 for these AWS SDK monorepo packages; preserve the supplied AWS SDK original license.",
+        "upstreamPackage": "@aws-sdk/client-bedrock-runtime",
+        "upstreamVersion": "3.1127.0"
+      },
+      "integrity": "sha512-B01jdXJtAW/XOiUzGdI2mz67WyEHbGEc9X6Euzw3bjLAa+txTqdZDER4X2FsIEcXzV2ABqudVZ5thali8tCCzQ==",
+      "name": "@aws-sdk/nested-clients",
+      "notices": [
+        {
+          "archiveSha256": "cb983616e2e7a81d0b9f454ca3bbc0892a58e3997e188a82f6c69d65191ab6ed",
+          "originalPath": "package/LICENSE",
+          "path": "compliance/licenses/collected/18c295fdd68d4f68418b0209829f241481e93549d9e7b9fcd4b4c029322c8a45.txt",
+          "sha256": "18c295fdd68d4f68418b0209829f241481e93549d9e7b9fcd4b4c029322c8a45",
+          "size": 11390,
+          "sourceArchive": "https://registry.npmjs.org/@aws-sdk/client-bedrock-runtime/-/client-bedrock-runtime-3.1127.0.tgz"
+        }
+      ],
+      "version": "3.997.48"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "71023aec1546d6d677a65669c5665c0927ce0dd0",
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "publisherGitHead": null,
+        "reason": "Publisher tarball omits notices or contains independently licensed embedded source.",
+        "repository": "earendil-works/pi",
+        "sourceFiles": [
+          {
+            "gitBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+            "path": "LICENSE",
+            "sourceSha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48"
+          }
+        ]
+      },
+      "integrity": "sha512-2jvpxZs47PFD5mSQb/yK0pGHJ5yO7Nu22u9mFjHbSLRgu62vZ9rupimDSIp4arnqOadyv0AWvYHtCSpFoJV7ag==",
+      "name": "@earendil-works/pi-agent-core",
+      "notices": [
+        {
+          "originalPath": "earendil-works/pi@71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE",
+          "path": "compliance/licenses/collected/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt",
+          "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+          "size": 1069,
+          "sourceBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+          "sourceUrl": "https://github.com/earendil-works/pi/blob/71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE"
+        }
+      ],
+      "version": "1.3.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "71023aec1546d6d677a65669c5665c0927ce0dd0",
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "publisherGitHead": null,
+        "reason": "Publisher tarball omits notices or contains independently licensed embedded source.",
+        "repository": "earendil-works/pi",
+        "sourceFiles": [
+          {
+            "gitBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+            "path": "LICENSE",
+            "sourceSha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48"
+          }
+        ]
+      },
+      "integrity": "sha512-KaBI8x7q7sPoFUXICNGD9efHzDG+oRNwVvkA9jdIsSQWH1RjFssOlEGsbLtewUPPgCrvmz0l2KTgSLXTyj3acw==",
+      "name": "@earendil-works/pi-ai",
+      "notices": [
+        {
+          "originalPath": "earendil-works/pi@71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE",
+          "path": "compliance/licenses/collected/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt",
+          "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+          "size": 1069,
+          "sourceBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+          "sourceUrl": "https://github.com/earendil-works/pi/blob/71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE"
+        }
+      ],
+      "version": "1.3.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "71023aec1546d6d677a65669c5665c0927ce0dd0",
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "publisherGitHead": null,
+        "reason": "Publisher tarball omits notices or contains independently licensed embedded source.",
+        "repository": "earendil-works/pi",
+        "sourceFiles": [
+          {
+            "gitBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+            "path": "LICENSE",
+            "sourceSha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48"
+          }
+        ]
+      },
+      "integrity": "sha512-2G9tmbsPhgzwfz7cmzJpbLSLqOx3eu22Gbzm+Wc3HqeZMjLQS4F3KfAabozVhv7uEjq3k2O1dZTHmhhWr2xbfQ==",
+      "name": "@earendil-works/pi-codemode",
+      "notices": [
+        {
+          "originalPath": "earendil-works/pi@71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE",
+          "path": "compliance/licenses/collected/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt",
+          "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+          "size": 1069,
+          "sourceBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+          "sourceUrl": "https://github.com/earendil-works/pi/blob/71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE"
+        }
+      ],
+      "version": "1.3.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "71023aec1546d6d677a65669c5665c0927ce0dd0",
+        "embeddedSourceNotices": [
+          {
+            "archiveMember": "package/dist/utils/ansi.js",
+            "license": "MIT",
+            "noticeSha256": "4b8dff5c8be53335fc77e33e2680232ac907ad249bf1ab83767cf1e83f246a53",
+            "originalCopyrights": [
+              "Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)"
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              0,
+              1336
+            ],
+            "sourceSha256": "c616ab4bd8da8bc5d8e94e38cc63224dbd98586cb3a7cffb75e47f1077b18031"
+          }
+        ],
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "publisherGitHead": null,
+        "reason": "Publisher tarball omits notices or contains independently licensed embedded source.",
+        "repository": "earendil-works/pi",
+        "sourceFiles": [
+          {
+            "gitBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+            "path": "LICENSE",
+            "sourceSha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48"
+          }
+        ]
+      },
+      "integrity": "sha512-V/WoCjA2hQSe3QLWIUB24cTRdtEdeLiIzkDqU5RMXV6VWuD+KGZnzVBMhglwdnQTySkehZsjt8a3g6Jd2g4nnw==",
+      "name": "@earendil-works/pi-coding-agent",
+      "notices": [
+        {
+          "originalPath": "earendil-works/pi@71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE",
+          "path": "compliance/licenses/collected/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt",
+          "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+          "size": 1069,
+          "sourceBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+          "sourceUrl": "https://github.com/earendil-works/pi/blob/71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE"
+        },
+        {
+          "archiveSha256": "ae2785e870b81a8c8e1d44510a57b5ee0bfc9e974679ac2faaada4aabee3d3c0",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/@earendil-works/pi-coding-agent@1.3.0/dist/utils/ansi.js",
+          "path": "compliance/licenses/collected/4b8dff5c8be53335fc77e33e2680232ac907ad249bf1ab83767cf1e83f246a53.txt",
+          "sha256": "4b8dff5c8be53335fc77e33e2680232ac907ad249bf1ab83767cf1e83f246a53",
+          "size": 1336,
+          "sourceArchive": "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-1.3.0.tgz",
+          "sourceArchiveMember": "package/dist/utils/ansi.js",
+          "sourceByteRange": [
+            0,
+            1336
+          ],
+          "sourceMemberSha256": "c616ab4bd8da8bc5d8e94e38cc63224dbd98586cb3a7cffb75e47f1077b18031"
+        }
+      ],
+      "version": "1.3.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "71023aec1546d6d677a65669c5665c0927ce0dd0",
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "publisherGitHead": null,
+        "reason": "Publisher tarball omits notices or contains independently licensed embedded source.",
+        "repository": "earendil-works/pi",
+        "sourceFiles": [
+          {
+            "gitBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+            "path": "LICENSE",
+            "sourceSha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48"
+          }
+        ]
+      },
+      "integrity": "sha512-lbktLplmdGamM2t460Q0ziNEfpUEHDTVNf79g/AialJ3XZ+SHgNqa/OJXRR+fU+GV/l+gBhRPcyP8XkQlv8Avw==",
+      "name": "@earendil-works/pi-mcp",
+      "notices": [
+        {
+          "originalPath": "earendil-works/pi@71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE",
+          "path": "compliance/licenses/collected/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt",
+          "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+          "size": 1069,
+          "sourceBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+          "sourceUrl": "https://github.com/earendil-works/pi/blob/71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE"
+        }
+      ],
+      "version": "1.3.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "71023aec1546d6d677a65669c5665c0927ce0dd0",
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "publisherGitHead": null,
+        "reason": "Publisher tarball omits notices or contains independently licensed embedded source.",
+        "repository": "earendil-works/pi",
+        "sourceFiles": [
+          {
+            "gitBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+            "path": "LICENSE",
+            "sourceSha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48"
+          }
+        ]
+      },
+      "integrity": "sha512-ERGZr+aXjNJzoUbB7ZzHVH3g5otzMHjHLs2Fyizm12By5X+gBEhod9cJXFOk13S7M8a29Am+Mq21zm73mRJFLg==",
+      "name": "@earendil-works/pi-telemetry",
+      "notices": [
+        {
+          "originalPath": "earendil-works/pi@71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE",
+          "path": "compliance/licenses/collected/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt",
+          "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+          "size": 1069,
+          "sourceBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+          "sourceUrl": "https://github.com/earendil-works/pi/blob/71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE"
+        }
+      ],
+      "version": "1.3.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "71023aec1546d6d677a65669c5665c0927ce0dd0",
+        "embeddedSourceNotices": [
+          {
+            "archiveMember": "package/dist/oklab.js",
+            "license": "MIT",
+            "noticeSha256": "09baa8b167295a36dd948c0426cba725060a6618587695a6e22c83fb9b75fec0",
+            "originalCopyrights": [
+              "Copyright (c) 2021 Bj\u00f6rn Ottosson, used under the MIT license:"
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              0,
+              1077
+            ],
+            "sourceSha256": "9aa1e62e9770e7f6f81b204c9d0f039d5f0b5cef017920f6d3e5368520428bfe"
+          },
+          {
+            "archiveMember": "package/dist/oklab.d.ts",
+            "license": "MIT",
+            "noticeSha256": "09baa8b167295a36dd948c0426cba725060a6618587695a6e22c83fb9b75fec0",
+            "originalCopyrights": [
+              "Copyright (c) 2021 Bj\u00f6rn Ottosson, used under the MIT license:"
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              0,
+              1077
+            ],
+            "sourceSha256": "1a5a420825582dc7bf567ba99189efd42591dd24ff26d1f8b07bf8f023651817"
+          }
+        ],
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "publisherGitHead": null,
+        "reason": "Publisher tarball omits notices or contains independently licensed embedded source.",
+        "repository": "earendil-works/pi",
+        "sourceFiles": [
+          {
+            "gitBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+            "path": "LICENSE",
+            "sourceSha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48"
+          }
+        ]
+      },
+      "integrity": "sha512-AlKvEwEWyVtnuw7SVb4N/mUhlfIohyFslUNWarZVdLHHSdt3ca5EhMLwTzblBpDpaofSz+f+tAHie6CfxVrWKA==",
+      "name": "@earendil-works/pi-tui",
+      "notices": [
+        {
+          "originalPath": "earendil-works/pi@71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE",
+          "path": "compliance/licenses/collected/0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48.txt",
+          "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+          "size": 1069,
+          "sourceBlob": "b0a8e9b81083294360c69b4ec45d3d39a2b28197",
+          "sourceUrl": "https://github.com/earendil-works/pi/blob/71023aec1546d6d677a65669c5665c0927ce0dd0/LICENSE"
+        },
+        {
+          "archiveSha256": "1ef7b630aac6a9796f395962bfd5b2e588c00d0502b94d8f3ae87722af42ef5d",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/@earendil-works/pi-tui@1.3.0/dist/oklab.js",
+          "path": "compliance/licenses/collected/09baa8b167295a36dd948c0426cba725060a6618587695a6e22c83fb9b75fec0.txt",
+          "sha256": "09baa8b167295a36dd948c0426cba725060a6618587695a6e22c83fb9b75fec0",
+          "size": 1077,
+          "sourceArchive": "https://registry.npmjs.org/@earendil-works/pi-tui/-/pi-tui-1.3.0.tgz",
+          "sourceArchiveMember": "package/dist/oklab.js",
+          "sourceByteRange": [
+            0,
+            1077
+          ],
+          "sourceMemberSha256": "9aa1e62e9770e7f6f81b204c9d0f039d5f0b5cef017920f6d3e5368520428bfe"
+        },
+        {
+          "archiveSha256": "1ef7b630aac6a9796f395962bfd5b2e588c00d0502b94d8f3ae87722af42ef5d",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/@earendil-works/pi-tui@1.3.0/dist/oklab.d.ts",
+          "path": "compliance/licenses/collected/09baa8b167295a36dd948c0426cba725060a6618587695a6e22c83fb9b75fec0.txt",
+          "sha256": "09baa8b167295a36dd948c0426cba725060a6618587695a6e22c83fb9b75fec0",
+          "size": 1077,
+          "sourceArchive": "https://registry.npmjs.org/@earendil-works/pi-tui/-/pi-tui-1.3.0.tgz",
+          "sourceArchiveMember": "package/dist/oklab.d.ts",
+          "sourceByteRange": [
+            0,
+            1077
+          ],
+          "sourceMemberSha256": "1a5a420825582dc7bf567ba99189efd42591dd24ff26d1f8b07bf8f023651817"
+        }
+      ],
+      "version": "1.3.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "d5c3c43b45393f99ba151770f97bd472de533671",
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "reason": "Bundled package bound to its integrity-checked parent; source commit comes from the matching publisher package metadata.",
+        "repository": "napi-rs/napi-rs"
+      },
+      "integrity": null,
+      "name": "@napi-rs/wasm-runtime",
+      "notices": [
+        {
+          "originalPath": "napi-rs/napi-rs@d5c3c43b45393f99ba151770f97bd472de533671/LICENSE",
+          "path": "compliance/licenses/collected/3f1ce66533302df3a32edbfdfc0b78f0dd34659e4c1f5817162e5ea3c2297215.txt",
+          "sha256": "3f1ce66533302df3a32edbfdfc0b78f0dd34659e4c1f5817162e5ea3c2297215",
+          "size": 2138,
+          "sourceBlob": "7fe7e35eff46457f65a4e30a717fada632de9e03",
+          "sourceUrl": "https://github.com/napi-rs/napi-rs/blob/d5c3c43b45393f99ba151770f97bd472de533671/LICENSE"
+        }
+      ],
+      "version": "1.1.4"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "02cbdb529ddca0a9f3d225e2abb2931924219cc3",
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "publisherGitHead": "02cbdb529ddca0a9f3d225e2abb2931924219cc3",
+        "reason": "Publisher tarball omits notices or contains independently licensed embedded source.",
+        "repository": "lukeed/polka",
+        "sourceFiles": [
+          {
+            "gitBlob": "d46889ae35762abe2fc2f33a4b2ef0825fd1a6dc",
+            "path": "license",
+            "sourceSha256": "ba573393f24555ac0528612ad39665fab5bdcc80330a61096024bbf5f736526d"
+          }
+        ]
+      },
+      "integrity": "sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==",
+      "name": "@polka/url",
+      "notices": [
+        {
+          "originalPath": "lukeed/polka@02cbdb529ddca0a9f3d225e2abb2931924219cc3/license",
+          "path": "compliance/licenses/collected/ba573393f24555ac0528612ad39665fab5bdcc80330a61096024bbf5f736526d.txt",
+          "sha256": "ba573393f24555ac0528612ad39665fab5bdcc80330a61096024bbf5f736526d",
+          "size": 1122,
+          "sourceBlob": "d46889ae35762abe2fc2f33a4b2ef0825fd1a6dc",
+          "sourceUrl": "https://github.com/lukeed/polka/blob/02cbdb529ddca0a9f3d225e2abb2931924219cc3/license"
+        }
+      ],
+      "version": "1.0.0-next.29"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-aLcgK9gIJ3YRvrrtfSBbRa27F5WrpiTaPulnFpsHPxpUHgFlSgnU4854MHwoRGEBhfRJDWCS2WQ7lIjskE9Olw==",
+      "name": "@rolldown/binding-android-arm-eabi",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-xD7DdZCrbThKuxNg7ooQmvp07ys4J/pnSEMTG3/OdOWl6daC67m/Q4fL78sRHMxTH/N4fGUbYhcPM0MF5WFHkg==",
+      "name": "@rolldown/binding-android-arm64",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-m2WuQ6r0B4OTYxyPpNLtXaMRbRDUbG8YQV2Q3KTdSSK8Th6KHCnC8jVCJt8bvYeSB5WivkkNbc85mKadaSdOxA==",
+      "name": "@rolldown/binding-darwin-arm64",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-5RtnsHM36nodM9WbMy+zip0LGS/G+y5wro5RHrpOlr4ac24+1zSi9kiV2MP1myZeZ/ifEHfulQcWjnAXzc2C2A==",
+      "name": "@rolldown/binding-darwin-x64",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-g3l09pyFqhu+135JKkbkwiKGQmwU5hUMUPJ4VdBADvuqR8d33L6H578rh8m7rtxbdp+VmX/+nzI7nvhSZlzpUQ==",
+      "name": "@rolldown/binding-freebsd-x64",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-nIe3VugI97nGQtspPxDqA4sXMUpeiocKIP/CqpY/u/vgbT+alX+cVxu1C/oVBPKg4feNTmYovE91v4DgXvXNwQ==",
+      "name": "@rolldown/binding-linux-arm-gnueabihf",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-iTBjXx+B5QSvgI89lJfmqh4wTh8NabR1YZIIN3hNx4zSG0EVfVqkOvLulNpG4251pbd6/IAmZ/LefVk1Y4rPhw==",
+      "name": "@rolldown/binding-linux-arm64-gnu",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-uN26XOnVR7rqQupG3V9oAG2EGGatWjcJHOeDOHUFCh4TBWmP2tHTFoVN13aYbwfm0aHqJAEmcwhAu6sooIjfqQ==",
+      "name": "@rolldown/binding-linux-arm64-musl",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-9nWkcdd+H+XhaA3fQIwpHnKIrfx/PQ6rO0pivr78Og07tXlUlctBBJoEYLPfhTmCR/QxEVdn6uPjHV5SymPhdw==",
+      "name": "@rolldown/binding-linux-ppc64-gnu",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-Ggh0ciFjLwIusLSLz7LZYEaGdxOAUJXI+Qu5JCbhPJJHEt8vP+IjRATTJheiJsdzzTYgUiHUiw3X1Ea3ZpMBdA==",
+      "name": "@rolldown/binding-linux-s390x-gnu",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-FHg60rS6DBePAYZ9X9F67x+JObFdmgn6tupA1C/a3B+CufFmTD4mX+e8M75tCiAO3foR/6xwVBI0KQiI7sn/rw==",
+      "name": "@rolldown/binding-linux-x64-gnu",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-/cvV/7v5VGz/moiz0XKRj2dE8DzsKyhIu1KpOvJGPjRywg3yscON889UGvAe8zfiJLHup7VLjBduoGWi3HusWQ==",
+      "name": "@rolldown/binding-linux-x64-musl",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-MyzC5Hrv/sm+Z7TSGKP/j8001RO2xQm1zOpCNVL4j0cY/VhBZviludA2YFQ7i4lH6ZAXxQm0lcMdBzM+99mE7w==",
+      "name": "@rolldown/binding-openharmony-arm64",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-+PgYiS+AH5omy6L45ZLxybasauJaj3M8buoT83D+nzPmCayXlxUV9hydhciCKVyIg0B/v0BtXPDE1uGqNwCPpg==",
+      "name": "@rolldown/binding-win32-arm64-msvc",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "kind": "same-release-platform-package",
+        "reason": "Platform binding is released by the same Rolldown project/version; retain the parent package MIT license text.",
+        "upstreamPackage": "rolldown",
+        "upstreamVersion": "1.2.15"
+      },
+      "integrity": "sha512-HFZd2QNQYn1JbIi+Hpd7H+r/lkWxcfIu28nirZ6eCn2LafuvmExMlb/P96Sfx5tf7pPArw39IdhmCF8vmV+NhQ==",
+      "name": "@rolldown/binding-win32-x64-msvc",
+      "notices": [
+        {
+          "path": "compliance/licenses/collected/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+          "size": 1302,
+          "sourceComponent": {
+            "ecosystem": "npm",
+            "name": "rolldown",
+            "version": "1.2.15"
+          }
+        }
+      ],
+      "version": "1.2.15"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-dnxczajOqt0gesZlN5pGQ1s1imQVrsmCw5G2Ci4oM+0WvNz3pyRnlWrT7McoZIb8VlFwCawdmbWRmxRn7HI+VQ==",
+      "name": "@rollup/rollup-android-arm-eabi",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-Bp3JpGP00Vu3f238ivRrjf7z3xSzVPXqCmaJYA9t2c+c8vKYvOzmXF7LkkeUalTEGd6cZcSWe+PFIP3Vy48fRg==",
+      "name": "@rollup/rollup-android-arm64",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-zaYIpr670mUmmZ1tVzUFplbQbG7h3Gugx3L5FoqhsC2m/YnLlR1a7zVLmXNPy+iY1tFPEbNG+HHBXZGyId0G5w==",
+      "name": "@rollup/rollup-darwin-arm64",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-+P49fvkv2dSoeevUW+lgZ/I2JHSsJCK1Lyjj7Cu6E4UHG4tS9XIefzIjo5qhgELjAclnen1rLzK2PMKJdo+Dyg==",
+      "name": "@rollup/rollup-darwin-x64",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-l3FAAOyKJXH2ea6KNFN+MMgC/rnE94YGLXs2ehYqDcCoHt1DpvgWX75BhUJxN38XojP7Ul+4H8PRn7EdyqSDrw==",
+      "name": "@rollup/rollup-freebsd-arm64",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-VokPN3TSctKj65cyCNPaUh4vMFA8awxOot/0sp+4J7ZlNRKQEhXhawqPwajoi8H5ZFt61i0ugZJuTKXBjGJ17Q==",
+      "name": "@rollup/rollup-freebsd-x64",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-DxH0P3wxm+Yzs/p3zrk9dw1rURu8p0Nv5+MRK/L7OtnLNg5rLZraSBFZ8iUXOd9f2BlhJyEpIZUH/emjq4UJ4g==",
+      "name": "@rollup/rollup-linux-arm-gnueabihf",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-T6ZvMNe84kAz6TBWHC7hGAoEtzP1LWYw/AqayGWEF6uISt3Abk/st06LqRD9THd7Xz3NxzurUpzAuEAUbZf+nw==",
+      "name": "@rollup/rollup-linux-arm-musleabihf",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-q/4hzvQkDs8b4jIBab1pnLiiM0ayTZsN2amBFPDzuyZxjEd4wDwx0UJFYM3cOZzSf5Kw8fnWSprJzIBMkcR44Q==",
+      "name": "@rollup/rollup-linux-arm64-gnu",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-vvYWX3akdEAY6km+9wAqFDnk6pQsbJKVnj7xawcvs/+fdlYBGp+U+Qq/lLfpIxYIZvZLHMAKD9HLdacSx/r3dw==",
+      "name": "@rollup/rollup-linux-arm64-musl",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-DePa5cqOxDP/Zp0VOXpeWaGew5iIv5DXp9NYbzkX5PFQyWVX9184WCTh3hvr/7lhXo8ZVlbFLkz8+o/q1dU6gA==",
+      "name": "@rollup/rollup-linux-loong64-gnu",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-LV8aWMB8UChglMCEzs7RkN0GsH29RJaLLqwm9fCIjlqwxQTiWAqNcc7wjBkH31hV0PU/yVxGYvrYsgfea2qw6g==",
+      "name": "@rollup/rollup-linux-loong64-musl",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-QoNSnwQtaeNu5grdBbsL0tt1uyl5EnS8DA8Mr3nluMXbhdQNyhN+G4tBax7VCdxLKj8YJ0/4OO9Ho84jMnJtKA==",
+      "name": "@rollup/rollup-linux-ppc64-gnu",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-/zZp5MKapIIApE8trN8qLGNSiRN9TUoaUZ1cmVu4XnVdd5LQLOXTtyi+vtfUbNnT3iyjzpPqYeKXmvJ+gJGYWw==",
+      "name": "@rollup/rollup-linux-ppc64-musl",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-RbrzcD3aJ1k3UbtMRRBNwojdVVyXjuVAFTfn/xPa6EEl6GE9Sm/akPgFTb9aAC9pMKGJ6CtWxaGrqWcabH+ySg==",
+      "name": "@rollup/rollup-linux-riscv64-gnu",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-ZF+onDsBso8PJf1XaG9lB+O9RnBpKGnY6OrzC4CSHrtC1jb6jWLTKK4bRqdoCXHd22gyr2hiYmEAm8Wns/BOCw==",
+      "name": "@rollup/rollup-linux-riscv64-musl",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-Atk0aSIk5Zx2Wuh9dgRQgLP0Koc8hOeYpbWryMXyk8G8/HmPkwPPkMqIIDhrXHHYqfUzSJA/I7IWSBv8xSmRBA==",
+      "name": "@rollup/rollup-linux-s390x-gnu",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-0uMOcf3eZ5K+K4cYHkdxShFMPlPXCOdfDFEFn9dNYAEEd2cVvmOfH7zFgRVoDgmtQ1m9k5q7qfrHzyMAubKYUA==",
+      "name": "@rollup/rollup-linux-x64-gnu",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-mvFtE4A/t/7hRJ7X8Ozmu8FsIkAUat2nzl12pgU337BRmq87AQUJztwHz2Zv5/tjo9/C95E66CK03SI/ToEDJw==",
+      "name": "@rollup/rollup-linux-x64-musl",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-z9b9+aTxvt8n2rNltMPvyaUfB8NJ+CVyOrGK/MdIKHx7B+lXmZpm/XbRsU7Rpf3fRqJ2uS6mBJiJveCtq8LHDg==",
+      "name": "@rollup/rollup-openbsd-x64",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-jXaXFqKMehsOc+g8R6oo33RRC6w07G9jDBxAE5eAKX7mOcCbZloYIPNhfG9Wl+P9O9IWHFO4OJgPi1Ml2qkt7w==",
+      "name": "@rollup/rollup-openharmony-arm64",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-OXNWVFocS2IA4+QplhTZZ2a+8hPZR7T8KuozsNmJKK8y7cp83StHvGksfHzPG3wczWTczyWHVQuqeiTUbjiyBg==",
+      "name": "@rollup/rollup-win32-arm64-msvc",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-AlAbNtBO637LxSldqV43z0FfXoGfl2TW1DgAg/bs7aQswFbDewz2SJm3BUhiGfbOVtW571xbc9p+REdxhyN/Eg==",
+      "name": "@rollup/rollup-win32-ia32-msvc",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-QRSrQXyJ1M4tjNXdR0/G/IgV6lzfQQJYBjlWIEYkY2Xs86DRl/iEpQ4blMDjJxSl7n19eDKKXMg0AmuBVYy8pQ==",
+      "name": "@rollup/rollup-win32-x64-gnu",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-T9mWdbWfQtp0B5lv/HX+wrhYsmXRlcWnXXmJbXqKJhlRaoS6KMhq0gpyzW4UJfclcxrEdLnTgjT2NjruLONu0g==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "rollup",
+        "version": "4.61.0"
+      },
+      "integrity": "sha512-tkuFxhvKO/HlGd0VsINF6vHSYH8AF8W0TcNxKDK6JZmrehngFj78pToc8iemtnvwilDjs2G/qSzYFhe9U8q+fw==",
+      "name": "@rollup/rollup-win32-x64-msvc",
+      "notices": [
+        {
+          "archiveSha256": "bd61749d50454a68d292409af1cd909a73ef8e486bf47b8df8670a1750f21300",
+          "originalPath": "package/LICENSE.md",
+          "path": "compliance/licenses/collected/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt",
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+          "size": 35231,
+          "sourceArchive": "https://registry.npmjs.org/rollup/-/rollup-4.61.0.tgz"
+        }
+      ],
+      "version": "4.61.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-bk3HemqvGRoy+5D/dVMUQHKMYLglD0jVnMm/0iGMH6ufZ+p8r14m6BpIixwij3PBvZdvORUp1YifTD8QxVZ1Nw==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "@tauri-apps/cli",
+        "version": "2.11.2"
+      },
+      "integrity": "sha512-+4UZzLt+eOAEQCwgd+TqKgyUJMrvx+BgdXLLaqJYmPqzP+nE6YZr/hY6CWLYGQb8jFn99jEkmC6uA3tNvamA1w==",
+      "name": "@tauri-apps/cli-darwin-arm64",
+      "notices": [
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_APACHE-2.0",
+          "path": "compliance/licenses/collected/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "size": 10174,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        },
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_MIT",
+          "path": "compliance/licenses/collected/9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d.txt",
+          "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d",
+          "size": 1090,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        }
+      ],
+      "version": "2.11.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-bk3HemqvGRoy+5D/dVMUQHKMYLglD0jVnMm/0iGMH6ufZ+p8r14m6BpIixwij3PBvZdvORUp1YifTD8QxVZ1Nw==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "@tauri-apps/cli",
+        "version": "2.11.2"
+      },
+      "integrity": "sha512-VjYYtZUPqDMLutSfJEyxFE3Bz+DPi7c8wC3imckgvciLDZLq4qwKJxBicg0BXGhXjJsl8vKWgWRFNMPELQ+Xyg==",
+      "name": "@tauri-apps/cli-darwin-x64",
+      "notices": [
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_APACHE-2.0",
+          "path": "compliance/licenses/collected/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "size": 10174,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        },
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_MIT",
+          "path": "compliance/licenses/collected/9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d.txt",
+          "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d",
+          "size": 1090,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        }
+      ],
+      "version": "2.11.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-bk3HemqvGRoy+5D/dVMUQHKMYLglD0jVnMm/0iGMH6ufZ+p8r14m6BpIixwij3PBvZdvORUp1YifTD8QxVZ1Nw==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "@tauri-apps/cli",
+        "version": "2.11.2"
+      },
+      "integrity": "sha512-yMemD6f4i95AQriS8EazyOFzbE34yjnP16i3IOzpHGQvBoy2DjypFMFBq0NtPuITURv/cOGguRtHR5d79/9CSA==",
+      "name": "@tauri-apps/cli-linux-arm-gnueabihf",
+      "notices": [
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_APACHE-2.0",
+          "path": "compliance/licenses/collected/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "size": 10174,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        },
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_MIT",
+          "path": "compliance/licenses/collected/9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d.txt",
+          "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d",
+          "size": 1090,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        }
+      ],
+      "version": "2.11.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-bk3HemqvGRoy+5D/dVMUQHKMYLglD0jVnMm/0iGMH6ufZ+p8r14m6BpIixwij3PBvZdvORUp1YifTD8QxVZ1Nw==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "@tauri-apps/cli",
+        "version": "2.11.2"
+      },
+      "integrity": "sha512-cgI91D2wL8GSgoWwZXDqt+DwnuZCP2/bz03QAE4TrhgAKIsrB4hX26W/H1EONPUUNkqrsgeCD0wU6pcNjV/5kw==",
+      "name": "@tauri-apps/cli-linux-arm64-gnu",
+      "notices": [
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_APACHE-2.0",
+          "path": "compliance/licenses/collected/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "size": 10174,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        },
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_MIT",
+          "path": "compliance/licenses/collected/9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d.txt",
+          "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d",
+          "size": 1090,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        }
+      ],
+      "version": "2.11.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-bk3HemqvGRoy+5D/dVMUQHKMYLglD0jVnMm/0iGMH6ufZ+p8r14m6BpIixwij3PBvZdvORUp1YifTD8QxVZ1Nw==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "@tauri-apps/cli",
+        "version": "2.11.2"
+      },
+      "integrity": "sha512-X1rm0BERqAAggtYTESSgXrS3sz4Sb/OiPiz54UqISlXW+GkR3vNIGnsy/lejNmoXGVqri3Q53BCfQiclOIyRPw==",
+      "name": "@tauri-apps/cli-linux-arm64-musl",
+      "notices": [
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_APACHE-2.0",
+          "path": "compliance/licenses/collected/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "size": 10174,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        },
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_MIT",
+          "path": "compliance/licenses/collected/9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d.txt",
+          "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d",
+          "size": 1090,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        }
+      ],
+      "version": "2.11.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-bk3HemqvGRoy+5D/dVMUQHKMYLglD0jVnMm/0iGMH6ufZ+p8r14m6BpIixwij3PBvZdvORUp1YifTD8QxVZ1Nw==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "@tauri-apps/cli",
+        "version": "2.11.2"
+      },
+      "integrity": "sha512-usbMLJbT3KtkOrBMDVeGYNM35aTHXx38SJSzTMSqqjeUIOQ+iVPjb2yAGNAE+KqmBbAx4FOFIyMeKXx2M/JKGQ==",
+      "name": "@tauri-apps/cli-linux-riscv64-gnu",
+      "notices": [
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_APACHE-2.0",
+          "path": "compliance/licenses/collected/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "size": 10174,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        },
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_MIT",
+          "path": "compliance/licenses/collected/9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d.txt",
+          "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d",
+          "size": 1090,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        }
+      ],
+      "version": "2.11.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-bk3HemqvGRoy+5D/dVMUQHKMYLglD0jVnMm/0iGMH6ufZ+p8r14m6BpIixwij3PBvZdvORUp1YifTD8QxVZ1Nw==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "@tauri-apps/cli",
+        "version": "2.11.2"
+      },
+      "integrity": "sha512-Ru4gwJKPG0ctVGchRGpRup4Y4lW2SSfFnrbQcyHhCliKy4g8Qz97TrUgCur4CbWyAgKxvGh3SjrkA0LDYzDGiw==",
+      "name": "@tauri-apps/cli-linux-x64-gnu",
+      "notices": [
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_APACHE-2.0",
+          "path": "compliance/licenses/collected/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "size": 10174,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        },
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_MIT",
+          "path": "compliance/licenses/collected/9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d.txt",
+          "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d",
+          "size": 1090,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        }
+      ],
+      "version": "2.11.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-bk3HemqvGRoy+5D/dVMUQHKMYLglD0jVnMm/0iGMH6ufZ+p8r14m6BpIixwij3PBvZdvORUp1YifTD8QxVZ1Nw==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "@tauri-apps/cli",
+        "version": "2.11.2"
+      },
+      "integrity": "sha512-eUm7T6clN1MMmNSRQ9gaWsQdyehQx2Gmn5hht/QUlqZQI/qcP2OJK5dnaxqwFzCr2HdsEo9ydxaqcS1oJzMvUw==",
+      "name": "@tauri-apps/cli-linux-x64-musl",
+      "notices": [
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_APACHE-2.0",
+          "path": "compliance/licenses/collected/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "size": 10174,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        },
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_MIT",
+          "path": "compliance/licenses/collected/9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d.txt",
+          "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d",
+          "size": 1090,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        }
+      ],
+      "version": "2.11.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-bk3HemqvGRoy+5D/dVMUQHKMYLglD0jVnMm/0iGMH6ufZ+p8r14m6BpIixwij3PBvZdvORUp1YifTD8QxVZ1Nw==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "@tauri-apps/cli",
+        "version": "2.11.2"
+      },
+      "integrity": "sha512-HeeZW80jU+gVTOEX4X/hC6NVSAdDVXajwP5fxIZ/3z9WvUC7qrudX2GMTilYq6Dg0e0sk0XgsAJD1hZ5wPBXUA==",
+      "name": "@tauri-apps/cli-win32-arm64-msvc",
+      "notices": [
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_APACHE-2.0",
+          "path": "compliance/licenses/collected/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "size": 10174,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        },
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_MIT",
+          "path": "compliance/licenses/collected/9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d.txt",
+          "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d",
+          "size": 1090,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        }
+      ],
+      "version": "2.11.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-bk3HemqvGRoy+5D/dVMUQHKMYLglD0jVnMm/0iGMH6ufZ+p8r14m6BpIixwij3PBvZdvORUp1YifTD8QxVZ1Nw==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "@tauri-apps/cli",
+        "version": "2.11.2"
+      },
+      "integrity": "sha512-YhjQNZcXfbkCLyazSv1nPnJ9iRFE1wm6kc51FDbU10/Dk09io+6PAGMLjkxnX2GdM0qMnDmTjstY8mTDVvtKeA==",
+      "name": "@tauri-apps/cli-win32-ia32-msvc",
+      "notices": [
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_APACHE-2.0",
+          "path": "compliance/licenses/collected/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "size": 10174,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        },
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_MIT",
+          "path": "compliance/licenses/collected/9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d.txt",
+          "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d",
+          "size": 1090,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        }
+      ],
+      "version": "2.11.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "integrity": "sha512-bk3HemqvGRoy+5D/dVMUQHKMYLglD0jVnMm/0iGMH6ufZ+p8r14m6BpIixwij3PBvZdvORUp1YifTD8QxVZ1Nw==",
+        "kind": "same-release-platform-package",
+        "reason": "Platform binaries are released by the same project/version; retain its supplied original notice bundle.",
+        "upstreamPackage": "@tauri-apps/cli",
+        "version": "2.11.2"
+      },
+      "integrity": "sha512-d2JchlFIpZevZVReyqhQOekJmb1UH3rhZ5VX6sH3ty9ETE0TKQavpihvoScUXfKKpW6HZC0MrFGRU0ZtD+w3gA==",
+      "name": "@tauri-apps/cli-win32-x64-msvc",
+      "notices": [
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_APACHE-2.0",
+          "path": "compliance/licenses/collected/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "size": 10174,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        },
+        {
+          "archiveSha256": "53273c6482fc9ea25927f7600daedaa63086196102291a21b58d17cc107c36c7",
+          "originalPath": "package/LICENSE_MIT",
+          "path": "compliance/licenses/collected/9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d.txt",
+          "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d",
+          "size": 1090,
+          "sourceArchive": "https://registry.npmjs.org/@tauri-apps/cli/-/cli-2.11.2.tgz"
+        }
+      ],
+      "version": "2.11.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "a16b188d44ae43cc91edb71996ba2b43ff0996d9",
+        "declaredLicense": "MIT",
+        "kind": "same-project-original-license",
+        "originalLicenseFileSupplied": false,
+        "projectOriginalLicenseRecovered": true,
+        "projectVersion": "0.10.3",
+        "publisherArchives": [
+          {
+            "archive": "https://registry.npmjs.org/@tailwindcss/oxide-wasm32-wasi/-/oxide-wasm32-wasi-4.3.0.tgz",
+            "integrity": "sha512-HNZGOUxEmElksYR7S6sC5jTeNGpobAsy9u7Gu0AskJ8/20FR9GqebUyB+HBcU/ax6BHuiuJi+Oda4B+YX6H1yA==",
+            "sha256": "eae66392c306dac85de27b94f30ea32ddb1f6df60b0ce3465932f6586699d9db"
+          }
+        ],
+        "publisherGitHead": "70f23296562c19ba3a00b9294532c1ebf7090b05",
+        "reason": "The publisher adds its project MIT LICENSE five descendant commits after the npm 0.10.1 gitHead. This is explicitly a later same-project license from 0.10.3, not a file contained in the locked 0.10.1 archive.",
+        "repository": "toyobayashi/wasm-util",
+        "sourceFiles": [
+          {
+            "gitBlob": "772a335c052c7df8835f91bf47bb1e2845ba201e",
+            "path": "LICENSE",
+            "sourceSha256": "09e436100bf926e78df875ec80cf3d0c643dfec779b52cfe2aa96afa0de714cb"
+          }
+        ]
+      },
+      "integrity": null,
+      "name": "@tybys/wasm-util",
+      "notices": [
+        {
+          "archiveSha256": "eae66392c306dac85de27b94f30ea32ddb1f6df60b0ce3465932f6586699d9db",
+          "originalPath": "npm/@tybys/wasm-util@0.10.1/package.json",
+          "path": "compliance/licenses/collected/195dd41458bce39a8e8ee247e2d24b4ab9d7bc106f37bd1e29573d2d0f894f36.txt",
+          "sha256": "195dd41458bce39a8e8ee247e2d24b4ab9d7bc106f37bd1e29573d2d0f894f36",
+          "size": 1527,
+          "sourceArchive": "https://registry.npmjs.org/@tailwindcss/oxide-wasm32-wasi/-/oxide-wasm32-wasi-4.3.0.tgz"
+        },
+        {
+          "archiveSha256": "eae66392c306dac85de27b94f30ea32ddb1f6df60b0ce3465932f6586699d9db",
+          "originalPath": "npm/@tybys/wasm-util@0.10.1/README.md",
+          "path": "compliance/licenses/collected/e7288a5d4a20e664a27134523f05ddb98c78cfe51b8283362c3b490cb9d12018.txt",
+          "sha256": "e7288a5d4a20e664a27134523f05ddb98c78cfe51b8283362c3b490cb9d12018",
+          "size": 4466,
+          "sourceArchive": "https://registry.npmjs.org/@tailwindcss/oxide-wasm32-wasi/-/oxide-wasm32-wasi-4.3.0.tgz"
+        },
+        {
+          "originalPath": "toyobayashi/wasm-util@a16b188d44ae43cc91edb71996ba2b43ff0996d9/LICENSE",
+          "path": "compliance/licenses/collected/09e436100bf926e78df875ec80cf3d0c643dfec779b52cfe2aa96afa0de714cb.txt",
+          "sha256": "09e436100bf926e78df875ec80cf3d0c643dfec779b52cfe2aa96afa0de714cb",
+          "size": 1076,
+          "sourceBlob": "772a335c052c7df8835f91bf47bb1e2845ba201e",
+          "sourceUrl": "https://github.com/toyobayashi/wasm-util/blob/a16b188d44ae43cc91edb71996ba2b43ff0996d9/LICENSE"
+        }
+      ],
+      "version": "0.10.1"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "embeddedSourceNotices": [
+          {
+            "archiveMember": "node v22.19/index.d.ts",
+            "license": "MIT",
+            "noticeSha256": "7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b",
+            "originalCopyrights": [
+              "Copyright Node.js contributors. All rights reserved."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              0,
+              1278
+            ],
+            "sourceSha256": "9f55299850d4f0921e79b6bf344b47c420ce0f507b9dcf593e532b09ea7eeea1"
+          },
+          {
+            "archiveMember": "node v22.19/ts5.6/index.d.ts",
+            "license": "MIT",
+            "noticeSha256": "7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b",
+            "originalCopyrights": [
+              "Copyright Node.js contributors. All rights reserved."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              0,
+              1278
+            ],
+            "sourceSha256": "96e9e7f1164e252c30f2dee6f97148593e94975d6cc159e1da0c64eea4dc534b"
+          }
+        ],
+        "kind": "locked-archive-embedded-source-notices",
+        "reason": "Additional source copyrights and publisher license comments from the integrity-verified locked npm archive. Package-level license evidence is retained separately."
+      },
+      "integrity": "sha512-dyh/xO2Fh5bYrfWaaqGrRQQGkNdmYw6AmaAUvYeUMNTWQtvb796ikLdmTchRmOlOiIJ1TDXfWgVx1QkUlQ6Hew==",
+      "name": "@types/node",
+      "notices": [
+        {
+          "archiveSha256": "c32937b40ab720ef6242de0bf4c8b8e48f1e4a29fbb4cb9d9f596471ee58d5c4",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/@types/node@22.19.19/index.d.ts",
+          "path": "compliance/licenses/collected/7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b.txt",
+          "sha256": "7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b",
+          "size": 1278,
+          "sourceArchive": "https://registry.npmjs.org/@types/node/-/node-22.19.19.tgz",
+          "sourceArchiveMember": "node v22.19/index.d.ts",
+          "sourceByteRange": [
+            0,
+            1278
+          ],
+          "sourceMemberSha256": "9f55299850d4f0921e79b6bf344b47c420ce0f507b9dcf593e532b09ea7eeea1"
+        },
+        {
+          "archiveSha256": "c32937b40ab720ef6242de0bf4c8b8e48f1e4a29fbb4cb9d9f596471ee58d5c4",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/@types/node@22.19.19/ts5.6/index.d.ts",
+          "path": "compliance/licenses/collected/7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b.txt",
+          "sha256": "7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b",
+          "size": 1278,
+          "sourceArchive": "https://registry.npmjs.org/@types/node/-/node-22.19.19.tgz",
+          "sourceArchiveMember": "node v22.19/ts5.6/index.d.ts",
+          "sourceByteRange": [
+            0,
+            1278
+          ],
+          "sourceMemberSha256": "96e9e7f1164e252c30f2dee6f97148593e94975d6cc159e1da0c64eea4dc534b"
+        }
+      ],
+      "version": "22.19.19"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "embeddedSourceNotices": [
+          {
+            "archiveMember": "node/index.d.ts",
+            "license": "MIT",
+            "noticeSha256": "7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b",
+            "originalCopyrights": [
+              "Copyright Node.js contributors. All rights reserved."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              0,
+              1278
+            ],
+            "sourceSha256": "c46f111af647c4134ae869653130610d62da321f90ebf19e186a3ea4bed79350"
+          },
+          {
+            "archiveMember": "node/ts5.6/index.d.ts",
+            "license": "MIT",
+            "noticeSha256": "7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b",
+            "originalCopyrights": [
+              "Copyright Node.js contributors. All rights reserved."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              0,
+              1278
+            ],
+            "sourceSha256": "c06cc00bc72dc896b4f1cceff8f1a52ea199ce23f8a0f7ccd93420e5906b17bd"
+          },
+          {
+            "archiveMember": "node/ts5.7/index.d.ts",
+            "license": "MIT",
+            "noticeSha256": "7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b",
+            "originalCopyrights": [
+              "Copyright Node.js contributors. All rights reserved."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              0,
+              1278
+            ],
+            "sourceSha256": "62c781adc94b18f3f2982eb58a266cd48e118c3295adb7f1d51729215599c76b"
+          }
+        ],
+        "kind": "locked-archive-embedded-source-notices",
+        "reason": "Additional source copyrights and publisher license comments from the integrity-verified locked npm archive. Package-level license evidence is retained separately."
+      },
+      "integrity": "sha512-uMzsv9stDdofIZBx4UGh4Z9ZgXnGC9seRDscilBcTHAeOFk67MZg/k9bWVfO+bk4qZmG+l52hRnLwUiH2LnJTg==",
+      "name": "@types/node",
+      "notices": [
+        {
+          "archiveSha256": "e4e47dac860469aa5aa79043a6b83396299d9cd6ee23b30fcb2074625ac8dbdf",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/@types/node@26.6.5/index.d.ts",
+          "path": "compliance/licenses/collected/7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b.txt",
+          "sha256": "7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b",
+          "size": 1278,
+          "sourceArchive": "https://registry.npmjs.org/@types/node/-/node-26.6.5.tgz",
+          "sourceArchiveMember": "node/index.d.ts",
+          "sourceByteRange": [
+            0,
+            1278
+          ],
+          "sourceMemberSha256": "c46f111af647c4134ae869653130610d62da321f90ebf19e186a3ea4bed79350"
+        },
+        {
+          "archiveSha256": "e4e47dac860469aa5aa79043a6b83396299d9cd6ee23b30fcb2074625ac8dbdf",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/@types/node@26.6.5/ts5.6/index.d.ts",
+          "path": "compliance/licenses/collected/7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b.txt",
+          "sha256": "7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b",
+          "size": 1278,
+          "sourceArchive": "https://registry.npmjs.org/@types/node/-/node-26.6.5.tgz",
+          "sourceArchiveMember": "node/ts5.6/index.d.ts",
+          "sourceByteRange": [
+            0,
+            1278
+          ],
+          "sourceMemberSha256": "c06cc00bc72dc896b4f1cceff8f1a52ea199ce23f8a0f7ccd93420e5906b17bd"
+        },
+        {
+          "archiveSha256": "e4e47dac860469aa5aa79043a6b83396299d9cd6ee23b30fcb2074625ac8dbdf",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/@types/node@26.6.5/ts5.7/index.d.ts",
+          "path": "compliance/licenses/collected/7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b.txt",
+          "sha256": "7131b3af2b906d38964c2d9996dd645ed491c3959055bc11fcbd277c0b2b871b",
+          "size": 1278,
+          "sourceArchive": "https://registry.npmjs.org/@types/node/-/node-26.6.5.tgz",
+          "sourceArchiveMember": "node/ts5.7/index.d.ts",
+          "sourceByteRange": [
+            0,
+            1278
+          ],
+          "sourceMemberSha256": "62c781adc94b18f3f2982eb58a266cd48e118c3295adb7f1d51729215599c76b"
+        }
+      ],
+      "version": "26.6.5"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "4e767299184ab4079dc8d7c970020103db14f431",
+        "declaredLicense": "MIT",
+        "kind": "same-version-project-original-license",
+        "originalLicenseFileSupplied": false,
+        "packageManifestBlob": "9b4b442bfc897103abe86a04a5465f254e354257",
+        "projectOriginalLicenseRecovered": true,
+        "projectVersion": "6.1.4",
+        "publisherArchives": [
+          {
+            "archive": "https://registry.npmjs.org/bezier-js/-/bezier-js-6.1.4.tgz",
+            "integrity": "sha512-PA0FW9ZpcHbojUCMu28z9Vg/fNkwTj5YhusSAjHHDfHDGLxJ6YUKrAN2vk1fP2MMOxVw4Oko16FMlRGVBGqLKg==",
+            "sha256": "3619e2920f86ce8c16540898cffa2e386364e83ece53f51da6d3aa6dc94f9665"
+          }
+        ],
+        "publisherGitHead": "a41f3e08e9724c9973eca0eb5c1304120e72fc70",
+        "reason": "The publisher adds LICENSE.md two descendant commits after the npm gitHead, with the identical package.json blob at version 6.1.4. Preserve the publisher original; the npm archive itself still omits this file.",
+        "repository": "Pomax/bezierjs",
+        "sourceFiles": [
+          {
+            "gitBlob": "73f6bcd359e1acbf895c5c3d1c109d2822394f43",
+            "path": "LICENSE.md",
+            "sourceSha256": "4fb7b04152f7b3a7c48c98c638aba80fc1f221e915d605d45d016d87d8e2cc9f"
+          }
+        ]
+      },
+      "integrity": "sha512-PA0FW9ZpcHbojUCMu28z9Vg/fNkwTj5YhusSAjHHDfHDGLxJ6YUKrAN2vk1fP2MMOxVw4Oko16FMlRGVBGqLKg==",
+      "name": "bezier-js",
+      "notices": [
+        {
+          "archiveSha256": "3619e2920f86ce8c16540898cffa2e386364e83ece53f51da6d3aa6dc94f9665",
+          "originalPath": "npm/bezier-js@6.1.4/package.json",
+          "path": "compliance/licenses/collected/6d336643c58e191cae7828db1e6a71344321aca74872b44f5c66ed0fb974e8e1.txt",
+          "sha256": "6d336643c58e191cae7828db1e6a71344321aca74872b44f5c66ed0fb974e8e1",
+          "size": 1411,
+          "sourceArchive": "https://registry.npmjs.org/bezier-js/-/bezier-js-6.1.4.tgz"
+        },
+        {
+          "archiveSha256": "3619e2920f86ce8c16540898cffa2e386364e83ece53f51da6d3aa6dc94f9665",
+          "originalPath": "npm/bezier-js@6.1.4/README.md",
+          "path": "compliance/licenses/collected/a484d83c36be812892ec44ec1575b31ffb7fc7cca5bf730c5c4eb4b12e6b3e63.txt",
+          "sha256": "a484d83c36be812892ec44ec1575b31ffb7fc7cca5bf730c5c4eb4b12e6b3e63",
+          "size": 3067,
+          "sourceArchive": "https://registry.npmjs.org/bezier-js/-/bezier-js-6.1.4.tgz"
+        },
+        {
+          "originalPath": "Pomax/bezierjs@4e767299184ab4079dc8d7c970020103db14f431/LICENSE.md",
+          "path": "compliance/licenses/collected/4fb7b04152f7b3a7c48c98c638aba80fc1f221e915d605d45d016d87d8e2cc9f.txt",
+          "sha256": "4fb7b04152f7b3a7c48c98c638aba80fc1f221e915d605d45d016d87d8e2cc9f",
+          "size": 1049,
+          "sourceBlob": "73f6bcd359e1acbf895c5c3d1c109d2822394f43",
+          "sourceUrl": "https://github.com/Pomax/bezierjs/blob/4e767299184ab4079dc8d7c970020103db14f431/LICENSE.md"
+        }
+      ],
+      "version": "6.1.4"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "8aaff31471c918d3eac2b40939c601bee37375dd",
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "publisherGitHead": "8aaff31471c918d3eac2b40939c601bee37375dd",
+        "reason": "Publisher tarball omits notices or contains independently licensed embedded source.",
+        "repository": "blakeembrey/change-case",
+        "sourceFiles": [
+          {
+            "gitBlob": "983fbe8aec3f4e2d4add592bb1083b00d7366f66",
+            "path": "LICENSE",
+            "sourceSha256": "4eeb3271453a891df609e5a9f4ee79a68307f730c13417a3bfeffa604ac8cf25"
+          }
+        ]
+      },
+      "integrity": "sha512-HRQyTk2/YPEkt9TnUPbOpr64Uw3KOicFWPVBb+xiHvd6eBx/qPr9xqfBFDT8P2vWsvvz4jbEkfDe71W3VyNu2w==",
+      "name": "change-case",
+      "notices": [
+        {
+          "originalPath": "blakeembrey/change-case@8aaff31471c918d3eac2b40939c601bee37375dd/LICENSE",
+          "path": "compliance/licenses/collected/4eeb3271453a891df609e5a9f4ee79a68307f730c13417a3bfeffa604ac8cf25.txt",
+          "sha256": "4eeb3271453a891df609e5a9f4ee79a68307f730c13417a3bfeffa604ac8cf25",
+          "size": 1103,
+          "sourceBlob": "983fbe8aec3f4e2d4add592bb1083b00d7366f66",
+          "sourceUrl": "https://github.com/blakeembrey/change-case/blob/8aaff31471c918d3eac2b40939c601bee37375dd/LICENSE"
+        }
+      ],
+      "version": "5.4.4"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "85cd8c854aefbf1bb636789d80364cfac8ea1583",
+        "kind": "original-license-in-readme",
+        "reason": "The fixed original README contains the full copyright and MIT text."
+      },
+      "integrity": "sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==",
+      "name": "data-uri-to-buffer",
+      "notices": [
+        {
+          "archiveSha256": "a5742b1b775d0b29fb562ff7e12f7ca19874e1c47322087b47a79230791642a1",
+          "originalPath": "npm/data-uri-to-buffer@4.0.1/package.json",
+          "path": "compliance/licenses/collected/ad4f90a737ab5d8af4dad265e9218456e3779ca5beb70df38dd5feecf80121dd.txt",
+          "sha256": "ad4f90a737ab5d8af4dad265e9218456e3779ca5beb70df38dd5feecf80121dd",
+          "size": 1350,
+          "sourceArchive": "https://registry.npmjs.org/data-uri-to-buffer/-/data-uri-to-buffer-4.0.1.tgz"
+        },
+        {
+          "archiveSha256": "a5742b1b775d0b29fb562ff7e12f7ca19874e1c47322087b47a79230791642a1",
+          "originalPath": "npm/data-uri-to-buffer@4.0.1/README.md",
+          "path": "compliance/licenses/collected/a7cc4332acfa1f9b6530e01aac77fefe74f2efa32579215fddaa473013f9a25c.txt",
+          "sha256": "a7cc4332acfa1f9b6530e01aac77fefe74f2efa32579215fddaa473013f9a25c",
+          "size": 2926,
+          "sourceArchive": "https://registry.npmjs.org/data-uri-to-buffer/-/data-uri-to-buffer-4.0.1.tgz"
+        },
+        {
+          "originalPath": "TooTallNate/node-data-uri-to-buffer@85cd8c854aefbf1bb636789d80364cfac8ea1583/README.md",
+          "path": "compliance/licenses/collected/a7cc4332acfa1f9b6530e01aac77fefe74f2efa32579215fddaa473013f9a25c.txt",
+          "sha256": "a7cc4332acfa1f9b6530e01aac77fefe74f2efa32579215fddaa473013f9a25c",
+          "size": 2926,
+          "sourceBlob": "d0f2e05973586a9e863337877138fe0a600cd2ee",
+          "sourceUrl": "https://github.com/TooTallNate/node-data-uri-to-buffer/blob/85cd8c854aefbf1bb636789d80364cfac8ea1583/README.md"
+        }
+      ],
+      "version": "4.0.1"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "embeddedSourceNotices": [
+          {
+            "archiveMember": "package/lexer.js",
+            "license": "MIT",
+            "noticeSha256": "d962219012b100225526e4725301044983595937a988553ac2519996fc3a7019",
+            "originalCopyrights": [
+              "Copyright (C) 2012-2020 by various contributors (see AUTHORS)"
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              13738,
+              14921
+            ],
+            "sourceSha256": "aad11eacc508afa1bdd538fd44a0c0a179a9530a56db996c8093638cea61b42d"
+          }
+        ],
+        "kind": "locked-archive-embedded-source-notices",
+        "reason": "Additional source copyrights and publisher license comments from the integrity-verified locked npm archive. Package-level license evidence is retained separately."
+      },
+      "integrity": "sha512-poHGpORABojJJucnV9KbOavETW8lBVnphkW77ER5/BQ5Fz7oXSoCNek7IH3vR5nRjdsEz926ibFYX8KtLQmdyw==",
+      "name": "es-module-lexer",
+      "notices": [
+        {
+          "archiveSha256": "99b4da5f3bd7cc4483f3d892ee9037b10a1da26ac5bec374038cf0bd4a52e1a7",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/es-module-lexer@2.3.2/lexer.js",
+          "path": "compliance/licenses/collected/d962219012b100225526e4725301044983595937a988553ac2519996fc3a7019.txt",
+          "sha256": "d962219012b100225526e4725301044983595937a988553ac2519996fc3a7019",
+          "size": 1183,
+          "sourceArchive": "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-2.3.2.tgz",
+          "sourceArchiveMember": "package/lexer.js",
+          "sourceByteRange": [
+            13738,
+            14921
+          ],
+          "sourceMemberSha256": "aad11eacc508afa1bdd538fd44a0c0a179a9530a56db996c8093638cea61b42d"
+        }
+      ],
+      "version": "2.3.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "embeddedSourceNotices": [
+          {
+            "archiveMember": "package/styles/night-owl.css",
+            "license": "MIT",
+            "noticeSha256": "4ea335920afd5d81e5cb7ef016ba785fc165a27ae49badd139eef09361fa25dc",
+            "originalCopyrights": [
+              "Copyright (c) 2018 Sarah Drasner"
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              0,
+              1233
+            ],
+            "sourceSha256": "db04738bb8186fbbfc5ade776154ba6062209f5d5130c191a7c628c1faba095d"
+          }
+        ],
+        "kind": "locked-archive-embedded-source-notices",
+        "reason": "Additional source copyrights and publisher license comments from the integrity-verified locked npm archive. Package-level license evidence is retained separately."
+      },
+      "integrity": "sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==",
+      "name": "highlight.js",
+      "notices": [
+        {
+          "archiveSha256": "292968c31d106f910fdd2e4d73a98d9bdf621e5f6e0244d9f3fbfc3572bea91e",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/highlight.js@10.7.3/styles/night-owl.css",
+          "path": "compliance/licenses/collected/4ea335920afd5d81e5cb7ef016ba785fc165a27ae49badd139eef09361fa25dc.txt",
+          "sha256": "4ea335920afd5d81e5cb7ef016ba785fc165a27ae49badd139eef09361fa25dc",
+          "size": 1233,
+          "sourceArchive": "https://registry.npmjs.org/highlight.js/-/highlight.js-10.7.3.tgz",
+          "sourceArchiveMember": "package/styles/night-owl.css",
+          "sourceByteRange": [
+            0,
+            1233
+          ],
+          "sourceMemberSha256": "db04738bb8186fbbfc5ade776154ba6062209f5d5130c191a7c628c1faba095d"
+        }
+      ],
+      "version": "10.7.3"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "embeddedSourceNotices": [
+          {
+            "archiveMember": "package/lib/vite/traceViewer/xtermModule.DYP7pi_n.css",
+            "license": "MIT",
+            "noticeSha256": "0c6a0e06b7895d779071431d743fed7ec562870eac01450415ce714488b39836",
+            "originalCopyrights": [
+              "Copyright (c) 2014 The xterm.js authors. All rights reserved.",
+              "Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)",
+              "Copyright (c) 2011 Fabrice Bellard"
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              0,
+              1579
+            ],
+            "sourceSha256": "7c5a01f382f76539fc9b4db6b18e18a7035741845fd14968c5cdc0a7e373d817"
+          }
+        ],
+        "kind": "locked-archive-embedded-source-notices",
+        "reason": "Additional source copyrights and publisher license comments from the integrity-verified locked npm archive. Package-level license evidence is retained separately."
+      },
+      "integrity": "sha512-h7Qlt6m4REp25qvIdvbDtVmD4LqVXfpRxhORv9L0jzETM05p4fuPJ3dKyuSXQxDSbXnmS79HAgi9589lGSpLkg==",
+      "name": "playwright-core",
+      "notices": [
+        {
+          "archiveSha256": "3740bba3a3e93b4c7bd7c0f6e3c0e5f8cdce498bef13511e4d534cc99a8ce198",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/playwright-core@1.61.1/lib/vite/traceViewer/xtermModule.DYP7pi_n.css",
+          "path": "compliance/licenses/collected/0c6a0e06b7895d779071431d743fed7ec562870eac01450415ce714488b39836.txt",
+          "sha256": "0c6a0e06b7895d779071431d743fed7ec562870eac01450415ce714488b39836",
+          "size": 1579,
+          "sourceArchive": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.61.1.tgz",
+          "sourceArchiveMember": "package/lib/vite/traceViewer/xtermModule.DYP7pi_n.css",
+          "sourceByteRange": [
+            0,
+            1579
+          ],
+          "sourceMemberSha256": "7c5a01f382f76539fc9b4db6b18e18a7035741845fd14968c5cdc0a7e373d817"
+        }
+      ],
+      "version": "1.61.1"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "embeddedSourceNotices": [
+          {
+            "archiveMember": "package/browser.js",
+            "license": "MIT",
+            "noticeSha256": "4585ccddcaaeb0db4b8e81d81c1065598d909f2704f0c09ea740a5abd809220b",
+            "originalCopyrights": [
+              "Copyright (c) 2009 Thomas Robinson <280north.com>"
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              66587,
+              67852
+            ],
+            "sourceSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+          },
+          {
+            "archiveMember": "package/browser.js",
+            "license": "MIT",
+            "noticeSha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+            "originalCopyrights": [
+              "Copyright Joyent, Inc. and other Node contributors."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              161981,
+              163113
+            ],
+            "sourceSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+          },
+          {
+            "archiveMember": "package/browser.js",
+            "license": "MIT",
+            "noticeSha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+            "originalCopyrights": [
+              "Copyright Joyent, Inc. and other Node contributors."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              165139,
+              166271
+            ],
+            "sourceSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+          },
+          {
+            "archiveMember": "package/browser.js",
+            "license": "MIT",
+            "noticeSha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+            "originalCopyrights": [
+              "Copyright Joyent, Inc. and other Node contributors."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              379618,
+              380750
+            ],
+            "sourceSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+          },
+          {
+            "archiveMember": "package/browser.js",
+            "license": "MIT",
+            "noticeSha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+            "originalCopyrights": [
+              "Copyright Joyent, Inc. and other Node contributors."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              383510,
+              384642
+            ],
+            "sourceSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+          },
+          {
+            "archiveMember": "package/browser.js",
+            "license": "MIT",
+            "noticeSha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+            "originalCopyrights": [
+              "Copyright Joyent, Inc. and other Node contributors."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              385377,
+              386509
+            ],
+            "sourceSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+          },
+          {
+            "archiveMember": "package/browser.js",
+            "license": "MIT",
+            "noticeSha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+            "originalCopyrights": [
+              "Copyright Joyent, Inc. and other Node contributors."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              416618,
+              417750
+            ],
+            "sourceSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+          },
+          {
+            "archiveMember": "package/browser.js",
+            "license": "MIT",
+            "noticeSha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+            "originalCopyrights": [
+              "Copyright Joyent, Inc. and other Node contributors."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              424530,
+              425662
+            ],
+            "sourceSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+          },
+          {
+            "archiveMember": "package/browser.js",
+            "license": "MIT",
+            "noticeSha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+            "originalCopyrights": [
+              "Copyright Joyent, Inc. and other Node contributors."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              459148,
+              460280
+            ],
+            "sourceSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+          },
+          {
+            "archiveMember": "package/browser.js",
+            "license": "MIT",
+            "noticeSha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+            "originalCopyrights": [
+              "Copyright Joyent, Inc. and other Node contributors."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              465200,
+              466332
+            ],
+            "sourceSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+          }
+        ],
+        "kind": "locked-archive-embedded-source-notices",
+        "reason": "Additional source copyrights and publisher license comments from the integrity-verified locked npm archive. Package-level license evidence is retained separately."
+      },
+      "integrity": "sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==",
+      "name": "pngjs",
+      "notices": [
+        {
+          "archiveSha256": "4d960bbbe078022d7a36822e2874f884c7410ead111f3603d69d70fc7af36f20",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/pngjs@5.0.0/browser.js",
+          "path": "compliance/licenses/collected/4585ccddcaaeb0db4b8e81d81c1065598d909f2704f0c09ea740a5abd809220b.txt",
+          "sha256": "4585ccddcaaeb0db4b8e81d81c1065598d909f2704f0c09ea740a5abd809220b",
+          "size": 1265,
+          "sourceArchive": "https://registry.npmjs.org/pngjs/-/pngjs-5.0.0.tgz",
+          "sourceArchiveMember": "package/browser.js",
+          "sourceByteRange": [
+            66587,
+            67852
+          ],
+          "sourceMemberSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+        },
+        {
+          "archiveSha256": "4d960bbbe078022d7a36822e2874f884c7410ead111f3603d69d70fc7af36f20",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/pngjs@5.0.0/browser.js",
+          "path": "compliance/licenses/collected/9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325.txt",
+          "sha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+          "size": 1132,
+          "sourceArchive": "https://registry.npmjs.org/pngjs/-/pngjs-5.0.0.tgz",
+          "sourceArchiveMember": "package/browser.js",
+          "sourceByteRange": [
+            161981,
+            163113
+          ],
+          "sourceMemberSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+        },
+        {
+          "archiveSha256": "4d960bbbe078022d7a36822e2874f884c7410ead111f3603d69d70fc7af36f20",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/pngjs@5.0.0/browser.js",
+          "path": "compliance/licenses/collected/9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325.txt",
+          "sha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+          "size": 1132,
+          "sourceArchive": "https://registry.npmjs.org/pngjs/-/pngjs-5.0.0.tgz",
+          "sourceArchiveMember": "package/browser.js",
+          "sourceByteRange": [
+            165139,
+            166271
+          ],
+          "sourceMemberSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+        },
+        {
+          "archiveSha256": "4d960bbbe078022d7a36822e2874f884c7410ead111f3603d69d70fc7af36f20",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/pngjs@5.0.0/browser.js",
+          "path": "compliance/licenses/collected/9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325.txt",
+          "sha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+          "size": 1132,
+          "sourceArchive": "https://registry.npmjs.org/pngjs/-/pngjs-5.0.0.tgz",
+          "sourceArchiveMember": "package/browser.js",
+          "sourceByteRange": [
+            379618,
+            380750
+          ],
+          "sourceMemberSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+        },
+        {
+          "archiveSha256": "4d960bbbe078022d7a36822e2874f884c7410ead111f3603d69d70fc7af36f20",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/pngjs@5.0.0/browser.js",
+          "path": "compliance/licenses/collected/9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325.txt",
+          "sha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+          "size": 1132,
+          "sourceArchive": "https://registry.npmjs.org/pngjs/-/pngjs-5.0.0.tgz",
+          "sourceArchiveMember": "package/browser.js",
+          "sourceByteRange": [
+            383510,
+            384642
+          ],
+          "sourceMemberSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+        },
+        {
+          "archiveSha256": "4d960bbbe078022d7a36822e2874f884c7410ead111f3603d69d70fc7af36f20",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/pngjs@5.0.0/browser.js",
+          "path": "compliance/licenses/collected/9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325.txt",
+          "sha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+          "size": 1132,
+          "sourceArchive": "https://registry.npmjs.org/pngjs/-/pngjs-5.0.0.tgz",
+          "sourceArchiveMember": "package/browser.js",
+          "sourceByteRange": [
+            385377,
+            386509
+          ],
+          "sourceMemberSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+        },
+        {
+          "archiveSha256": "4d960bbbe078022d7a36822e2874f884c7410ead111f3603d69d70fc7af36f20",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/pngjs@5.0.0/browser.js",
+          "path": "compliance/licenses/collected/9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325.txt",
+          "sha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+          "size": 1132,
+          "sourceArchive": "https://registry.npmjs.org/pngjs/-/pngjs-5.0.0.tgz",
+          "sourceArchiveMember": "package/browser.js",
+          "sourceByteRange": [
+            416618,
+            417750
+          ],
+          "sourceMemberSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+        },
+        {
+          "archiveSha256": "4d960bbbe078022d7a36822e2874f884c7410ead111f3603d69d70fc7af36f20",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/pngjs@5.0.0/browser.js",
+          "path": "compliance/licenses/collected/9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325.txt",
+          "sha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+          "size": 1132,
+          "sourceArchive": "https://registry.npmjs.org/pngjs/-/pngjs-5.0.0.tgz",
+          "sourceArchiveMember": "package/browser.js",
+          "sourceByteRange": [
+            424530,
+            425662
+          ],
+          "sourceMemberSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+        },
+        {
+          "archiveSha256": "4d960bbbe078022d7a36822e2874f884c7410ead111f3603d69d70fc7af36f20",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/pngjs@5.0.0/browser.js",
+          "path": "compliance/licenses/collected/9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325.txt",
+          "sha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+          "size": 1132,
+          "sourceArchive": "https://registry.npmjs.org/pngjs/-/pngjs-5.0.0.tgz",
+          "sourceArchiveMember": "package/browser.js",
+          "sourceByteRange": [
+            459148,
+            460280
+          ],
+          "sourceMemberSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+        },
+        {
+          "archiveSha256": "4d960bbbe078022d7a36822e2874f884c7410ead111f3603d69d70fc7af36f20",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/pngjs@5.0.0/browser.js",
+          "path": "compliance/licenses/collected/9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325.txt",
+          "sha256": "9ed580a09fdd2e561c0ffc1fb5504c66b9cd72b039ac979d96264436deeca325",
+          "size": 1132,
+          "sourceArchive": "https://registry.npmjs.org/pngjs/-/pngjs-5.0.0.tgz",
+          "sourceArchiveMember": "package/browser.js",
+          "sourceByteRange": [
+            465200,
+            466332
+          ],
+          "sourceMemberSha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+        }
+      ],
+      "version": "5.0.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "211fa0ebec9b628affc09219199639887174bfc3",
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "publisherGitHead": "211fa0ebec9b628affc09219199639887174bfc3",
+        "reason": "Publisher tarball omits notices or contains independently licensed embedded source.",
+        "repository": "lddubeau/saxes",
+        "sourceFiles": [
+          {
+            "gitBlob": "187f3ba399862022f4e670b2a3a1dbc6d7e6a800",
+            "path": "LICENSE",
+            "sourceSha256": "0fac2374380621b22e6b50451057721a9c52935b02d16d106a9f04897f061d0e"
+          }
+        ]
+      },
+      "integrity": "sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==",
+      "name": "saxes",
+      "notices": [
+        {
+          "originalPath": "lddubeau/saxes@211fa0ebec9b628affc09219199639887174bfc3/LICENSE",
+          "path": "compliance/licenses/collected/0fac2374380621b22e6b50451057721a9c52935b02d16d106a9f04897f061d0e.txt",
+          "sha256": "0fac2374380621b22e6b50451057721a9c52935b02d16d106a9f04897f061d0e",
+          "size": 3011,
+          "sourceBlob": "187f3ba399862022f4e670b2a3a1dbc6d7e6a800",
+          "sourceUrl": "https://github.com/lddubeau/saxes/blob/211fa0ebec9b628affc09219199639887174bfc3/LICENSE"
+        }
+      ],
+      "version": "6.0.0"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "5971995be3ce05d4a1bf820fdf9d7ccdc942e945",
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "publisherGitHead": "5971995be3ce05d4a1bf820fdf9d7ccdc942e945",
+        "reason": "Publisher tarball omits notices or contains independently licensed embedded source.",
+        "repository": "idranme/silk-wasm",
+        "sourceFiles": [
+          {
+            "gitBlob": "9e1034caa668ad49f99f827374724009958ef2be",
+            "path": "LICENSE",
+            "sourceSha256": "449bc5a81385bb4a9e3a0cba5e03e64ca8591362cd7cac4caec5e339bc947e46"
+          },
+          {
+            "gitBlob": "48a90e702504fdf91b1c02af3a3474c2c5ddf6f0",
+            "path": "binding/libSilkCodec/silk/LICENSE",
+            "sourceSha256": "2605f550752714dccc2b9f38c5951582937b1f1e957bc0d0b51bad5a0ac5f6b6"
+          },
+          {
+            "gitBlob": "0209ed9b062e0bc623f86a8e08726b5dd24e084e",
+            "path": "binding/libSilkCodec/silk/src/SILK_SDK_SRC_ARM_v1.0.9/interface/SKP_Silk_SDK_API.h",
+            "sourceSha256": "1a248d7c2fa783ee21ab25f7a7e9a23cedd38ace3251f9b39f85a327daaee557"
+          }
+        ]
+      },
+      "integrity": "sha512-mXPwLRtZxrYV3TZx41jMAeKc80wvmyrcXIcs8HctFxK15Ahz2OJQENYhNgEPeCEOdI6Mbx1NxQsqxzwc3DKerw==",
+      "name": "silk-wasm",
+      "notices": [
+        {
+          "originalPath": "idranme/silk-wasm@5971995be3ce05d4a1bf820fdf9d7ccdc942e945/LICENSE",
+          "path": "compliance/licenses/collected/449bc5a81385bb4a9e3a0cba5e03e64ca8591362cd7cac4caec5e339bc947e46.txt",
+          "sha256": "449bc5a81385bb4a9e3a0cba5e03e64ca8591362cd7cac4caec5e339bc947e46",
+          "size": 1064,
+          "sourceBlob": "9e1034caa668ad49f99f827374724009958ef2be",
+          "sourceUrl": "https://github.com/idranme/silk-wasm/blob/5971995be3ce05d4a1bf820fdf9d7ccdc942e945/LICENSE"
+        },
+        {
+          "originalPath": "idranme/silk-wasm@5971995be3ce05d4a1bf820fdf9d7ccdc942e945/binding/libSilkCodec/silk/LICENSE",
+          "path": "compliance/licenses/collected/2605f550752714dccc2b9f38c5951582937b1f1e957bc0d0b51bad5a0ac5f6b6.txt",
+          "sha256": "2605f550752714dccc2b9f38c5951582937b1f1e957bc0d0b51bad5a0ac5f6b6",
+          "size": 1291,
+          "sourceBlob": "48a90e702504fdf91b1c02af3a3474c2c5ddf6f0",
+          "sourceUrl": "https://github.com/idranme/silk-wasm/blob/5971995be3ce05d4a1bf820fdf9d7ccdc942e945/binding/libSilkCodec/silk/LICENSE"
+        },
+        {
+          "extraction": "Leading original copyright/license comment; source blob checked separately",
+          "originalPath": "idranme/silk-wasm@5971995be3ce05d4a1bf820fdf9d7ccdc942e945/binding/libSilkCodec/silk/src/SILK_SDK_SRC_ARM_v1.0.9/interface/SKP_Silk_SDK_API.h",
+          "path": "compliance/licenses/collected/10abd8371227c527862ddb062631394e99ad27ce78a7290a85405433b63f515e.txt",
+          "sha256": "10abd8371227c527862ddb062631394e99ad27ce78a7290a85405433b63f515e",
+          "size": 1787,
+          "sourceBlob": "0209ed9b062e0bc623f86a8e08726b5dd24e084e",
+          "sourceUrl": "https://github.com/idranme/silk-wasm/blob/5971995be3ce05d4a1bf820fdf9d7ccdc942e945/binding/libSilkCodec/silk/src/SILK_SDK_SRC_ARM_v1.0.9/interface/SKP_Silk_SDK_API.h"
+        }
+      ],
+      "version": "3.7.1"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "1135207e92c40354543cbd15c763c7a61d79d432",
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "publisherGitHead": "1135207e92c40354543cbd15c763c7a61d79d432",
+        "reason": "Publisher tarball omits notices or contains independently licensed embedded source.",
+        "repository": "lukeed/sirv",
+        "sourceFiles": [
+          {
+            "gitBlob": "d46889ae35762abe2fc2f33a4b2ef0825fd1a6dc",
+            "path": "license",
+            "sourceSha256": "ba573393f24555ac0528612ad39665fab5bdcc80330a61096024bbf5f736526d"
+          }
+        ]
+      },
+      "integrity": "sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g==",
+      "name": "sirv",
+      "notices": [
+        {
+          "originalPath": "lukeed/sirv@1135207e92c40354543cbd15c763c7a61d79d432/license",
+          "path": "compliance/licenses/collected/ba573393f24555ac0528612ad39665fab5bdcc80330a61096024bbf5f736526d.txt",
+          "sha256": "ba573393f24555ac0528612ad39665fab5bdcc80330a61096024bbf5f736526d",
+          "size": 1122,
+          "sourceBlob": "d46889ae35762abe2fc2f33a4b2ef0825fd1a6dc",
+          "sourceUrl": "https://github.com/lukeed/sirv/blob/1135207e92c40354543cbd15c763c7a61d79d432/license"
+        }
+      ],
+      "version": "3.0.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "embeddedSourceNotices": [
+          {
+            "archiveMember": "package/lib/base64-vlq.js",
+            "license": "BSD-3-Clause",
+            "noticeSha256": "0c046eff03e6793947e2122f42c1b38d0f13f19b4b6fdafa3914d81186f22624",
+            "originalCopyrights": [
+              "Copyright 2011 Mozilla Foundation and contributors",
+              "Copyright 2011 The Closure Compiler Authors. All rights reserved."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              44,
+              1968
+            ],
+            "sourceSha256": "f3407e528f54ec0787bd0a71eeac0c99fffd98445916fcbe116dc69ca3be928b"
+          }
+        ],
+        "kind": "locked-archive-embedded-source-notices",
+        "reason": "Additional source copyrights and publisher license comments from the integrity-verified locked npm archive. Package-level license evidence is retained separately."
+      },
+      "integrity": "sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==",
+      "name": "source-map-js",
+      "notices": [
+        {
+          "archiveSha256": "05c8cf8e7c3a6b56cada7668fe9342b10f4b625efc92aba9ba05b9e8fe4d71a3",
+          "embeddedLicense": "BSD-3-Clause",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/source-map-js@1.2.2/lib/base64-vlq.js",
+          "path": "compliance/licenses/collected/0c046eff03e6793947e2122f42c1b38d0f13f19b4b6fdafa3914d81186f22624.txt",
+          "sha256": "0c046eff03e6793947e2122f42c1b38d0f13f19b4b6fdafa3914d81186f22624",
+          "size": 1924,
+          "sourceArchive": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.2.tgz",
+          "sourceArchiveMember": "package/lib/base64-vlq.js",
+          "sourceByteRange": [
+            44,
+            1968
+          ],
+          "sourceMemberSha256": "f3407e528f54ec0787bd0a71eeac0c99fffd98445916fcbe116dc69ca3be928b"
+        }
+      ],
+      "version": "1.2.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "commit": "b4d2c14fc5b4ccff3ff271e3b087dff812254c59",
+        "kind": "publisher-metadata-and-fixed-source-blobs",
+        "publisherGitHead": "b4d2c14fc5b4ccff3ff271e3b087dff812254c59",
+        "reason": "Publisher tarball omits notices or contains independently licensed embedded source.",
+        "repository": "standard-webhooks/standard-webhooks",
+        "sourceFiles": [
+          {
+            "gitBlob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+            "path": "LICENSE",
+            "sourceSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+          }
+        ]
+      },
+      "integrity": "sha512-bCbX9ZEyFkWPsRz7Bl3NuQUJohmwGSev/yhr7vhaGPlc4AfIrspIRa6cPTBuI1ItmrTDJ4d/S2hCsfe4+vQGnQ==",
+      "name": "standardwebhooks",
+      "notices": [
+        {
+          "originalPath": "standard-webhooks/standard-webhooks@b4d2c14fc5b4ccff3ff271e3b087dff812254c59/LICENSE",
+          "path": "compliance/licenses/collected/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "size": 11357,
+          "sourceBlob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+          "sourceUrl": "https://github.com/standard-webhooks/standard-webhooks/blob/b4d2c14fc5b4ccff3ff271e3b087dff812254c59/LICENSE"
+        }
+      ],
+      "version": "1.1.1"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "embeddedSourceNotices": [
+          {
+            "archiveMember": "package/dist/cookie/cookie.js",
+            "license": "BSD-3-Clause",
+            "noticeSha256": "c3569014eec497efe37247e46a92f2036563dff3d7af0ed44e954351efd49292",
+            "originalCopyrights": [
+              "Copyright (c) 2015-2020, Salesforce.com, Inc."
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              1129,
+              2705
+            ],
+            "sourceSha256": "01639adb2b748f785d5e63b688e0dd83ba8a64dfc7fc9fc041ef6bc08829c6c8"
+          },
+          {
+            "archiveMember": "package/dist/validators.js",
+            "license": "MIT",
+            "noticeSha256": "fe4b23b3b358b6e568ea1a2778385ccc191aa01c61ecc0803589ee5645f25db4",
+            "originalCopyrights": [
+              "Copyright (c) 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019 Phil Booth"
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              14,
+              1374
+            ],
+            "sourceSha256": "7baced48361266c525fa95b55c3152356294d821016cf896a15f4b7c762c0c77"
+          }
+        ],
+        "kind": "locked-archive-embedded-source-notices",
+        "reason": "Additional source copyrights and publisher license comments from the integrity-verified locked npm archive. Package-level license evidence is retained separately."
+      },
+      "integrity": "sha512-FVDYdxtnj0G6Qm/DhNPSb8Ju59ULcup3tuJxkFb5K8Bv2pUXILbf0xZWU8PX8Ov19OXljbUyveOFwRMwkXzO+A==",
+      "name": "tough-cookie",
+      "notices": [
+        {
+          "archiveSha256": "73baea52c8cdd34f301126e7b4e47c19ec43e228d49c9db5230b1dc3039ac43b",
+          "embeddedLicense": "BSD-3-Clause",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/tough-cookie@5.1.2/dist/cookie/cookie.js",
+          "path": "compliance/licenses/collected/c3569014eec497efe37247e46a92f2036563dff3d7af0ed44e954351efd49292.txt",
+          "sha256": "c3569014eec497efe37247e46a92f2036563dff3d7af0ed44e954351efd49292",
+          "size": 1576,
+          "sourceArchive": "https://registry.npmjs.org/tough-cookie/-/tough-cookie-5.1.2.tgz",
+          "sourceArchiveMember": "package/dist/cookie/cookie.js",
+          "sourceByteRange": [
+            1129,
+            2705
+          ],
+          "sourceMemberSha256": "01639adb2b748f785d5e63b688e0dd83ba8a64dfc7fc9fc041ef6bc08829c6c8"
+        },
+        {
+          "archiveSha256": "73baea52c8cdd34f301126e7b4e47c19ec43e228d49c9db5230b1dc3039ac43b",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/tough-cookie@5.1.2/dist/validators.js",
+          "path": "compliance/licenses/collected/fe4b23b3b358b6e568ea1a2778385ccc191aa01c61ecc0803589ee5645f25db4.txt",
+          "sha256": "fe4b23b3b358b6e568ea1a2778385ccc191aa01c61ecc0803589ee5645f25db4",
+          "size": 1360,
+          "sourceArchive": "https://registry.npmjs.org/tough-cookie/-/tough-cookie-5.1.2.tgz",
+          "sourceArchiveMember": "package/dist/validators.js",
+          "sourceByteRange": [
+            14,
+            1374
+          ],
+          "sourceMemberSha256": "7baced48361266c525fa95b55c3152356294d821016cf896a15f4b7c762c0c77"
+        }
+      ],
+      "version": "5.1.2"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "embeddedSourceNotices": [
+          {
+            "archiveMember": "package/dist/chunks/rpc.MzXet3jl.js",
+            "license": "MIT",
+            "noticeSha256": "4ad7bf2afccbe8ce8474f7004eeb52f30f794372d6cc3175790ddecf482988d9",
+            "originalCopyrights": [
+              "Copyright (c) 2014 Bob Lauer"
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              253,
+              1334
+            ],
+            "sourceSha256": "5be591fb05181d5b57f3bb506193e7558b2d3d4ed0402535c680e1c7653fadd0"
+          }
+        ],
+        "kind": "locked-archive-embedded-source-notices",
+        "reason": "Additional source copyrights and publisher license comments from the integrity-verified locked npm archive. Package-level license evidence is retained separately."
+      },
+      "integrity": "sha512-5eWdz2yb3ajxWF3C8C4TjkXl7FGm3n2E/VlazALrQHzK7nYMSGFnCZto0bbPNl77AwkOZVLk0YnBAejUu0NiWA==",
+      "name": "vitest",
+      "notices": [
+        {
+          "archiveSha256": "ac79c9561c99eabc1cc29e0a839cbd03d1ff0e45bbecb5a2edfa6c3827c823d1",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/vitest@4.1.12/dist/chunks/rpc.MzXet3jl.js",
+          "path": "compliance/licenses/collected/4ad7bf2afccbe8ce8474f7004eeb52f30f794372d6cc3175790ddecf482988d9.txt",
+          "sha256": "4ad7bf2afccbe8ce8474f7004eeb52f30f794372d6cc3175790ddecf482988d9",
+          "size": 1081,
+          "sourceArchive": "https://registry.npmjs.org/vitest/-/vitest-4.1.12.tgz",
+          "sourceArchiveMember": "package/dist/chunks/rpc.MzXet3jl.js",
+          "sourceByteRange": [
+            253,
+            1334
+          ],
+          "sourceMemberSha256": "5be591fb05181d5b57f3bb506193e7558b2d3d4ed0402535c680e1c7653fadd0"
+        }
+      ],
+      "version": "4.1.12"
+    },
+    {
+      "ecosystem": "npm",
+      "evidence": {
+        "embeddedSourceNotices": [
+          {
+            "archiveMember": "package/build/lib/levenshtein.js",
+            "license": "MIT",
+            "noticeSha256": "5b0b3b1141e4d4f9d0de30c1af57de71a3abcba87f7cec4b2193b8291ad8e6a9",
+            "originalCopyrights": [
+              "Copyright (c) 2011 Andrei Mackenzie"
+            ],
+            "reason": "Preserve this publisher-supplied comment as written, including any abbreviated terms; do not replace it with a generic license template.",
+            "sourceByteRange": [
+              14,
+              1079
+            ],
+            "sourceSha256": "478054c3ec4f1097e9798a5959a1987da85d2ed81847ccd1f7f3181ae519683d"
+          }
+        ],
+        "kind": "locked-archive-embedded-source-notices",
+        "reason": "Additional source copyrights and publisher license comments from the integrity-verified locked npm archive. Package-level license evidence is retained separately."
+      },
+      "integrity": "sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==",
+      "name": "yargs",
+      "notices": [
+        {
+          "archiveSha256": "41abfec6a74cfb4fa330af2a33b867dfa06a9b2b439bb01244c4f47c585de535",
+          "embeddedLicense": "MIT",
+          "extraction": "Unmodified original source comment bytes; offsets are zero-based, end-exclusive.",
+          "originalPath": "npm/yargs@15.4.1/build/lib/levenshtein.js",
+          "path": "compliance/licenses/collected/5b0b3b1141e4d4f9d0de30c1af57de71a3abcba87f7cec4b2193b8291ad8e6a9.txt",
+          "sha256": "5b0b3b1141e4d4f9d0de30c1af57de71a3abcba87f7cec4b2193b8291ad8e6a9",
+          "size": 1065,
+          "sourceArchive": "https://registry.npmjs.org/yargs/-/yargs-15.4.1.tgz",
+          "sourceArchiveMember": "package/build/lib/levenshtein.js",
+          "sourceByteRange": [
+            14,
+            1079
+          ],
+          "sourceMemberSha256": "478054c3ec4f1097e9798a5959a1987da85d2ed81847ccd1f7f3181ae519683d"
+        }
+      ],
+      "version": "15.4.1"
+    }
+  ],
+  "formatVersion": 1
+}

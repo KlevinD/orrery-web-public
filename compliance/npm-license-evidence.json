@@ -1,0 +1,77 @@
+{
+  "formatVersion": 1,
+  "packages": [
+    {
+      "name": "@tauri-apps/api",
+      "version": "2.11.0",
+      "license": "Apache-2.0 OR MIT",
+      "integrity": "sha512-7CinYODhky9lmO23xHnUFv0Xt43fbtWMyxZcLcRBlFkcgXKuEirBvHpmtJ89YMhyeGcq20Wuc47Fa4XjyniywA==",
+      "metadataSource": "Installed official npm tarball package.json after integrity-checked npm ci; optional Web-to-Tauri bridge only",
+      "files": [
+        {
+          "path": "compliance/licenses/tauri-api-2.11.0-Apache-2.0.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "compliance/licenses/tauri-api-2.11.0-MIT.txt",
+          "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d"
+        }
+      ]
+    },
+    {
+      "name": "@tauri-apps/cli",
+      "version": "2.11.2",
+      "license": "Apache-2.0 OR MIT",
+      "integrity": "sha512-bk3HemqvGRoy+5D/dVMUQHKMYLglD0jVnMm/0iGMH6ufZ+p8r14m6BpIixwij3PBvZdvORUp1YifTD8QxVZ1Nw==",
+      "metadataSource": "Installed official npm tarball package.json after integrity-checked npm ci; optional desktop build tooling only",
+      "files": [
+        {
+          "path": "compliance/licenses/tauri-cli-2.11.2-Apache-2.0.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "compliance/licenses/tauri-cli-2.11.2-MIT.txt",
+          "sha256": "9dd42ea92cff2ede5cd477cbfcce051b2d0115c0ac7f368ee88cb545055dff1d"
+        }
+      ]
+    },
+    {
+      "name": "playwright",
+      "version": "1.61.1",
+      "license": "Apache-2.0",
+      "integrity": "sha512-DWnY5o3YbLWK4GovuAVwpqL+1VwGNdUGrRr++8j8PtQQzvAVZUIMjKQ90fY689sEJZJBbZVw1rXaOKSTitkzPQ==",
+      "metadataSource": "Installed official npm tarball package.json after integrity-checked npm ci; no dependency resolution changes",
+      "files": [
+        {
+          "path": "compliance/licenses/playwright-1.61.1-LICENSE.txt",
+          "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+        },
+        {
+          "path": "compliance/licenses/playwright-1.61.1-NOTICE.txt",
+          "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+        }
+      ]
+    },
+    {
+      "name": "silk-wasm",
+      "version": "3.7.1",
+      "license": "MIT",
+      "integrity": "sha512-mXPwLRtZxrYV3TZx41jMAeKc80wvmyrcXIcs8HctFxK15Ahz2OJQENYhNgEPeCEOdI6Mbx1NxQsqxzwc3DKerw==",
+      "metadataSource": "Installed official npm tarball package.json after integrity-checked npm ci; embedded SILK SDK notices are recorded separately",
+      "files": [
+        {
+          "path": "compliance/licenses/silk-wasm-3.7.1-MIT.txt",
+          "sha256": "3b1585c0e6d9d501e86383948fc0d1734bcb86517a13111d97749c65ad2bfb74"
+        },
+        {
+          "path": "compliance/licenses/silk-wasm-3.7.1-SILK-SDK-BSD.txt",
+          "sha256": "2605f550752714dccc2b9f38c5951582937b1f1e957bc0d0b51bad5a0ac5f6b6"
+        },
+        {
+          "path": "compliance/licenses/silk-wasm-3.7.1-SILK-SDK-Skype.txt",
+          "sha256": "10abd8371227c527862ddb062631394e99ad27ce78a7290a85405433b63f515e"
+        }
+      ]
+    }
+  ]
+}

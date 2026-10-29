@@ -1,0 +1,101 @@
+    {:else if activeTab === 'focus'}
+      <div class="mb-2 flex items-center gap-4 border-b border-[#ececec]">
+        {#each taskFeedFilterOptions() as filter}
+          <button
+            type="button"
+            class="-mb-px border-b-2 pb-2 text-[13px] transition-colors {taskFeedFilter === filter.value ? 'border-black font-medium text-black' : 'border-transparent text-[#8a8a8a] hover:text-black'}"
+            onclick={() => (taskFeedFilter = filter.value)}
+          >
+            {filter.label}
+          </button>
+        {/each}
+      </div>
+
+      {#if homeTaskFeed.length}
+        <div class="divide-y divide-[#f0f0f0]" data-testid="home-task-feed">
+          {#each homeTaskFeed as task (task.todo_id)}
+            <article class="group flex w-full items-center gap-3 px-1 py-3 text-left transition-colors hover:bg-[#fafafa]">
+              {#if task.assignee_id}
+                <WorkforceAvatar
+                  profileId={taskAssigneeProfileId(task)}
+                  name={task.assignee_name || task.assignee_id}
+                  human={taskAssigneeIsHuman(task)}
+                  class="h-8 w-8 rounded-full"
+                  textClass="text-[12px]"
+                />
+              {:else}
+                <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#e8e8e8] text-[12px] font-medium text-[#3a3a3a]">--</span>
+              {/if}
+              <div class="min-w-0 flex-1">
+                <a class="block truncate text-[13.5px] text-black hover:underline" href={`/todos/${encodeURIComponent(task.todo_id)}`}>{task.title}</a>
+                <div class="mt-0.5 flex min-w-0 items-center gap-1 text-[11.5px] text-[#a0a0a0]" data-task-metadata>
+                  {#if canWriteTodos}
+                    <select
+                      value={task.assignee_id ?? ''}
+                      aria-label={`${t('workhub.form.assignee')}: ${task.title}`}
+                      disabled={todoMutationPending}
+                      class="min-w-0 max-w-40 truncate bg-transparent outline-none hover:text-black"
+                      onchange={(event) => changeTaskAssignee(task, event.currentTarget.value)}
+                    >
+                      {#each assigneeOptionsFor(task) as option}
+                        <option value={option.value}>{option.label}</option>
+                      {/each}
+                    </select>
+                    {#if task.issue_number}
+                      <span>·</span>
+                      <span class="shrink-0 font-mono">{task.issue_number}</span>
+                    {/if}
+                    <span>·</span>
+                    <span class="shrink-0 {priorityTextClass(task.priority)}">{t(`workhub.priority.${task.priority}` as TranslationKey)}</span>
+                    <span>·</span>
+                    <span class="shrink-0">{shortDate(task.updated_at || task.created_at)}</span>
+                  {:else}
+                    <span class="truncate">{taskSecondaryLine(task)}</span>
+                  {/if}
+                </div>
+                {#if task.blocked_reason}
+                  <span class="mt-0.5 block truncate text-[11.5px] text-rose-600">{task.blocked_reason}</span>
+                {/if}
+              </div>
+              {#if canWriteTodos}
+                <span class="relative shrink-0">
+                  <span class="pointer-events-none absolute left-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full {taskStatusDotClass(task.status)}"></span>
+                  <select
+                    value={task.status}
+                    aria-label={`${t('workhub.form.status')}: ${task.title}`}
+                    disabled={todoMutationPending}
+                    class="h-7 max-w-28 appearance-none rounded-full border-0 py-0 pl-5 pr-2 text-[11.5px] font-medium outline-none {taskStatusPillClass(task.status)}"
+                    onchange={(event) => changeTaskStatus(task, event.currentTarget.value as TodoStatus)}
+                  >
+                    {#each allowedTodoStatuses(task.status) as status}
+                      <option value={status}>{t(`workhub.status.${status}` as TranslationKey)}</option>
+                    {/each}
+                  </select>
+                </span>
+                {#if canCompleteTodo(task.status)}
+                  <button
+                    type="button"
+                    class="grid h-7 w-7 shrink-0 place-items-center rounded-lg text-[#8a8a8a] hover:bg-emerald-50 hover:text-emerald-700"
+                    disabled={todoMutationPending}
+                    aria-label={`${t('workhub.action.complete')}: ${task.title}`}
+                    title={t('workhub.action.complete')}
+                    onclick={() => completeTask(task)}
+                  >
+                    <CheckCircle2 class="h-4 w-4" />
+                  </button>
+                {/if}
+              {:else}
+                <span class="flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[11.5px] font-medium {taskStatusPillClass(task.status)}">
+                  <span class="h-1.5 w-1.5 rounded-full {taskStatusDotClass(task.status)}"></span>
+                  {t(`workhub.status.${task.status}` as TranslationKey)}
+                </span>
+              {/if}
+            </article>
+          {/each}
+        </div>
+      {:else}
+        <div class="rounded-xl border border-dashed border-[#e0e0e0] bg-white px-4 py-10 text-center text-[13px] text-[#8a8a8a]">
+          {t('workhub.empty.tasks')}
+        </div>
+      {/if}
+      {@render pagination(focusOffset, focusTodosQuery.data?.total ?? 0, Boolean(focusTodosQuery.data?.has_more), (offset) => (focusOffset = offset))}

@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orrery 用户前台视觉草稿</title>
+    <link rel="stylesheet" href="./user-chat.css" />
+  </head>
+  <body>
+    <div class="product-shell">
+      <nav class="app-rail" role="tablist" aria-label="功能页签">
+        <button class="rail-toggle" type="button" data-rail-toggle aria-label="展开左侧功能栏">☰</button>
+        <button class="rail-icon active" type="button" role="tab" data-sidebar-tab="home" aria-selected="true" aria-label="首页" title="首页"><span>◎</span><strong class="rail-label">首页</strong></button>
+        <button class="rail-icon" type="button" role="tab" data-sidebar-tab="team" aria-selected="false" aria-label="团队任务" title="团队任务"><span>◌</span><strong class="rail-label">团队任务</strong></button>
+        <button class="rail-icon rail-bottom" type="button" role="tab" data-sidebar-tab="settings" aria-selected="false" aria-label="设置" title="设置"><span>⚙</span><strong class="rail-label">设置</strong></button>
+      </nav>
+
+      <aside class="history-panel" aria-label="Mission 会话历史">
+        <div class="brand-row">
+          <div class="brand-mark">I</div>
+          <div>
+            <div class="brand-name">Orrery</div>
+            <div class="brand-subtitle">用户工作台</div>
+          </div>
+        </div>
+
+        <section class="sidebar-panel active" data-sidebar-panel="home" aria-label="首页页签内容">
+          <button class="new-task-button" type="button" data-context-action="new-task">新建 Mission</button>
+          <nav class="conversation-list" aria-label="最近任务">
+            <div class="nav-section-label">今天</div>
+            <button class="conversation active" type="button" data-mission-id="board-sales">
+              <span>董事会销售报告</span>
+              <small>RVAE 生成中</small>
+            </button>
+            <button class="conversation" type="button" data-mission-id="marketing-risk">
+              <span>Marketing 发布复核</span>
+              <small>等待审批</small>
+            </button>
+            <button class="conversation" type="button" data-mission-id="people-change">
+              <span>People 组织变更</span>
+              <small>已完成</small>
+            </button>
+
+            <div class="nav-section-label">本周</div>
+            <button class="conversation" type="button" data-mission-id="learning-path">
+              <span>学习路径设计</span>
+              <small>草稿</small>
+            </button>
+            <button class="conversation" type="button" data-mission-id="mcp-audit">
+              <span>MCP 工具风险检查</span>
+              <small>审计完成</small>
+            </button>
+          </nav>
+        </section>
+
+        <section class="sidebar-panel" data-sidebar-panel="team" aria-label="团队任务页签内容">
+          <div class="sidebar-panel-title">团队任务</div>
+          <div class="team-work-list" aria-label="团队与智能体工作状态">
+            <article class="team-work-card active" data-activity-role="human">
+              <span class="activity-avatar">林</span>
+              <div><strong>林可</strong><small>正在审核报告口径</small></div>
+            </article>
+            <article class="team-work-card waiting" data-activity-role="human">
+              <span class="activity-avatar">周</span>
+              <div><strong>周铭</strong><small>等待确认数据来源</small></div>
+            </article>
+            <article class="team-work-card active" data-activity-role="agent">
+              <span class="activity-avatar agent">DA</span>
+              <div><strong>Data Analyst</strong><small>正在分析异常</small></div>
+            </article>
+            <article class="team-work-card active" data-activity-role="agent">
+              <span class="activity-avatar agent">RV</span>
+              <div><strong>RVAE Reporter</strong><small>正在生成图表</small></div>
+            </article>
+            <article class="team-work-card idle" data-activity-role="agent">
+              <span class="activity-avatar agent">GV</span>
+              <div><strong>Governance</strong><small>记录审计证据</small></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="sidebar-panel" data-sidebar-panel="settings" aria-label="设置页签内容">
+          <div class="sidebar-panel-title">设置</div>
+          <button class="sidebar-row active" type="button"><span>语言</span><small>中文</small></button>
+          <button class="sidebar-row" type="button"><span>报告风格</span><small>McKinsey</small></button>
+          <button class="sidebar-row" type="button"><span>进入后台</span><small>治理控制台</small></button>
+        </section>
+
+        <div class="admin-link">
+          <span>管理后台</span>
+          <a href="./index.html">打开治理控制台</a>
+        </div>
+      </aside>
+
+      <main class="chat-workspace">
+        <header class="workspace-header">
+          <button class="icon-button" type="button" aria-label="展开会话列表">☰</button>
+          <nav class="mission-tab-strip" role="tablist" aria-label="Mission 页签">
+            <button class="mission-tab active" type="button" role="tab" aria-selected="true" data-context="home" data-mission-id="board-sales">
+              <span>董事会销售报告</span>
+              <small>运行中 · RVAE 生成图表</small>
+            </button>
+            <button class="mission-tab" type="button" role="tab" aria-selected="false" data-context="home" data-mission-id="marketing-risk">
+              <span>Marketing 发布复核</span>
+              <small>等待审批</small>
+            </button>
+            <button class="mission-tab context-template" type="button" role="tab" aria-selected="false" data-context="people" data-mission-id="people-change">
+              <span>People 组织变更</span>
+              <small>成员与组织上下文</small>
+            </button>
+            <button class="mission-tab context-template" type="button" role="tab" aria-selected="false" data-context="team" data-mission-id="team-work">
+              <span>团队协作任务</span>
+              <small>成员与 Agent 正在执行</small>
+            </button>
+            <button class="mission-tab context-template" type="button" role="tab" aria-selected="false" data-context="mcp" data-mission-id="mcp-audit">
+              <span>MCP 工具风险检查</span>
+              <small>能力服务上下文</small>
+            </button>
+            <button class="mission-tab context-template" type="button" role="tab" aria-selected="false" data-context="knowledge" data-mission-id="learning-path">
+              <span>知识库清洗</span>
+              <small>文档与报告口径</small>
+            </button>
+            <button class="mission-tab context-template" type="button" role="tab" aria-selected="false" data-context="audit" data-mission-id="audit-review">
+              <span>审计线索复核</span>
+              <small>调用记录上下文</small>
+            </button>
+            <button class="mission-tab context-template" type="button" role="tab" aria-selected="false" data-context="settings">
+              <span>偏好与后台设置</span>
+              <small>用户端配置</small>
+            </button>
+            <button class="mission-plus-tab" type="button" aria-label="新建并行 Mission" title="新建并行 Mission">＋</button>
+          </nav>
+          <div class="header-actions">
+            <span class="status-pill">3 个 Agent 在线</span>
+          </div>
+        </header>
+
+        <section class="chat-thread" aria-label="任务对话">
+          <div class="welcome-panel">
+            <p class="welcome-kicker">自然语言工作台</p>
+            <h2>描述目标，平台会自动创建 Mission、选择 Agent、调用 MCP，并保留证据链。</h2>
+            <div class="prompt-grid" aria-label="示例任务">
+              <button type="button" data-template-id="sales-report">基于销售数据生成董事会报告</button>
+              <button type="button" data-template-id="marketing-risk">复核一次营销发布风险</button>
+              <button type="button" data-template-id="people-approval">把组织变更计划转成审批单</button>
+              <button type="button" data-template-id="learning-path">从知识库生成学习路径</button>
+            </div>
+            <div class="mission-status-strip" aria-label="Mission 工作台概览">
+              <button class="status-metric active" type="button" data-mission-id="board-sales">
+                <span>运行中</span>
+                <strong>董事会销售报告</strong>
+                <small>RVAE 正在生成图表</small>
+              </button>
+              <button class="status-metric needs-action" type="button" data-mission-id="marketing-risk">
+                <span>待我处理</span>
+                <strong>1 个审批</strong>
+                <small>Marketing 风险确认</small>
+              </button>
+              <button class="status-metric" type="button" data-detail-type="artifact" data-detail-id="html-report">
+                <span>产物</span>
+                <strong>2 个可查看</strong>
+                <small>HTML 报告 / SVG 图表</small>
+              </button>
+              <button class="status-metric danger" type="button" data-mission-id="mcp-audit">
+                <span>失败可重试</span>
+                <strong>1 个工具调用</strong>
+                <small>RVAE 权限不足</small>
+              </button>
+            </div>
+          </div>
+
+          <article class="mission-draft is-hidden" data-draft-panel aria-live="polite">
+            <div class="mission-draft-header">
+              <div>
+                <p>Mission 草案</p>
+                <h3 data-draft-title>新建 Mission</h3>
+              </div>
+              <span class="status-badge planning">Planning</span>
+            </div>
+            <div class="mission-draft-grid">
+              <div><span>目标</span><strong data-draft-goal>等待输入业务目标</strong></div>
+              <div><span>产物</span><strong data-draft-output>HTML 报告、PDF、SVG 图表</strong></div>
+              <div><span>推荐 Agent</span><strong data-draft-agents>Data Analyst、RVAE Reporter、Governance</strong></div>
+              <div><span>需要权限</span><strong data-draft-permissions>读取数据源并调用 RVAE</strong></div>
+            </div>
+            <ol class="mission-draft-steps" data-draft-steps>
+              <li>理解目标并拆解 Mission</li>
+              <li>确认输入数据和组织上下文</li>
+              <li>生成产物并归档审计证据</li>
+            </ol>
+            <div class="mission-draft-actions">
+              <button type="button" data-edit-draft>继续修改</button>
+              <button class="primary-action" type="button" data-confirm-draft>确认创建 Mission</button>
+            </div>
+          </article>
+
+          <article class="message user-message">
+            <div class="avatar">你</div>
+            <div class="message-body">
+              <p>帮我基于这份销售数据，生成一份董事会风格分析报告，包含趋势图、异常说明、数据来源和下一步建议。</p>
+            </div>
+          </article>
+
+          <article class="message assistant-message">
+            <div class="avatar">ID</div>
+            <div class="message-body">
+              <p>我会把它作为一个 Mission 执行。计划调用数据分析 Agent、报告生成 Agent 和 RVAE 图表引擎，所有 MCP 调用和产物都会写入审计记录。</p>
+              <div class="intent-card">
+                <div>
+                  <span>Mission</span>
+                  <strong>董事会销售报告</strong>
+                </div>
+                <div>
+                  <span>输出</span>
+                  <strong>HTML 报告、PDF、SVG 图表</strong>
+                </div>
+                <div>
+                  <span>治理</span>
+                  <strong>工具调用审计、数据来源说明</strong>
+                </div>
+              </div>
+              <div class="org-context-card">
+                <div>
+                  <span>相关组织</span>
+                  <strong>增长团队 · 企业销售组</strong>
+                  <p>系统将读取该团队已授权的数据集、成员职责和历史复盘。</p>
+                </div>
+                <div class="member-chips" aria-label="参与成员">
+                  <span>参与成员</span>
+                  <button type="button">林可 · 业务负责人</button>
+                  <button type="button">周铭 · 数据审核</button>
+                  <button type="button">RVAE Reporter · 报告 Agent</button>
+                </div>
+              </div>
+              <div class="approval-card">
+                <div>
+                  <span>需要确认</span>
+                  <strong>允许读取 sales_q2.csv 并调用 RVAE 生成图表。</strong>
+                </div>
+                <div class="approval-actions">
+                  <button type="button" data-approval-action="reject">拒绝</button>
+                  <button class="primary-action" type="button" data-approval-action="approve">确认开始</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="message assistant-message compact">
+            <div class="avatar">ID</div>
+            <div class="message-body">
+              <div class="progress-strip">
+                <div class="progress-step done" data-step-id="plan"><span></span>创建 Mission</div>
+                <div class="progress-step done" data-step-id="data"><span></span>读取数据</div>
+                <div class="progress-step active" data-step-id="chart"><span></span>生成图表</div>
+                <div class="progress-step" data-step-id="report"><span></span>整理报告</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="artifact-preview" aria-label="生成产物预览">
+            <div class="artifact-header">
+              <div>
+                <p>产物预览</p>
+                <h3>Board Sales Performance Brief</h3>
+              </div>
+              <button type="button" data-open-report>打开完整报告</button>
+            </div>
+            <div class="report-preview">
+              <section>
+                <span>Executive finding</span>
+                <strong>企业客户收入同比增长 18.4%，但西区续费率低于均值 7.2 个百分点。</strong>
+                <p>建议优先处理西区企业客户续费风险，并将增长预算转向高留存行业。</p>
+                <div class="owner-line">
+                  <span>责任组织</span>
+                  <strong>增长团队 / 企业销售组</strong>
+                  <span>负责人：林可</span>
+                </div>
+              </section>
+              <div class="chart-card" role="img" aria-label="销售趋势图草稿">
+                <div class="chart-title">Quarterly revenue trend</div>
+                <svg viewBox="0 0 420 220" preserveAspectRatio="none">
+                  <line x1="34" y1="184" x2="390" y2="184" />
+                  <line x1="34" y1="34" x2="34" y2="184" />
+                  <polyline points="38,152 118,128 198,92 278,108 368,58" />
+                  <circle cx="38" cy="152" r="4" />
+                  <circle cx="118" cy="128" r="4" />
+                  <circle cx="198" cy="92" r="4" />
+                  <circle cx="278" cy="108" r="4" />
+                  <circle cx="368" cy="58" r="4" />
+                </svg>
+                <div class="chart-footnote">Source: sales_q2.csv · Generated by RVAE · 2026-06-19</div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <form class="composer" aria-label="输入任务" data-composer>
+          <button class="tool-button" type="button" aria-label="添加文件" data-attach-source>＋</button>
+          <textarea rows="1" placeholder="描述你要完成的业务目标，或粘贴数据、文件、链接..." data-composer-input></textarea>
+          <button class="send-button" type="button" aria-label="发送" data-send-mission disabled>↑</button>
+          <div class="composer-menu is-hidden" data-attachment-menu>
+            <button type="button" data-attachment-kind="file">选择 sales_q2.csv</button>
+            <button type="button" data-attachment-kind="knowledge">引用增长团队知识库</button>
+            <button type="button" data-attachment-kind="link">粘贴数据源链接</button>
+          </div>
+          <div class="slash-command-menu is-hidden" data-slash-menu>
+            <button type="button" data-command="/export">/export 导出当前产物</button>
+            <button type="button" data-command="/assign">/assign 指派成员复核</button>
+            <button type="button" data-command="/audit">/audit 查看审计证据</button>
+          </div>
+        </form>
+      </main>
+
+      <aside class="mission-panel" aria-label="当前 Mission 状态">
+        <nav class="panel-filter-bar" aria-label="筛选 Mission 侧栏内容">
+          <button class="panel-filter active" type="button" data-filter="all" aria-label="全部" title="全部" aria-pressed="true">◉</button>
+          <button class="panel-filter" type="button" data-filter="hil" aria-label="HIL" title="HIL" aria-pressed="false">✓</button>
+          <button class="panel-filter" type="button" data-filter="tasks" aria-label="任务管理" title="任务管理" aria-pressed="false">☷</button>
+          <button class="panel-filter" type="button" data-filter="todos" aria-label="代办" title="代办" aria-pressed="false">◷</button>
+          <button class="panel-filter" type="button" data-filter="artifacts" aria-label="产物" title="产物" aria-pressed="false">▣</button>
+          <button class="panel-filter" type="button" data-filter="audit" aria-label="审计" title="审计" aria-pressed="false">⌕</button>
+        </nav>
+
+        <div class="panel-header">
+          <div>
+            <p>当前 Mission</p>
+            <h2 data-panel-title>董事会销售报告</h2>
+          </div>
+          <span data-panel-status>运行中</span>
+        </div>
+
+        <div class="detail-drawer is-hidden" data-detail-drawer aria-live="polite">
+          <button class="detail-back" type="button" data-detail-close>返回概览</button>
+          <p data-detail-kicker>对象详情</p>
+          <h3 data-detail-title>Mission 详情</h3>
+          <div class="detail-body" data-detail-body></div>
+        </div>
+
+        <section class="panel-section" data-panel-kind="hil" data-context-panel="mission">
+          <h3>HIL</h3>
+          <div class="hil-card">
+            <span data-side-approval-status>等待确认</span>
+            <strong data-side-approval-copy>允许读取 sales_q2.csv 并调用 RVAE 生成图表</strong>
+            <div>
+              <button type="button" data-approval-action="reject">拒绝</button>
+              <button type="button" data-approval-action="revise">要求修改</button>
+              <button class="primary" type="button" data-approval-action="approve">批准</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel-section" data-panel-kind="tasks" data-context-panel="mission mcp">
+          <h3>Agent</h3>
+          <div class="agent-stack">
+            <button type="button" data-detail-type="agent" data-detail-id="data-analyst"><strong>Data Analyst</strong><span>清洗数据与异常检测</span></button>
+            <button type="button" data-detail-type="agent" data-detail-id="rvae-reporter"><strong>RVAE Reporter</strong><span>生成图表和报告</span></button>
+            <button type="button" data-detail-type="agent" data-detail-id="governance"><strong>Governance Agent</strong><span>记录证据与审计</span></button>
+          </div>
+        </section>
+
+        <section class="panel-section" data-panel-kind="tasks" data-context-panel="mission people">
+          <h3>组织与成员</h3>
+          <div class="org-tree-card">
+            <div class="org-node root">
+              <strong>增长团队</strong>
+              <span>12 人 · 负责收入增长与营销转化</span>
+            </div>
+            <div class="org-node">
+              <strong>企业销售组</strong>
+              <span>5 人 · 当前 Mission 责任组织</span>
+            </div>
+          </div>
+          <div class="member-list">
+            <div>
+              <span class="member-avatar">林</span>
+              <div><strong>林可</strong><small>业务负责人 · 批准报告口径</small></div>
+            </div>
+            <div>
+              <span class="member-avatar">周</span>
+              <div><strong>周铭</strong><small>数据审核 · 确认数据来源</small></div>
+            </div>
+            <div>
+              <span class="member-avatar agent">AI</span>
+              <div><strong>RVAE Reporter</strong><small>报告 Agent · 生成图表产物</small></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel-section" data-panel-kind="todos" data-context-panel="mission people mcp audit">
+          <h3>代办</h3>
+          <div class="todo-list">
+            <label data-detail-type="todo" data-detail-id="data-auth"><input type="checkbox" checked /> 数据读取授权已确认</label>
+            <label data-detail-type="todo" data-detail-id="west-renewal"><input type="checkbox" /> 西区续费异常需要业务负责人复核</label>
+            <label data-detail-type="todo" data-detail-id="report-tone"><input type="checkbox" /> 报告口径提交给林可批准</label>
+          </div>
+        </section>
+
+        <section class="panel-section" data-panel-kind="artifacts" data-context-panel="mission knowledge">
+          <h3>产物</h3>
+          <div class="artifact-list">
+            <button type="button" data-detail-type="artifact" data-detail-id="html-report"><span>HTML</span><strong>董事会报告</strong></button>
+            <button type="button" data-detail-type="artifact" data-detail-id="trend-chart"><span>SVG</span><strong>收入趋势图</strong></button>
+            <button type="button" data-detail-type="artifact" data-detail-id="pdf-report"><span>PDF</span><strong>待生成</strong></button>
+          </div>
+        </section>
+
+        <section class="panel-section" data-panel-kind="audit" data-context-panel="mission mcp audit">
+          <h3>工具调用</h3>
+          <details open>
+            <summary>3 条 MCP 记录</summary>
+            <ol class="audit-list">
+              <li data-detail-type="audit" data-detail-id="read-dataset" tabindex="0"><span>resource.read_dataset</span><small>成功 · sales_q2.csv</small></li>
+              <li data-detail-type="audit" data-detail-id="render-chart" tabindex="0"><span>rvae.render_chart_svg</span><small>执行中 · trend line</small></li>
+              <li data-detail-type="audit" data-detail-id="export-report" tabindex="0"><span>rvae.export_report_html</span><small>排队中</small></li>
+            </ol>
+          </details>
+        </section>
+
+        <section class="panel-section" data-panel-kind="audit" data-context-panel="mission audit">
+          <h3>审计摘要</h3>
+          <div class="audit-summary">
+            <div><span>数据来源</span><strong>1 个文件</strong></div>
+            <div><span>审批状态</span><strong>已确认读取</strong></div>
+            <div><span>外部动作</span><strong>无</strong></div>
+          </div>
+        </section>
+      </aside>
+    </div>
+    <div class="report-modal is-hidden" data-report-modal role="dialog" aria-modal="true" aria-label="完整报告预览">
+      <div class="report-dialog">
+        <div class="report-dialog-header">
+          <div>
+            <p>完整报告</p>
+            <h2>Board Sales Performance Brief <span data-report-version>v1</span></h2>
+          </div>
+          <button type="button" data-report-close aria-label="关闭报告">×</button>
+        </div>
+        <div class="report-dialog-body">
+          <section>
+            <span>Executive summary</span>
+            <h3>企业客户收入同比增长 18.4%，西区续费风险需要优先处理。</h3>
+            <p>本版本基于 sales_q2.csv、增长团队历史复盘和 RVAE 趋势图生成，所有结论均可追溯到数据来源和工具调用。</p>
+          </section>
+          <section>
+            <span>Actions</span>
+            <div class="report-action-grid">
+              <button type="button" data-report-action="regenerate-summary">重写摘要</button>
+              <button type="button" data-report-action="regenerate-chart">重生成图表</button>
+              <button type="button" data-report-action="export-pdf">导出 PDF</button>
+              <button type="button" data-report-action="show-sources">查看来源</button>
+            </div>
+          </section>
+          <section class="report-sources">
+            <span>Sources</span>
+            <p>sales_q2.csv · 增长团队 / 企业销售组 · resource.read_dataset · rvae.render_chart_svg</p>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="./user-chat.js"></script>
+  </body>
+</html>

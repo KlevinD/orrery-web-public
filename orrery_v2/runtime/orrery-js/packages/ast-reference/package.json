@@ -1,0 +1,10 @@
+{
+  "name": "@orrery/ast-reference",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": "Minvia",
+  "exports": { "types": "./index.d.ts", "default": "./index.js" },
+  "files": ["index.js", "index.d.ts", "LICENSE", "NOTICE"]
+}

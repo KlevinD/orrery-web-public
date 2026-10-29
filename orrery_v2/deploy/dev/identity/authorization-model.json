@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.1",
+  "type_definitions": [
+    { "type": "user" },
+    { "type": "agent" },
+    { "type": "system" },
+    {
+      "type": "platform",
+      "relations": {
+        "assigned_role": { "this": {} },
+        "member": { "union": { "child": [
+          { "this": {} },
+          { "tupleToUserset": { "tupleset": { "relation": "assigned_role" }, "computedUserset": { "relation": "assignee" } } }
+        ] } }
+      },
+      "metadata": { "relations": {
+        "assigned_role": { "directly_related_user_types": [{ "type": "role" }] },
+        "member": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] }
+      } }
+    },
+    {
+      "type": "organization",
+      "relations": {
+        "admin": { "this": {} },
+        "member": { "this": {} },
+        "viewer": { "union": { "child": [{ "computedUserset": { "relation": "admin" } }, { "computedUserset": { "relation": "member" } }] } }
+      },
+      "metadata": { "relations": {
+        "admin": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "member": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "viewer": { "directly_related_user_types": [] }
+      } }
+    },
+    {
+      "type": "department",
+      "relations": {
+        "org": { "this": {} },
+        "manager": { "this": {} },
+        "member": { "this": {} },
+        "admin": { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } },
+        "viewer": { "union": { "child": [{ "computedUserset": { "relation": "member" } }, { "computedUserset": { "relation": "manager" } }, { "computedUserset": { "relation": "admin" } }] } },
+        "editor": { "union": { "child": [{ "computedUserset": { "relation": "manager" } }, { "computedUserset": { "relation": "admin" } }] } }
+      },
+      "metadata": { "relations": {
+        "org": { "directly_related_user_types": [{ "type": "organization" }] },
+        "manager": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "member": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "admin": { "directly_related_user_types": [] },
+        "viewer": { "directly_related_user_types": [] },
+        "editor": { "directly_related_user_types": [] }
+      } }
+    },
+    {
+      "type": "role",
+      "relations": {
+        "org": { "this": {} },
+        "scope": { "this": {} },
+        "assignee": { "this": {} },
+        "admin": { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } },
+        "viewer": { "union": { "child": [{ "computedUserset": { "relation": "assignee" } }, { "computedUserset": { "relation": "admin" } }] } }
+      },
+      "metadata": { "relations": {
+        "org": { "directly_related_user_types": [{ "type": "organization" }] },
+        "scope": { "directly_related_user_types": [{ "type": "platform" }, { "type": "organization" }, { "type": "department" }] },
+        "assignee": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "admin": { "directly_related_user_types": [] },
+        "viewer": { "directly_related_user_types": [] }
+      } }
+    },
+    {
+      "type": "mission",
+      "relations": {
+        "owner": { "this": {} },
+        "participant": { "this": {} },
+        "automation": { "this": {} },
+        "department": { "this": {} },
+        "origin_todo": { "this": {} },
+        "origin_development_project": { "this": {} },
+        "viewer": { "union": { "child": [
+          { "computedUserset": { "relation": "owner" } },
+          { "computedUserset": { "relation": "participant" } },
+          { "computedUserset": { "relation": "automation" } },
+          { "tupleToUserset": { "tupleset": { "relation": "origin_todo" }, "computedUserset": { "relation": "reader" } } },
+          { "tupleToUserset": { "tupleset": { "relation": "department" }, "computedUserset": { "relation": "manager" } } },
+          { "tupleToUserset": { "tupleset": { "relation": "department" }, "computedUserset": { "relation": "admin" } } }
+        ] } },
+        "development_monitor": { "tupleToUserset": { "tupleset": { "relation": "origin_development_project" }, "computedUserset": { "relation": "monitor" } } },
+        "editor": { "union": { "child": [
+          { "computedUserset": { "relation": "owner" } },
+          { "computedUserset": { "relation": "automation" } },
+          { "tupleToUserset": { "tupleset": { "relation": "origin_todo" }, "computedUserset": { "relation": "assignee" } } },
+          { "tupleToUserset": { "tupleset": { "relation": "department" }, "computedUserset": { "relation": "manager" } } },
+          { "tupleToUserset": { "tupleset": { "relation": "department" }, "computedUserset": { "relation": "admin" } } }
+        ] } },
+        "qa_approver": { "union": { "child": [
+          { "computedUserset": { "relation": "owner" } },
+          { "tupleToUserset": { "tupleset": { "relation": "origin_todo" }, "computedUserset": { "relation": "reviewer" } } },
+          { "tupleToUserset": { "tupleset": { "relation": "department" }, "computedUserset": { "relation": "manager" } } },
+          { "tupleToUserset": { "tupleset": { "relation": "department" }, "computedUserset": { "relation": "admin" } } }
+        ] } },
+        "manager": { "union": { "child": [
+          { "computedUserset": { "relation": "owner" } },
+          { "tupleToUserset": { "tupleset": { "relation": "department" }, "computedUserset": { "relation": "admin" } } }
+        ] } }
+      },
+      "metadata": { "relations": {
+        "owner": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "participant": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "automation": { "directly_related_user_types": [{ "type": "system" }] },
+        "department": { "directly_related_user_types": [{ "type": "department" }] },
+        "origin_todo": { "directly_related_user_types": [{ "type": "todo" }] },
+        "origin_development_project": { "directly_related_user_types": [{ "type": "development_project" }] },
+        "viewer": { "directly_related_user_types": [] },
+        "development_monitor": { "directly_related_user_types": [] },
+        "editor": { "directly_related_user_types": [] },
+        "qa_approver": { "directly_related_user_types": [] },
+        "manager": { "directly_related_user_types": [] }
+      } }
+    },
+    {
+      "type": "discussion",
+      "relations": {
+        "mission": { "this": {} },
+        "todo": { "this": {} },
+        "owner": { "this": {} },
+        "member": { "this": {} },
+        "viewer": { "union": { "child": [
+          { "computedUserset": { "relation": "owner" } },
+          { "computedUserset": { "relation": "member" } }
+        ] } },
+        "poster": { "union": { "child": [
+          { "computedUserset": { "relation": "owner" } },
+          { "computedUserset": { "relation": "member" } }
+        ] } },
+        "manager": { "computedUserset": { "relation": "owner" } }
+      },
+      "metadata": { "relations": {
+        "mission": { "directly_related_user_types": [{ "type": "mission" }] },
+        "todo": { "directly_related_user_types": [{ "type": "todo" }] },
+        "owner": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "member": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "viewer": { "directly_related_user_types": [] },
+        "poster": { "directly_related_user_types": [] },
+        "manager": { "directly_related_user_types": [] }
+      } }
+    },
+    {
+      "type": "project",
+      "relations": {
+        "owner": { "this": {} },
+        "participant": { "this": {} },
+        "org": { "this": {} },
+        "viewer": { "union": { "child": [
+          { "computedUserset": { "relation": "owner" } },
+          { "computedUserset": { "relation": "participant" } },
+          { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "member" } } },
+          { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } }
+        ] } },
+        "editor": { "union": { "child": [
+          { "computedUserset": { "relation": "owner" } },
+          { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } }
+        ] } }
+      },
+      "metadata": { "relations": {
+        "owner": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "participant": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "org": { "directly_related_user_types": [{ "type": "organization" }] },
+        "viewer": { "directly_related_user_types": [] },
+        "editor": { "directly_related_user_types": [] }
+      } }
+    },
+    {
+      "type": "development_project",
+      "relations": {
+        "org": { "this": {} },
+        "owner": { "this": {} },
+        "maintainer": { "this": {} },
+        "contributor": { "this": {} },
+        "viewer": { "this": {} },
+        "executor": { "this": {} },
+        "merger": { "this": {} },
+        "reader": { "union": { "child": [{ "computedUserset": { "relation": "viewer" } }, { "computedUserset": { "relation": "contributor" } }, { "computedUserset": { "relation": "maintainer" } }, { "computedUserset": { "relation": "owner" } }, { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } }] } },
+        "monitor": { "union": { "child": [{ "computedUserset": { "relation": "maintainer" } }, { "computedUserset": { "relation": "owner" } }, { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } }] } },
+        "writer": { "union": { "child": [{ "computedUserset": { "relation": "contributor" } }, { "computedUserset": { "relation": "maintainer" } }, { "computedUserset": { "relation": "owner" } }, { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } }] } },
+        "configurer": { "union": { "child": [{ "computedUserset": { "relation": "maintainer" } }, { "computedUserset": { "relation": "owner" } }, { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } }] } },
+        "runner": { "union": { "child": [{ "computedUserset": { "relation": "contributor" } }, { "computedUserset": { "relation": "maintainer" } }, { "computedUserset": { "relation": "owner" } }, { "computedUserset": { "relation": "executor" } }, { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } }] } },
+        "submitter": { "union": { "child": [{ "computedUserset": { "relation": "contributor" } }, { "computedUserset": { "relation": "maintainer" } }, { "computedUserset": { "relation": "owner" } }, { "computedUserset": { "relation": "executor" } }, { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } }] } },
+        "approver": { "union": { "child": [{ "computedUserset": { "relation": "maintainer" } }, { "computedUserset": { "relation": "owner" } }, { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } }] } },
+        "manager": { "union": { "child": [{ "computedUserset": { "relation": "owner" } }, { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } }] } },
+        "merge_authorizer": { "union": { "child": [{ "computedUserset": { "relation": "merger" } }, { "computedUserset": { "relation": "owner" } }, { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } }] } }
+      },
+      "metadata": { "relations": {
+        "org": { "directly_related_user_types": [{ "type": "organization" }] },
+        "owner": { "directly_related_user_types": [{ "type": "user" }] },
+        "maintainer": { "directly_related_user_types": [{ "type": "user" }] },
+        "contributor": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "viewer": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "executor": { "directly_related_user_types": [{ "type": "agent" }] },
+        "merger": { "directly_related_user_types": [{ "type": "user" }] },
+        "reader": { "directly_related_user_types": [] },
+        "monitor": { "directly_related_user_types": [] },
+        "writer": { "directly_related_user_types": [] },
+        "configurer": { "directly_related_user_types": [] },
+        "runner": { "directly_related_user_types": [] },
+        "submitter": { "directly_related_user_types": [] },
+        "approver": { "directly_related_user_types": [] },
+        "manager": { "directly_related_user_types": [] },
+        "merge_authorizer": { "directly_related_user_types": [] }
+      } }
+    },
+    {
+      "type": "scm_connection",
+      "relations": {
+        "org": { "this": {} },
+        "owner": { "this": {} },
+        "user": { "union": { "child": [
+          { "this": {} },
+          { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } }
+        ] } },
+        "manager": { "union": { "child": [
+          { "this": {} },
+          { "tupleToUserset": { "tupleset": { "relation": "org" }, "computedUserset": { "relation": "admin" } } }
+        ] } }
+      },
+      "metadata": { "relations": {
+        "org": { "directly_related_user_types": [{ "type": "organization" }] },
+        "owner": { "directly_related_user_types": [{ "type": "user" }] },
+        "user": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }, { "type": "development_project" }] },
+        "manager": { "directly_related_user_types": [{ "type": "user" }] }
+      } }
+    },
+    {
+      "type": "todo",
+      "relations": {
+        "proposer": { "this": {} },
+        "assignee": { "this": {} },
+        "reviewer": { "this": {} },
+        "collaborator": { "this": {} },
+        "development_project": { "this": {} },
+        "reader": { "union": { "child": [{ "computedUserset": { "relation": "proposer" } }, { "computedUserset": { "relation": "assignee" } }, { "computedUserset": { "relation": "reviewer" } }, { "computedUserset": { "relation": "collaborator" } }] } },
+        "editor": { "union": { "child": [{ "computedUserset": { "relation": "proposer" } }, { "computedUserset": { "relation": "assignee" } }, { "computedUserset": { "relation": "reviewer" } }] } }
+      },
+      "metadata": { "relations": {
+        "proposer": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "assignee": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "reviewer": { "directly_related_user_types": [{ "type": "user" }] },
+        "collaborator": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "development_project": { "directly_related_user_types": [{ "type": "development_project" }] },
+        "reader": { "directly_related_user_types": [] },
+        "editor": { "directly_related_user_types": [] }
+      } }
+    },
+    {
+      "type": "resource",
+      "relations": {
+        "owner": { "this": {} },
+        "bound_mission": { "this": {} },
+        "viewer": { "union": { "child": [{ "computedUserset": { "relation": "owner" } }, { "tupleToUserset": { "tupleset": { "relation": "bound_mission" }, "computedUserset": { "relation": "viewer" } } }] } },
+        "operator": { "union": { "child": [{ "this": {} }, { "computedUserset": { "relation": "owner" } }, { "tupleToUserset": { "tupleset": { "relation": "bound_mission" }, "computedUserset": { "relation": "editor" } } }] } }
+      },
+      "metadata": { "relations": {
+        "owner": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] },
+        "bound_mission": { "directly_related_user_types": [{ "type": "mission" }] },
+        "viewer": { "directly_related_user_types": [] },
+        "operator": { "directly_related_user_types": [{ "type": "user" }, { "type": "agent" }] }
+      } }
+    }
+  ]
+}

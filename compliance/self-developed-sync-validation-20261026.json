@@ -1,0 +1,65 @@
+{
+  "formatVersion": 1,
+  "reviewDate": "2026-10-26",
+  "privateSourceCommit": "4bb2cab578d0b5938463018a9366d40244ded456",
+  "personalInputCommit": "af3aba51dc4acbbeb0f2a6dcf03e09d9abe018ca",
+  "scope": "Web/API self-developed JavaScript utility sync; no desktop product or private monorepo Git history imported",
+  "platform": "Windows",
+  "nodeVersion": "22.23.0",
+  "npmVersion": "11.6.2",
+  "checks": {
+    "cleanWebInstall": true,
+    "cleanPiProductionInstall": true,
+    "installedAliasesAndEmbeddedHelpers": true,
+    "utilityIntegrationPassed": 16,
+    "webTypeErrors": 0,
+    "webTypeWarnings": 0,
+    "webTestFiles": 258,
+    "webTestPassed": 1347,
+    "webTestSkipped": 1,
+    "webProductionBuild": true,
+    "rootComplianceTestsPassed": 55,
+    "attachmentSourceEvidencePassed": 4,
+    "attachmentPosixSkipped": 10,
+    "inventoryChecks": true,
+    "licenseEvidence": {
+      "components": 592,
+      "license_evidence_verified": true,
+      "publisher_reference_only": []
+    },
+    "webAssetCount": 16,
+    "powershellAndBashSyntax": true
+  },
+  "retainedSecurityVersions": {
+    "vite": "6.4.5",
+    "redoclyAjv": "8.18.3"
+  },
+  "locks": {
+    "orrery_v2/go.mod": "52069a4608ff9a69b4efaefbe5a6fc044b3559a9434cc2d37a375a2ebfe89bf7",
+    "orrery_v2/go.sum": "1508cdfa35fa2774adeb7b89bf541199760c74232cdaf1f954683504d0108501",
+    "orrery_v2/runtime/pi-coding-agent/package-lock.json": "63f40a7f42d02b3079ee0239531c6ce26251c701c31909c54bd0cfd5354504ff",
+    "orrery_v2/scripts/audio-codec/package-lock.json": "4b12961acface4c062bf330943f107fa7ca9592a1abb75c258142be26a2955e1",
+    "orrery_v2/web/package-lock.json": "90e03dfb3cdeefde15f2f8cc011714b0bb3724c2c1aab197c3823b58bcc0b73d"
+  },
+  "orrerySourceManifestSha256": "633fab157c9f9e5ea6d246c2b78daeb8664b0b4590b9d44954bdb1db5a9e6c3a",
+  "designBaseline": {
+    "revision": 8,
+    "exitCode": 1,
+    "missingExcludedDesktopReferences": 10
+  },
+  "remainingWork": [
+    "Legacy Claude SDK sidecar retained but its lock graph is outside the frozen notice inventory",
+    "Npm audit: PI 1 high; legacy sidecar 5 high and 1 critical; other lower severity findings retained",
+    "Existing main.go structure gate is 803 lines against 800; no Go business source changed or full Linux rerun",
+    "Docker cold start, POSIX release attachment execution and real enterprise Kerberos not verified"
+  ],
+  "interruptedRun": {
+    "command": "npm run test -- --maxWorkers=2",
+    "outcome": "Manually stopped for elapsed time; superseded by complete standard npm run test; no product failure inferred"
+  },
+  "releaseApproved": false,
+  "repositoryVisibility": "private",
+  "actionsEnabled": false,
+  "merged": false,
+  "deployed": false
+}

@@ -1,0 +1,21 @@
+{
+  "name": "orrery-pi-coding-agent-runtime",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Bundled PI coding agent runtime for Orrery.",
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "1.3.0",
+    "proxy-agent-negotiate": "file:../orrery-js/packages/proxy-negotiate"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "overrides": {
+    "proxy-agent-negotiate": "$proxy-agent-negotiate",
+    "undici": "8.12.2"
+  },
+  "scripts": {
+    "postinstall": "node ../orrery-js/install.mjs pi",
+    "verify:utilities": "node ../orrery-js/install.mjs pi --check"
+  }
+}

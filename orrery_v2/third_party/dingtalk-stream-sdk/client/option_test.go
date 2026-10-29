@@ -1,0 +1,48 @@
+package client
+
+import (
+	"context"
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+
+	"github.com/open-dingtalk/dingtalk-stream-sdk-go/payload"
+)
+
+/**
+ * @Author linya.jj
+ * @Date 2023/3/22 14:48
+ */
+
+func TestWithAppCredential(t *testing.T) {
+	op := WithAppCredential(NewAppCredentialConfig("clientId", "clientSecret"))
+
+	c := NewStreamClient(op)
+	assert.Equal(t, "clientId", c.AppCredential.ClientId)
+	assert.Equal(t, "clientSecret", c.AppCredential.ClientSecret)
+}
+
+func TestWithSubscription(t *testing.T) {
+	op := WithSubscription("stype", "stopic", func(ctx context.Context, df *payload.DataFrame) (*payload.DataFrameResponse, error) {
+		return nil, nil
+	})
+
+	c := NewStreamClient(op)
+	h, err := c.GetHandler("stype", "stopic")
+	assert.Nil(t, err)
+	assert.NotNil(t, h)
+}
+
+func TestWithUserAgent(t *testing.T) {
+	op := WithUserAgent(NewDingtalkGoSDKUserAgent())
+	c := NewStreamClient(op)
+	assert.NotNil(t, c.UserAgent)
+}
+
+func TestWithCallbackConcurrency(t *testing.T) {
+	c := NewStreamClient(WithCallbackConcurrency(7))
+	assert.Equal(t, 7, cap(c.callbackSlots))
+
+	defaultClient := NewStreamClient(WithCallbackConcurrency(0))
+	assert.Equal(t, 64, cap(defaultClient.callbackSlots))
+}

@@ -1,0 +1,50 @@
+{
+  "auditReportVersion": 2,
+  "reviewDate": "2026-10-28",
+  "scope": "Web, bundled PI and audio source lock graphs, including build/test dependencies; official npm registry audit, not Go/OS or image audit",
+  "graphs": {
+    "web": {
+      "lockFile": "orrery_v2/web/package-lock.json",
+      "sha256": "a955f92a8e867dbb9e2675a5cd1810b41dab5d3e2f4f11a49fb9f8b056f2024d",
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "findings": {},
+      "exitCode": 0
+    },
+    "pi": {
+      "lockFile": "orrery_v2/runtime/pi-coding-agent/package-lock.json",
+      "sha256": "2f7c5c73a14c1ca8e597112fefac6ec95767c67eac6a24429e5cf04635208fed",
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "findings": {},
+      "exitCode": 0
+    },
+    "audio": {
+      "lockFile": "orrery_v2/scripts/audio-codec/package-lock.json",
+      "sha256": "ee1bba797ea2eb90fa364bce9e07e20f07c6f7f9185b87fa051b97e739f6ae4c",
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "findings": {},
+      "exitCode": 0
+    }
+  },
+  "sha256Normalization": "CRLF-to-LF for UTF-8 lock files; binary evidence retains raw bytes"
+}

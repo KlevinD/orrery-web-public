@@ -1,0 +1,40 @@
+package responsibility
+
+const (
+	MetricAssignmentToAcceptSeconds = "responsibility_assignment_to_accept_seconds"
+	MetricAutonomousClosureRate     = "responsibility_autonomous_closure_rate"
+	MetricSilentStallRate           = "responsibility_silent_stall_rate"
+	MetricBlockedSeconds            = "responsibility_blocked_seconds"
+	MetricFirstPassAcceptanceRate   = "responsibility_first_pass_acceptance_rate"
+	MetricEvidenceCompleteness      = "responsibility_evidence_completeness"
+	MetricDuplicateSideEffectRate   = "responsibility_duplicate_side_effect_rate"
+	MetricCostPerApprovedOutcome    = "responsibility_cost_per_approved_outcome"
+)
+
+const (
+	AuditAssignmentOffered            = "responsibility.assignment.offered"
+	AuditAssignmentAccepted           = "responsibility.assignment.accepted"
+	AuditAssignmentDeclined           = "responsibility.assignment.declined"
+	AuditAssignmentReassigned         = "responsibility.assignment.reassigned"
+	AuditAssignmentSourceLinked       = "responsibility.assignment.source_linked"
+	AuditActivationClaimed            = "responsibility.activation.claimed"
+	AuditActivationCreated            = "responsibility.activation.created"
+	AuditActivationDispatched         = "responsibility.activation.dispatched"
+	AuditAttemptCompleted             = "responsibility.attempt.completed"
+	AuditBlockerOpened                = "responsibility.blocker.opened"
+	AuditBlockerResolved              = "responsibility.blocker.resolved"
+	AuditBlockerEscalated             = "responsibility.blocker.escalated"
+	AuditSupervisionAlertOpened       = "responsibility.supervision_alert.opened"
+	AuditSupervisionAlertEscalated    = "responsibility.supervision_alert.escalated"
+	AuditSupervisionAlertResolved     = "responsibility.supervision_alert.resolved"
+	AuditResponsibilityEscalated      = "responsibility.escalated"
+	AuditResponsibilityPaused         = "responsibility.paused"
+	AuditResponsibilityResumed        = "responsibility.resumed"
+	AuditResponsibilityRetried        = "responsibility.retried"
+	AuditResponsibilityTerminated     = "responsibility.terminated"
+	AuditPolicyUpdated                = "responsibility.policy.updated"
+	AuditAutoplanExecutionGranted     = "responsibility.autoplan.execution_granted"
+	AuditResultSubmitted              = "responsibility.result.submitted"
+	AuditResponsibilityFulfilled      = "responsibility.fulfilled"
+	AuditHistoricalAssignmentImported = "responsibility.assignment.historical_imported"
+)

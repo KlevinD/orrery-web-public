@@ -1,0 +1,13 @@
+# RSI production integration
+
+This release integrates the RSI runtime content and transactional publication changes from `b4ce348b93aa7debbfce3434e431c07adee49645` into the exact source archive of production release `ding-scheduled-results-20261015T055259Z` (SHA256 `a39e5e5eaa1dbd06015bc443f5800d7183ec778794724b0f886da753650ede22`). That release layers scheduled result notifications on Laya shadow source `a6a1accf76f72956da0a18d9dbfcf961e531a294`. It preserves these notifications, Laya shadow feedback and its sample persistence, the dependency pruning release `48ed82281584d263466b71fa23fb4df648615a27`, scheduler dispatch, website native workspaces, WeChat repairs and current talent defaults. The release does not merge a protected branch.
+
+Production lacked the earlier skill version registry and HTTP interfaces. Their required changes from the five RSI commits ending at `b1eeb85677058229361137b5a282b3e30df1a8bd` are included. The unrelated memory distillation edits are excluded. Pi's current skill name resolution remains available and now respects the selected historical version and package digest.
+
+Validation covers the integrated Linux skill, resource administration, agent core, assembly, operations and HTTP packages, production startup helpers, website temporary workspaces, and ontology artifact contracts. Optional PostgreSQL tests require `ORRERY_TEST_RSI_POSTGRES_URL` to select a dedicated schema whose name starts with `rsi_validation_`; they verify stale concurrent publication rejection and transaction rollback when the audit journal insert fails. Production data is not used for these mutation tests.
+
+Before activation, registered skill records and the editable package directory are backed up privately. A copied registry and package directory are used to rehearse snapshot migration, verify every archived file and preserve skill identities, versions and enabled states. Activation uses a new immutable release directory, a guarded current symlink switch, service restart and readiness checks. The previous release remains the binary rollback target. Snapshot metadata is additive and readable by the prior executable, which ignores the new fields.
+
+The context graph coverage gate is also run against the exact previous production source. Existing expired coverage exemptions are retained and reported; their expiration dates and the gate's current-time checks are not changed. The deployment record must distinguish this existing failure from RSI validation results.
+
+This release provides RSI infrastructure. Model candidate generation, isolated baseline/candidate execution, independent frozen evaluation and recursive optimizer adoption are still separate work.

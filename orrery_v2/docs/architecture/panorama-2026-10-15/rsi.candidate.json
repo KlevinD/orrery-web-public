@@ -1,0 +1,32 @@
+{
+  "schema_version": 1, "diagram_type": "architecture",
+  "meta": {"title": "Orrery Ontology 与 RSI 治理架构", "output": ".archify/architecture-orrery-panorama-20261015-114814/rsi.html", "locale": "zh-CN", "quality_profile": "showcase", "repository": {"url": "local-only", "revision": "redacted", "link_mode": "local-only"}},
+  "components": [
+    {"id": "baseline", "type": "database", "label": "当前 Skill 基线", "sublabel": "版本 · DefinitionHash · 包快照", "pos": [40, 40], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/app/resourceadmin/skill_rsi_supervisor.go", "line": 67, "end_line": 76}]},
+    {"id": "generator", "type": "external", "label": "候选生成接口", "sublabel": "注入生成器；真实优化器待接入", "tag": "接口已实现", "pos": [340, 40], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/app/resourceadmin/skill_rsi_supervisor.go", "line": 18, "end_line": 30}, {"path": "orrery_v2/docs/rsi/2026-10-14-runtime-content.md", "line": 24, "end_line": 35}]},
+    {"id": "candidate", "type": "database", "label": "不可变候选快照", "sublabel": "新版本 · 内容摘要 · 资源包", "pos": [640, 40], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/app/resourceadmin/skill_rsi_supervisor.go", "line": 76, "end_line": 95}, {"path": "orrery_v2/docs/rsi/2026-10-14-runtime-content.md", "line": 5, "end_line": 13}]},
+    {"id": "evaluator", "type": "external", "label": "基线与候选评估", "sublabel": "注入评估器；真实对照仍待完成", "tag": "接口已实现", "pos": [940, 40], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/app/resourceadmin/skill_rsi_supervisor.go", "line": 24, "end_line": 30}, {"path": "orrery_v2/internal/app/resourceadmin/skill_rsi_supervisor.go", "line": 91, "end_line": 104}]},
+    {"id": "artifact", "type": "backend", "label": "Ontology 评估产物", "sublabel": "数据集 · 策略版本 · 裁判 · 证据", "pos": [940, 220], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/app/resourceadmin/skill_version_evaluation.go", "line": 32, "end_line": 90}]},
+    {"id": "ledger", "type": "database", "label": "可信评估账本", "sublabel": "通过/失败 · 双端哈希 · 评估引用", "pos": [640, 220], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/app/resourceadmin/skill_version_evaluation.go", "line": 18, "end_line": 44}, {"path": "orrery_v2/internal/app/resourceadmin/skill_rsi_supervisor.go", "line": 95, "end_line": 108}]},
+    {"id": "gate", "type": "security", "label": "受控晋级闸门", "sublabel": "评估通过且显式请求；核验基线", "pos": [340, 220], "size": [205, 80], "sources": [{"path": "orrery_v2/internal/app/resourceadmin/command_skill_rsi.go", "line": 60, "end_line": 112}, {"path": "orrery_v2/internal/app/resourceadmin/skill_rsi_supervisor.go", "line": 105, "end_line": 124}]},
+    {"id": "active", "type": "backend", "label": "原子发布与回滚", "sublabel": "Active · 激活历史 · 提交审计", "pos": [40, 220], "size": [205, 80], "sources": [{"path": "orrery_v2/docs/rsi/2026-10-14-publication-consistency.md", "line": 5, "end_line": 25}, {"path": "orrery_v2/internal/app/resourceadmin/command_skill_rsi.go", "line": 103, "end_line": 116}]},
+    {"id": "runtime", "type": "backend", "label": "Agent 使用绑定版本", "sublabel": "版本与包摘要固定 · 逐文件校验", "pos": [40, 400], "size": [205, 80], "sources": [{"path": "orrery_v2/docs/rsi/2026-10-14-runtime-content.md", "line": 5, "end_line": 13}]},
+    {"id": "audit", "type": "messagebus", "label": "提交审计与可靠转存", "sublabel": "事务 Outbox · Sweeper · 幂等归档", "pos": [340, 400], "size": [205, 80], "sources": [{"path": "orrery_v2/cmd/server/production_skill_audit.go", "line": 14, "end_line": 26}, {"path": "orrery_v2/docs/rsi/2026-10-14-publication-consistency.md", "line": 17, "end_line": 25}]}
+  ],
+  "connections": [
+    {"id": "baseline-generator", "from": "baseline", "to": "generator", "label": "基线"},
+    {"id": "generator-candidate", "from": "generator", "to": "candidate", "label": "候选", "variant": "emphasis"},
+    {"id": "candidate-evaluator", "from": "candidate", "to": "evaluator", "label": "精确版本", "variant": "emphasis"},
+    {"id": "evaluator-artifact", "from": "evaluator", "to": "artifact", "label": "产物约定", "variant": "dashed"},
+    {"id": "artifact-ledger", "from": "artifact", "to": "ledger", "label": "受信桥接"},
+    {"id": "ledger-gate", "from": "ledger", "to": "gate", "label": "校验", "variant": "security"},
+    {"id": "gate-active", "from": "gate", "to": "active", "label": "通过+显式", "variant": "security"},
+    {"id": "active-runtime", "from": "active", "to": "runtime", "label": "版本绑定"},
+    {"id": "active-audit", "from": "active", "to": "audit", "label": "原子记录", "variant": "dashed"}
+  ],
+  "cards": [
+    {"dot": "emerald", "title": "已经实现的基础", "items": ["单轮 Supervisor 固定基线，登记候选，调用注入评估器，保存通过与失败结果。", "默认等待晋级；通过校验且调用方显式要求后才尝试切换。回滚仅允许历史生效版本。", "版本、完整包摘要、激活历史和提交审计保持一致；运行绑定旧版本不会自动换成新候选。"]},
+    {"dot": "amber", "title": "RSI 完整闭环仍在建设", "items": ["Memory / RunDiary 提供观察与证据，Scheduler 提供后台触发基础；这些并不证明真实优化闭环已接通。", "真实候选生成、隔离对照执行、独立裁判、底层事件反馈与改进器自身的版本实验仍需实现和实测。", "Ontology 自我修复恢复已知一致性，RSI 改进产生候选；两者是不同的治理职责。"]},
+    {"dot": "violet", "title": "Ontology 如何参与", "items": ["本体管理结构化对象、关系、事实、证据，以及模型运行、数据集、策略版本和评估产物。", "RSI 可通过可信内部桥接引用本体评估产物；晋级请求不能现场自报分数。", "本图展示源码能力及接口约定，不是全部能力已部署并自动运行的证明。"]}
+  ]
+}

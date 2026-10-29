@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orrery.local/schema/config/v1",
+  "title": "Orrery instance configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "profile", "environment", "server", "device_delivery", "paths", "database",
+    "runtime", "integrations", "bootstrap", "filestore", "logging", "health",
+    "queue", "lock", "liveness", "metrics", "secret", "sweeper", "tracing",
+    "resource", "auth", "authz", "discussion"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "profile": { "enum": ["development", "production"] },
+    "environment": { "enum": ["development", "production"] },
+    "server": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["addr", "trusted_proxy_cidrs", "trusted_viewer_headers_enabled"],
+      "properties": {
+        "addr": { "type": "string", "minLength": 1 },
+        "trusted_proxy_cidrs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "trusted_viewer_headers_enabled": { "type": "boolean" }
+      }
+    },
+    "device_delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["public_origin", "default_tenant_id", "max_artifact_bytes"],
+      "properties": {
+        "public_origin": { "type": "string" },
+        "default_tenant_id": { "type": "string", "minLength": 1 },
+        "max_artifact_bytes": { "type": "integer", "minimum": 1, "maximum": 104857600 }
+      }
+    },
+    "paths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["base_dir"],
+      "properties": { "base_dir": { "type": "string", "minLength": 1 } }
+    },
+    "database": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["password_env", "default_url", "urls"],
+      "properties": {
+        "password_env": { "enum": ["", "ORRERY_DATABASE_PASSWORD"] },
+        "allow_embedded_in_production": { "type": "boolean", "default": false },
+        "default_url": { "$ref": "#/$defs/database_url" },
+        "urls": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["core", "audit", "events", "jobs", "runtime", "observability"],
+          "properties": {
+            "core": { "$ref": "#/$defs/database_url" },
+            "audit": { "$ref": "#/$defs/database_url" },
+            "events": { "$ref": "#/$defs/database_url" },
+            "jobs": { "$ref": "#/$defs/database_url" },
+            "runtime": { "$ref": "#/$defs/database_url" },
+            "observability": { "$ref": "#/$defs/database_url" }
+          }
+        }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["execenv", "managed", "mcp"],
+      "properties": {
+        "execenv": { "type": "object", "additionalProperties": false, "required": ["root"], "properties": { "root": { "type": "string", "minLength": 1 } } },
+        "managed": { "type": "object", "additionalProperties": false, "required": ["enabled"], "properties": { "enabled": { "type": "boolean" } } },
+        "mcp": {
+          "type": "object", "additionalProperties": false,
+          "required": ["url", "server_name", "transport"],
+          "properties": {
+            "url": { "type": "string", "format": "uri" },
+            "server_name": { "type": "string", "minLength": 1 },
+            "transport": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "integrations": {
+      "type": "object", "additionalProperties": false, "required": ["legal"],
+      "properties": {
+        "legal": { "type": "object", "additionalProperties": false, "required": ["mcp_url"], "properties": { "mcp_url": { "type": "string", "format": "uri" } } },
+        "people": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "base_url": { "type": "string", "format": "uri" },
+            "token_ref": { "type": "string" },
+            "people_tenant_id": { "type": "string" },
+            "orrery_tenant_id": { "type": "string" },
+            "reconcile_interval": { "$ref": "#/$defs/duration" },
+            "planner_cron": { "type": "string" },
+            "planner_timezone": { "type": "string" },
+            "agent_bindings": { "type": "object", "additionalProperties": { "type": "string", "minLength": 1 } },
+            "human_role_mappings": { "type": "object", "propertyNames": { "minLength": 1 }, "additionalProperties": { "type": "string", "minLength": 1 } }
+          }
+        }
+      }
+    },
+    "bootstrap": {
+      "type": "object", "additionalProperties": false, "required": ["pageindex", "gateway"],
+      "properties": {
+        "pageindex": { "type": "object", "additionalProperties": false, "required": ["api_url", "api_key_ref"], "properties": { "enabled": { "type": "boolean", "default": true }, "api_url": { "type": "string", "format": "uri" }, "api_key_ref": { "type": "string" } } },
+        "gateway": { "type": "object", "additionalProperties": false, "required": ["legacy_config"], "properties": { "legacy_config": { "type": "string" } } }
+      }
+    },
+    "filestore": { "$ref": "#/$defs/filestore" },
+    "logging": { "$ref": "#/$defs/logging" },
+    "health": { "$ref": "#/$defs/health" },
+    "queue": { "$ref": "#/$defs/queue" },
+    "lock": { "$ref": "#/$defs/lock" },
+    "liveness": { "$ref": "#/$defs/liveness" },
+    "metrics": { "$ref": "#/$defs/metrics" },
+    "secret": { "$ref": "#/$defs/secret" },
+    "sweeper": { "$ref": "#/$defs/sweeper" },
+    "tracing": { "$ref": "#/$defs/tracing" },
+    "resource": { "$ref": "#/$defs/resource" },
+    "auth": { "$ref": "#/$defs/auth" },
+    "authz": { "$ref": "#/$defs/authz" },
+    "discussion": { "$ref": "#/$defs/discussion" },
+    "knowledge": { "$ref": "#/$defs/knowledge" },
+    "ontology": { "$ref": "#/$defs/ontology" },
+    "mission": { "type": "object", "additionalProperties": true },
+    "agents": { "type": "object", "additionalProperties": { "$ref": "#/$defs/agent_runtime" } },
+    "agent_defaults": { "$ref": "#/$defs/agent_runtime" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "allOf": [
+          { "properties": { "profile": { "const": "production" } }, "required": ["profile"] },
+          {
+            "not": {
+              "properties": {
+                "database": {
+                  "properties": { "allow_embedded_in_production": { "const": true } },
+                  "required": ["allow_embedded_in_production"]
+                }
+              },
+              "required": ["database"]
+            }
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "database": {
+            "properties": {
+              "password_env": { "const": "ORRERY_DATABASE_PASSWORD" },
+              "default_url": { "$ref": "#/$defs/postgres_url" },
+              "urls": {
+                "properties": {
+                  "core": { "$ref": "#/$defs/postgres_url" },
+                  "audit": { "$ref": "#/$defs/postgres_url" },
+                  "events": { "$ref": "#/$defs/postgres_url" },
+                  "jobs": { "$ref": "#/$defs/postgres_url" },
+                  "runtime": { "$ref": "#/$defs/postgres_url" },
+                  "observability": { "$ref": "#/$defs/postgres_url" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "database_url": { "type": "string", "pattern": "^(postgres(ql)?|file|sqlite)://" },
+    "postgres_url": { "type": "string", "pattern": "^postgres(ql)?://" },
+    "duration": { "type": "string", "pattern": "^[0-9]+(ns|us|ms|s|m|h)([0-9]+(ns|us|ms|s|m|h))*$" },
+    "filestore": {
+      "type": "object", "additionalProperties": false,
+      "required": ["backend", "root", "base_url"],
+      "properties": {
+        "backend": { "type": "string", "minLength": 1 },
+        "root": { "type": "string", "minLength": 1 },
+        "base_url": { "type": "string" },
+        "s3": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "bucket": { "type": "string" }, "region": { "type": "string" },
+            "endpoint_url": { "type": "string" }, "cdn_domain": { "type": "string" }
+          }
+        }
+      }
+    },
+    "logging": {
+      "type": "object", "additionalProperties": false, "required": ["level", "console", "file"],
+      "properties": { "level": { "type": "string", "minLength": 1 }, "console": { "type": "boolean" }, "file": { "type": "string", "minLength": 1 } }
+    },
+    "health": {
+      "type": "object", "additionalProperties": false, "required": ["readiness_cache_ttl"],
+      "properties": { "readiness_cache_ttl": { "$ref": "#/$defs/duration" } }
+    },
+    "queue": {
+      "type": "object", "additionalProperties": false, "required": ["claim_ttl", "max_attempts", "sweep_batch_size"],
+      "properties": { "claim_ttl": { "$ref": "#/$defs/duration" }, "max_attempts": { "type": "integer", "minimum": 1 }, "sweep_batch_size": { "type": "integer", "minimum": 1 } }
+    },
+    "lock": { "type": "object", "additionalProperties": false, "required": ["default_ttl"], "properties": { "default_ttl": { "$ref": "#/$defs/duration" } } },
+    "liveness": { "type": "object", "additionalProperties": false, "required": ["heartbeat_ttl"], "properties": { "heartbeat_ttl": { "$ref": "#/$defs/duration" } } },
+    "metrics": {
+      "type": "object", "additionalProperties": false, "required": ["addr", "buffer_size", "warn_interval"],
+      "properties": { "addr": { "type": "string" }, "buffer_size": { "type": "integer", "minimum": 1 }, "warn_interval": { "$ref": "#/$defs/duration" } }
+    },
+    "secret": { "type": "object", "additionalProperties": false, "required": ["root"], "properties": { "root": { "type": "string", "minLength": 1 } } },
+    "sweeper": {
+      "type": "object", "additionalProperties": false, "required": ["timeout", "batch_size"],
+      "properties": { "timeout": { "$ref": "#/$defs/duration" }, "batch_size": { "type": "integer", "minimum": 1 } }
+    },
+    "tracing": { "type": "object", "additionalProperties": false, "required": ["buffer_size"], "properties": { "buffer_size": { "type": "integer", "minimum": 1 } } },
+    "resource": { "type": "object", "additionalProperties": false, "required": ["mcp_registry_url"], "properties": { "mcp_registry_url": { "type": "string" } } },
+    "auth": {
+      "type": "object", "additionalProperties": false,
+      "required": ["require_https", "local", "identity", "kratos", "feishu", "oidc", "hydra"],
+      "properties": {
+        "require_https": { "type": "boolean" },
+        "local": { "type": "object", "additionalProperties": false, "required": ["enabled", "superadmin_mfa_enabled"], "properties": { "enabled": { "type": "boolean" }, "superadmin_mfa_enabled": { "type": "boolean" } } },
+        "identity": { "type": "object", "additionalProperties": false, "required": ["mode", "auto_link_enabled"], "properties": { "mode": { "type": "string", "enum": ["standalone", "people_sso"] }, "auto_link_enabled": { "type": "boolean" } } },
+        "kratos": { "type": "object", "additionalProperties": false, "required": ["public_url", "callback_url", "display_name", "session_cookie_names", "admin_url", "schema_id", "feishu_provider_id"], "properties": { "public_url": { "type": "string" }, "callback_url": { "type": "string" }, "display_name": { "type": "string" }, "session_cookie_names": { "type": "string" }, "admin_url": { "type": "string" }, "schema_id": { "type": "string" }, "feishu_provider_id": { "type": "string" } } },
+        "feishu": { "type": "object", "additionalProperties": false, "required": ["app_id", "callback_url", "binding_callback_url", "allowed_tenant_key", "auto_provision_enabled", "directory_sync_enabled"], "properties": { "app_id": { "type": "string" }, "callback_url": { "type": "string" }, "binding_callback_url": { "type": "string" }, "allowed_tenant_key": { "type": "string" }, "auto_provision_enabled": { "type": "boolean" }, "directory_sync_enabled": { "type": "boolean" } } },
+        "oidc": { "type": "object", "additionalProperties": false, "required": ["introspection_url", "client_id", "issuer", "audience", "provider"], "properties": { "introspection_url": { "type": "string" }, "client_id": { "type": "string" }, "issuer": { "type": "string" }, "audience": { "type": "string" }, "provider": { "type": "string" } } },
+        "hydra": { "type": "object", "additionalProperties": false, "required": ["admin_url", "remember_for", "client_sync_enabled"], "properties": { "admin_url": { "type": "string" }, "remember_for": { "type": "string" }, "client_sync_enabled": { "type": "boolean" } } }
+      }
+    },
+    "authz": {
+      "type": "object", "additionalProperties": false, "required": ["mode", "role_scope", "openfga", "relation_backfill"],
+      "properties": {
+        "mode": { "type": "string" },
+        "role_scope": { "type": "object", "additionalProperties": false, "required": ["mode"], "properties": { "mode": { "type": "string", "minLength": 1 } } },
+        "openfga": { "type": "object", "additionalProperties": false, "required": ["api_url", "store_id", "authorization_model_id", "timeout", "ignore_duplicate_writes", "enforce_ready", "enforce_object_types", "fail_open_dev"], "properties": { "api_url": { "type": "string" }, "store_id": { "type": "string" }, "authorization_model_id": { "type": "string" }, "timeout": { "type": "string" }, "ignore_duplicate_writes": { "type": "boolean" }, "enforce_ready": { "type": "boolean" }, "enforce_object_types": { "type": "string" }, "fail_open_dev": { "type": "boolean" } } },
+        "relation_backfill": { "type": "object", "additionalProperties": false, "required": ["mode"], "properties": { "mode": { "type": "string" } } }
+      }
+    },
+    "agent_runtime": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "runtime_kind": { "type": "string" }, "runtime_config_ref": { "type": "string" },
+        "runtime_config": {}, "system_prompt": { "type": "string" }, "model": { "type": "string" },
+        "working_directory": { "type": "string" }, "timeout": { "type": "string" }
+      }
+    },
+    "discussion": {
+      "type": "object", "additionalProperties": false, "required": ["agent_id", "agent"],
+      "properties": { "agent_id": { "type": "string" }, "agent": { "$ref": "#/$defs/agent_runtime" } }
+    },
+    "knowledge": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "root": { "type": "string" }, "vector_backend": { "type": "string" },
+        "default_chunk_policy": { "type": "object", "additionalProperties": false, "properties": { "max_runes": { "type": "integer" }, "overlap_runes": { "type": "integer" }, "min_runes": { "type": "integer" }, "preserve_heads": { "type": "boolean" } } },
+        "embedding": { "type": "object", "additionalProperties": false, "properties": { "default_profile_ref": { "type": "string" }, "batch_size": { "type": "integer" }, "request_timeout": { "type": "string" } } },
+        "ingest": { "type": "object", "additionalProperties": false, "properties": { "max_document_bytes": { "type": "integer" }, "supported_content_types": { "type": "array", "items": { "type": "string" } } } }
+      }
+    },
+    "ontology": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "metric_recording_sweeper": { "type": "object", "additionalProperties": false, "properties": { "lookback": { "type": "string" }, "limit": { "type": "integer" } } },
+        "policy_alert_audit_sweeper": { "type": "object", "additionalProperties": false, "properties": { "lookback": { "type": "string" }, "trend_limit": { "type": "integer" }, "profile_limit": { "type": "integer" }, "min_failures": { "type": "integer" } } },
+        "alert_notification_sweeper": { "type": "object", "additionalProperties": false, "properties": { "limit": { "type": "integer" }, "repeat_window": { "type": "string" }, "recovery_window": { "type": "string" }, "log": { "type": "object", "additionalProperties": false, "properties": { "enabled": { "type": "boolean" }, "channel": { "type": "string" } } }, "webhook": { "type": "object", "additionalProperties": false, "properties": { "enabled": { "type": "boolean" }, "endpoint": { "type": "string" }, "channel": { "type": "string" }, "headers": { "type": "object", "additionalProperties": { "type": "string" } }, "allow_private_endpoints": { "type": "boolean" } } } } },
+        "alert_notification_retry_sweeper": { "type": "object", "additionalProperties": false, "properties": { "enabled": { "type": "boolean" }, "limit": { "type": "integer" }, "max_attempts": { "type": "integer" }, "backoff": { "type": "string" } } },
+        "artifact_health_sweeper": { "type": "object", "additionalProperties": false, "properties": { "limit": { "type": "integer" }, "s3": { "type": "object", "additionalProperties": false, "properties": { "enabled": { "type": "boolean" }, "region": { "type": "string" }, "endpoint_url": { "type": "string" }, "expected_bucket_owner": { "type": "string" }, "allowed_prefixes": { "type": "array", "items": { "type": "string" } } } } } }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+Orrery
+Copyright 2026 Minvia
+
+The Orrery-owned source in this repository is licensed under Apache-2.0.
+Existing third-party copyright and license notices remain applicable.
+
+The Go Session Runtime includes historical adaptations of AionCore's
+aionui-session, Copyright 2025 AionUi (aionui.com), Apache-2.0, from commit
+76f5554286ba0b6d33fb74d5c2bb2b3b0b83100d. A retained Claude test fixture is
+also adapted from that source. Orrery modifications: Copyright 2026 Minvia.
+The original license is preserved in
+compliance/licenses/aionui-session-76f5554-Apache-2.0.txt. File scope and changes
+are recorded in compliance/source-adaptations.json and
+orrery_v2/docs/runtime/runtime-source-provenance.md. These source adaptations
+do not require an AionCore executable or a separate build/runtime installation.
+
+The bundled PI coding agent (@earendil-works/pi-coding-agent 1.3.0) is
+Copyright (c) 2025 Mario Zechner, licensed under MIT. Its original license is
+preserved in compliance/licenses/pi-coding-agent-1.3.0-MIT.txt.
+
+The optional SILK voice decoder uses silk-wasm 3.7.1, Copyright (c) 2024
+idranme, MIT. Its underlying SILK codec retains separate original notices.
+The pinned audio dependency graph, original license texts and supplemental
+source notices are recorded in compliance/license-texts.json.
+
+Claude Code and PageIndex services are external integrations. Their executables,
+service images, accounts, trademarks and licenses are not granted by this
+repository's license. See compliance/ and THIRD_PARTY.md for evidence.
+Orrery supports connections to compatible independently operated PageIndex
+services. Project: https://github.com/VectifyAI/PageIndex . The independent
+service's implementation, dependencies and images are outside this release.
+
+The realtime transport includes a modified source distribution of Centrifuge
+v0.38.0, Copyright (c) 2023 Centrifugal Labs LTD, MIT. The optional Redis
+adapters are omitted. Preserve third_party/centrifuge/LICENSE and its internal
+WebSocket license under orrery_v2; details are in compliance/source-adaptations.json.
+
+The optional Tauri JavaScript bridge and CLI retain their original Apache-2.0
+and MIT notices in compliance/licenses/tauri-*.txt; version and integrity
+evidence is recorded in compliance/npm-license-evidence.json. The desktop
+application, Tauri Rust source and native binaries are outside this export.

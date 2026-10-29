@@ -1,0 +1,31 @@
+gateway:
+    port: 18789
+    bindAddress: 127.0.0.1
+    idleSessionTimeoutMinutes: 30
+    staticAssetsPath: ""
+    maxPerSessionMcpInstances: 5
+adapters:
+    feishu:
+        enabled: false
+        appId: ""
+        appSecret: ""
+        encryptKey: ""
+        verifyToken: ""
+        defaultSessionLabel: general
+        connectionMode: stream
+        domainName: feishu
+    weixin:
+        enabled: false
+        extra: {}
+    dingtalk:
+        enabled: false
+        token: ""
+        apiKey: ""
+        webhookUrl: ""
+        extra: {}
+    email:
+        enabled: false
+        token: ""
+        apiKey: ""
+        webhookUrl: ""
+        extra: {}

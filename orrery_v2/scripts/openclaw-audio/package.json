@@ -1,0 +1,7 @@
+{
+  "name": "orrery-openclaw-audio-adapter",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test bridge.test.mjs" },
+  "engines": { "node": ">=22" }
+}

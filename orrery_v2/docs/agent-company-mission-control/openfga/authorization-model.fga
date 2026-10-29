@@ -1,0 +1,111 @@
+model
+  schema 1.1
+
+type user
+
+type agent
+
+type system
+
+type platform
+  relations
+    define assigned_role: [role]
+    define member: [user, agent] or assignee from assigned_role
+
+type organization
+  relations
+    define admin: [user, agent]
+    define member: [user, agent]
+    define viewer: admin or member
+
+type department
+  relations
+    define org: [organization]
+    define manager: [user, agent]
+    define member: [user, agent]
+    define admin: admin from org
+    define viewer: member or manager or admin
+    define editor: manager or admin
+
+type role
+  relations
+    define org: [organization]
+    define scope: [platform, organization, department]
+    define assignee: [user, agent]
+    define admin: admin from org
+    define viewer: assignee or admin
+
+type mission
+  relations
+    define owner: [user, agent]
+    define participant: [user, agent]
+    define automation: [system]
+    define department: [department]
+    define origin_todo: [todo]
+    define origin_development_project: [development_project]
+    define viewer: owner or participant or automation or reader from origin_todo or manager from department or admin from department
+    define development_monitor: monitor from origin_development_project
+    define editor: owner or automation or assignee from origin_todo or manager from department or admin from department
+    define qa_approver: owner or reviewer from origin_todo or manager from department or admin from department
+    define manager: owner or admin from department
+
+type discussion
+  relations
+    define mission: [mission]
+    define todo: [todo]
+    define owner: [user, agent]
+    define member: [user, agent]
+    define viewer: owner or member
+    define poster: owner or member
+    define manager: owner
+
+type project
+  relations
+    define owner: [user, agent]
+    define participant: [user, agent]
+    define org: [organization]
+    define viewer: owner or participant or member from org or admin from org
+    define editor: owner or admin from org
+
+type development_project
+  relations
+    define org: [organization]
+    define owner: [user]
+    define maintainer: [user]
+    define contributor: [user, agent]
+    define viewer: [user, agent]
+    define executor: [agent]
+    define merger: [user]
+    define reader: viewer or contributor or maintainer or owner or admin from org
+    define monitor: maintainer or owner or admin from org
+    define writer: contributor or maintainer or owner or admin from org
+    define configurer: maintainer or owner or admin from org
+    define runner: contributor or maintainer or owner or executor or admin from org
+    define submitter: contributor or maintainer or owner or executor or admin from org
+    define approver: maintainer or owner or admin from org
+    define manager: owner or admin from org
+    define merge_authorizer: merger or owner or admin from org
+
+type scm_connection
+  relations
+    define org: [organization]
+    define owner: [user]
+    define user: [user, agent, development_project] or admin from org
+    define manager: [user] or admin from org
+
+type todo
+  relations
+    define proposer: [user, agent]
+    define assignee: [user, agent]
+    define reviewer: [user]
+    define collaborator: [user, agent]
+    define development_project: [development_project]
+    define reader: proposer or assignee or reviewer or collaborator
+    define editor: proposer or assignee or reviewer
+
+type resource
+  relations
+    define owner: [user, agent]
+    define bound_mission: [mission]
+    define viewer: owner or viewer from bound_mission
+    define operator: [user, agent] or owner or editor from bound_mission

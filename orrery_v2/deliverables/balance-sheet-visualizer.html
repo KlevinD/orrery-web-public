@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  Third-party runtime notices: this demo loads, but does not vendor, the
+  version-pinned SheetJS xlsx 0.20.1 and Apache ECharts 5.5.0 browser bundles.
+  SheetJS terms: https://github.com/SheetJS/sheetjs/blob/github/LICENSE
+  ECharts Apache-2.0: https://github.com/apache/echarts/blob/master/LICENSE
+  The CDN URLs are kept explicit so the demo's external runtime scope is clear.
+-->
+<title>多单位资产负债表可视化对比工具</title>
+<script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js" integrity="sha384-QCIdq2UMVEoSRhR3ZWZwdz2/pivLowr+eokFMdYyukq7qI26VYRxFa4Nl6FKetmL" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js" integrity="sha384-o5uz97et3bErHvpKfD4Jz4n0JfhJDWABFuF4NP+iEEDxE1VwMWJ19QGR0lqFZnr6" crossorigin="anonymous">
+</script>
+<style>
+:root {
+  --bg: #f5f6fa;
+  --card-bg: #ffffff;
+  --text: #2d3436;
+  --text-secondary: #636e72;
+  --border: #e0e3e8;
+  --accent: #4a6cf7;
+  --accent-light: #eef1ff;
+  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  --radius: 12px;
+  --transition: 0.2s ease;
+  --colors: #4a6cf7, #00b894, #e17055, #a29bfe, #fdcb6e, #00cec9, #ff7675, #6c5ce7, #55a3e8, #e84393;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+.container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+
+/* Header */
+.header { text-align: center; padding: 32px 0 24px; }
+.header h1 { font-size: 28px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.header p { color: var(--text-secondary); font-size: 15px; }
+
+/* Upload */
+.upload-section { margin-bottom: 24px; }
+.upload-zone { border: 2px dashed var(--border); border-radius: var(--radius); padding: 48px 24px; text-align: center; cursor: pointer; transition: var(--transition); background: var(--card-bg); position: relative; }
+.upload-zone:hover, .upload-zone.drag-over { border-color: var(--accent); background: var(--accent-light); }
+.upload-zone .icon { font-size: 48px; margin-bottom: 12px; display: block; }
+.upload-zone .title { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
+.upload-zone .hint { font-size: 13px; color: var(--text-secondary); }
+.upload-zone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+
+/* Loading */
+.loading-overlay { display: none; position: fixed; inset: 0; background: rgba(255,255,255,0.7); z-index: 999; justify-content: center; align-items: center; flex-direction: column; gap: 12px; }
+.loading-overlay.active { display: flex; }
+.spinner { width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* File List */
+.file-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; min-height: 36px; align-items: center; }
+.file-tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; color: #fff; animation: fadeIn 0.25s ease; }
+.file-tag .remove { cursor: pointer; width: 20px; height: 20px; border-radius: 50%; background: rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 12px; transition: var(--transition); border: none; color: #fff; }
+.file-tag .remove:hover { background: rgba(255,255,255,0.5); }
+.file-tag .period { font-size: 11px; opacity: 0.8; margin-left: 2px; }
+@keyframes fadeIn { from { opacity:0; transform:scale(0.9); } to { opacity:1; transform:scale(1); } }
+.empty-hint { color: var(--text-secondary); font-size: 13px; }
+
+/* Action Bar */
+.action-bar { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
+.btn { padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; border: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 6px; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #3b5de7; }
+.btn-outline { background: var(--card-bg); color: var(--accent); border: 1.5px solid var(--accent); }
+.btn-outline:hover { background: var(--accent-light); }
+.btn-ghost { background: transparent; color: var(--text-secondary); }
+.btn-ghost:hover { background: var(--border); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Summary Cards */
+.cards-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.metric-card { background: var(--card-bg); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+.metric-card .label { font-size: 13px; color: var(--text-secondary); margin-bottom: 4px; }
+.metric-card .value { font-size: 26px; font-weight: 700; }
+.metric-card .unit-list { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
+.metric-card .unit-item { display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+.metric-card .unit-item .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; flex-shrink: 0; }
+
+/* Charts Grid */
+.charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+.chart-panel { background: var(--card-bg); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+.chart-panel.full-width { grid-column: 1 / -1; }
+.chart-panel h3 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text); }
+.chart-box { width: 100%; height: 380px; }
+.chart-box.tall { height: 440px; }
+
+/* Data Table */
+.table-wrap { background: var(--card-bg); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); overflow-x: auto; margin-bottom: 24px; }
+.table-wrap h3 { font-size: 16px; font-weight: 600; margin-bottom: 14px; }
+.table-wrap table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table-wrap th, .table-wrap td { padding: 10px 14px; text-align: right; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.table-wrap th { background: #f8f9fc; font-weight: 600; color: var(--text-secondary); position: sticky; top: 0; }
+.table-wrap td:first-child, .table-wrap th:first-child { text-align: left; font-weight: 500; }
+.table-wrap tr:hover td { background: #fafbfd; }
+.bar-cell { display: inline-block; height: 6px; border-radius: 3px; margin-right: 8px; vertical-align: middle; min-width: 2px; }
+
+/* Footer */
+.footer { text-align: center; padding: 24px 0; color: var(--text-secondary); font-size: 12px; }
+
+/* Toast */
+.toast { position: fixed; top: 20px; right: 20px; background: #2d3436; color: #fff; padding: 12px 20px; border-radius: 8px; font-size: 14px; z-index: 1000; animation: slideIn 0.3s ease; box-shadow: 0 4px 16px rgba(0,0,0,0.15); max-width: 420px; }
+.toast.warn { background: #e17055; }
+@keyframes slideIn { from { opacity:0; transform:translateX(20px); } to { opacity:1; transform:translateX(0); } }
+
+/* Empty State */
+.empty-state { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
+.empty-state .big-icon { font-size: 64px; display: block; margin-bottom: 16px; opacity: 0.6; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .charts-grid { grid-template-columns: 1fr; }
+  .container { padding: 12px; }
+  .header h1 { font-size: 22px; }
+  .cards-row { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+}
+
+/* Print */
+@media print {
+  body { background: #fff; }
+  .upload-section, .action-bar, .footer, .file-tag .remove, .toast, .loading-overlay { display: none !important; }
+  .chart-panel { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+  .container { max-width: 100%; padding: 0; }
+  .charts-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header class="header">
+    <h1>📊 多单位资产负债表可视化对比</h1>
+    <p>上传多个单位的 Excel 资产负债表文件（.xlsx），自动解析并进行横向对比分析 · 数据仅在浏览器端处理，不会上传到服务器</p>
+  </header>
+
+  <section class="upload-section">
+    <div class="upload-zone" id="uploadZone" tabindex="0" role="button" aria-label="点击或拖拽上传Excel文件">
+      <span class="icon">📁</span>
+      <div class="title">点击上传或拖拽文件到此处</div>
+      <div class="hint">支持 .xlsx 格式，可同时上传多个文件。数据读取自 Sheet1。<br>资产负债表格式应包含：资产 / 负债 / 所有者权益等中文科目名称</div>
+      <input type="file" id="fileInput" accept=".xlsx" multiple aria-label="选择Excel文件">
+    </div>
+    <div class="file-list" id="fileList">
+      <span class="empty-hint">尚未上传文件 — 上传后各单位将以不同颜色标识</span>
+    </div>
+  </section>
+
+  <div class="action-bar">
+    <button class="btn btn-outline" id="btnDemo" title="加载 4 家演示单位数据，快速体验功能">🎲 加载演示数据</button>
+    <button class="btn btn-outline" id="btnExport" title="导出对比数据为 CSV 文件" disabled>📥 导出 CSV</button>
+    <button class="btn btn-ghost" id="btnClear" style="margin-left:auto">🗑 清空全部</button>
+  </div>
+
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+    <div style="font-size:14px;color:var(--text-secondary)">正在解析文件…</div>
+  </div>
+
+  <div id="dashboard" style="display:none;">
+    <div class="cards-row" id="cardsRow"></div>
+    <div class="charts-grid">
+      <div class="chart-panel">
+        <h3>📈 总资产对比</h3>
+        <div class="chart-box" id="chartTotalAssets"></div>
+      </div>
+      <div class="chart-panel">
+        <h3>⚠️ 资产负债率对比</h3>
+        <div class="chart-box" id="chartDebtRatio"></div>
+      </div>
+      <div class="chart-panel">
+        <h3>🏗 资产结构（流动 vs 非流动）</h3>
+        <div class="chart-box" id="chartAssetStructure"></div>
+      </div>
+      <div class="chart-panel">
+        <h3>📋 负债与权益构成</h3>
+        <div class="chart-box" id="chartLiabilityEquity"></div>
+      </div>
+      <div class="chart-panel full-width">
+        <h3>🎯 综合财务指标雷达</h3>
+        <div class="chart-box tall" id="chartRadar"></div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <h3>📝 解析数据明细</h3>
+      <div id="dataTable"></div>
+    </div>
+  </div>
+
+  <div class="empty-state" id="emptyState">
+    <span class="big-icon">📤</span>
+    <p>上传 Excel 文件或点击「加载演示数据」开始分析</p>
+  </div>
+
+  <footer class="footer">
+    Orrery Mission · 多单位资产负债表可视化工具 · 纯前端运行，数据不会上传到服务器
+  </footer>
+</div>
+
+<div id="toastContainer"></div>
+
+<script>
+(function() {
+  'use strict';
+
+  // ---- Constants ----
+  const COLOR_PALETTE = ['#4a6cf7','#00b894','#e17055','#a29bfe','#fdcb6e','#00cec9','#ff7675','#6c5ce7','#55a3e8','#e84393'];
+
+  // ---- State ----
+  let units = [];   // { name, color, fileName, period, data: { ...parsed fields } }
+  let charts = {};
+
+  // ---- DOM refs ----
+  const $ = (s) => document.querySelector(s);
+  const uploadZone = $('#uploadZone');
+  const fileInput = $('#fileInput');
+  const fileList = $('#fileList');
+  const dashboard = $('#dashboard');
+  const emptyState = $('#emptyState');
+  const cardsRow = $('#cardsRow');
+  const dataTable = $('#dataTable');
+  const btnDemo = $('#btnDemo');
+  const btnClear = $('#btnClear');
+  const btnExport = $('#btnExport');
+  const loadingOverlay = $('#loadingOverlay');
+
+  // ---- Toast ----
+  function toast(msg, warn) {
+    const el = document.createElement('div');
+    el.className = 'toast' + (warn ? ' warn' : '');
+    el.textContent = msg;
+    $('#toastContainer').appendChild(el);
+    setTimeout(function() { el.remove(); }, 3000);
+  }
+
+  // ---- Loading ----
+  function showLoading() { loadingOverlay.classList.add('active'); }
+  function hideLoading() { loadingOverlay.classList.remove('active'); }
+
+  // ---- Balance Sheet Parsing ----
+  // Keyword patterns → canonical field name. Order: longer / more specific first.
+  const FIELD_PATTERNS = [
+    // Assets
+    { re: /流动资产\s*合?计/, field: 'currentAssets' },
+    { re: /非流动资产\s*合?计/, field: 'nonCurrentAssets' },
+    { re: /资产[总合]计/, field: 'totalAssets' },
+    { re: /总资产/, field: 'totalAssets' },
+    // Liabilities
+    { re: /流动负债\s*合?计/, field: 'currentLiabilities' },
+    { re: /非流动负债\s*合?计/, field: 'nonCurrentLiabilities' },
+    { re: /负债[总合]计/, field: 'totalLiabilities' },
+    { re: /总负债/, field: 'totalLiabilities' },
+    // Equity
+    { re: /(?:所有者|股东)权益\s*合?计/, field: 'totalEquity' },
+    { re: /(?:实收资本|股本)/, field: 'paidInCapital' },
+    { re: /资本公积/, field: 'capitalReserve' },
+    { re: /盈余公积/, field: 'surplusReserve' },
+    { re: /未分配利润/, field: 'undistributedProfit' },
+    // Cross-check total
+    { re: /负债和?所有者权益\s*[总合]计/, field: 'totalLiabilitiesEquity' },
+    { re: /负债及[和]?所有者权益\s*[总合]计/, field: 'totalLiabilitiesEquity' },
+    { re: /负债[和及]?股东权益\s*[总合]计/, field: 'totalLiabilitiesEquity' },
+    { re: /负债和\s*(?:所有者|股东)\s*权益\s*[总合]计/, field: 'totalLiabilitiesEquity' },
+    // Detailed items
+    { re: /货币资金/, field: 'cashEquivalents' },
+    { re: /应收账款/, field: 'accountsReceivable' },
+    { re: /存货/, field: 'inventory' },
+    { re: /固定资产/, field: 'fixedAssets' },
+    { re: /无形资产/, field: 'intangibleAssets' },
+    { re: /短期借款/, field: 'shortTermBorrowing' },
+    { re: /应付账款/, field: 'accountsPayable' },
+    { re: /长期借款/, field: 'longTermBorrowing' },
+  ];
+
+  function normalizeText(s) {
+    if (s == null) return '';
+    return String(s).replace(/[\s 　]+/g, '').trim();
+  }
+
+  function extractNumber(val) {
+    if (typeof val === 'number') return isNaN(val) ? NaN : val;
+    if (val == null) return NaN;
+    var s = String(val).replace(/[¥￥,$%\s ]/g, '').trim();
+    // Handle parentheses for negatives: (1,000) → -1000
+    if (/^\(.+\)$/.test(s)) return -parseFloat(s.slice(1, -1).replace(/,/g, ''));
+    // Handle leading minus
+    return parseFloat(s.replace(/,/g, ''));
+  }
+
+  // Try to detect company/unit name and period from sheet content
+  function detectMeta(rows) {
+    var meta = { unitName: null, period: null };
+    // Scan first 8 rows for company name and period indicators
+    for (var i = 0; i < Math.min(rows.length, 8); i++) {
+      var row = rows[i];
+      if (!row || !row.length) continue;
+      var text = normalizeText(String(row[0] || ''));
+      if (!text) {
+        // Try full row joined
+        text = row.map(function(c) { return normalizeText(String(c || '')); }).join('');
+      }
+      // Company name patterns
+      if (!meta.unitName) {
+        var nameMatch = text.match(/(?:单位名称|编制单位|企业名称|公司名称)[：:]\s*(.+)/);
+        if (nameMatch && nameMatch[1].length < 60) meta.unitName = nameMatch[1].trim();
+        // Sometimes the company name is in the first cell without a label
+        if (!meta.unitName && i === 0 && text.length >= 2 && text.length < 50 &&
+            !/[负资债权益表元科]/.test(text) && !/^\d/.test(text)) {
+          meta.unitName = text;
+        }
+      }
+      // Period patterns
+      if (!meta.period) {
+        var dateMatch = text.match(/(\d{4}[年\/\-]\d{1,2}[月\/\-]\d{1,2}日?)/);
+        if (dateMatch) meta.period = dateMatch[1];
+        if (!meta.period) {
+          var yearMatch = text.match(/(\d{4})年/);
+          if (yearMatch) meta.period = yearMatch[1] + '年';
+        }
+      }
+      if (meta.unitName && meta.period) break;
+    }
+    return meta;
+  }
+
+  // Pre-process sheet: fill merged-cell gaps
+  function preprocessRows(rows) {
+    if (!rows || !rows.length) return rows;
+    // For each column position, if a row has a value but previous row doesn't,
+    // this might be a merged cell. We don't try to replicate merge logic fully,
+    // but we can fill down the first column (labels) which is commonly merged.
+    var cleaned = [];
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i];
+      if (!row || row.every(function(c) { return c == null || c === ''; })) continue;
+      var newRow = row.slice();
+      // Fill down col A if empty (common for merged category headers)
+      if (i > 0 && (!newRow[0] || String(newRow[0]).trim() === '') && cleaned.length > 0) {
+        newRow[0] = cleaned[cleaned.length - 1][0];
+      }
+      cleaned.push(newRow);
+    }
+    return cleaned;
+  }
+
+  function parseSheet(workbook, fileName) {
+    var sheetName = workbook.SheetNames[0];
+    if (!sheetName) throw new Error('文件中没有找到 Sheet');
+    var sheet = workbook.Sheets[sheetName];
+    var rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: null, blankrows: false });
+    if (!rows || !rows.length) throw new Error('Sheet1 无数据');
+
+    rows = preprocessRows(rows);
+    var meta = detectMeta(rows);
+    var result = {};
+
+    for (var ri = 0; ri < rows.length; ri++) {
+      var row = rows[ri];
+      if (!row || row.length === 0) continue;
+      var label = normalizeText(row[0]);
+      if (!label || label.length < 2) continue;
+
+      for (var pi = 0; pi < FIELD_PATTERNS.length; pi++) {
+        var pat = FIELD_PATTERNS[pi];
+        if (!pat.re.test(label)) continue;
+        // First match wins per field
+        if (result[pat.field] != null) continue;
+
+        // Search for a numeric value in the row (skip col A = label)
+        var found = false;
+        for (var ci = 1; ci < row.length; ci++) {
+          var v = extractNumber(row[ci]);
+          if (!isNaN(v)) { result[pat.field] = v; found = true; break; }
+        }
+        // If no value in this row, try the next row (some formats split label/value)
+        if (!found && ri + 1 < rows.length) {
+          var nextRow = rows[ri + 1];
+          if (nextRow && (!nextRow[0] || String(nextRow[0]).trim() === '')) {
+            for (var cj = 1; cj < nextRow.length; cj++) {
+              var v2 = extractNumber(nextRow[cj]);
+              if (!isNaN(v2)) { result[pat.field] = v2; break; }
+            }
+          }
+        }
+        break; // Matched pattern, move to next row
+      }
+    }
+
+    // ---- Sanity / Derivation ----
+    // Cross-check: totalAssets should equal totalLiabilitiesEquity
+    if (!result.totalAssets && result.totalLiabilitiesEquity) {
+      result.totalAssets = result.totalLiabilitiesEquity;
+    }
+    if (!result.totalLiabilitiesEquity && result.totalAssets) {
+      result.totalLiabilitiesEquity = result.totalAssets;
+    }
+    // Derive totalLiabilities from current + non-current
+    if (result.totalLiabilities == null &&
+        result.currentLiabilities != null && result.nonCurrentLiabilities != null) {
+      result.totalLiabilities = result.currentLiabilities + result.nonCurrentLiabilities;
+    }
+    // Derive totalEquity from Assets - Liabilities
+    if (result.totalEquity == null && result.totalAssets != null && result.totalLiabilities != null) {
+      result.totalEquity = result.totalAssets - result.totalLiabilities;
+    }
+    // Derive nonCurrent from total - current
+    if (result.nonCurrentAssets == null && result.totalAssets != null && result.currentAssets != null) {
+      result.nonCurrentAssets = result.totalAssets - result.currentAssets;
+    }
+    if (result.nonCurrentLiabilities == null && result.totalLiabilities != null && result.currentLiabilities != null) {
+      result.nonCurrentLiabilities = result.totalLiabilities - result.currentLiabilities;
+    }
+
+    return { data: result, meta: meta };
+  }
+
+  // ---- Unit name resolution ----
+  function resolveUnitName(file, index, meta) {
+    // Priority: detected from content > filename (without ext) > fallback
+    if (meta && meta.unitName && meta.unitName.length >= 2 && meta.unitName.length < 50) {
+      return meta.unitName;
+    }
+    var base = file.name.replace(/\.xlsx?$/i, '').trim();
+    return base || ('单位' + (index + 1));
+  }
+
+  // ---- File Handling ----
+  async function processFiles(files) {
+    showLoading();
+    // Use setTimeout to let the loading overlay render before heavy work
+    await new Promise(function(r) { setTimeout(r, 50); });
+
+    var newUnits = [];
+    for (var i = 0; i < files.length; i++) {
+      var file = files[i];
+      try {
+        if (!/\.xlsx?$/i.test(file.name)) {
+          toast('跳过非 Excel 文件: ' + file.name, true);
+          continue;
+        }
+        var buf = await file.arrayBuffer();
+        var wb = XLSX.read(new Uint8Array(buf), { type: 'array' });
+        var parsed = parseSheet(wb, file.name);
+        var data = parsed.data;
+        var meta = parsed.meta;
+        var fieldCount = Object.keys(data).length;
+        if (fieldCount === 0) {
+          toast('⚠ [' + file.name + '] 未识别到任何资产负债表科目，请检查 Excel 格式（需包含中文科目名称如"流动资产合计"、"总资产"等）', true);
+          continue;
+        }
+        if (fieldCount < 3) {
+          toast('⚠ [' + file.name + '] 仅识别到 ' + fieldCount + ' 个科目，部分图表可能数据不足', true);
+        }
+        var name = resolveUnitName(file, units.length + newUnits.length, meta);
+        var color = COLOR_PALETTE[(units.length + newUnits.length) % COLOR_PALETTE.length];
+        newUnits.push({ name: name, color: color, fileName: file.name, period: meta.period, data: data });
+      } catch (e) {
+        console.error('Parse error for ' + file.name + ':', e);
+        toast('解析失败 [' + file.name + ']: ' + e.message, true);
+      }
+    }
+    hideLoading();
+
+    if (newUnits.length) {
+      units = units.concat(newUnits);
+      renderAll();
+      toast('成功加载 ' + newUnits.length + ' 个单位');
+      btnExport.disabled = false;
+    }
+  }
+
+  function removeUnit(index) {
+    units.splice(index, 1);
+    // Reassign colors consistently
+    units.forEach(function(u, i) { u.color = COLOR_PALETTE[i % COLOR_PALETTE.length]; });
+    if (!units.length) btnExport.disabled = true;
+    renderAll();
+  }
+
+  // ---- File Input Events ----
+  uploadZone.addEventListener('dragover', function(e) { e.preventDefault(); uploadZone.classList.add('drag-over'); });
+  uploadZone.addEventListener('dragleave', function() { uploadZone.classList.remove('drag-over'); });
+  uploadZone.addEventListener('drop', function(e) {
+    e.preventDefault();
+    uploadZone.classList.remove('drag-over');
+    if (e.dataTransfer.files && e.dataTransfer.files.length) processFiles(e.dataTransfer.files);
+  });
+  fileInput.addEventListener('change', function() {
+    if (fileInput.files && fileInput.files.length) { processFiles(fileInput.files); fileInput.value = ''; }
+  });
+  // Keyboard accessibility for upload zone
+  uploadZone.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); } });
+
+  // ---- Buttons ----
+  btnClear.addEventListener('click', function() { units = []; btnExport.disabled = true; renderAll(); toast('已清空'); });
+  btnDemo.addEventListener('click', loadDemoData);
+  btnExport.addEventListener('click', exportCSV);
+
+  // ---- Formatting helpers ----
+  function fmtMoney(v) {
+    if (v == null || isNaN(v) || !isFinite(v)) return '—';
+    var abs = Math.abs(v);
+    var sign = v < 0 ? '-' : '';
+    if (abs >= 1e8) return sign + (abs / 1e8).toFixed(2) + ' 亿';
+    if (abs >= 1e4) return sign + (abs / 1e4).toFixed(2) + ' 万';
+    return sign + abs.toLocaleString('zh-CN', { maximumFractionDigits: 0 });
+  }
+  function fmtPct(v) {
+    if (v == null || isNaN(v) || !isFinite(v)) return '—';
+    return (v * 100).toFixed(1) + '%';
+  }
+  function fmtNum(v) {
+    if (v == null || isNaN(v) || !isFinite(v)) return '—';
+    return v.toLocaleString('zh-CN', { maximumFractionDigits: 0 });
+  }
+
+  // ---- Computed Metrics (with safety guards) ----
+  function getMetrics(u) {
+    var d = u.data;
+    var totalAssets = d.totalAssets || 0;
+    var totalLiabilities = d.totalLiabilities || 0;
+    var totalEquity = d.totalEquity || 0;
+    var currentAssets = d.currentAssets || 0;
+    var currentLiabilities = d.currentLiabilities || 0;
+    return {
+      totalAssets: totalAssets,
+      totalLiabilities: totalLiabilities,
+      totalEquity: totalEquity,
+      debtRatio: totalAssets > 0 ? totalLiabilities / totalAssets : 0,
+      equityRatio: totalAssets > 0 ? totalEquity / totalAssets : 0,
+      currentRatio: currentLiabilities > 0 ? currentAssets / currentLiabilities : (currentAssets > 0 ? Infinity : 0),
+      currentAssetRatio: totalAssets > 0 ? currentAssets / totalAssets : 0,
+      debtEquityRatio: totalEquity > 0 ? totalLiabilities / totalEquity : (totalLiabilities > 0 ? Infinity : 0),
+    };
+  }
+
+  // ---- Render Orchestration ----
+  function renderAll() {
+    var hasData = units.length > 0;
+    dashboard.style.display = hasData ? '' : 'none';
+    emptyState.style.display = hasData ? 'none' : '';
+
+    if (!hasData) {
+      fileList.innerHTML = '<span class="empty-hint">尚未上传文件 — 上传后各单位将以不同颜色标识</span>';
+      btnExport.disabled = true;
+      return;
+    }
+
+    renderFileList();
+    renderCards();
+    renderCharts();
+    renderTable();
+  }
+
+  function renderFileList() {
+    fileList.innerHTML = units.map(function(u, i) {
+      var periodHtml = u.period ? ' <span class="period">' + u.period + '</span>' : '';
+      return '<span class="file-tag" style="background:' + u.color + '" title="' + u.fileName + '">' +
+        u.name + periodHtml +
+        ' <button class="remove" onclick="window._removeUnit(' + i + ')" title="移除" aria-label="移除' + u.name + '">×</button></span>';
+    }).join('');
+  }
+  // Expose for inline onclick
+  window._removeUnit = removeUnit;
+
+  // ---- Summary Cards ----
+  function renderCards() {
+    var metrics = units.map(function(u) { return { name: u.name, color: u.color, m: getMetrics(u) }; });
+    var cardDefs = [
+      { label: '总资产', key: 'totalAssets', fmt: fmtMoney },
+      { label: '资产负债率', key: 'debtRatio', fmt: fmtPct, warn: function(v) { return v > 0.7; } },
+      { label: '流动比率', key: 'currentRatio', fmt: function(v) { return isFinite(v) ? v.toFixed(2) : 'N/A'; }, good: function(v) { return isFinite(v) && v >= 2; } },
+      { label: '所有者权益', key: 'totalEquity', fmt: fmtMoney },
+    ];
+    cardsRow.innerHTML = cardDefs.map(function(def) {
+      var items = metrics.map(function(m) {
+        var val = m.m[def.key];
+        var cls = '';
+        if (def.warn && def.warn(val)) cls = ' style="color:#e17055"';
+        else if (def.good && def.good(val)) cls = ' style="color:#00b894"';
+        return '<div class="unit-item"><span><span class="dot" style="background:' + m.color + '"></span>' + m.name + '</span><strong' + cls + '>' + def.fmt(val) + '</strong></div>';
+      }).join('');
+      return '<div class="metric-card"><div class="label">' + def.label + '</div><div class="unit-list">' + items + '</div></div>';
+    }).join('');
+  }
+
+  // ---- Charts ----
+  function initOrUpdateChart(id, option) {
+    var dom = document.getElementById(id);
+    if (!dom) return;
+    var instance = charts[id];
+    if (!instance || instance.isDisposed()) {
+      instance = echarts.init(dom);
+      charts[id] = instance;
+    }
+    instance.setOption(option, true);
+    return instance;
+  }
+
+  function resizeAllCharts() {
+    Object.keys(charts).forEach(function(k) {
+      try { charts[k].resize(); } catch(e) { /* ignore */ }
+    });
+  }
+  window.addEventListener('resize', resizeAllCharts);
+
+  // Re-layout charts when they become visible (e.g., after display:none → block)
+  var dashboardObserver = new MutationObserver(function(muts) {
+    muts.forEach(function(mut) {
+      if (mut.attributeName === 'style' && dashboard.style.display !== 'none') {
+        setTimeout(resizeAllCharts, 100);
+      }
+    });
+  });
+  dashboardObserver.observe(dashboard, { attributes: true, attributeFilter: ['style'] });
+
+  function baseBarOption(names, colors) {
+    return {
+      tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: function(v) { return (v != null && !isNaN(v)) ? v.toLocaleString('zh-CN') : '-'; } },
+      grid: { left: '3%', right: '8%', bottom: '8%', top: '8%', containLabel: true },
+      xAxis: { type: 'category', data: names, axisLabel: { fontSize: 12, interval: 0, rotate: names.length > 5 ? 30 : 0 } },
+      yAxis: { type: 'value', axisLabel: { formatter: function(v) { return v >= 1e8 ? (v/1e8).toFixed(1)+'亿' : (v>=1e4 ? (v/1e4).toFixed(0)+'万' : v); } } },
+      color: colors,
+    };
+  }
+
+  function renderCharts() {
+    if (!units.length) return;
+    var names = units.map(function(u) { return u.name; });
+    var colors = units.map(function(u) { return u.color; });
+
+    // 1. Total Assets Bar
+    (function() {
+      var metrics = units.map(function(u) { return getMetrics(u); });
+      initOrUpdateChart('chartTotalAssets', Object.assign({}, baseBarOption(names, colors), {
+        series: [{
+          name: '总资产', type: 'bar', data: metrics.map(function(m) { return m.totalAssets; }),
+          label: { show: true, position: 'top', formatter: function(p) { return fmtMoney(p.value); }, fontSize: 11 },
+          barMaxWidth: 50,
+          emphasis: { itemStyle: { shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.2)' } },
+        }],
+      }));
+    })();
+
+    // 2. Debt Ratio Bar (with warning line)
+    (function() {
+      var metrics = units.map(function(u) { return getMetrics(u); });
+      var markLineVal = 0.7;
+      initOrUpdateChart('chartDebtRatio', {
+        tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: function(v) { return (v*100).toFixed(1)+'%'; } },
+        grid: { left: '3%', right: '8%', bottom: '8%', top: '12%', containLabel: true },
+        xAxis: { type: 'category', data: names, axisLabel: { fontSize: 12, rotate: names.length > 5 ? 30 : 0 } },
+        yAxis: { type: 'value', axisLabel: { formatter: function(v) { return (v*100).toFixed(0)+'%'; } }, max: 1 },
+        color: colors,
+        series: [{
+          name: '资产负债率', type: 'bar', data: metrics.map(function(m) { return m.debtRatio; }),
+          label: { show: true, position: 'top', formatter: function(p) { return fmtPct(p.value); }, fontSize: 11 },
+          barMaxWidth: 50,
+          markLine: { silent: true, symbol: 'none', lineStyle: { type: 'dashed', color: '#e17055', width: 2 },
+            label: { formatter: '警戒线 70%', fontSize: 11 }, data: [{ yAxis: markLineVal }] },
+          itemStyle: {
+            color: function(params) { return metrics[params.dataIndex].debtRatio > markLineVal ? '#e17055' : colors[params.dataIndex]; },
+          },
+        }],
+      });
+    })();
+
+    // 3. Asset Structure — Stacked Bar: Current vs Non-Current
+    (function() {
+      var current = units.map(function(u) { return u.data.currentAssets || 0; });
+      var nonCurrent = units.map(function(u) { return u.data.nonCurrentAssets || 0; });
+      initOrUpdateChart('chartAssetStructure', {
+        tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: function(v) { return fmtNum(v); } },
+        legend: { data: ['流动资产', '非流动资产'], top: 0 },
+        grid: { left: '3%', right: '8%', bottom: '8%', top: '12%', containLabel: true },
+        xAxis: { type: 'category', data: names, axisLabel: { fontSize: 12, rotate: names.length > 5 ? 30 : 0 } },
+        yAxis: { type: 'value', axisLabel: { formatter: function(v) { return v>=1e8?(v/1e8).toFixed(1)+'亿':(v>=1e4?(v/1e4).toFixed(0)+'万':v); } } },
+        color: ['#74b9ff', '#a29bfe'],
+        series: [
+          { name: '流动资产', type: 'bar', stack: 'assets', data: current, barMaxWidth: 50, label: { show: true, position: 'inside', formatter: function(p) {
+            var total = current[p.dataIndex] + nonCurrent[p.dataIndex];
+            return total > 0 ? (p.value/total*100).toFixed(0)+'%' : '';
+          }, fontSize: 10 } },
+          { name: '非流动资产', type: 'bar', stack: 'assets', data: nonCurrent, barMaxWidth: 50, label: { show: true, position: 'inside', formatter: function(p) {
+            var total = current[p.dataIndex] + nonCurrent[p.dataIndex];
+            return total > 0 ? (p.value/total*100).toFixed(0)+'%' : '';
+          }, fontSize: 10 } },
+        ],
+      });
+    })();
+
+    // 4. Liability & Equity Composition — Stacked Bar
+    (function() {
+      var curLiab = units.map(function(u) { return u.data.currentLiabilities || 0; });
+      var nonCurLiab = units.map(function(u) { return u.data.nonCurrentLiabilities || 0; });
+      var equity = units.map(function(u) { return getMetrics(u).totalEquity; });
+      initOrUpdateChart('chartLiabilityEquity', {
+        tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: function(v) { return fmtNum(v); } },
+        legend: { data: ['流动负债', '非流动负债', '所有者权益'], top: 0 },
+        grid: { left: '3%', right: '8%', bottom: '8%', top: '12%', containLabel: true },
+        xAxis: { type: 'category', data: names, axisLabel: { fontSize: 12, rotate: names.length > 5 ? 30 : 0 } },
+        yAxis: { type: 'value', axisLabel: { formatter: function(v) { return v>=1e8?(v/1e8).toFixed(1)+'亿':(v>=1e4?(v/1e4).toFixed(0)+'万':v); } } },
+        color: ['#fab1a0', '#e17055', '#81ecec'],
+        series: [
+          { name: '流动负债', type: 'bar', stack: 'le', data: curLiab, barMaxWidth: 50 },
+          { name: '非流动负债', type: 'bar', stack: 'le', data: nonCurLiab, barMaxWidth: 50 },
+          { name: '所有者权益', type: 'bar', stack: 'le', data: equity, barMaxWidth: 50 },
+        ],
+      });
+    })();
+
+    // 5. Radar Chart — Multi-dimensional Financial Health (normalised 0–100)
+    (function() {
+      var metricsList = units.map(function(u) { return getMetrics(u); });
+      // Each dimension: key, display name, a soft ceiling for normalisation, and whether lower-is-better
+      var dims = [
+        { key: 'totalAssets',      name: '总资产规模',     cap: 0,  invert: false },
+        { key: 'equityRatio',      name: '权益比率',       cap: 1,  invert: false },
+        { key: 'currentRatio',     name: '流动比率',       cap: 3,  invert: false },
+        { key: 'currentAssetRatio',name: '流动资产占比',   cap: 1,  invert: false },
+        { key: 'debtRatio',        name: '负债率(低优)',   cap: 1,  invert: true  },
+      ];
+
+      // For totalAssets (cap=0) use the observed max across units
+      dims.forEach(function(d) {
+        if (d.cap === 0) {
+          var vals = metricsList.map(function(m) {
+            var v = m[d.key];
+            return (v != null && isFinite(v)) ? v : 0;
+          });
+          d.cap = Math.max.apply(null, vals.concat([0.01]));
+        }
+      });
+
+      // Normalise raw value → 0–100 score, respecting the dimension cap
+      function norm(v, cap) {
+        if (v == null || !isFinite(v)) return 0;
+        var clamped = Math.max(0, Math.min(v, cap));
+        return cap > 0 ? (clamped / cap) * 100 : 0;
+      }
+
+      var indicator = dims.map(function(d) { return { name: d.name, max: 100 }; });
+
+      var seriesData = metricsList.map(function(m, i) {
+        var values = dims.map(function(d) {
+          var raw = m[d.key] || 0;
+          var score = norm(raw, d.cap);
+          return d.invert ? 100 - score : score;
+        });
+        return {
+          name: names[i],
+          value: values,
+          lineStyle: { color: colors[i], width: 2 },
+          areaStyle: { color: colors[i] + '20' },
+          itemStyle: { color: colors[i] },
+        };
+      });
+
+      initOrUpdateChart('chartRadar', {
+        tooltip: { trigger: 'item' },
+        legend: { data: names, bottom: 0, type: 'scroll' },
+        radar: { indicator: indicator, center: ['50%', '48%'], radius: '58%' },
+        series: [{ type: 'radar', data: seriesData, emphasis: { lineStyle: { width: 3 } } }],
+      });
+    })();
+  }
+
+  // ---- Data Table ----
+  function renderTable() {
+    var fields = [
+      { key: 'totalAssets', label: '总资产' },
+      { key: 'currentAssets', label: '流动资产' },
+      { key: 'nonCurrentAssets', label: '非流动资产' },
+      { key: 'totalLiabilities', label: '总负债' },
+      { key: 'currentLiabilities', label: '流动负债' },
+      { key: 'nonCurrentLiabilities', label: '非流动负债' },
+      { key: 'totalEquity', label: '所有者权益' },
+      { key: 'paidInCapital', label: '实收资本' },
+      { key: 'capitalReserve', label: '资本公积' },
+      { key: 'surplusReserve', label: '盈余公积' },
+      { key: 'undistributedProfit', label: '未分配利润' },
+      { key: 'cashEquivalents', label: '货币资金' },
+      { key: 'accountsReceivable', label: '应收账款' },
+      { key: 'inventory', label: '存货' },
+      { key: 'fixedAssets', label: '固定资产' },
+      { key: 'accountsPayable', label: '应付账款' },
+      { key: 'shortTermBorrowing', label: '短期借款' },
+      { key: 'longTermBorrowing', label: '长期借款' },
+    ];
+    // Only show fields present in at least one unit
+    var activeFields = fields.filter(function(f) {
+      return units.some(function(u) { return u.data[f.key] != null; });
+    });
+
+    // Computed fields
+    var computedFields = [
+      { key: 'debtRatio', label: '资产负债率', fmt: fmtPct, compute: function(d) {
+        var a = d.totalAssets || 0, l = d.totalLiabilities || 0; return a > 0 ? l / a : 0;
+      }},
+      { key: 'currentRatio', label: '流动比率', fmt: function(v) { return isFinite(v) ? v.toFixed(2) : 'N/A'; }, compute: function(d) {
+        var ca = d.currentAssets || 0, cl = d.currentLiabilities || 0; return cl > 0 ? ca / cl : (ca > 0 ? Infinity : 0);
+      }},
+    ];
+
+    var allFields = activeFields.concat(computedFields);
+
+    // Find max per field for bar sizing
+    var maxVals = {};
+    allFields.forEach(function(f) {
+      var vals = units.map(function(u) {
+        var v = f.compute ? f.compute(u.data) : u.data[f.key];
+        return (v != null && isFinite(v)) ? v : 0;
+      });
+      maxVals[f.key] = Math.max.apply(null, vals.concat([1]));
+    });
+
+    var headerHtml = '<tr><th>指标</th>' +
+      units.map(function(u) { return '<th style="color:' + u.color + '">' + u.name + '</th>'; }).join('') +
+      '</tr>';
+
+    var rowsHtml = allFields.map(function(f) {
+      var cells = units.map(function(u) {
+        var v = f.compute ? f.compute(u.data) : u.data[f.key];
+        var display = f.fmt ? f.fmt(v) : fmtMoney(v);
+        var numV = (v != null && isFinite(v)) ? v : 0;
+        var barW = maxVals[f.key] > 0 ? (numV / maxVals[f.key] * 60) : 0;
+        return '<td><span class="bar-cell" style="width:' + Math.max(barW, 2) + 'px;background:' + u.color + '40"></span>' + display + '</td>';
+      }).join('');
+      return '<tr><td>' + f.label + '</td>' + cells + '</tr>';
+    }).join('');
+
+    dataTable.innerHTML = '<table>' + headerHtml + rowsHtml + '</table>';
+  }
+
+  // ---- CSV Export ----
+  function exportCSV() {
+    if (!units.length) return;
+    var fields = [
+      { key: 'totalAssets', label: '总资产' },
+      { key: 'currentAssets', label: '流动资产' },
+      { key: 'nonCurrentAssets', label: '非流动资产' },
+      { key: 'totalLiabilities', label: '总负债' },
+      { key: 'currentLiabilities', label: '流动负债' },
+      { key: 'nonCurrentLiabilities', label: '非流动负债' },
+      { key: 'totalEquity', label: '所有者权益' },
+      { key: 'paidInCapital', label: '实收资本' },
+      { key: 'capitalReserve', label: '资本公积' },
+      { key: 'surplusReserve', label: '盈余公积' },
+      { key: 'undistributedProfit', label: '未分配利润' },
+      { key: 'cashEquivalents', label: '货币资金' },
+      { key: 'accountsReceivable', label: '应收账款' },
+      { key: 'inventory', label: '存货' },
+      { key: 'fixedAssets', label: '固定资产' },
+      { key: 'accountsPayable', label: '应付账款' },
+      { key: 'shortTermBorrowing', label: '短期借款' },
+      { key: 'longTermBorrowing', label: '长期借款' },
+    ];
+    var activeFields = fields.filter(function(f) {
+      return units.some(function(u) { return u.data[f.key] != null; });
+    });
+    // Add computed
+    var allFields = activeFields.concat([
+      { key: 'debtRatio', label: '资产负债率', compute: function(d) { var a=d.totalAssets||0,l=d.totalLiabilities||0; return a>0?l/a:0; }},
+      { key: 'currentRatio', label: '流动比率', compute: function(d) { var ca=d.currentAssets||0,cl=d.currentLiabilities||0; return cl>0?ca/cl:0; }},
+    ]);
+
+    // Build CSV rows
+    var header = ['指标'].concat(units.map(function(u) { return u.name; }));
+    var rows = [header];
+    allFields.forEach(function(f) {
+      var row = [f.label];
+      units.forEach(function(u) {
+        var v = f.compute ? f.compute(u.data) : u.data[f.key];
+        row.push((v != null && !isNaN(v)) ? v : '');
+      });
+      rows.push(row);
+    });
+
+    // Escape CSV cells
+    var csvContent = rows.map(function(r) {
+      return r.map(function(cell) {
+        var s = String(cell);
+        if (s.includes(',') || s.includes('"') || s.includes('\n')) {
+          return '"' + s.replace(/"/g, '""') + '"';
+        }
+        return s;
+      }).join(',');
+    }).join('\n');
+
+    // BOM for Excel UTF-8 compatibility
+    var blob = new Blob(['﻿' + csvContent], { type: 'text/csv;charset=utf-8;' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = '资产负债表对比_' + new Date().toISOString().slice(0,10) + '.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    toast('CSV 已导出');
+  }
+
+  // ---- Demo Data ----
+  function loadDemoData() {
+    units = [
+      {
+        name: '甲公司', color: COLOR_PALETTE[0], fileName: 'demo-甲.xlsx', period: '2025年度',
+        data: {
+          totalAssets: 580000000, currentAssets: 320000000, nonCurrentAssets: 260000000,
+          totalLiabilities: 350000000, currentLiabilities: 210000000, nonCurrentLiabilities: 140000000,
+          totalEquity: 230000000, paidInCapital: 100000000, capitalReserve: 40000000,
+          surplusReserve: 35000000, undistributedProfit: 55000000,
+          cashEquivalents: 85000000, accountsReceivable: 120000000, inventory: 75000000,
+          fixedAssets: 200000000, intangibleAssets: 35000000,
+          shortTermBorrowing: 90000000, accountsPayable: 85000000, longTermBorrowing: 140000000,
+          totalLiabilitiesEquity: 580000000,
+        }
+      },
+      {
+        name: '乙公司', color: COLOR_PALETTE[1], fileName: 'demo-乙.xlsx', period: '2025年度',
+        data: {
+          totalAssets: 420000000, currentAssets: 180000000, nonCurrentAssets: 240000000,
+          totalLiabilities: 220000000, currentLiabilities: 140000000, nonCurrentLiabilities: 80000000,
+          totalEquity: 200000000, paidInCapital: 80000000, capitalReserve: 25000000,
+          surplusReserve: 40000000, undistributedProfit: 55000000,
+          cashEquivalents: 45000000, accountsReceivable: 65000000, inventory: 50000000,
+          fixedAssets: 195000000, intangibleAssets: 28000000,
+          shortTermBorrowing: 55000000, accountsPayable: 60000000, longTermBorrowing: 80000000,
+          totalLiabilitiesEquity: 420000000,
+        }
+      },
+      {
+        name: '丙公司', color: COLOR_PALETTE[2], fileName: 'demo-丙.xlsx', period: '2025年度',
+        data: {
+          totalAssets: 720000000, currentAssets: 450000000, nonCurrentAssets: 270000000,
+          totalLiabilities: 500000000, currentLiabilities: 320000000, nonCurrentLiabilities: 180000000,
+          totalEquity: 220000000, paidInCapital: 120000000, capitalReserve: 30000000,
+          surplusReserve: 28000000, undistributedProfit: 42000000,
+          cashEquivalents: 120000000, accountsReceivable: 165000000, inventory: 110000000,
+          fixedAssets: 210000000, intangibleAssets: 42000000,
+          shortTermBorrowing: 150000000, accountsPayable: 120000000, longTermBorrowing: 180000000,
+          totalLiabilitiesEquity: 720000000,
+        }
+      },
+      {
+        name: '丁公司', color: COLOR_PALETTE[3], fileName: 'demo-丁.xlsx', period: '2025年度',
+        data: {
+          totalAssets: 350000000, currentAssets: 220000000, nonCurrentAssets: 130000000,
+          totalLiabilities: 160000000, currentLiabilities: 95000000, nonCurrentLiabilities: 65000000,
+          totalEquity: 190000000, paidInCapital: 70000000, capitalReserve: 35000000,
+          surplusReserve: 38000000, undistributedProfit: 47000000,
+          cashEquivalents: 65000000, accountsReceivable: 78000000, inventory: 55000000,
+          fixedAssets: 95000000, intangibleAssets: 22000000,
+          shortTermBorrowing: 40000000, accountsPayable: 38000000, longTermBorrowing: 65000000,
+          totalLiabilitiesEquity: 350000000,
+        }
+      },
+    ];
+    btnExport.disabled = false;
+    renderAll();
+    toast('已加载 4 家演示单位数据');
+  }
+
+  // ---- Init ----
+  renderAll();
+})();
+</script>
+</body>
+</html>

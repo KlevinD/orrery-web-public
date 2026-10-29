@@ -1,0 +1,210 @@
+      <!-- Retired notification sections retained for rollback; WorkInbox owns the active view. -->
+      {#if false}
+      <div class="space-y-5" data-context-todos>
+        {#if canReadApprovals}
+          <section data-context-councils>
+            <div class="mb-2 flex h-6 items-center justify-between gap-2 px-0.5">
+              <div class="flex min-w-0 items-center gap-1.5">
+                <Users class="h-3.5 w-3.5 shrink-0 text-indigo-600" />
+                <h2 class="truncate text-[12px] font-medium">{t('context.pendingCouncils')}</h2>
+                <span class="min-w-5 rounded-full bg-indigo-50 px-1.5 text-center text-[10.5px] font-semibold leading-5 text-indigo-700">{councilCount}</span>
+              </div>
+              <a class="flex shrink-0 items-center gap-0.5 text-[10.5px] text-[#8a8a8a] hover:text-black" href="/approvals?mode=council">
+                {t('context.viewAll')}<ChevronRight class="h-3 w-3" />
+              </a>
+            </div>
+            {#if approvalBadgeCountsQuery.isLoading}
+              <div class="h-[58px] animate-pulse rounded-lg bg-[#eeeeee]" aria-label={t('context.pendingCouncils')}></div>
+            {:else if approvalBadgeCountsQuery.isError}
+              <p class="rounded-lg border border-rose-200 bg-rose-50 px-3 py-3 text-center text-[11px] text-rose-700">{t('context.todosLoadFailed')}</p>
+            {:else if councilItems.length > 0}
+              <div class="divide-y divide-[#eeeeee] overflow-hidden rounded-lg border border-[#e8e8e8] bg-white">
+                {#each councilItems as item (item.id)}
+                  <a class="group block px-3 py-2.5 transition-colors hover:bg-[#f7f7f7]" href={`/approvals?mode=council&council=${encodeURIComponent(item.councilId)}`}>
+                    <div class="flex items-start gap-2">
+                      <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span>
+                      <span class="min-w-0 flex-1 break-words text-[12px] font-medium leading-[18px] text-[#282828]">{item.action}</span>
+                      <ChevronRight class="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#b0b0b0] transition-transform group-hover:translate-x-0.5 group-hover:text-[#777]" />
+                    </div>
+                    <div class="mt-1 flex min-w-0 items-center gap-1.5 pl-3.5 text-[10px] leading-4 text-[#9a9a9a]">
+                      <span class="truncate">{item.resource}</span>
+                      {#if item.createdAtRaw}<span aria-hidden="true">路</span>{/if}
+                      {#if item.createdAtRaw}<span class="shrink-0">{contextDate(item.createdAtRaw, item.createdAt)}</span>{/if}
+                    </div>
+                  </a>
+                {/each}
+              </div>
+            {:else}
+              <div class="rounded-lg border border-dashed border-[#dedede] bg-white px-3 py-4 text-center text-[11px] text-[#9a9a9a]">{t('context.noPendingCouncils')}</div>
+            {/if}
+          </section>
+
+          <section>
+            <div class="mb-2 flex h-6 items-center justify-between gap-2 px-0.5">
+              <div class="flex min-w-0 items-center gap-1.5">
+                <CheckCircle2 class="h-3.5 w-3.5 shrink-0 text-amber-600" />
+                <h2 class="truncate text-[12px] font-medium">{t('context.pendingApprovals')}</h2>
+                <span class="min-w-5 rounded-full bg-amber-50 px-1.5 text-center text-[10.5px] font-semibold leading-5 text-amber-700">{approvalCount}</span>
+              </div>
+              <a class="flex shrink-0 items-center gap-0.5 text-[10.5px] text-[#8a8a8a] hover:text-black" href={approvalQueueHref()}>
+                {t('context.viewAll')}<ChevronRight class="h-3 w-3" />
+              </a>
+            </div>
+            {#if approvalBadgeCountsQuery.isLoading}
+              <div class="h-[58px] animate-pulse rounded-lg bg-[#eeeeee]" aria-label={t('context.pendingApprovals')}></div>
+            {:else if approvalBadgeCountsQuery.isError}
+              <p class="rounded-lg border border-rose-200 bg-rose-50 px-3 py-3 text-center text-[11px] text-rose-700">{t('context.todosLoadFailed')}</p>
+            {:else if approvalItems.length > 0}
+              <div class="divide-y divide-[#eeeeee] overflow-hidden rounded-lg border border-[#e8e8e8] bg-white">
+                {#each approvalItems as item (item.id)}
+                  <a class="group block px-3 py-2.5 transition-colors hover:bg-[#f7f7f7]" href={approvalNotificationHref(item)}>
+                    <div class="flex items-start gap-2">
+                      <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500"></span>
+                      <span class="min-w-0 flex-1 break-words text-[12px] font-medium leading-[18px] text-[#282828]">{item.title}</span>
+                      <ChevronRight class="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#b0b0b0] transition-transform group-hover:translate-x-0.5 group-hover:text-[#777]" />
+                    </div>
+                    <div class="mt-1 flex min-w-0 items-center gap-1.5 pl-3.5 text-[10px] leading-4 text-[#9a9a9a]">
+                      {#if item.requestedBy}<span class="truncate">{item.requestedByName || item.requestedBy}</span>{/if}
+                      {#if item.requestedBy && item.createdAtRaw}<span aria-hidden="true">·</span>{/if}
+                      {#if item.createdAtRaw}<span class="shrink-0">{contextDate(item.createdAtRaw, item.createdAt)}</span>{/if}
+                    </div>
+                  </a>
+                {/each}
+              </div>
+            {:else}
+              <div class="rounded-lg border border-dashed border-[#dedede] bg-white px-3 py-4 text-center text-[11px] text-[#9a9a9a]">{t('context.noPendingApprovals')}</div>
+            {/if}
+          </section>
+        {/if}
+
+        {#if canReadTodos}
+          <section>
+            <div class="mb-2 flex h-6 items-center justify-between gap-2 px-0.5">
+              <div class="flex min-w-0 items-center gap-1.5">
+                <ClipboardList class="h-3.5 w-3.5 shrink-0 text-violet-600" />
+                <h2 class="truncate text-[12px] font-medium">{t('context.myTodos')}</h2>
+                <span class="min-w-5 rounded-full bg-violet-50 px-1.5 text-center text-[10.5px] font-semibold leading-5 text-violet-700">{myTodoCount}</span>
+              </div>
+              <a class="flex shrink-0 items-center gap-0.5 text-[10.5px] text-[#8a8a8a] hover:text-black" href="/?tab=team">
+                {t('context.viewAll')}<ChevronRight class="h-3 w-3" />
+              </a>
+            </div>
+            {#if todosQuery.isLoading}
+              <div class="h-[58px] animate-pulse rounded-lg bg-[#eeeeee]" aria-label={t('context.myTodos')}></div>
+            {:else if todosQuery.isError}
+              <p class="rounded-lg border border-rose-200 bg-rose-50 px-3 py-3 text-center text-[11px] text-rose-700">{t('context.todosLoadFailed')}</p>
+            {:else if myTodoItems.length > 0}
+              <div class="divide-y divide-[#eeeeee] overflow-hidden rounded-lg border border-[#e8e8e8] bg-white">
+                {#each myTodoItems as item (item.todo_id)}
+                  <a class="group block px-3 py-2.5 transition-colors hover:bg-[#f7f7f7]" href={`/todos/${encodeURIComponent(item.todo_id)}`}>
+                    <div class="flex items-start gap-2">
+                      <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full {item.status === 'blocked' ? 'bg-rose-500' : item.status === 'review' ? 'bg-amber-500' : 'bg-violet-500'}"></span>
+                      <span class="min-w-0 flex-1 break-words text-[12px] font-medium leading-[18px] text-[#282828]">{item.title}</span>
+                      <ChevronRight class="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#b0b0b0] transition-transform group-hover:translate-x-0.5 group-hover:text-[#777]" />
+                    </div>
+                    <div class="mt-1 flex min-w-0 items-center gap-1.5 pl-3.5 text-[10px] leading-4 text-[#9a9a9a]">
+                      <span class={todoStatusClass(item.status)}>{todoStatusLabel(item.status)}</span>
+                      <span aria-hidden="true">·</span>
+                      <span>{t(`workhub.priority.${item.priority}` as TranslationKey)}</span>
+                      {#if item.due_at}
+                        <span aria-hidden="true">·</span>
+                        <span class="truncate">{t('context.dueAt', { date: contextDate(item.due_at) })}</span>
+                      {/if}
+                    </div>
+                  </a>
+                {/each}
+              </div>
+            {:else}
+              <div class="rounded-lg border border-dashed border-[#dedede] bg-white px-3 py-4 text-center text-[11px] text-[#9a9a9a]">{t('context.noMyTodos')}</div>
+            {/if}
+          </section>
+        {/if}
+
+        {#if canReadScheduler || failedAutomationTodos.length > 0}
+          <section>
+            <div class="mb-2 flex h-6 items-center justify-between gap-2 px-0.5">
+              <div class="flex min-w-0 items-center gap-1.5">
+                <AlertTriangle class="h-3.5 w-3.5 shrink-0 text-rose-600" />
+                <h2 class="truncate text-[12px] font-medium">{t('context.runtimeAlerts')}</h2>
+                <span class="min-w-5 rounded-full bg-rose-50 px-1.5 text-center text-[10.5px] font-semibold leading-5 text-rose-700">{runtimeAlertCount}</span>
+              </div>
+            </div>
+            {#if (canReadTodos && todosQuery.isLoading) || (canReadScheduler && scheduledRunAlertsQuery.isLoading)}
+              <div class="h-[58px] animate-pulse rounded-lg bg-[#eeeeee]" aria-label={t('context.runtimeAlerts')}></div>
+            {:else if (canReadTodos && todosQuery.isError) && (canReadScheduler && scheduledRunAlertsQuery.isError)}
+              <p class="rounded-lg border border-rose-200 bg-rose-50 px-3 py-3 text-center text-[11px] text-rose-700">{t('context.runtimeAlertsLoadFailed')}</p>
+            {:else if runtimeAlerts.length > 0}
+              <div class="divide-y divide-[#eeeeee] overflow-hidden rounded-lg border border-[#e8e8e8] bg-white">
+                {#each runtimeAlerts as alert (alert.kind === 'todo' ? `todo:${alert.item.todo_id}` : `schedule:${alert.item.run.scheduled_run_id}`)}
+                  {#if alert.kind === 'todo'}
+                    <a class="group block px-3 py-2.5 transition-colors hover:bg-[#f7f7f7]" href={`/todos/${encodeURIComponent(alert.item.todo_id)}`}>
+                      <div class="flex items-start gap-2">
+                        <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-rose-500"></span>
+                        <span class="min-w-0 flex-1 break-words text-[12px] font-medium leading-[18px] text-[#282828]">{alert.item.title}</span>
+                        <ChevronRight class="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#b0b0b0] transition-transform group-hover:translate-x-0.5 group-hover:text-[#777]" />
+                      </div>
+                      <p class="mt-1 truncate pl-3.5 text-[10px] leading-4 text-rose-700">{t('context.automationFailed')}</p>
+                    </a>
+                  {:else}
+                    <a class="group block px-3 py-2.5 transition-colors hover:bg-[#f7f7f7]" href={`/scheduled-tasks?view=results&task=${encodeURIComponent(alert.item.run.scheduled_task_id)}&run=${encodeURIComponent(alert.item.run.scheduled_run_id)}&filter=attention`}>
+                      <div class="flex items-start gap-2">
+                        <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-rose-500"></span>
+                        <span class="min-w-0 flex-1 break-words text-[12px] font-medium leading-[18px] text-[#282828]">{alert.item.task_title}</span>
+                        <ChevronRight class="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#b0b0b0] transition-transform group-hover:translate-x-0.5 group-hover:text-[#777]" />
+                      </div>
+                      <p class="mt-1 truncate pl-3.5 text-[10px] leading-4 text-rose-700">{t('context.scheduledRunFailed')}</p>
+                    </a>
+                  {/if}
+                {/each}
+              </div>
+            {:else}
+              <div class="flex items-center justify-center gap-1.5 rounded-lg border border-dashed border-[#dedede] bg-white px-3 py-4 text-[11px] text-[#8a8a8a]">
+                <CheckCircle2 class="h-3.5 w-3.5 text-emerald-500" />{t('context.runtimeHealthy')}
+              </div>
+            {/if}
+          </section>
+        {/if}
+
+        {#if canReadDiscussions}
+          <section>
+            <div class="mb-2 flex h-6 items-center justify-between gap-2 px-0.5">
+              <div class="flex min-w-0 items-center gap-1.5">
+                <MessageSquare class="h-3.5 w-3.5 shrink-0 text-blue-600" />
+                <h2 class="truncate text-[12px] font-medium">{t('context.unreadDiscussions')}</h2>
+                <span class="min-w-5 rounded-full bg-blue-50 px-1.5 text-center text-[10.5px] font-semibold leading-5 text-blue-700">{discussionCount}</span>
+              </div>
+              <a class="flex shrink-0 items-center gap-0.5 text-[10.5px] text-[#8a8a8a] hover:text-black" href="/discussions">
+                {t('context.viewAll')}<ChevronRight class="h-3 w-3" />
+              </a>
+            </div>
+            {#if discussionBadgeCountsQuery.isLoading}
+              <div class="h-[58px] animate-pulse rounded-lg bg-[#eeeeee]" aria-label={t('context.unreadDiscussions')}></div>
+            {:else if discussionBadgeCountsQuery.isError}
+              <p class="rounded-lg border border-rose-200 bg-rose-50 px-3 py-3 text-center text-[11px] text-rose-700">{t('context.todosLoadFailed')}</p>
+            {:else if discussionItems.length > 0}
+              <div class="divide-y divide-[#eeeeee] overflow-hidden rounded-lg border border-[#e8e8e8] bg-white">
+                {#each discussionItems as item (item.id)}
+                  <a class="group block px-3 py-2.5 transition-colors hover:bg-[#f7f7f7]" href={`/discussions?discussion=${encodeURIComponent(item.id)}`}>
+                    <div class="flex items-start gap-2">
+                      <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"></span>
+                      <span class="min-w-0 flex-1 break-words text-[12px] font-medium leading-[18px] text-[#282828]">{item.title}</span>
+                      <ChevronRight class="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#b0b0b0] transition-transform group-hover:translate-x-0.5 group-hover:text-[#777]" />
+                    </div>
+                    {#if item.lastMessage}
+                      <p class="mt-1 truncate pl-3.5 text-[10.5px] leading-4 text-[#7f7f7f]">{item.lastMessage}</p>
+                    {/if}
+                    <p class="mt-0.5 pl-3.5 text-[10px] leading-4 text-[#a0a0a0]">{contextDate(item.updatedAtRaw, item.updatedAt)}</p>
+                  </a>
+                {/each}
+              </div>
+            {:else}
+              <div class="rounded-lg border border-dashed border-[#dedede] bg-white px-3 py-4 text-center text-[11px] text-[#9a9a9a]">{t('context.noUnreadDiscussions')}</div>
+            {/if}
+          </section>
+        {/if}
+
+        {#if !canReadApprovals && !canReadDiscussions && !canReadTodos && !canReadScheduler}
+          <p class="rounded-lg border border-dashed border-[#dedede] bg-white px-3 py-5 text-center text-[11px] text-[#9a9a9a]">{t('context.todosUnavailable')}</p>
+        {/if}
+      </div>
+      {/if}

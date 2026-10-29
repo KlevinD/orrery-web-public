@@ -1,0 +1,114 @@
+name: orrery-identity-dev
+
+services:
+  kratos-postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: kratos
+      POSTGRES_PASSWORD: kratos-development-password
+      POSTGRES_DB: kratos
+    volumes:
+      - kratos-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kratos -d kratos"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    networks:
+      - kratos-control
+
+  kratos-migrate:
+    image: oryd/kratos:v1.3.1
+    restart: "no"
+    command: migrate sql -e --yes --config /etc/config/kratos/kratos.yml
+    volumes:
+      - ./kratos.yml:/etc/config/kratos/kratos.yml:ro
+      - ./identity.schema.json:/etc/config/kratos/identity.schema.json:ro
+      - ./feishu.jsonnet:/etc/config/kratos/feishu.jsonnet:ro
+    environment: &kratos-environment
+      ORRERY_FEISHU_APP_ID: ${ORRERY_FEISHU_APP_ID:?ORRERY_FEISHU_APP_ID is required}
+      ORRERY_FEISHU_APP_SECRET: ${ORRERY_FEISHU_APP_SECRET:?ORRERY_FEISHU_APP_SECRET is required}
+    depends_on:
+      kratos-postgres:
+        condition: service_healthy
+    networks:
+      - kratos-control
+
+  kratos:
+    image: oryd/kratos:v1.3.1
+    restart: unless-stopped
+    command: serve --dev --config /etc/config/kratos/kratos.yml
+    volumes:
+      - ./kratos.yml:/etc/config/kratos/kratos.yml:ro
+      - ./identity.schema.json:/etc/config/kratos/identity.schema.json:ro
+      - ./feishu.jsonnet:/etc/config/kratos/feishu.jsonnet:ro
+    environment:
+      <<: *kratos-environment
+      SERVE_PUBLIC_BASE_URL: "http://127.0.0.1:${ORRERY_KRATOS_PUBLIC_PORT:-4433}/"
+    ports:
+      - "127.0.0.1:${ORRERY_KRATOS_PUBLIC_PORT:-4433}:4433"
+      - "127.0.0.1:${ORRERY_KRATOS_ADMIN_PORT:-4434}:4434"
+    # Admin is host-accessible only through loopback for the Orrery API projection worker.
+    depends_on:
+      kratos-migrate:
+        condition: service_completed_successfully
+    networks:
+      - kratos-control
+
+  openfga-postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: openfga
+      POSTGRES_PASSWORD: openfga-development-password
+      POSTGRES_DB: openfga
+    volumes:
+      - openfga-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U openfga -d openfga"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    networks:
+      - openfga-runtime
+
+  openfga-migrate:
+    image: openfga/openfga:v1.18.1
+    restart: "no"
+    command: migrate
+    environment: &openfga-environment
+      OPENFGA_DATASTORE_ENGINE: postgres
+      OPENFGA_DATASTORE_URI: postgres://openfga:openfga-development-password@openfga-postgres:5432/openfga?sslmode=disable
+      OPENFGA_LOG_FORMAT: json
+      OPENFGA_PLAYGROUND_ENABLED: "false"
+    depends_on:
+      openfga-postgres:
+        condition: service_healthy
+    networks:
+      - openfga-runtime
+
+  openfga:
+    image: openfga/openfga:v1.18.1
+    restart: unless-stopped
+    command: run
+    environment:
+      <<: *openfga-environment
+      OPENFGA_HTTP_ADDR: 0.0.0.0:8080
+      OPENFGA_GRPC_ADDR: 0.0.0.0:8081
+      OPENFGA_METRICS_ENABLED: "false"
+    ports:
+      - "127.0.0.1:${ORRERY_OPENFGA_PUBLIC_PORT:-8082}:8080"
+    depends_on:
+      openfga-migrate:
+        condition: service_completed_successfully
+    networks:
+      - openfga-runtime
+
+volumes:
+  kratos-postgres-data:
+  openfga-postgres-data:
+
+networks:
+  kratos-control:
+  openfga-runtime:

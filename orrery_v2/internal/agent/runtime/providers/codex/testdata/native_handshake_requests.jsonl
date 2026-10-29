@@ -1,0 +1,5 @@
+{"id":1,"jsonrpc":"2.0","method":"initialize","params":{"capabilities":{"experimentalApi":true,"requestAttestation":false},"clientInfo":{"name":"orrery-runtime-bridge","version":"0.1.0"}}}
+{"jsonrpc":"2.0","method":"initialized"}
+{"id":2,"jsonrpc":"2.0","method":"thread/start","params":{"approvalPolicy":"on-request","cwd":"\u003cWORKSPACE\u003e","sandbox":"workspace-write"}}
+{"id":3,"jsonrpc":"2.0","method":"model/list","params":{"includeHidden":false}}
+{"id":4,"jsonrpc":"2.0","method":"permissionProfile/list","params":{}}

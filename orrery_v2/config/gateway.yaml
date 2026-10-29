@@ -1,0 +1,58 @@
+gateway:
+  port: 18789
+  bindAddress: 127.0.0.1
+  idleSessionTimeoutMinutes: 30
+  staticAssetsPath: ""
+  maxPerSessionMcpInstances: 5
+adapters:
+  feishu:
+    enabled: false
+    appId: ""
+    appSecret: ""
+    encryptKey: ""
+    verifyToken: ""
+    defaultSessionLabel: general
+    connectionMode: stream
+    domainName: feishu
+  weixin:
+    enabled: false
+    token: ""
+    apiKey: ""
+    webhookUrl: ""
+    extra:
+      mode: ilink_bot_api
+      loginBaseUrl: https://ilinkai.weixin.qq.com
+      ilinkBaseUrl: https://ilinkai.weixin.qq.com/ilink/bot
+      botType: "3"
+      getUpdatesPath: getupdates
+      sendMessagePath: sendmessage
+      channelVersion: "2.4.6"
+      ilinkAppId: bot
+      ilinkAppClientVersion: "132102"
+      pollIntervalSeconds: 2
+      requestTimeoutSeconds: 60
+      statePath: ""
+      seenMessageLimit: 5000
+      agentBindings: {}
+      contextTokens: 8192
+      replyChunkSize: 1800
+  dingtalk:
+    enabled: false
+    token: ""
+    apiKey: ""
+    webhookUrl: ""
+    extra:
+      clientId: ""
+      clientSecret: ""
+  email:
+    enabled: false
+    token: ""
+    apiKey: ""
+    webhookUrl: ""
+    extra:
+      address: ""
+      password: ""
+      imapHost: ""
+      smtpHost: ""
+      imapPort: 993
+      smtpPort: 587

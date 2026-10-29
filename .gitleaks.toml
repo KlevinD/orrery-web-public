@@ -1,0 +1,8 @@
+title = "Orrery secret scanning policy"
+
+[allowlist]
+description = "Two audited historical commits contain only test fixtures, example configuration, and documentation identifiers; current-tree scans must still inspect all subsequent changes."
+commits = [
+  "35f6b095c9e05a5cb1caca6622aa8c2fdec041b1",
+  "a6da83e4c5645a1aa5728c213900d1fe24f2c44d"
+]

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orrery 全景架构 · 用户、功能、应用与数据</title>
+  <style>
+    :root{color-scheme:light;--bg:#f4f6fa;--surface:#fff;--text:#192334;--muted:#59677b;--line:#dae2ee;--accent:#295ed8;--blue:#eef4ff;--green:#ecf9f3;--purple:#f2edff;--orange:#fff4e8;--rose:#fff0f4}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.6 "Segoe UI","Microsoft YaHei",sans-serif}button,a{font:inherit}button{cursor:pointer}a{color:var(--accent);text-underline-offset:3px}header,main,footer{max-width:1480px;margin:auto;padding-left:30px;padding-right:30px}header{padding-top:32px;padding-bottom:18px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--accent);font-weight:700}h1{font-size:29px;line-height:1.3;margin:8px 0 10px;font-weight:750}header p{color:var(--muted);margin:0;max-width:1000px}.topline{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.print{padding:8px 16px;border:1px solid var(--line);border-radius:8px;background:var(--surface);white-space:nowrap}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-top:22px;border-bottom:1px solid var(--line);padding-bottom:10px}.tabs button{border:0;border-radius:7px;background:transparent;padding:9px 18px;color:var(--muted)}.tabs button[aria-selected=true]{background:var(--text);color:white}.tabs button:hover{background:var(--blue);color:var(--accent)}.tabs button[aria-selected=true]:hover{background:var(--text);color:white}main{padding-bottom:16px}[hidden]{display:none!important}.lead{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:8px 0 18px}.chip{display:inline-flex;border:1px solid var(--line);border-radius:20px;padding:3px 10px;font-size:12px;background:var(--surface);color:var(--muted)}.legend{margin-left:auto;color:var(--muted);font-size:12px}.layer{display:grid;grid-template-columns:138px minmax(0,1fr);margin-bottom:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;break-inside:avoid}.layer-label{padding:21px 16px;background:#f8faff;border-right:1px solid var(--line)}.layer-label .number{display:block;font-size:11px;font-weight:700;color:var(--accent);margin-bottom:6px}.layer-label strong{display:block;font-size:17px}.layer-label small{display:block;font-size:12px;color:var(--muted);margin-top:4px}.cells{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:14px}.cells.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:12px 14px;border-radius:8px;border:1px solid var(--line);min-width:0;background:var(--surface)}.card strong{display:block;font-size:14px;margin-bottom:4px;line-height:1.5}.card p{margin:0;color:var(--muted);font-size:12px;line-height:1.8;overflow-wrap:anywhere}.users .card{background:var(--blue)}.features .card{background:var(--green)}.features .ontology{border-color:#9a83e9;background:var(--purple)}.features .rsi{border-color:#dda960;background:var(--orange)}.services .card{background:#f7f9fd}.data .card{background:var(--purple)}.platform .card{background:#f7f9fd}.note{border:1px solid #e5c48c;background:#fff9ee;border-radius:10px;padding:15px 18px;color:#684c1b;margin:18px 0}.note strong{display:block;margin-bottom:5px}.note p{margin:3px 0;font-size:13px}.crosscut{display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:#192b49;color:#fff;border-radius:10px;padding:14px 18px;margin:15px 0}.crosscut strong{margin-right:9px}.crosscut span{border:1px solid #61728c;border-radius:6px;padding:4px 11px;font-size:12px}.readline{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin:18px 0}.readline b{color:var(--text)}.panelhead{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:5px 0 15px}.panelhead h2{margin:0;font-size:21px}.panelhead p{color:var(--muted);font-size:13px;margin:5px 0 0}.open{white-space:nowrap;font-size:13px}iframe{display:block;width:100%;height:calc(100vh - 265px);min-height:620px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.tablebox{margin:22px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px}.tablebox h3{margin:0 0 12px;font-size:17px}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;text-align:left;font-size:13px}th,td{border-bottom:1px solid var(--line);padding:12px 10px;vertical-align:top}th{background:#f7f9fd;font-size:12px;color:var(--muted)}td:first-child{font-weight:650;min-width:115px}td code{font-size:12px;white-space:normal;overflow-wrap:anywhere}footer{color:var(--muted);font-size:12px;padding-top:12px;padding-bottom:26px}footer p{margin:5px 0}details{margin-top:12px}summary{cursor:pointer}code{font-family:Consolas,monospace}.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}.proof .card{background:var(--surface)}
+    @media(max-width:1050px){.cells{grid-template-columns:repeat(2,minmax(0,1fr))}.cells.three{grid-template-columns:repeat(2,minmax(0,1fr))}.proof{grid-template-columns:1fr}.legend{margin-left:0}}
+    @media(max-width:620px){header,main,footer{padding-left:14px;padding-right:14px}h1{font-size:23px}.layer{grid-template-columns:1fr}.layer-label{border-right:0;border-bottom:1px solid var(--line);padding:11px 14px;display:flex;align-items:center;gap:10px}.layer-label .number{margin:0}.layer-label strong{font-size:15px}.layer-label small{margin:0}.cells,.cells.three{grid-template-columns:1fr;padding:10px}.tabs button{padding:8px 10px}.topline{display:block}.print{margin-top:12px}.panelhead{align-items:flex-start}.open{white-space:normal}.crosscut{gap:7px}iframe{min-height:540px}.legend{display:none}}
+    @media print{header,main,footer{max-width:none;padding-left:0;padding-right:0}.tabs,.print,.diagram-panel{display:none!important}#overview{display:block!important}body{background:white;font-size:11px}h1{font-size:22px}.layer{margin-bottom:7px}.cells{gap:6px;padding:8px}.card{padding:8px 10px}.layer-label{padding:14px}.note{break-inside:avoid}.layer-label strong{font-size:14px}.card p{font-size:10px}.crosscut{background:#eaf0f9;color:#192334}.crosscut span{border-color:#aaa}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topline"><div><div class="eyebrow">ORRERY · ENTERPRISE ARCHITECTURE</div><h1>Orrery 全景架构</h1><p>从“谁使用系统”，到“提供哪些功能、由哪些服务实现、数据如何组织与治理”。Ontology、RSI、定时任务、知识与记忆均单独展开。</p></div><button class="print" onclick="window.print()">打印 / 保存 PDF</button></div>
+    <nav class="tabs" role="tablist" aria-label="架构视图">
+      <button id="tab-overview" role="tab" aria-selected="true" aria-controls="overview" data-tab="overview">全景总览</button>
+      <button id="tab-features" role="tab" aria-selected="false" aria-controls="features" data-tab="features" tabindex="-1">功能地图</button>
+      <button id="tab-data" role="tab" aria-selected="false" aria-controls="data" data-tab="data" tabindex="-1">应用与数据</button>
+      <button id="tab-rsi" role="tab" aria-selected="false" aria-controls="rsi" data-tab="rsi" tabindex="-1">Ontology 与 RSI</button>
+    </nav>
+  </header>
+  <main>
+    <section id="overview" role="tabpanel" aria-labelledby="tab-overview">
+      <div class="lead"><span class="chip">功能架构</span><span class="chip">应用架构</span><span class="chip">数据架构</span><span class="chip">用户与治理</span><span class="legend">分层表示职责归属；不把每个模块画成独立部署服务。</span></div>
+      <div class="layer users"><div class="layer-label"><span class="number">01 / WHO</span><strong>用户与组织</strong><small>谁在使用和管理</small></div><div class="cells">
+        <div class="card"><strong>平台 / 根管理员</strong><p>身份与权限治理、系统配置、全局管理能力；具体权限由云端判定。</p></div>
+        <div class="card"><strong>组织管理者与团队</strong><p>组织结构、人员与 Agent 归属、职责分配、资源与审批授权。</p></div>
+        <div class="card"><strong>业务用户与审批人</strong><p>发起对话、任务和自动化，使用知识与记忆，审阅结果并处理待办。</p></div>
+        <div class="card"><strong>Agent / 系统执行身份</strong><p>按 Profile、租户、任务和能力权限执行；后台调度保留创建者与范围。</p></div>
+      </div></div>
+      <div class="layer"><div class="layer-label"><span class="number">02 / ACCESS</span><strong>接入与体验</strong><small>统一业务的入口</small></div><div class="cells">
+        <div class="card"><strong>Orrery Web</strong><p>云端工作空间、事务与任务、人员组织、知识本体与管理界面。</p></div>
+        <div class="card"><strong>Orrery 客户端</strong><p>AionUI / Arco 交互组件、云端业务接入、本地会话与设备操作；迁移中。</p></div>
+        <div class="card"><strong>微信 / 飞书等消息渠道</strong><p>账号与身份绑定、个人助理消息、审批和任务结果通知；能力按渠道区分。</p></div>
+        <div class="card"><strong>设备与外部系统</strong><p>设备授权、WorkOrder、MCP、SCM、模型和知识 Provider 集成。</p></div>
+      </div></div>
+      <div class="layer features"><div class="layer-label"><span class="number">03 / CAPABILITY</span><strong>功能应用</strong><small>用户可获得的能力</small></div><div class="cells">
+        <div class="card"><strong>对话与个人助理</strong><p>私聊与群组、上下文、Agent 协作、会话消息与最终结果。</p></div>
+        <div class="card"><strong>事务中心与 Mission</strong><p>待办、目标、任务合同、责任分工、进展、证据与验收。</p></div>
+        <div class="card"><strong>定时任务与自动化</strong><p>计划与时区、到期触发、Agent / 工具 / 记忆任务、重试与运行记录。</p></div>
+        <div class="card"><strong>组织、人员与智能体</strong><p>组织与团队、Human / Agent Profile、岗位职责、能力资源绑定。</p></div>
+        <div class="card ontology"><strong>Ontology 本体工作台</strong><p>模型、对象、关系、事实、证据、动作、模型运行、血缘、治理和投影。</p></div>
+        <div class="card"><strong>知识库与 PageIndex</strong><p>资料入库、文档解析与索引、检索、访问控制、知识与本体关联。</p></div>
+        <div class="card"><strong>记忆库与学习沉淀</strong><p>运行日记、记忆记录、候选与审核、蒸馏、证据与来源血缘。</p></div>
+        <div class="card rsi"><strong>RSI 受控改进</strong><p>Skill 候选版本、评估账本、门禁、原子晋级、历史回滚；完整自动闭环在建。</p></div>
+        <div class="card"><strong>审批与 HIL</strong><p>人工介入、运行确认、决策与权限检查、审批结果及审计关联。</p></div>
+        <div class="card"><strong>MCP、Skills 与工具</strong><p>能力目录、工具调用、Skill 包和资源、版本、启用状态与 Agent 绑定。</p></div>
+        <div class="card"><strong>开发项目与 SCM</strong><p>开发项目、代码连接、执行工作空间、开发任务和产出。</p></div>
+        <div class="card"><strong>通知、评估与审计</strong><p>任务结果、会话通知、渠道投递、评估记录、操作与版本审计。</p></div>
+      </div></div>
+      <div class="layer services"><div class="layer-label"><span class="number">04 / APPLICATION</span><strong>应用服务</strong><small>功能由谁实现</small></div><div class="cells">
+        <div class="card"><strong>API、身份与权限服务</strong><p>登录 / 授权、账号与 Profile、角色与资源关系、租户和服务器鉴权。</p></div>
+        <div class="card"><strong>协作与任务领域</strong><p>Discussion、Mission、Task、Todo、责任、项目、交付与验收生命周期。</p></div>
+        <div class="card"><strong>Scheduler 与执行平台</strong><p>计划调度、持久化 Queue、Worker、租约、心跳、重试与恢复。</p></div>
+        <div class="card"><strong>Agent Runtime 与能力层</strong><p>PI / Codex / Claude / Device 等适配，模型配置、工具分发和 Skills。</p></div>
+        <div class="card"><strong>Knowledge 与 Memory</strong><p>文档入库、Provider 路由、检索，记忆捕获、蒸馏、审核与生命周期。</p></div>
+        <div class="card"><strong>Ontology 与投影服务</strong><p>Graph Context、模型和动作、规则映射、血缘证据、评估与治理回执。</p></div>
+        <div class="card"><strong>RSI 与版本发布边界</strong><p>单轮编排、可信评估、哈希与基线检查、原子切换、审计与回滚。</p></div>
+        <div class="card"><strong>通知、审计与设备服务</strong><p>Outbox、可靠转存、渠道路由、设备身份、授权范围和工单交付。</p></div>
+      </div></div>
+      <div class="layer data"><div class="layer-label"><span class="number">05 / DATA</span><strong>数据资产</strong><small>系统保存和关联什么</small></div><div class="cells">
+        <div class="card"><strong>用户与组织</strong><p>Account、Profile、组织、成员、团队、角色、身份绑定与权限关系。</p></div>
+        <div class="card"><strong>业务与协作</strong><p>Conversation / Message、Mission、Task、Todo、责任、项目与交付证据。</p></div>
+        <div class="card"><strong>定时与执行</strong><p>ScheduledTask、ScheduledRun、执行 Job、AgentRun、租约、状态与结果。</p></div>
+        <div class="card"><strong>Ontology 关系与证据</strong><p>Object、Link、Fact、Evidence、Schema、映射、动作、血缘和治理记录。</p></div>
+        <div class="card"><strong>知识与检索</strong><p>KnowledgeBase、Document、内容与分块、原始文件、索引和引用。</p></div>
+        <div class="card"><strong>记忆与学习</strong><p>MemoryRecord、MemoryCandidate、运行日记、蒸馏来源、审核与证据。</p></div>
+        <div class="card"><strong>Skills 与 RSI</strong><p>定义、包快照、版本与摘要、评估数据集 / 策略 / 裁判、激活历史。</p></div>
+        <div class="card"><strong>审计与运营</strong><p>审计事件、Outbox 待转存、通知与渠道回执、轨迹、指标和日志。</p></div>
+      </div></div>
+      <div class="layer platform"><div class="layer-label"><span class="number">06 / FOUNDATION</span><strong>存储与基础设施</strong><small>逻辑职责和物理实现</small></div><div class="cells">
+        <div class="card"><strong>SQL 数据路由</strong><p>core · audit · events · jobs · runtime · observability 六角色；按配置使用数据库驱动。</p></div>
+        <div class="card"><strong>文件与包资产</strong><p>原始资料、附件、成果、Skill 内容快照、运行工作空间和轨迹。</p></div>
+        <div class="card"><strong>检索与外部能力</strong><p>PageIndex / Local / MCP Provider、模型 API、外部工具与代码系统。</p></div>
+        <div class="card"><strong>用户本地电脑</strong><p>Electron 主进程、连接器、本地 Core、SQLite 状态、OS 加密凭据与本地授权。</p></div>
+      </div></div>
+      <div class="crosscut"><strong>贯穿所有层</strong><span>云端身份与权限</span><span>租户与资源归属</span><span>HIL / 本机确认</span><span>证据与血缘</span><span>审计与可观测</span><span>幂等、重试与恢复</span></div>
+      <div class="note"><strong>RSI 已纳入；要区分框架与完整闭环。</strong><p>已实现：候选和包快照、可信评估记录、基线检查、受控晋级、回滚、事务审计与可靠转存。</p><p>仍需建设：真实候选生成器、隔离对照执行、独立裁判、底层事件反馈，以及改进器自身的版本与效果实验。Ontology 自我修复与 RSI 改进分别承担一致性恢复和候选优化职责。</p></div>
+      <div class="readline"><b>关键关系</b><span>用户 / 组织 → 权限 → 应用与资源</span><span>定时计划 → 运行记录 → 执行与结果</span><span>知识 / 记忆 → 元数据投影 → Ontology</span><span>RSI 候选 → 可信评估 → 受控发布 → 版本绑定</span></div>
+    </section>
+    <section id="features" class="diagram-panel" role="tabpanel" aria-labelledby="tab-features" hidden><div class="panelhead"><div><h2>功能与架构范围地图</h2><p>按用户、业务功能、应用服务、数据和技术分解；连线表示归属。</p></div><a class="open" href="features.html" target="_blank" rel="noopener">单独打开 / 导出 ↗</a></div><iframe title="Orrery 全景功能地图" data-src="features.html"></iframe></section>
+    <section id="data" class="diagram-panel" role="tabpanel" aria-labelledby="tab-data" hidden><div class="panelhead"><div><h2>应用服务管理哪些数据</h2><p>各数据域共享底层存储体系；图中的数据库图标不表示八个独立数据库。</p></div><a class="open" href="data.html" target="_blank" rel="noopener">单独打开 / 导出 ↗</a></div><iframe title="Orrery 应用与数据架构" data-src="data.html"></iframe>
+      <div class="tablebox"><h3>核心对象与关联</h3><div class="tablewrap"><table><thead><tr><th>数据域</th><th>主要对象</th><th>关联方式与责任</th></tr></thead><tbody>
+      <tr><td>用户与组织</td><td>账号、Profile、组织、成员、角色、权限关系</td><td>外部身份映射用户 / Profile，组织归属与资源关系参与权限判定。</td></tr>
+      <tr><td>事务与协作</td><td>Conversation、Message、Mission、Task、Todo、责任、项目</td><td>任务合同连接执行人、目标、交付证据与验收；会话承载沟通和结果。</td></tr>
+      <tr><td>定时与执行</td><td>ScheduledTask、ScheduledRun、Job、AgentRun</td><td>计划产生运行实例，进入持久化执行；保存状态、创建者、结果和重试信息。</td></tr>
+      <tr><td>知识</td><td>KnowledgeBase、Document、分块、文件、索引</td><td>检索返回来源引用；元数据通过映射投影进入本体，原始内容保留在知识与文件层。</td></tr>
+      <tr><td>记忆</td><td>MemoryRecord、MemoryCandidate、日记、证据与来源</td><td>候选与正式记录保持审核状态和来源血缘；记忆数据可以向本体发布元数据。</td></tr>
+      <tr><td>Ontology</td><td>Object、Link、Fact、Evidence、Schema、Action、Projection</td><td>组织业务对象与关系、事实和证据；对象关联受租户、来源访问与映射规则约束。</td></tr>
+      <tr><td>评估与 RSI</td><td>ModelRun、EvaluationArtifact、SkillVersionEvaluation、SkillVersion</td><td>数据集、策略、裁判和证据绑定评估；候选 / 基线哈希与包摘要约束发布。</td></tr>
+      <tr><td>资源与集成</td><td>Skill、Tool、MCP、LLM Profile、SCM Connection、Device</td><td>Agent 绑定允许的资源；本地操作另经 WorkspaceGrant 和本机确认。</td></tr>
+      <tr><td>审计与通知</td><td>审计事件、Outbox、投递记录、渠道回执</td><td>业务提交与待转存事件保持一致，通过可靠重试写入审计或渠道系统。</td></tr>
+      </tbody></table></div></div>
+    </section>
+    <section id="rsi" class="diagram-panel" role="tabpanel" aria-labelledby="tab-rsi" hidden><div class="panelhead"><div><h2>Ontology 与 RSI 的职责边界</h2><p>显示已实现的受控版本能力、评估产物桥接和仍需接入的真实生成 / 对照能力。</p></div><a class="open" href="rsi.html" target="_blank" rel="noopener">单独打开 / 导出 ↗</a></div><iframe title="Orrery Ontology 与 RSI 架构" data-src="rsi.html"></iframe><div class="proof"><div class="card"><strong>Ontology</strong><p>模型、对象、关系、事实、证据、动作和治理；模型运行产物承载评估上下文。</p></div><div class="card"><strong>RSI</strong><p>使用固定基线和候选，读取可信评估，在门槛满足且显式要求后发布或回滚。</p></div><div class="card"><strong>定时与记忆</strong><p>Scheduler 与 Memory 提供触发、观察、经验和证据基础；完整反馈接线仍需要实现。</p></div></div></section>
+  </main>
+  <footer><p>功能与源码架构 · 2026-10-15 · 深入图由 <a href="https://github.com/tt-a1i/archify" target="_blank" rel="noopener">Archify</a> 生成。全景按职责分层，非 ECS 部署进程清单。</p><p>图中纳入跨分支能力：存在实现或接口，不代表每项功能已在同一个线上版本上线。</p><details><summary>源码范围与可核验依据</summary><p>云端 / RSI：<code>redacted</code>；客户端：<code>redacted</code>。单独打开各 Archify 图可查看节点源码引用。</p><p>RSI：<code>internal/app/resourceadmin/skill_rsi_supervisor.go</code>、<code>command_skill_rsi.go</code>、<code>skill_version_evaluation.go</code> 及 <code>docs/rsi/</code>。数据：<code>contextgraph/types.go</code>、<code>knowledge/core/types.go</code>、<code>memory/core/</code>、<code>app/scheduler/repository.go</code>。统一应用装配：<code>cmd/server/main.go</code>。</p><p>客户端依据 <code>orrery-desktop/core-compatibility.json</code> 和 <code>process/orrery/runtime/createRuntime.ts</code>，已明确标为迁移中；页面不以旧导航证明当前入口状态。</p></details></footer>
+  <script>
+    const tabs = [...document.querySelectorAll('[data-tab]')];
+    function selectTab(id, focus = false) {
+      const target = document.getElementById(id);
+      if (!target || !tabs.some(t => t.dataset.tab === id)) return;
+      for (const tab of tabs) { const active = tab.dataset.tab === id; tab.setAttribute('aria-selected', String(active)); tab.tabIndex = active ? 0 : -1; document.getElementById(tab.dataset.tab).hidden = !active; if (active && focus) tab.focus(); }
+      const frame = target.querySelector('iframe');
+      if (frame && !frame.getAttribute('src')) frame.src = frame.dataset.src;
+      try { history.replaceState(null, '', '#' + id); } catch {}
+    }
+    for (const tab of tabs) { tab.addEventListener('click', () => selectTab(tab.dataset.tab)); tab.addEventListener('keydown', e => { let next = tabs.indexOf(tab); if (e.key === 'ArrowRight') next = (next + 1) % tabs.length; else if (e.key === 'ArrowLeft') next = (next + tabs.length - 1) % tabs.length; else if (e.key === 'Home') next = 0; else if (e.key === 'End') next = tabs.length - 1; else return; e.preventDefault(); selectTab(tabs[next].dataset.tab, true); }); }
+    selectTab(location.hash.slice(1) || 'overview');
+  </script>
+</body>
+</html>
